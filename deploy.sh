@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
+export PATH="$HOME/google-cloud-sdk/bin:$PATH"
 
 # Automated deployment script for Google Cloud Run
 SERVICE_NAME="${SERVICE_NAME:-mercadona-ai-companion}"
