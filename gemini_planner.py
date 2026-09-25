@@ -360,15 +360,7 @@ def _call_gemini_flash_selector(
     constraints: dict[str, Any],
     candidates: list[dict[str, Any]],
 ) -> dict[str, Any] | None:
-    """Calls Gemini 3.8 Flash (with automatic fallback to gemini-2.5-flash) for recipe selection & explanation."""
-    api_key = (
-        os.environ.get("GEMINI_API_KEY")
-        or os.environ.get("GOOGLE_API_KEY")
-        or ""
-    ).strip()
-    if not api_key:
-        return None
-
+    """Calls Gemini 3.8 Flash (with automatic fallback to gemini-2.5-flash) via Vertex AI or AI Studio."""
     compact_candidates = [
         {
             "recipe_id": r["recipe_id"],
@@ -400,6 +392,43 @@ def _call_gemini_flash_selector(
         },
         ensure_ascii=False,
     )
+
+    # 1. Try Vertex AI via google-genai SDK (works automatically on Cloud Run with ADC)
+    try:
+        from google import genai  # type: ignore
+        from google.genai import types  # type: ignore
+
+        project_id = os.environ.get("GOOGLE_CLOUD_PROJECT") or os.environ.get("PROJECT_ID") or "mercadona-ia-companion"
+        client = genai.Client(vertexai=True, project=project_id, location="us-central1")
+        for model_name in [MODEL_PRIMARY, MODEL_FALLBACK, "gemini-2.0-flash"]:
+            try:
+                resp = client.models.generate_content(
+                    model=model_name,
+                    contents=user_payload,
+                    config=types.GenerateContentConfig(
+                        system_instruction=sys_instruction,
+                        temperature=0.2,
+                        response_mime_type="application/json",
+                    ),
+                )
+                if resp and resp.text:
+                    parsed = json.loads(resp.text)
+                    if isinstance(parsed.get("selected_recipe_ids"), list):
+                        parsed["model_used"] = f"Gemini 3.8 Flash ({model_name})"
+                        return parsed
+            except Exception:
+                continue
+    except Exception:
+        pass
+
+    # 2. Try AI Studio REST API if GEMINI_API_KEY / GOOGLE_API_KEY is provided
+    api_key = (
+        os.environ.get("GEMINI_API_KEY")
+        or os.environ.get("GOOGLE_API_KEY")
+        or ""
+    ).strip()
+    if not api_key:
+        return None
 
     for model_name in [MODEL_PRIMARY, MODEL_FALLBACK]:
         url = f"https://generativelanguage.googleapis.com/v1beta/models/{model_name}:generateContent?key={api_key}"

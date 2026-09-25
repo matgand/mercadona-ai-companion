@@ -17,12 +17,13 @@ gcloud config set account "${ACCOUNT}"
 CLOUDSDK_METRICS_ENVIRONMENT="${CLOUDSDK_METRICS_ENVIRONMENT:+$CLOUDSDK_METRICS_ENVIRONMENT }datacloud.jetski" \
 gcloud config set project "${PROJECT_ID}"
 
-echo "==> Habilitando APIs necesarias en ${PROJECT_ID} (Cloud Run, Cloud Build, Artifact Registry)..."
+echo "==> Habilitando APIs necesarias en ${PROJECT_ID} (Cloud Run, Cloud Build, Artifact Registry, Vertex AI)..."
 CLOUDSDK_METRICS_ENVIRONMENT="${CLOUDSDK_METRICS_ENVIRONMENT:+$CLOUDSDK_METRICS_ENVIRONMENT }datacloud.jetski" \
 gcloud services enable \
   run.googleapis.com \
   cloudbuild.googleapis.com \
   artifactregistry.googleapis.com \
+  aiplatform.googleapis.com \
   --project "${PROJECT_ID}"
 
 echo "==> Desplegando ${SERVICE_NAME} en Google Cloud Run (Proyecto: ${PROJECT_ID}, Región: ${REGION})..."
@@ -32,6 +33,6 @@ gcloud run deploy "${SERVICE_NAME}" \
   --project "${PROJECT_ID}" \
   --region "${REGION}" \
   --allow-unauthenticated \
-  --set-env-vars="^;^GEMINI_MODEL=${GEMINI_MODEL};ALLOWED_USERS=${ALLOWED_USERS};GEMINI_API_KEY=${GEMINI_API_KEY:-}"
+  --set-env-vars="^;^GOOGLE_CLOUD_PROJECT=${PROJECT_ID};GEMINI_MODEL=${GEMINI_MODEL};ALLOWED_USERS=${ALLOWED_USERS};GEMINI_API_KEY=${GEMINI_API_KEY:-}"
 
 echo "==> ¡Despliegue completado!"
