@@ -1,0 +1,1633 @@
+[
+  {
+    "id": "10161",
+    "name": "Nata ligera para cocinar Hacendado",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/f451d3695c8b94b17cb61540de841da8.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/10161/nata-ligera-cocinar-hacendado-brick",
+    "unit_price": 1.55,
+    "unit_size": 0.5,
+    "size_format": "l",
+    "packaging": "Brik",
+    "allergens": "Contiene leche y sus derivados (incluida la lactosa).",
+    "ingredients": "NATA ligera, almidón modificado de maíz, emulgente (E-471) y estabilizantes (E-415, E-451, E-460 y E-466). Origen de la leche: España",
+    "categories": [
+      "Huevos, leche y mantequilla"
+    ],
+    "unit": "0.5 l"
+  },
+  {
+    "id": "10380",
+    "name": "Leche entera Hacendado",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/a731a91252722a3a9cb5856ae8f7d282.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/10380/leche-entera-hacendado-brick",
+    "unit_price": 0.96,
+    "unit_size": 1.0,
+    "size_format": "l",
+    "packaging": "Brik",
+    "allergens": "Contiene leche y sus derivados (incluida la lactosa).",
+    "ingredients": "Leche entera de vaca",
+    "categories": [
+      "Huevos, leche y mantequilla"
+    ],
+    "unit": "1.0 l"
+  },
+  {
+    "id": "16044",
+    "name": "Tomate triturado Hacendado",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/db53895dcbf286affe16def253a0ab89.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/16044/tomate-triturado-hacendado-freir-bote",
+    "unit_price": 0.55,
+    "unit_size": 0.4,
+    "size_format": "kg",
+    "packaging": "Bote",
+    "allergens": "Sin alérgenos declarados en la API",
+    "ingredients": "Tomate, sal, azúcar, acidulante: ácido cítrico.",
+    "categories": [
+      "Conservas, caldos y cremas"
+    ],
+    "unit": "0.4 kg"
+  },
+  {
+    "id": "16074",
+    "name": "Tomate doble concentrado Hacendado extra",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/21524237f9e676cb0c075d38a8ff1578.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/16074/tomate-doble-concentrado-hacendado-extra-freir-bote",
+    "unit_price": 1.05,
+    "unit_size": 0.17,
+    "size_format": "kg",
+    "packaging": "Bote",
+    "allergens": "Sin alérgenos declarados en la API",
+    "ingredients": "Tomate concentrado y sal (0,5%).",
+    "categories": [
+      "Conservas, caldos y cremas"
+    ],
+    "unit": "0.17 kg"
+  },
+  {
+    "id": "17174",
+    "name": "Preparado de coco Hacendado",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/ec235bb4be1a71c37f32247b8da4400a.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/17174/leche-coco-dee-thai-bote",
+    "unit_price": 1.3,
+    "unit_size": 0.4,
+    "size_format": "l",
+    "packaging": "Bote",
+    "allergens": "Sin alérgenos declarados en la API",
+    "ingredients": "Extracto de Coco 81-82%, eche de coco 17 -19%, agua, estabilizante (E466 carboxy methyl cellulose), emulsionante (Polysorbate60)",
+    "categories": [
+      "Huevos, leche y mantequilla"
+    ],
+    "unit": "0.4 l"
+  },
+  {
+    "id": "22216",
+    "name": "Queso rallado emmental gratinar Hacendado",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/bfc088bcd08f0dc6e421323e51b5d9fa.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/22216/queso-rallado-emmental-gratinar-hacendado-paquete",
+    "unit_price": 1.65,
+    "unit_size": 0.2,
+    "size_format": "kg",
+    "packaging": "Paquete",
+    "allergens": "Contiene leche y sus derivados (incluida la lactosa).",
+    "ingredients": "Leche pasterizada de vaca (origen: Francia), sal, fermentos lácticos y coagulante.",
+    "categories": [
+      "Charcutería y quesos"
+    ],
+    "unit": "0.2 kg"
+  },
+  {
+    "id": "22313",
+    "name": "Yogur natural Hacendado",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/0689561ce98dba5c0b3ad43e69be0f5f.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/22313/yogur-natural-hacendado-pack-6",
+    "unit_price": 1.0,
+    "unit_size": 0.75,
+    "size_format": "kg",
+    "packaging": "Pack-6",
+    "allergens": "Contiene leche y sus derivados (incluida la lactosa).",
+    "ingredients": "Leche entera pasteurizada, leche desnatada en polvo y fermentos lácteos.",
+    "categories": [
+      "Postres y yogures"
+    ],
+    "unit": "0.75 kg"
+  },
+  {
+    "id": "26029",
+    "name": "Garbanzo cocido Hacendado",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/b8b807948038c4b64791632f799e9bd8.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/26029/garbanzo-cocido-hacendado-tarro",
+    "unit_price": 0.8,
+    "unit_size": 0.57,
+    "size_format": "kg",
+    "packaging": "Tarro",
+    "allergens": "Sin alérgenos declarados en la API",
+    "ingredients": "Garbanzos, agua, sal y antioxidantes (disulfito sódico, E 385).",
+    "categories": [
+      "Arroz, legumbres y pasta"
+    ],
+    "unit": "0.57 kg"
+  },
+  {
+    "id": "26030",
+    "name": "Lenteja cocida Hacendado",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/50b071c4bae7230b8de346b495a7981b.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/26030/lenteja-cocida-hacendado-tarro",
+    "unit_price": 0.9,
+    "unit_size": 0.57,
+    "size_format": "kg",
+    "packaging": "Tarro",
+    "allergens": "Sin alérgenos declarados en la API",
+    "ingredients": "Lenteja, agua, sal y antioxidantes (E-385, ácido ascórbico).",
+    "categories": [
+      "Arroz, legumbres y pasta"
+    ],
+    "unit": "0.57 kg"
+  },
+  {
+    "id": "31505",
+    "name": "Huevos medianos M",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/96ba986bc89d7298da0a7605824227a9.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/31505/huevos-medianos-m-paquete",
+    "unit_price": 2.85,
+    "unit_size": 12.0,
+    "size_format": "ud",
+    "packaging": "Paquete",
+    "allergens": "Contiene huevos y productos a base de huevo.",
+    "ingredients": "huevo",
+    "categories": [
+      "Huevos, leche y mantequilla"
+    ],
+    "unit": "12.0 ud"
+  },
+  {
+    "id": "3210",
+    "name": "Limón",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/dde3a9f03e3b8abc1ebf690a29c9631d.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/3210/limon-pieza",
+    "unit_price": 0.51,
+    "unit_size": 0.18,
+    "size_format": "kg",
+    "packaging": "Pieza",
+    "allergens": "Sin alérgenos declarados en la API",
+    "ingredients": "limón",
+    "categories": [
+      "Fruta y verdura"
+    ],
+    "unit": "0.18 kg"
+  },
+  {
+    "id": "3400",
+    "name": "Filetes pechuga de pollo corte fino",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/c89d28c5929f14861da52e2508912e3d.jpeg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/3400/filetes-pechuga-pollo-corte-fino-minimo-10-filetes-bandeja",
+    "unit_price": 3.85,
+    "unit_size": 0.5,
+    "size_format": "kg",
+    "packaging": "Bandeja",
+    "allergens": "Sin alérgenos declarados en la API",
+    "ingredients": "Filete de pechuga de pollo",
+    "categories": [
+      "Carne"
+    ],
+    "unit": "0.5 kg"
+  },
+  {
+    "id": "4740",
+    "name": "Aceite de oliva virgen extra Hacendado",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/a5648e373920a10023a7ab6304eb0dc0.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/4740/aceite-oliva-virgen-extra-hacendado-botella",
+    "unit_price": 4.45,
+    "unit_size": 1.0,
+    "size_format": "l",
+    "packaging": "Botella",
+    "allergens": "Sin alérgenos declarados en la API",
+    "ingredients": "Ingredientes: Aceite de Oliva Virgen Extra",
+    "categories": [
+      "Aceite, especias y salsas"
+    ],
+    "unit": "1.0 l"
+  },
+  {
+    "id": "5044",
+    "name": "Arroz redondo Hacendado",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/0daf43fb5761b823ce83c985930c97c9.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/5044/arroz-redondo-hacendado-paquete",
+    "unit_price": 1.15,
+    "unit_size": 1.0,
+    "size_format": "kg",
+    "packaging": "Paquete",
+    "allergens": "Sin alérgenos declarados en la API",
+    "ingredients": "Arroz",
+    "categories": [
+      "Arroz, legumbres y pasta"
+    ],
+    "unit": "1.0 kg"
+  },
+  {
+    "id": "51050",
+    "name": "Mozzarella fresca de vaca Hacendado",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/82991bcf404ead6164e1b3b4ad79eeea.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/51050/mozzarella-fresca-vaca-hacendado-paquete",
+    "unit_price": 0.9,
+    "unit_size": 0.25,
+    "size_format": "kg",
+    "packaging": "Paquete",
+    "allergens": "Libre de dióxido de azufre y sulfitos. Libre de cacahuetes y productos a base de cacahuetes. Libre de soja y productos a base de soja. Libre de apio y productos derivados. Libre de granos de sésamo y productos a base de granos de sésamo. Libre de leche y sus derivados (incluida la lactosa). Libre de pescado y productos a base de pescado. Libre de mostaza y productos derivados. Libre de moluscos y productos a base de moluscos. Contiene leche y sus derivados (incluida la lactosa). Libre de huevos y productos a base de huevo. Libre de frutos de cáscara. Libre de crustáceos y productos a base de crustáceos. Libre de cereales que contengan gluten.",
+    "ingredients": "Leche pasteurizada de vaca, coagulante microbiano, corrector de acidez (ácido cítrico) y sal.  Origen de la leche: (España)",
+    "categories": [
+      "Charcutería y quesos"
+    ],
+    "unit": "0.25 kg"
+  },
+  {
+    "id": "60622",
+    "name": "Mantequilla sin sal añadida Hacendado",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/8c11c0b183629fa23a4860057686e794.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/60622/mantequilla-sin-sal-anadida-hacendado-tarrina",
+    "unit_price": 2.45,
+    "unit_size": 0.25,
+    "size_format": "kg",
+    "packaging": "Tarrina",
+    "allergens": "Contiene leche y sus derivados (incluida la lactosa).",
+    "ingredients": "mantequilla de leche",
+    "categories": [
+      "Huevos, leche y mantequilla"
+    ],
+    "unit": "0.25 kg"
+  },
+  {
+    "id": "61200",
+    "name": "Guisante muy tierno Hacendado ultracongelado",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/110a733a4288e3cee3fa98822491ea5a.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/61200/guisante-muy-tierno-hacendado-ultracongelado-paquete",
+    "unit_price": 1.05,
+    "unit_size": 0.3,
+    "size_format": "kg",
+    "packaging": "Paquete",
+    "allergens": "Sin alérgenos declarados en la API",
+    "ingredients": "Guisantes",
+    "categories": [
+      "Congelados"
+    ],
+    "unit": "0.3 kg"
+  },
+  {
+    "id": "6175",
+    "name": "Pasta fresca gnocchi Hacendado",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/cba9ea825acfc6789572d4088ac61392.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/6175/pasta-fresca-gnocchi-hacendado-paquete",
+    "unit_price": 1.0,
+    "unit_size": 0.5,
+    "size_format": "kg",
+    "packaging": "Paquete",
+    "allergens": "Contiene trigo y productos derivados. Puede contener mostaza y productos derivados. Puede contener soja y productos a base de soja. Contiene cereales que contengan gluten.",
+    "ingredients": "Puré de patatas 80% (agua y copos de patata [emulgente E471]), harina de trigo extrafina, sal, aromas naturales, polvo de harina de arroz. Acidulante: E270. Conservador: E200. Contiene: gluten. Puede contener: soja y trazas de mostaza",
+    "categories": [
+      "Arroz, legumbres y pasta"
+    ],
+    "unit": "0.5 kg"
+  },
+  {
+    "id": "62113",
+    "name": "Lomos y centros de merluza del Cabo Hacendado ultracongelados",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/9f123401c254bda557489bd5ae173584.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/62113/lomos-centros-merluza-cabo-hacendado-ultracongelados-caja",
+    "unit_price": 4.9,
+    "unit_size": 0.4,
+    "size_format": "kg",
+    "packaging": "Caja",
+    "allergens": "Contiene pescado y productos a base de pescado.",
+    "ingredients": "Pescado.",
+    "categories": [
+      "Congelados",
+      "Marisco y pescado"
+    ],
+    "unit": "0.4 kg"
+  },
+  {
+    "id": "6326",
+    "name": "Macarrón Hacendado",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/9ae3cacb4d10d5bf8790a58cb80989cf.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/6326/macarron-hacendado-paquete",
+    "unit_price": 0.8,
+    "unit_size": 0.5,
+    "size_format": "kg",
+    "packaging": "Paquete",
+    "allergens": "Contiene trigo y productos derivados. Contiene cereales que contengan gluten.",
+    "ingredients": "Sémola de trigo duro (gluten). Puede contener trazas de huevos, soja y mostaza.",
+    "categories": [
+      "Arroz, legumbres y pasta"
+    ],
+    "unit": "0.5 kg"
+  },
+  {
+    "id": "69089",
+    "name": "Cebollas",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/d950590e426dca5e9531e1ff2809edb4.jpeg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/69089/cebollas-malla",
+    "unit_price": 1.7,
+    "unit_size": 1.0,
+    "size_format": "kg",
+    "packaging": "Malla",
+    "allergens": "Sin alérgenos declarados en la API",
+    "ingredients": "Cebolla (Allinium cepa)",
+    "categories": [
+      "Fruta y verdura"
+    ],
+    "unit": "1.0 kg"
+  },
+  {
+    "id": "69289",
+    "name": "Jengibre",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/772a3b8cae19e4e33396f6ea9d12d45e.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/69289/jengibre-bandeja",
+    "unit_price": 1.65,
+    "unit_size": 0.2,
+    "size_format": "kg",
+    "packaging": null,
+    "allergens": "Sin alérgenos declarados en la API",
+    "ingredients": "Jengibre",
+    "categories": [
+      "Fruta y verdura"
+    ],
+    "unit": "0.2 kg"
+  },
+  {
+    "id": "69297",
+    "name": "Ajos morados",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/3e754d795d63e6a75070fb672c24d773.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/69297/ajos-morados-malla",
+    "unit_price": 1.85,
+    "unit_size": 0.25,
+    "size_format": "kg",
+    "packaging": "Malla",
+    "allergens": "Sin alérgenos declarados en la API",
+    "ingredients": "Ajo morado, calibre: 45/55 mm.",
+    "categories": [
+      "Fruta y verdura"
+    ],
+    "unit": "0.25 kg"
+  },
+  {
+    "id": "69326",
+    "name": "Berenjena",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/cbd784174d4dfee4fedee9f32d3ad0ab.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/69326/berenjena-pieza",
+    "unit_price": 0.84,
+    "unit_size": 0.38,
+    "size_format": "kg",
+    "packaging": "Pieza",
+    "allergens": "Sin alérgenos declarados en la API",
+    "ingredients": "Berenjena",
+    "categories": [
+      "Fruta y verdura"
+    ],
+    "unit": "0.38 kg"
+  },
+  {
+    "id": "69386",
+    "name": "Patatas guarnición",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/df2dd24063ff1787bf0e643da4f9e9ed.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/69386/patatas-guarnicion-malla",
+    "unit_price": 2.55,
+    "unit_size": 1.0,
+    "size_format": "kg",
+    "packaging": "Malla",
+    "allergens": "Sin alérgenos declarados en la API",
+    "ingredients": "",
+    "categories": [
+      "Fruta y verdura"
+    ],
+    "unit": "1.0 kg"
+  },
+  {
+    "id": "69519",
+    "name": "Champiñones laminados limpios",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/54ff851ca2c2df5bd4d76ef38b1b1aeb.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/69519/champinon-laminado-limpio-bandeja",
+    "unit_price": 2.11,
+    "unit_size": 0.32,
+    "size_format": "kg",
+    "packaging": "Bandeja",
+    "allergens": "Sin alérgenos declarados en la API",
+    "ingredients": "Champiñón, antioxidante: ascorbato sódico, correctores de acidez: citrato de sodio y carbonato de potasio, sal.",
+    "categories": [
+      "Fruta y verdura"
+    ],
+    "unit": "0.32 kg"
+  },
+  {
+    "id": "69656",
+    "name": "Espárragos verdes finos",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/ea97ef69aac2024e9b454a14c635fb1a.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/69656/esparrago-verde-fino-paquete",
+    "unit_price": 2.7,
+    "unit_size": 0.25,
+    "size_format": "kg",
+    "packaging": "Manojo",
+    "allergens": "Sin alérgenos declarados en la API",
+    "ingredients": "Espárragos",
+    "categories": [
+      "Fruta y verdura"
+    ],
+    "unit": "0.25 kg"
+  },
+  {
+    "id": "69669",
+    "name": "Zanahorias",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/19768109deaae9fd2488f78cc198c6f5.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/69669/zanahorias-paquete",
+    "unit_price": 0.8,
+    "unit_size": 0.5,
+    "size_format": "kg",
+    "packaging": "Paquete",
+    "allergens": "Sin alérgenos declarados en la API",
+    "ingredients": "Zanahorias",
+    "categories": [
+      "Fruta y verdura"
+    ],
+    "unit": "0.5 kg"
+  },
+  {
+    "id": "69730",
+    "name": "Espinacas cortadas y lavadas",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/652d843ed52e1271a7babf8d32e43d8f.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/69730/espinacas-cortadas-paquete",
+    "unit_price": 1.3,
+    "unit_size": 0.3,
+    "size_format": "kg",
+    "packaging": "Paquete",
+    "allergens": "Sin alérgenos declarados en la API",
+    "ingredients": "Espinaca",
+    "categories": [
+      "Fruta y verdura"
+    ],
+    "unit": "0.3 kg"
+  },
+  {
+    "id": "69757",
+    "name": "Ensalada mezcla brotes tiernos lavada",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/77a9cc89e7a3c57a49e23a71517e4796.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/69757/ensalada-mezcla-brotes-tiernos-compuesta-brotes-batavia-roja-verde-lollo-rojo-rucula-espinaca-baby-paquete",
+    "unit_price": 1.2,
+    "unit_size": 0.1,
+    "size_format": "kg",
+    "packaging": "Paquete",
+    "allergens": "Sin alérgenos declarados en la API",
+    "ingredients": "Brotes de lechuga en proporción variable (lechuga batavia verde, lechuga batavia roja y lechuga lollo rosso), brotes de espinaca y rúcula.",
+    "categories": [
+      "Fruta y verdura"
+    ],
+    "unit": "0.1 kg"
+  },
+  {
+    "id": "69937",
+    "name": "Tomate ensalada",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/ccb2b42ba2bb6a7b692dac6101074709.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/69937/tomate-ensalada-pieza",
+    "unit_price": 0.55,
+    "unit_size": 0.25,
+    "size_format": "kg",
+    "packaging": "Pieza",
+    "allergens": "Sin alérgenos declarados en la API",
+    "ingredients": "Tomate Ensalada",
+    "categories": [
+      "Fruta y verdura"
+    ],
+    "unit": "0.25 kg"
+  },
+  {
+    "id": "5063",
+    "name": "Arroz largo Hacendado",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/801f924df0d429d82c0a136901dcb9b0.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/5063/arroz-largo-hacendado-paquete",
+    "unit_price": 1.2,
+    "unit_size": 1.0,
+    "size_format": "kg",
+    "packaging": "Paquete",
+    "allergens": "Sin alérgenos declarados en la API",
+    "ingredients": "Arroz",
+    "categories": [
+      "Arroz, legumbres y pasta"
+    ],
+    "unit": "1.0 kg"
+  },
+  {
+    "id": "22280",
+    "name": "Arroz cocido basmati Sabroz",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/485f5e653b6655185c51eec9858703cb.jpeg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/22280/arroz-cocido-basmati-sabroz-brillante-pack-2",
+    "unit_price": 1.1,
+    "unit_size": 0.25,
+    "size_format": "kg",
+    "packaging": null,
+    "allergens": "Sin alérgenos declarados en la API",
+    "ingredients": "Arroz basmati cocido 98%. (agua, arroz basmati) aceite de girasol. sal. emulgente:lecitina de girasol. Sin gluten",
+    "categories": [
+      "Arroz, legumbres y pasta",
+      "Pizzas y platos preparados"
+    ],
+    "unit": "0.25 kg"
+  },
+  {
+    "id": "13577",
+    "name": "Fideo cabello de ángel Hacendado",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/66992393aeb518b19a12b4844845ac21.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/13577/fideo-cabello-angel-hacendado-paquete",
+    "unit_price": 0.8,
+    "unit_size": 0.5,
+    "size_format": "kg",
+    "packaging": "Paquete",
+    "allergens": "Contiene trigo y productos derivados. Contiene cereales que contengan gluten.",
+    "ingredients": "Lista de ingredientes : Sémola de trigo duro (gluten). Puede contener trazas de huevos, soja y mostaza.",
+    "categories": [
+      "Arroz, legumbres y pasta"
+    ],
+    "unit": "0.5 kg"
+  },
+  {
+    "id": "6253",
+    "name": "Fideuá Hacendado",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/e5b402647751a7b60f87b4663bdc86e5.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/6253/fideua-hacendado-paquete",
+    "unit_price": 0.8,
+    "unit_size": 0.5,
+    "size_format": "kg",
+    "packaging": "Paquete",
+    "allergens": "Contiene trigo y productos derivados. Contiene cereales que contengan gluten.",
+    "ingredients": "Sémola de trigo duro (gluten). Puede contener trazas de huevos, soja y mostaza.",
+    "categories": [
+      "Arroz, legumbres y pasta"
+    ],
+    "unit": "0.5 kg"
+  },
+  {
+    "id": "6261",
+    "name": "Fideo grueso Hacendado",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/0778f8e6272f1c743d1da88f16c4d978.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/6261/fideo-grueso-hacendado-paquete",
+    "unit_price": 0.8,
+    "unit_size": 0.5,
+    "size_format": "kg",
+    "packaging": "Paquete",
+    "allergens": "Contiene trigo y productos derivados. Contiene cereales que contengan gluten.",
+    "ingredients": "Sémola de trigo duro (gluten). Puede contener trazas de huevos, soja y mostaza.",
+    "categories": [
+      "Arroz, legumbres y pasta"
+    ],
+    "unit": "0.5 kg"
+  },
+  {
+    "id": "6305",
+    "name": "Pajaritas vegetales Hacendado",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/efecccdb297479c7a16f0555a3375159.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/6305/pajaritas-vegetales-hacendado-paquete",
+    "unit_price": 0.9,
+    "unit_size": 0.5,
+    "size_format": "kg",
+    "packaging": "Paquete",
+    "allergens": "Contiene trigo y productos derivados. Puede contener trigo y productos derivados. Puede contener soja y productos a base de soja. Puede contener huevos y productos a base de huevo.",
+    "ingredients": "Pasta alimenticia de calidad superior : 100% Sémola de trigo duro. Pasta compuesta al Tomate : Sémola de trigo duro , 3% de tomate deshidratado. Pasta compuesta a las Espinacas : Sémola de trigo duro, 2% de espinacas deshidratadas. Puede contener trazas de soja y mostaza.",
+    "categories": [
+      "Arroz, legumbres y pasta"
+    ],
+    "unit": "0.5 kg"
+  },
+  {
+    "id": "35777",
+    "name": "Macarrón rayado integral Hacendado",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/231ef027d5b28f7040b3075da848399f.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/35777/pasta-penne-integral-hacendado-paquete",
+    "unit_price": 1.15,
+    "unit_size": 0.5,
+    "size_format": "kg",
+    "packaging": "Paquete",
+    "allergens": "Contiene cereales que contengan gluten.",
+    "ingredients": "Sémola integral de trigo duro (gluten). Puede contener trazas de huevos, soja y mostaza.",
+    "categories": [
+      "Arroz, legumbres y pasta"
+    ],
+    "unit": "0.5 kg"
+  },
+  {
+    "id": "6358",
+    "name": "Pasta tortiglioni Armando",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/a4d3db444d4e97cf724bd457aadcb05a.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/6358/pasta-tortiglioni-armando-paquete",
+    "unit_price": 1.4,
+    "unit_size": 0.5,
+    "size_format": "kg",
+    "packaging": "Paquete",
+    "allergens": "Puede contener mostaza y productos derivados. Puede contener soja y productos a base de soja. Puede contener huevos y productos a base de huevo. Contiene cereales que contengan gluten.",
+    "ingredients": "Ingredientes: sémola de trigo duro. Puede contener HUEVO, SOJA y MOSTAZA.",
+    "categories": [
+      "Arroz, legumbres y pasta"
+    ],
+    "unit": "0.5 kg"
+  },
+  {
+    "id": "6246",
+    "name": "Tallarines Hacendado",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/7b60c169e6f22118d5d9ea21c4d8fe59.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/6246/tallarines-hacendado-paquete",
+    "unit_price": 0.8,
+    "unit_size": 0.5,
+    "size_format": "kg",
+    "packaging": "Paquete",
+    "allergens": "Contiene trigo y productos derivados. Contiene cereales que contengan gluten.",
+    "ingredients": "Sémola de trigo duro (gluten). Puede contener trazas de huevos, soja y mostaza.",
+    "categories": [
+      "Arroz, legumbres y pasta"
+    ],
+    "unit": "0.5 kg"
+  },
+  {
+    "id": "35778",
+    "name": "Spaghetti integral Hacendado",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/3e10d3e036f04703c87e31a01d680ebc.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/35778/spaghetti-integral-hacendado-paquete",
+    "unit_price": 1.15,
+    "unit_size": 0.5,
+    "size_format": "kg",
+    "packaging": "Paquete",
+    "allergens": "Contiene cereales que contengan gluten.",
+    "ingredients": "Sémola integral de trigo duro (gluten). Puede contener trazas de huevos, soja y mostaza.",
+    "categories": [
+      "Arroz, legumbres y pasta"
+    ],
+    "unit": "0.5 kg"
+  },
+  {
+    "id": "6277",
+    "name": "Spaghetti fino Hacendado",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/12cb042a1db2a965e3a7b1be7b01bd62.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/6277/spaghetti-fino-hacendado-paquete",
+    "unit_price": 0.8,
+    "unit_size": 0.5,
+    "size_format": "kg",
+    "packaging": "Paquete",
+    "allergens": "Contiene trigo y productos derivados. Puede contener soja y productos a base de soja. Contiene cereales que contengan gluten.",
+    "ingredients": "Sémola de trigo duro (gluten). Puede contener trazas de huevos, soja, y mostaza.",
+    "categories": [
+      "Arroz, legumbres y pasta"
+    ],
+    "unit": "0.5 kg"
+  },
+  {
+    "id": "17577",
+    "name": "Pasta fresca girasoles rellena de pesto y queso de oveja Hacendado",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/207b1917598affd9716f90bd50672b7a.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/17577/pasta-fresca-girasoles-rellena-pesto-queso-oveja-hacendado-bandeja",
+    "unit_price": 1.95,
+    "unit_size": 0.25,
+    "size_format": "kg",
+    "packaging": "Bandeja",
+    "allergens": "Contiene trigo y productos derivados. Puede contener mostaza y productos derivados. Puede contener frutos de cáscara. Puede contener crustáceos y productos a base de crustáceos. Puede contener pescado y productos a base de pescado. Puede contener soja y productos a base de soja. Contiene leche y sus derivados (incluida la lactosa). Contiene huevos y productos a base de huevo. Contiene cereales que contengan gluten.",
+    "ingredients": "Relleno (60%): salsa de pesto y queso cocinada 23,6% (aceite refinado de girasol, salsa de albahaca 30% (albahaca 89%, aceite refinado de girasol, sal, regulador de aciditez:carbonato de sodio), agua, queso rallado 10% (LECHE, sal, cuajo), fibra de TRIGO, sal, zumo de limón, ajo), LECHE semidesnatada, pan rallado (harina de TRIGO, sal, levadura), nata (LECHE), ricota de oveja 10,5% (suero de LECHE de oveja, sal), suero de LECHE en polvo, ricota 6,3% (suero de LECHE, nata (LECHE), sal), aceite refinado de girasol, queso de oveja 3,5% (LECHE de oveja, sal, coagulante, cultivos de queso, conservante: lisozima (HUEVOS)), agua, sal, harina de TRIGO blando, mantequilla (LECHE), almidón de maíz, azúcar. PASTA (40%): harina de TRIGO blando, HUEVOS 22,5%, sémola de TRIGO duro, espinacas 5,9%, sal. puede contener trazas de SOJA, CRUSTÁCEOS, PESCADO, FRUTOS DE CÁSCARA, MOSTAZA.",
+    "categories": [
+      "Arroz, legumbres y pasta"
+    ],
+    "unit": "0.25 kg"
+  },
+  {
+    "id": "6565",
+    "name": "Tortellini carne Pagani",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/44b8ffd1b3cbe2d21d219fffd79f9cef.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/6565/tortellini-carne-pagani-paquete",
+    "unit_price": 1.4,
+    "unit_size": 0.25,
+    "size_format": "kg",
+    "packaging": "Paquete",
+    "allergens": "Contiene trigo y productos derivados. Puede contener mostaza y productos derivados. Puede contener soja y productos a base de soja. Contiene cereales que contengan gluten. Contiene leche y sus derivados (incluida la lactosa). Contiene huevos y productos a base de huevo.",
+    "ingredients": "Pasta (72%): sémola de trigo duro, huevos de gallinas criadas en el suelo (19,4% sobre la pasta). Relleno (28%): mortadela (45,3% sobre el relleno) (carne de cerdo, grasa de cerdo, sal, especias, aromas naturales), pan rallado (harina de trigo tierno, sal), margarina [grasa de coco, aceites vegetales (girasol, soja, nabina), agua], jamón (3,1% sobre el relleno) (carne de cerdo, sal), sal, aromas, queso fundido en polvo (leche, suero de leche, sal, enzimas), especias. Puede contener trazas de soja y mostaza.",
+    "categories": [
+      "Arroz, legumbres y pasta"
+    ],
+    "unit": "0.25 kg"
+  },
+  {
+    "id": "6142",
+    "name": "Pasta fresca tortellini rellena de carne Hacendado",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/c963d4353c28eec3b4653867138e7bda.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/6142/pasta-fresca-tortellini-carne-hacendado-bandeja",
+    "unit_price": 1.95,
+    "unit_size": 0.25,
+    "size_format": "kg",
+    "packaging": "Bandeja",
+    "allergens": "Contiene trigo y productos derivados. Puede contener mostaza y productos derivados. Puede contener frutos de cáscara. Puede contener crustáceos y productos a base de crustáceos. Puede contener pescado y productos a base de pescado. Puede contener soja y productos a base de soja. Contiene leche y sus derivados (incluida la lactosa). Contiene huevos y productos a base de huevo. Contiene cereales que contengan gluten.",
+    "ingredients": "PASTA (57%): harina de TRIGO blando, HUEVOS 21%, sémola de TRIGO duro, agua. RELLENO (43%): carne estofada 40% [carne porcina 40%, agua,  carne ternera 10%, aceite de semillas de girasol, cebolla, zanahoria, almidón de maíz, sal, ajo, nuez moscada, extracto de orégano, pimienta negra], pan rallado (harina de TRIGO, sal, levadura), puré de patata [agua, LECHE parcialmente desnatada, copos de patata, aceite ed semillas ed girasol, mantequilla (LECHE), sal], jamón curado 13% (carne porcina, sal), aceite ed semilla de girasol, aromas naturales, fibra de TRIGO, sal. PUEDE CONTENER TRAZAS DE SOJA, CRUSTÁCEOS, PESCADO, FRUTOS DE CÁSCARA, MOSTAZA.",
+    "categories": [
+      "Arroz, legumbres y pasta"
+    ],
+    "unit": "0.25 kg"
+  },
+  {
+    "id": "8645",
+    "name": "Fideos orientales Yatekomo sabor pollo Gallina Blanca",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/492728f67a5f03dadbb0d479129bfaae.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/8645/fideos-orientales-yatekomo-sabor-pollo-gallina-blanca-pack-3",
+    "unit_price": 3.45,
+    "unit_size": 0.18,
+    "size_format": "kg",
+    "packaging": null,
+    "allergens": "Puede contener pescado y productos a base de pescado. Puede contener crustáceos y productos a base de crustáceos. Contiene go. Contiene cereales que contengan gluten. Contiene gb. Contiene trigo y productos derivados. Puede contener moluscos y productos a base de moluscos. Puede contener mostaza y productos derivados. Contiene apio y productos derivados. Puede contener leche y sus derivados (incluida la lactosa). Puede contener soja y productos a base de soja. Puede contener huevos y productos a base de huevo.",
+    "ingredients": "Fideos orientales (harina de TRIGO, aceite de girasol, sal) (91,7%), condimento (8,3%)(aromas naturales, sal, zanahoria, fibra de AVENA, azúcar, ajo, grasa de pollo (0,15%), especias, APIO , aroma natural de APIO, carne de pollo (0,05%), CEBADA malteada, puerro, perejil). Puede contener trazas deSOJA, PESCADO, MOLUSCOS, CRUSTÁCEOS, LECHE, MOSTAZA, HUEVO. ContieneAPIO.",
+    "categories": [
+      "Arroz, legumbres y pasta",
+      "Pizzas y platos preparados"
+    ],
+    "unit": "0.18 kg"
+  },
+  {
+    "id": "8618",
+    "name": "Fideos orientales Yatekomo sabor pollo Gallina Blanca",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/085b0053a48bef5ecfdc30df939ede63.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/8618/fideos-orientales-yatekomo-sabor-pollo-gallina-blanca-vaso",
+    "unit_price": 1.4,
+    "unit_size": 0.06,
+    "size_format": "kg",
+    "packaging": "Vaso",
+    "allergens": "Puede contener pescado y productos a base de pescado. Puede contener crustáceos y productos a base de crustáceos. Contiene go. Contiene cereales que contengan gluten. Contiene gb. Contiene trigo y productos derivados. Puede contener moluscos y productos a base de moluscos. Puede contener mostaza y productos derivados. Contiene apio y productos derivados. Puede contener leche y sus derivados (incluida la lactosa). Puede contener soja y productos a base de soja. Puede contener huevos y productos a base de huevo.",
+    "ingredients": "Fideos orientales (harina de TRIGO, aceite de girasol, sal) (91,7%), condimento (8,3%)(aromas naturales, sal, zanahoria, fibra de AVENA, azúcar, ajo, grasa de pollo (0,15%), especias, APIO , aroma natural de APIO, carne de pollo (0,05%), CEBADA malteada, puerro, perejil). Puede contener trazas de SOJA, PESCADO, MOLUSCOS, CRUSTÁCEOS, LECHE, MOSTAZA, HUEVO. Contiene APIO.",
+    "categories": [
+      "Arroz, legumbres y pasta",
+      "Pizzas y platos preparados"
+    ],
+    "unit": "0.06 kg"
+  },
+  {
+    "id": "8727",
+    "name": "Fideos orientales Yakisoba sabor soja Hacendado",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/a2c0f2e4dea415968e3c99e30389b38e.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/8727/fideos-orientales-yakisoba-sabor-soja-hacendado-vaso",
+    "unit_price": 1.0,
+    "unit_size": 0.072,
+    "size_format": "kg",
+    "packaging": "Vaso",
+    "allergens": "Puede contener moluscos y productos a base de moluscos. Puede contener mostaza y productos derivados. Puede contener apio y productos derivados. Contiene soja y productos a base de soja. Contiene cereales que contengan gluten. Puede contener granos de sésamo y productos a base de granos de sésamo. Puede contener leche y sus derivados (incluida la lactosa). Puede contener pescado y productos a base de pescado. Puede contener crustáceos y productos a base de crustáceos. Contiene trigo y productos derivados.",
+    "ingredients": "Fideos 80,0% [harina de trigo, aceite de palma, sal, potenciador del sabor (E621), agentes de tratamiento de la harina (E500, E451), antioxidante (E306), corrector de acidez: ácido cítrico], Sazonador líquido 18,1% [azúcar, agua, aceite de colza, salsa de soja (agua, habas de soja, sal, trigo) 8,8% en el sazonador líquido, potenciadores del sabor (E621, E635), colorante (E150c), dextrosa, melaza, vinagre, sal, especias, proteína vegetal hidrolizada, tomate en polvo, corrector de acidez: ácido cítrico, aromas], zanahoria, cebolleta. Puede contener trazas de apio, crustáceos, pescado, leche, moluscos, mostaza y sésamo.",
+    "categories": [
+      "Arroz, legumbres y pasta",
+      "Pizzas y platos preparados"
+    ],
+    "unit": "0.072 kg"
+  },
+  {
+    "id": "6856",
+    "name": "Placas para lasaña precocidas El Pavo",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/96cc14f684c1d79e23f394f2ce293c7a.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/6856/placas-lasana-precocidas-pavo-caja",
+    "unit_price": 1.65,
+    "unit_size": 0.2,
+    "size_format": "kg",
+    "packaging": "Caja",
+    "allergens": "Contiene trigo y productos derivados. Puede contener mostaza y productos derivados. Puede contener soja y productos a base de soja. Contiene cereales que contengan gluten.",
+    "ingredients": "Sémola de TRIGO duro. Puede contener trazas de SOJA, MOSTAZA.",
+    "categories": [
+      "Arroz, legumbres y pasta"
+    ],
+    "unit": "0.2 kg"
+  },
+  {
+    "id": "52889",
+    "name": "Placas para canelones El Pavo",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/facea9d66785b6079ac2d856e9e453a6.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/52889/placas-canelones-pavo-caja",
+    "unit_price": 1.35,
+    "unit_size": 0.125,
+    "size_format": "kg",
+    "packaging": "Caja",
+    "allergens": "Contiene trigo y productos derivados. Puede contener mostaza y productos derivados. Puede contener soja y productos a base de soja. Puede contener huevos y productos a base de huevo. Contiene cereales que contengan gluten.",
+    "ingredients": "Harina de TRIGO. Puede contener trazas de HUEVO, SOJA, MOSTAZA.",
+    "categories": [
+      "Arroz, legumbres y pasta"
+    ],
+    "unit": "0.125 kg"
+  },
+  {
+    "id": "26039",
+    "name": "Garbanzo cocido Hacendado",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/66cff189ab481a314894b2ca6c1a5ff3.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/26039/garbanzo-cocido-hacendado-tarro",
+    "unit_price": 0.75,
+    "unit_size": 0.295,
+    "size_format": "kg",
+    "packaging": "Tarro",
+    "allergens": "Sin alérgenos declarados en la API",
+    "ingredients": "Garbanzos, agua, sal y antioxidantes (disulfito sódico, E 385).",
+    "categories": [
+      "Arroz, legumbres y pasta"
+    ],
+    "unit": "0.295 kg"
+  },
+  {
+    "id": "26033",
+    "name": "Garbanzo cocido Pedrosillano Hacendado",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/d3a3751f303595a3ff36d87de9730597.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/26033/garbanzo-cocido-pedrosillano-hacendado-categoria-extra-tarro",
+    "unit_price": 0.9,
+    "unit_size": 0.57,
+    "size_format": "kg",
+    "packaging": "Tarro",
+    "allergens": "Sin alérgenos declarados en la API",
+    "ingredients": "Garbanzos, agua, sal y antioxidantes (disulfito sódico, E-385).",
+    "categories": [
+      "Arroz, legumbres y pasta"
+    ],
+    "unit": "0.57 kg"
+  },
+  {
+    "id": "26019",
+    "name": "Alubia cocida blanca Hacendado",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/f3797bcd3c8ed58804490159df581279.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/26019/alubia-cocida-blanca-hacendado-tarro",
+    "unit_price": 0.75,
+    "unit_size": 0.57,
+    "size_format": "kg",
+    "packaging": "Tarro",
+    "allergens": "Sin alérgenos declarados en la API",
+    "ingredients": "Alubia blanca, agua, sal y antioxidantes (disulfito sódico, E 385).",
+    "categories": [
+      "Arroz, legumbres y pasta"
+    ],
+    "unit": "0.57 kg"
+  },
+  {
+    "id": "26028",
+    "name": "Alubia cocida blanca Hacendado",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/5f0806bcbd4a2de3c9f7dd39468359bb.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/26028/alubia-cocida-blanca-hacendado-tarro",
+    "unit_price": 0.7,
+    "unit_size": 0.295,
+    "size_format": "kg",
+    "packaging": "Tarro",
+    "allergens": "Sin alérgenos declarados en la API",
+    "ingredients": "Alubia blanca, agua, sal y antioxidantes (disulfito sódico, E 385).",
+    "categories": [
+      "Arroz, legumbres y pasta"
+    ],
+    "unit": "0.295 kg"
+  },
+  {
+    "id": "26000",
+    "name": "Alubia cocida roja Hacendado",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/231e70f1833a97babe9b0ecab3bfee2c.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/26000/alubia-cocida-roja-hacendado-tarro",
+    "unit_price": 1.2,
+    "unit_size": 0.57,
+    "size_format": "kg",
+    "packaging": "Tarro",
+    "allergens": "Sin alérgenos declarados en la API",
+    "ingredients": "Alubia roja, agua, sal y antioxidante (E 385).",
+    "categories": [
+      "Arroz, legumbres y pasta"
+    ],
+    "unit": "0.57 kg"
+  },
+  {
+    "id": "5330",
+    "name": "Lenteja pardina Hacendado",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/80c08ddcd236321ea41242268903726b.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/5330/lenteja-pardina-hacendado-categoria-extra-paquete",
+    "unit_price": 1.85,
+    "unit_size": 1.0,
+    "size_format": "kg",
+    "packaging": "Paquete",
+    "allergens": "Sin alérgenos declarados en la API",
+    "ingredients": "Lenteja Pardina",
+    "categories": [
+      "Arroz, legumbres y pasta"
+    ],
+    "unit": "1.0 kg"
+  },
+  {
+    "id": "26011",
+    "name": "Lenteja cocida Hacendado",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/ffbc3f23e35051fc1a326bda5a4f9063.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/26011/lenteja-cocida-hacendado-tarro",
+    "unit_price": 0.75,
+    "unit_size": 0.295,
+    "size_format": "kg",
+    "packaging": "Tarro",
+    "allergens": "Sin alérgenos declarados en la API",
+    "ingredients": "Lenteja, agua, sal y antioxidantes (E 385, ácido ascórbico). Puede contener gluten.",
+    "categories": [
+      "Arroz, legumbres y pasta"
+    ],
+    "unit": "0.295 kg"
+  },
+  {
+    "id": "86905",
+    "name": "Arroz tres delicias Hacendado ultracongelado",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/428728aa152dad6c0476a1c0ce694804.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/86905/arroz-tres-delicias-hacendado-ultracongelado-con-2-sazonadores-paquete",
+    "unit_price": 2.85,
+    "unit_size": 1.0,
+    "size_format": "kg",
+    "packaging": "Paquete",
+    "allergens": "Contiene huevos y productos a base de huevo. Contiene crustáceos y productos a base de crustáceos.",
+    "ingredients": "Arroz blanco (66%) (agua, arroz), tortilla (huevo, agua, harina de maíz, sal y zumo de limón concentrado), guisante, zanahoria, gamba (crustáceo) pelada (gamba, agua, sal y corrector de acidez: citratos de sodio), fiambre magro de cerdo cocido (carne de cerdo, agua, almidón de patata, sal, proteínas de cerdo, azúcar, estabilizantes: trifosfato pentasódico y carragenano, antioxidante: eritorbato sódico, conservador: nitrito sódico y especias). Sazonador: sal, azúcar moreno, aroma, ajo en polvo y extracto de jengibre.",
+    "categories": [
+      "Congelados"
+    ],
+    "unit": "1.0 kg"
+  },
+  {
+    "id": "61302",
+    "name": "Arroz para microondas Hacendado ultracongelado",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/6e9554aa659c51ead8bc8f8a4ff4cfda.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/61302/arroz-precocido-hacendado-ultracongelado-paquete",
+    "unit_price": 1.9,
+    "unit_size": 1.0,
+    "size_format": "kg",
+    "packaging": "Paquete",
+    "allergens": "Sin alérgenos declarados en la API",
+    "ingredients": "Arroz (agua, arroz).",
+    "categories": [
+      "Congelados"
+    ],
+    "unit": "1.0 kg"
+  },
+  {
+    "id": "22720",
+    "name": "Risotto de setas para microondas Hacendado ultracongelado",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/4eb44aeae5386d37310949b8b6909baf.jpeg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/22720/risotto-setas-hacendado-ultracongelados-paquete",
+    "unit_price": 2.0,
+    "unit_size": 0.35,
+    "size_format": "kg",
+    "packaging": "Paquete",
+    "allergens": "Contiene apio y productos derivados. Puede contener soja y productos a base de soja. Puede contener cereales que contengan gluten. Contiene leche y sus derivados (incluida la lactosa). Puede contener huevos y productos a base de huevo.",
+    "ingredients": "Arroz Carnaroli cocido 38,8% (agua, arroz Carnaroli), agua, setas Champiñón 15,3% (Agaricus Bisporus), setas Nameko 4,8% (Pholiota Nameko Mutabilis), aceite refinado de semillas de girasol, harina de arroz, QUESO duro (LECHE, sal, cuajo), QUESO Asiago DOP (LECHE, sal, cuajo, fermentos lácticos), cebolla, MANTEQUILLA, NATA, caldo vegetal [sal, fécula de patatas, maltodextrina de patatas, verduras deshidratadas (cebolla, zanahoria, APIO, perejil), aceite refinado de semillas de girasol, especias, extractos de hierbas aromáticas], setas Porcini secas 0,4% (Boletus Edulis), sal, ajo, perejil, pimienta negra.Puede contener: GLUTEN, SOJA, HUEVO",
+    "categories": [
+      "Congelados"
+    ],
+    "unit": "0.35 kg"
+  },
+  {
+    "id": "35767",
+    "name": "Lasaña boloñesa familiar Hacendado ultracongelada",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/d3aa6907a659d89fd40a5c7f195a56ce.jpeg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/35767/lasana-bolonesa-familiar-hacendado-ultracongelada-bandeja",
+    "unit_price": 5.2,
+    "unit_size": 1.1,
+    "size_format": "kg",
+    "packaging": "Bandeja",
+    "allergens": "Contiene trigo y productos derivados. Puede contener moluscos y productos a base de moluscos. Puede contener mostaza y productos derivados. Contiene leche y sus derivados (incluida la lactosa). Puede contener soja y productos a base de soja. Puede contener pescado y productos a base de pescado. Contiene huevos y productos a base de huevo. Puede contener crustáceos y productos a base de crustáceos. Contiene cereales que contengan gluten.",
+    "ingredients": "Agua, leche pasteurizada, carne de cerdo y vacuno (16%), sémola de trigo, concentrado de tomate, quesos (leche pasteurizada, sal, fermentos lácticos, coagulante microbiano, colorante (E-160b(ii)), endurecedor (E-509)), cebolla (5%), harina de trigo, tomate (2%), zumo de tomate, aceite refinado de girasol, almidón modificado, zanahoria, bebida espirituosa, azúcar, gelatina, sal, pan rallado (harina de trigo, agua, sal y levadura), clara de huevo en polvo, especias, gluten de trigo. Contiene gluten, huevo, leche. Puede contener trazas de: crustáceos, pescado, soja, mostaza, moluscos.",
+    "categories": [
+      "Congelados"
+    ],
+    "unit": "1.1 kg"
+  },
+  {
+    "id": "86597",
+    "name": "Lasaña a la boloñesa Hacendado ultracongelada",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/48e415b4c7b108dba53576be1917ace9.jpeg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/86597/lasana-bolonesa-hacendado-ultracongelada-caja",
+    "unit_price": 2.9,
+    "unit_size": 0.6,
+    "size_format": "kg",
+    "packaging": "Caja",
+    "allergens": "Contiene trigo y productos derivados. Puede contener moluscos y productos a base de moluscos. Puede contener mostaza y productos derivados. Contiene leche y sus derivados (incluida la lactosa). Puede contener soja y productos a base de soja. Puede contener pescado y productos a base de pescado. Contiene huevos y productos a base de huevo. Puede contener crustáceos y productos a base de crustáceos. Contiene cereales que contengan gluten.",
+    "ingredients": "Agua, carnes (17%), de cerdo y vacuno,  leche pasteurizada, sémola de trigo, concentrado de tomate, cebolla (5%), quesos (leche pasteurizada, sal, fermentos lácticos, coagulante microbiano, colorante (E-160b(ii)), endurecedor (E-509)), tomate (2%), zumo de tomate, harina de trigo, aceite refinado de girasol, almidón modificado, zanahoria, bebida espirituosa, gelatina, azúcar, sal, pan rallado (harina de trigo, agua, sal y levadura), clara de huevo en polvo, especias, gluten de trigo. Contiene gluten, huevo, leche. Puede contener trazas de: crustáceos, pescado, soja, mostaza, moluscos.",
+    "categories": [
+      "Congelados"
+    ],
+    "unit": "0.6 kg"
+  },
+  {
+    "id": "86600",
+    "name": "Canelones de carne Hacendado ultracongelados",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/321dd61c7086641b56602f6da3cb477b.jpeg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/86600/canelones-carne-hacendado-ultracongelados-caja",
+    "unit_price": 3.24,
+    "unit_size": 0.6,
+    "size_format": "kg",
+    "packaging": "Caja",
+    "allergens": "Contiene trigo y productos derivados. Puede contener moluscos y productos a base de moluscos. Puede contener mostaza y productos derivados. Contiene leche y sus derivados (incluida la lactosa). Contiene soja y productos a base de soja. Puede contener pescado y productos a base de pescado. Contiene huevos y productos a base de huevo. Puede contener crustáceos y productos a base de crustáceos. Contiene cereales que contengan gluten.",
+    "ingredients": "Agua, leche pasteurizada, carnes (24%) de pollo y cerdo, sémola de trigo, cebolla (6%), quesos (leche pasteurizada, sal, fermentos lácticos, coagulante microbiano, colorante (E-160b(ii)), endurecedor (E-509)), harina de trigo, tomate, aceite de girasol, zumo de tomate, almidón modificado, bebida espirituosa, pan rallado (harina de trigo, agua, sal y levadura), vino de licor, sal, especias, salsa de soja (agua, soja, trigo, sal), clara de huevo en polvo, gluten de trigo. Contiene gluten, huevo, soja, leche. Puede contener trazas de: crustáceos, pescado, mostaza, moluscos.",
+    "categories": [
+      "Congelados"
+    ],
+    "unit": "0.6 kg"
+  },
+  {
+    "id": "19996",
+    "name": "Brochetas de pollo Yakitori Hacendado ultracongeladas",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/56c1f6bd09368902a2c493d7f0c6a7a3.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/19996/brochetas-pollo-yakitori-hacendado-ultracongeladas-caja",
+    "unit_price": 3.4,
+    "unit_size": 0.24,
+    "size_format": "kg",
+    "packaging": "Caja",
+    "allergens": "Contiene cereales que contengan gluten. Contiene trigo y productos derivados. Contiene soja y productos a base de soja.",
+    "ingredients": "Pollo (69%), salsa de soja (agua, soja, trigo, sal), azúcar, jarabe de fructosa, agua, almidones modificados de tapioca (E1442, E1420), vino de arroz dulce, jengibre, sal, colorantes (E150d, E160c), pimienta de cayena, pimienta blanca, humectante (E451), emulgente (E472e).",
+    "categories": [
+      "Carne",
+      "Congelados"
+    ],
+    "unit": "0.24 kg"
+  },
+  {
+    "id": "25183",
+    "name": "Jamoncitos de pollo congelados",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/628598ef0eef94c068206014855e28f7.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/25183/jamoncitos-pollo-congelados-paquete",
+    "unit_price": 3.5,
+    "unit_size": 1.0,
+    "size_format": "kg",
+    "packaging": "Paquete",
+    "allergens": "Sin alérgenos declarados en la API",
+    "ingredients": "Pollo 100%.",
+    "categories": [
+      "Carne",
+      "Congelados"
+    ],
+    "unit": "1.0 kg"
+  },
+  {
+    "id": "25184",
+    "name": "Alas de pollo congeladas",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/c57822e42dafc3bcab953b8755a6a40f.jpeg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/25184/alas-pollo-congeladas-paquete",
+    "unit_price": 3.7,
+    "unit_size": 1.0,
+    "size_format": "kg",
+    "packaging": "Paquete",
+    "allergens": "Sin alérgenos declarados en la API",
+    "ingredients": "Carne de pollo",
+    "categories": [
+      "Carne",
+      "Congelados"
+    ],
+    "unit": "1.0 kg"
+  },
+  {
+    "id": "34125",
+    "name": "Curry Hacendado",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/b4dbf028827cf764d8f7b19257ce771e.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/34125/curry-hacendado-bote",
+    "unit_price": 1.1,
+    "unit_size": 0.057,
+    "size_format": "kg",
+    "packaging": "Bote",
+    "allergens": "Puede contener cacahuetes y productos a base de cacahuetes. Puede contener frutos de cáscara. Puede contener mostaza y productos derivados. Puede contener granos de sésamo y productos a base de granos de sésamo. Puede contener cereales que contengan gluten.",
+    "ingredients": "Cilantro, cúrcuma, ajo, pimienta negra, comino, jengibre, cebolla granulada, canela, cayena y anís estrellado. Puede contener trazas de gluten, sésamo, mostaza y cacahuete.",
+    "categories": [
+      "Aceite, especias y salsas"
+    ],
+    "unit": "0.057 kg"
+  },
+  {
+    "id": "34024",
+    "name": "Nuez natural Hacendado pelada",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/de768af5358346867a912d57ec96b69c.jpeg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/34024/nuez-natural-hacendado-pelada-paquete",
+    "unit_price": 2.5,
+    "unit_size": 0.2,
+    "size_format": "kg",
+    "packaging": "Paquete",
+    "allergens": "Contiene sw. Puede contener cacahuetes y productos a base de cacahuetes. Puede contener frutos de cáscara.",
+    "ingredients": "NUECES. TRAZAS DE CACAHUETE Y OTROS FRUTOS DE CÁSCARA.",
+    "categories": [
+      "Aperitivos"
+    ],
+    "unit": "0.2 kg"
+  },
+  {
+    "id": "35902",
+    "name": "Brochetas de pollo, pimiento verde y tocino de cerdo con varilla",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/15b2eaac006412625943b1d7a52d01de.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/35902/brochetas-pollo-con-varilla-bandeja",
+    "unit_price": 3.11,
+    "unit_size": 0.37,
+    "size_format": "kg",
+    "packaging": "Bandeja",
+    "allergens": "Libre de cereales que contengan gluten.",
+    "ingredients": "Carne de pechuga depollo (74%), pimiento verde (13%) y pimiento rojo (13%).",
+    "categories": [
+      "Carne"
+    ],
+    "unit": "0.37 kg"
+  },
+  {
+    "id": "2169",
+    "name": "Flautas de bacón y queso",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/efd938ceb30081a8b1c076c1d4a08bd9.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/2169/flautas-bacon-queso-bandeja",
+    "unit_price": 2.2,
+    "unit_size": 0.28,
+    "size_format": "kg",
+    "packaging": "Bandeja",
+    "allergens": "Puede contener soja y productos a base de soja. Puede contener mostaza y productos derivados. Contiene leche y sus derivados (incluida la lactosa). Contiene cereales que contengan gluten.",
+    "ingredients": "TORTILLADE TRIGO 57%: Harina de trigo (38%), agua, grasa de palma,estabilizante (E 422), sal, gasificantes (E 450i, E 500ii), emulgente (E 471),gluten de trigo, agente de tratamiento de la harina (E 920). QUESO FUNDIDO 22%: Queso , agua, almidón modificado, nata , proteínas de laleche, lactosuero , estabilizante(E-331), sal, conservador (E-202)y colorante (E-160a y E160b)BACON 21%: Carne de cerdo, agua,sal, azúcar, estabilizante (E-451i), antioxidante (E-316), conservador (E-250)y aroma humo. Almidón modificado (E-1442). Puede contenertrazas soja y mostaza",
+    "categories": [
+      "Carne"
+    ],
+    "unit": "0.28 kg"
+  },
+  {
+    "id": "56619",
+    "name": "Jamón de pavo Hacendado finas lonchas",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/b7691fb2718bc66ad695bb0454823efe.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/56619/jamon-pavo-hacendado-finas-lonchas-paquete",
+    "unit_price": 1.9,
+    "unit_size": 0.225,
+    "size_format": "kg",
+    "packaging": "Paquete",
+    "allergens": "Contiene soja y productos a base de soja.",
+    "ingredients": "Jamón de pavo (65%), agua, sal, jarabe de glucosa, proteína de soja, estabilizantes (E-451i, E-407), aromas, antioxidante (ascorbato sódico), conservador (nitrito sódico).",
+    "categories": [
+      "Charcutería y quesos"
+    ],
+    "unit": "0.225 kg"
+  },
+  {
+    "id": "60329",
+    "name": "Jamón cocido extra Hacendado finas lonchas",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/d070e4c58948dba0b36098e312bb401b.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/60329/jamon-cocido-extra-hacendado-finas-lonchas-paquete",
+    "unit_price": 2.0,
+    "unit_size": 0.2,
+    "size_format": "kg",
+    "packaging": "Paquete",
+    "allergens": "Sin alérgenos declarados en la API",
+    "ingredients": "Jamón (85%), agua, sal, jarabe de glucosa, estabilizantes (E-451i, E-407), antioxidante (ascorbato sódico), especias, aromas, conservadores (acetato potásico, nitrito sódico).",
+    "categories": [
+      "Charcutería y quesos"
+    ],
+    "unit": "0.2 kg"
+  },
+  {
+    "id": "17797",
+    "name": "Jamón serrano Incarlopsa lonchas",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/c12d4f731cce8d0de3a8c41b3abf09b2.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/17797/jamon-serrano-incarlopsa-lonchas-paquete",
+    "unit_price": 1.1,
+    "unit_size": 0.05,
+    "size_format": "kg",
+    "packaging": "Paquete",
+    "allergens": "Sin alérgenos declarados en la API",
+    "ingredients": "Jamón de    cerdo, sal y conservadores (E-252, E-250).",
+    "categories": [
+      "Charcutería y quesos"
+    ],
+    "unit": "0.05 kg"
+  },
+  {
+    "id": "51197",
+    "name": "Queso feta mezcla Hacendado en dados",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/32a48eaa259c9728b5f4e60333eb2fea.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/51197/queso-feta-mezcla-hacendado-dados-tarrina",
+    "unit_price": 2.4,
+    "unit_size": 0.37,
+    "size_format": "kg",
+    "packaging": "Tarrina",
+    "allergens": "Contiene leche y sus derivados (incluida la lactosa).",
+    "ingredients": "Ingredientes: Leche de oveja y cabra pasteurizada, sal, fermentos lácticos, cuajo. Salmuera: agua, sal.",
+    "categories": [
+      "Charcutería y quesos"
+    ],
+    "unit": "0.37 kg"
+  },
+  {
+    "id": "51619",
+    "name": "Queso rulo con piña y almendra Liptana",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/29f74b4eec7a17d711864fd9462bef29.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/51619/queso-rulo-con-pina-almendra-liptana-bandeja",
+    "unit_price": 1.45,
+    "unit_size": 0.1,
+    "size_format": "kg",
+    "packaging": "Bandeja",
+    "allergens": "Contiene leche y sus derivados (incluida la lactosa). Contiene frutos de cáscara.",
+    "ingredients": "Queso blanco pasterizado extragraso (76%),azúcar, almendras (7%), puré concentrado de piña (6%),sal, gelatina de cerdo, estabilizante (E410), acidulante(E330), colorante (E160a), conservante (E202).",
+    "categories": [
+      "Charcutería y quesos"
+    ],
+    "unit": "0.1 kg"
+  },
+  {
+    "id": "14283",
+    "name": "Aguacate en dados Hacendado congelado",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/7afc639243a351139b0d2c0679a14c0e.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/14283/aguacate-dados-hacendado-congelado-paquete",
+    "unit_price": 3.5,
+    "unit_size": 0.5,
+    "size_format": "kg",
+    "packaging": "Paquete",
+    "allergens": "Sin alérgenos declarados en la API",
+    "ingredients": "Aguacate 99%, antioxidante: ácido ascórbico, sal y regulador de acidez: ácido cítrico",
+    "categories": [
+      "Congelados"
+    ],
+    "unit": "0.5 kg"
+  },
+  {
+    "id": "86820",
+    "name": "Relleno fajitas pollo, pimientos y cebolla Hacendado ultracongelado",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/616e77243843f37f7568ef21d1b4fd13.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/86820/relleno-fajitas-pollo-pimientos-cebolla-hacendado-ultracongelado-paquete",
+    "unit_price": 1.9,
+    "unit_size": 0.3,
+    "size_format": "kg",
+    "packaging": "Paquete",
+    "allergens": "Sin alérgenos declarados en la API",
+    "ingredients": "Mezcla fajita: Pollo (35%) (Pechuga de pollo, almidón de tapioca, sal, agua, xilosa, dextrosa, antioxidante: citrato de sodio y estabilizante: carbonato de sodio), cebolla (20%),  pimiento verde asado (15%), pimiento rojo asado (15%) y pimiento amarillo  (15%). Sazonador: Azúcar, sal ahumada, aroma, y especias  (chili en polvo, pimienta negra molida y jengibre molido).",
+    "categories": [
+      "Congelados"
+    ],
+    "unit": "0.3 kg"
+  },
+  {
+    "id": "24712",
+    "name": "Langostino crudo Hacendado ultracongelado",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/c48b090bf241f8eb71d0d3aa2fc36bed.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/24712/langostino-crudo-ultracongelado-caja",
+    "unit_price": 5.95,
+    "unit_size": null,
+    "size_format": "kg",
+    "packaging": "Caja",
+    "allergens": "Puede contener moluscos y productos a base de moluscos. Contiene dióxido de azufre y sulfitos. Puede contener pescado y productos a base de pescado. Contiene crustáceos y productos a base de crustáceos.",
+    "ingredients": "Langostino vannamei crustáceos, sal, antioxidantes (E 223 (sulfitos), E 330). Puede contener pescado, moluscos",
+    "categories": [
+      "Congelados",
+      "Marisco y pescado"
+    ],
+    "unit": "kg"
+  },
+  {
+    "id": "62396",
+    "name": "Carne de mejillón cocido Hacendado ultracongelado",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/0166a818db1acd99b8a10c4338f2f09e.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/62396/carne-mejillon-chile-cocido-hacendado-ultracongelado-paquete",
+    "unit_price": 2.5,
+    "unit_size": null,
+    "size_format": "kg",
+    "packaging": "Paquete",
+    "allergens": "Contiene moluscos y productos a base de moluscos. Puede contener pescado y productos a base de pescado. Puede contener crustáceos y productos a base de crustáceos.",
+    "ingredients": "Molusco.Puede contener trazas de Pescado y Crustaceos",
+    "categories": [
+      "Congelados",
+      "Marisco y pescado"
+    ],
+    "unit": "kg"
+  },
+  {
+    "id": "24016",
+    "name": "Filetes de bacalao MareDeus ultracongelado",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/26b601980426f52cbc8cf1a76b4f7aa0.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/24016/filetes-bacalao-maredeus-ultracongelado-punto-sal-paquete",
+    "unit_price": 7.4,
+    "unit_size": null,
+    "size_format": "kg",
+    "packaging": "Paquete",
+    "allergens": "Contiene pescado y productos a base de pescado.",
+    "ingredients": "Bacalao (Gadus Morhua) 90%, agua 8% y sal 2%.",
+    "categories": [
+      "Congelados",
+      "Marisco y pescado"
+    ],
+    "unit": "kg"
+  },
+  {
+    "id": "18114",
+    "name": "Filetes de melva canutera con pimientos del piquillo Hacendado en aceite de oliva",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/445a01e2f758999022716b69d4adb597.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/18114/filetes-melva-canutera-con-pimientos-piquillo-hacendado-aceite-oliva-lata",
+    "unit_price": 1.8,
+    "unit_size": 0.09,
+    "size_format": "kg",
+    "packaging": "Lata",
+    "allergens": "Sin alérgenos declarados en la API",
+    "ingredients": "Melva canutera (55%), aceite de oliva (27%), pimiento del piquillo (17%) y sal",
+    "categories": [
+      "Conservas, caldos y cremas"
+    ],
+    "unit": "0.09 kg"
+  },
+  {
+    "id": "18817",
+    "name": "Salmón al natural Hacendado",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/132349e85d92574b06ec1ecd52a1cfa4.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/18817/salmon-natural-hacendado-pack-3",
+    "unit_price": 3.55,
+    "unit_size": 0.24,
+    "size_format": "kg",
+    "packaging": "Pack-3",
+    "allergens": "Sin alérgenos declarados en la API",
+    "ingredients": "",
+    "categories": [
+      "Conservas, caldos y cremas"
+    ],
+    "unit": "0.24 kg"
+  },
+  {
+    "id": "16616",
+    "name": "Champiñón laminado Hacendado",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/3cd99cb7145b94f63805588ec374b019.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/16616/champinon-laminado-hacendado-pack-3",
+    "unit_price": 1.8,
+    "unit_size": 0.45,
+    "size_format": "kg",
+    "packaging": "Pack-3",
+    "allergens": "Sin alérgenos declarados en la API",
+    "ingredients": "Champiñones (Agaricus bisporus), agua, sal, antioxidantes: ácidos cítrico y disulfito sódico.",
+    "categories": [
+      "Conservas, caldos y cremas"
+    ],
+    "unit": "0.45 kg"
+  },
+  {
+    "id": "15086",
+    "name": "Postre de manzana Jamar",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/3365e8aa9279ee048b4ddcb7d44b47b3.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/15086/postre-manzana-jamar-tarro",
+    "unit_price": 1.9,
+    "unit_size": 0.71,
+    "size_format": "kg",
+    "packaging": "Tarro",
+    "allergens": "Sin alérgenos declarados en la API",
+    "ingredients": "Manzana 94%, azúcar, regulador de acidez: ácido cítrico, antioxidante: ácido ascórbico.",
+    "categories": [
+      "Conservas, caldos y cremas"
+    ],
+    "unit": "0.71 kg"
+  },
+  {
+    "id": "7313",
+    "name": "Caldo de pollo Hacendado",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/3b782816c7c91c3ccffdf837fbd02ae7.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/7313/caldo-pollo-hacendado-brick",
+    "unit_price": 0.75,
+    "unit_size": 1.0,
+    "size_format": "l",
+    "packaging": "Brik",
+    "allergens": "Libre de trigo y productos derivados. Libre de mostaza y productos derivados. Libre de apio y productos derivados. Libre de soja y productos a base de soja. Libre de cereales que contengan gluten. Libre de leche y sus derivados (incluida la lactosa). Libre de pescado y productos a base de pescado. Libre de huevos y productos a base de huevo. Libre de crustáceos y productos a base de crustáceos.",
+    "ingredients": "Agua, pollo 4,3%, sal, hortalizas 0,03% (cebolla, zanahoria), aromas naturales, almidón, carne de vacuno, especias.",
+    "categories": [
+      "Conservas, caldos y cremas"
+    ],
+    "unit": "1.0 l"
+  },
+  {
+    "id": "22860",
+    "name": "Caldo de carne Hacendado en pastillas",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/8f2f5b6b39b8cb837d68a6e4df67f80b.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/22860/caldo-carne-hacendado-pastillas-caja",
+    "unit_price": 0.85,
+    "unit_size": 0.12,
+    "size_format": "kg",
+    "packaging": "Caja",
+    "allergens": "Libre de cereales que contengan gluten. Libre de ml. Puede contener soja y productos a base de soja. Puede contener apio y productos derivados.",
+    "ingredients": "Sal, grasa vegetal de palma, potenciadores del sabor (E621, E635), extracto de levadura, almidón de maíz, aromas, colorante (caramelo de sulfito amónico), hortalizas 1% (cebolla, zanahoria), extracto de carne 0,5%, especias (pimienta negra, romero), antioxidante (extractos de romero). Puede contener trazas de apio y soja. SIN GLUTEN. SIN LACTOSA",
+    "categories": [
+      "Conservas, caldos y cremas"
+    ],
+    "unit": "0.12 kg"
+  },
+  {
+    "id": "3028",
+    "name": "Manzana Golden",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/12cc1ef38a5b781f364ca22e46a25ad7.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/3028/manzana-golden-pieza",
+    "unit_price": 0.48,
+    "unit_size": 0.2,
+    "size_format": "kg",
+    "packaging": "Pieza",
+    "allergens": "Sin alérgenos declarados en la API",
+    "ingredients": "Manzana Golden",
+    "categories": [
+      "Fruta y verdura"
+    ],
+    "unit": "0.2 kg"
+  },
+  {
+    "id": "3830",
+    "name": "Aguacate",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/b1dee7e254871996d81c69a656fa4304.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/3830/aguacate-pieza",
+    "unit_price": 1.1,
+    "unit_size": 0.22,
+    "size_format": "kg",
+    "packaging": "Pieza",
+    "allergens": "Sin alérgenos declarados en la API",
+    "ingredients": "Aguacate",
+    "categories": [
+      "Fruta y verdura"
+    ],
+    "unit": "0.22 kg"
+  },
+  {
+    "id": "69584",
+    "name": "Pepino",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/a1e854648225054f10d2bac80ca7ca98.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/69584/pepino-pieza",
+    "unit_price": 0.36,
+    "unit_size": 0.21,
+    "size_format": "kg",
+    "packaging": "Pieza",
+    "allergens": "Sin alérgenos declarados en la API",
+    "ingredients": "PEPINO",
+    "categories": [
+      "Fruta y verdura"
+    ],
+    "unit": "0.21 kg"
+  },
+  {
+    "id": "69310",
+    "name": "Pimiento rojo",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/6a280610f9bfadf9b78b2197c21acfae.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/69310/pimiento-rojo-pieza",
+    "unit_price": 0.83,
+    "unit_size": 0.33,
+    "size_format": "kg",
+    "packaging": "Pieza",
+    "allergens": "Sin alérgenos declarados en la API",
+    "ingredients": "",
+    "categories": [
+      "Fruta y verdura"
+    ],
+    "unit": "0.33 kg"
+  },
+  {
+    "id": "69580",
+    "name": "Brócoli",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/2ef72b37fe1021e9ff4ea8f46f9204f8.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/69580/brocoli-pieza",
+    "unit_price": 1.38,
+    "unit_size": 0.46,
+    "size_format": "kg",
+    "packaging": "Pieza",
+    "allergens": "Sin alérgenos declarados en la API",
+    "ingredients": "",
+    "categories": [
+      "Fruta y verdura"
+    ],
+    "unit": "0.46 kg"
+  },
+  {
+    "id": "69622",
+    "name": "Floretas de brócoli para microondas lavadas",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/3c23712045339f762d14e691e9b0171e.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/69622/floretas-brocoli-microondas-paquete",
+    "unit_price": 1.7,
+    "unit_size": 0.23,
+    "size_format": "kg",
+    "packaging": "Paquete",
+    "allergens": "Sin alérgenos declarados en la API",
+    "ingredients": "Brócoli",
+    "categories": [
+      "Fruta y verdura"
+    ],
+    "unit": "0.23 kg"
+  },
+  {
+    "id": "62750",
+    "name": "Gamba arrocera pequeña Hacendado congelada",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/9c857dfc9708a23ce8acf927e1637c51.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/62750/gamba-arrocera-pequena-hacendado-congelada-caja",
+    "unit_price": 6.0,
+    "unit_size": 0.55,
+    "size_format": "kg",
+    "packaging": "Caja",
+    "allergens": "Contiene dióxido de azufre y sulfitos. Contiene crustáceos y productos a base de crustáceos. Puede contener moluscos y productos a base de moluscos. Puede contener pescado y productos a base de pescado.",
+    "ingredients": "Gamba Blanca (crustáceo). Antioxidantes: Difosfatos, Citratos de sodio, Ácido cítrico y Metabisulfito de sodio. Puede contener pescados y moluscos.",
+    "categories": [
+      "Congelados",
+      "Marisco y pescado"
+    ],
+    "unit": "0.55 kg"
+  },
+  {
+    "id": "62401",
+    "name": "Mejillón de Chile entero cocido Hacendado ultracongelado",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/b4e4b2663ea1d17228e8500f39b911d3.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/62401/mejillon-chile-entero-cocido-hacendado-ultracongelado-caja",
+    "unit_price": 3.25,
+    "unit_size": 0.45,
+    "size_format": "kg",
+    "packaging": "Caja",
+    "allergens": "Contiene moluscos y productos a base de moluscos.",
+    "ingredients": "Molusco.",
+    "categories": [
+      "Congelados",
+      "Marisco y pescado"
+    ],
+    "unit": "0.45 kg"
+  },
+  {
+    "id": "24350",
+    "name": "Filete de salmón rosado salvaje con piel Hacendado ultracongelado",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/9433ea335072ed81924f318ac4cdb24e.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/24350/filete-salmon-rosado-salvaje-con-piel-hacendado-ultracongelado-pieza",
+    "unit_price": 4.99,
+    "unit_size": null,
+    "size_format": "kg",
+    "packaging": "Pieza",
+    "allergens": "Puede contener moluscos y productos a base de moluscos. Contiene pescado y productos a base de pescado. Puede contener crustáceos y productos a base de crustáceos.",
+    "ingredients": "Filete de salmón. Puede contener trazas de crustáceos y de moluscos.",
+    "categories": [
+      "Congelados",
+      "Marisco y pescado"
+    ],
+    "unit": "kg"
+  },
+  {
+    "id": "26775",
+    "name": "Chipirones enharinados Hacendado ultracongelado",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/cd8f429297f82e06b79f7c8d8a481464.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/26775/chipirones-enharinados-hacendado-ultracongelado-paquete",
+    "unit_price": 4.95,
+    "unit_size": 0.325,
+    "size_format": "kg",
+    "packaging": "Paquete",
+    "allergens": "Contiene trigo y productos derivados. Puede contener mostaza y productos derivados. Puede contener soja y productos a base de soja. Puede contener pescado y productos a base de pescado. Puede contener crustáceos y productos a base de crustáceos. Puede contener leche y sus derivados (incluida la lactosa). Contiene huevos y productos a base de huevo. Contiene cereales que contengan gluten. Contiene moluscos y productos a base de moluscos.",
+    "ingredients": "CALAMAR (MOLUSCO) (62%) (CALAMAR, agua y sal), enharinado (38%): pan rallado [harina de TRIGO (GLUTEN), agua, sal, levadura], aceite de girasol, agua, harina de TRIGO (GLUTEN), clara de HUEVO en polvo, harina de arroz, almidón modificado de maíz, dextrina de tapioca, sal, gasificantes (E-450, E-500) y dextrosa. Puede contener trazas de CRUSTÁCEOS, PESCADO, LECHE, SOJA y MOSTAZA.",
+    "categories": [
+      "Congelados",
+      "Marisco y pescado"
+    ],
+    "unit": "0.325 kg"
+  },
+  {
+    "id": "87208",
+    "name": "Filete de salmón",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/da236aaa8e3f4a760d95f063ec5a1638.jpeg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/87208/medio-salmon-bandeja",
+    "unit_price": 16.15,
+    "unit_size": 0.85,
+    "size_format": "kg",
+    "packaging": "Bandeja",
+    "allergens": "Contiene pescado y productos a base de pescado. Puede contener moluscos y productos a base de moluscos. Puede contener crustáceos y productos a base de crustáceos.",
+    "ingredients": "Salmón (Salmo salar). Puede contener crustáceos y moluscos.",
+    "categories": [
+      "Marisco y pescado"
+    ],
+    "unit": "0.85 kg"
+  },
+  {
+    "id": "87211",
+    "name": "Bacalao al punto de sal descongelado",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/ca53c73b6afd0d72635caaec9e3e3420.jpeg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/87211/bacalao-punto-sal-descongelado-con-agua-anadida-bandeja",
+    "unit_price": 9.5,
+    "unit_size": 0.45,
+    "size_format": "kg",
+    "packaging": "Bandeja",
+    "allergens": "Puede contener moluscos y productos a base de moluscos. Contiene pescado y productos a base de pescado. Puede contener crustáceos y productos a base de crustáceos.",
+    "ingredients": "Bacalao (pescado) (Gadus morhua) 90%, agua 9,25% y sal 0,75%. Puede contener trazas de crustáceos y moluscos.",
+    "categories": [
+      "Marisco y pescado"
+    ],
+    "unit": "0.45 kg"
+  },
+  {
+    "id": "27548",
+    "name": "Elaborado de merluza y langostino",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/9add643053c6c2b1f51a79211c2bcdfb.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/27548/elaborado-merluza-langostino-bandeja",
+    "unit_price": 2.95,
+    "unit_size": 0.2,
+    "size_format": "kg",
+    "packaging": "Bandeja",
+    "allergens": "Contiene crustáceos y productos a base de crustáceos.",
+    "ingredients": "62% MERLUZA (PESCADO), 11% LANGOSTINO ((CRUSTÁCEO), agua, sal, antioxidantes E330, E331, estabilizante E451, E452), harina de arroz, aceite refinado de girasol, fibras vegetales, almidón, azúcar, corrector de la acidez (vinagre tamponado), especias (perejil y ajo) y aromas. Puede contener trazas de huevos y derivados, moluscos y derivados y sulfitos.",
+    "categories": [
+      "Marisco y pescado"
+    ],
+    "unit": "0.2 kg"
+  },
+  {
+    "id": "83869",
+    "name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/2c503fa3d2fb1a21bf062e8a9b9affae.jpeg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/83869/pan-molde-semillas-pipas-calabaza-hacendado-paquete",
+    "unit_price": 1.55,
+    "unit_size": 0.58,
+    "size_format": "kg",
+    "packaging": "Paquete",
+    "allergens": "Puede contener soja y productos a base de soja. Puede contener granos de sésamo y productos a base de granos de sésamo. Puede contener mostaza y productos derivados. Puede contener cereales que contengan gluten. Contiene trigo y productos derivados. Contiene centeno y productos derivados. Contiene go.",
+    "ingredients": "Harina de trigo, agua, semillas de calabaza (4,6%), copos de centeno, semillas de lino marrón (3,9%), semillas de girasol (3,9%), levadura, aceite vegetal (girasol), copos de avena, gluten de trigo, azúcar, sal, semillas amapola (0,5%), conservadores (E-282,E-200,E-202), vinagre de vino, harina de habas, emulgentes (E-471,E-472e), harina de centeno malteada, agente de tratamiento de la harina (E-300). Puede contener semillas de sésamo, soja y mostaza.",
+    "categories": [
+      "Panadería y pastelería"
+    ],
+    "unit": "0.58 kg"
+  },
+  {
+    "id": "80859",
+    "name": "Tortillas de trigo Hacendado",
+    "thumbnail": "https://prod-mercadona.imgix.net/images/ed65b3b242f3ea0ffb63bdc75878a1d7.jpg?fit=crop&h=300&w=300",
+    "share_url": "https://tienda.mercadona.es/product/80859/tortillas-trigo-hacendado-paquete",
+    "unit_price": 1.15,
+    "unit_size": 0.36,
+    "size_format": "kg",
+    "packaging": "Paquete",
+    "allergens": "Contiene cereales que contengan gluten.",
+    "ingredients": "Harina de trigo (69%), agua,aceite de girasol alto oleico (3%), estabilizante (E 422), emulgente (E 471),sal, conservadores (E 202, E 282), corrector de acidez (E 296), gasificante (E500ii), fibra vegetal, agente de tratamiento de la harina (E 920).",
+    "categories": [
+      "Panadería y pastelería"
+    ],
+    "unit": "0.36 kg"
+  }
+]
