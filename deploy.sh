@@ -26,6 +26,23 @@ gcloud services enable \
   aiplatform.googleapis.com \
   --project "${PROJECT_ID}"
 
+echo "==> Configurando permisos IAM para Cloud Build y Vertex AI en la cuenta de servicio por defecto..."
+PROJECT_NUMBER=$(CLOUDSDK_METRICS_ENVIRONMENT="${CLOUDSDK_METRICS_ENVIRONMENT:+$CLOUDSDK_METRICS_ENVIRONMENT }datacloud.jetski" gcloud projects describe "${PROJECT_ID}" --format="value(projectNumber)")
+COMPUTE_SA="${PROJECT_NUMBER}-compute@developer.gserviceaccount.com"
+
+for ROLE in \
+  "roles/storage.admin" \
+  "roles/artifactregistry.writer" \
+  "roles/logging.logWriter" \
+  "roles/aiplatform.user"; do
+  CLOUDSDK_METRICS_ENVIRONMENT="${CLOUDSDK_METRICS_ENVIRONMENT:+$CLOUDSDK_METRICS_ENVIRONMENT }datacloud.jetski" \
+  gcloud projects add-iam-policy-binding "${PROJECT_ID}" \
+    --member="serviceAccount:${COMPUTE_SA}" \
+    --role="${ROLE}" \
+    --condition=None \
+    --quiet >/dev/null
+done
+
 echo "==> Desplegando ${SERVICE_NAME} en Google Cloud Run (Proyecto: ${PROJECT_ID}, Región: ${REGION})..."
 CLOUDSDK_METRICS_ENVIRONMENT="${CLOUDSDK_METRICS_ENVIRONMENT:+$CLOUDSDK_METRICS_ENVIRONMENT }datacloud.jetski" \
 gcloud run deploy "${SERVICE_NAME}" \
@@ -33,6 +50,7 @@ gcloud run deploy "${SERVICE_NAME}" \
   --project "${PROJECT_ID}" \
   --region "${REGION}" \
   --allow-unauthenticated \
+  --quiet \
   --set-env-vars="^;^GOOGLE_CLOUD_PROJECT=${PROJECT_ID};GEMINI_MODEL=${GEMINI_MODEL};ALLOWED_USERS=${ALLOWED_USERS};GEMINI_API_KEY=${GEMINI_API_KEY:-}"
 
 echo "==> ¡Despliegue completado!"
