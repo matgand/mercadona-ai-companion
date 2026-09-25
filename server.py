@@ -260,8 +260,8 @@ class CompanionRequestHandler(BaseHTTPRequestHandler):
             return
 
         if path == "/api/plan":
-            prompt = str(body.get("message") or "").strip()
-            postal_code = str(body.get("postalCode") or "28016").strip()
+            prompt = str(body.get("message") or body.get("prompt") or "").strip()
+            postal_code = str(body.get("postalCode") or body.get("postal_code") or "28016").strip()
             current_plan = body.get("currentPlan")
             variety_seed = str(body.get("varietySeed") or "1")
             if not prompt:

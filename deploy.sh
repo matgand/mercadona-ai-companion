@@ -50,6 +50,7 @@ gcloud run deploy "${SERVICE_NAME}" \
   --project "${PROJECT_ID}" \
   --region "${REGION}" \
   --allow-unauthenticated \
+  --no-invoker-iam-check \
   --quiet \
   --set-env-vars="^;^GOOGLE_CLOUD_PROJECT=${PROJECT_ID};GEMINI_MODEL=${GEMINI_MODEL};ALLOWED_USERS=${ALLOWED_USERS};GEMINI_API_KEY=${GEMINI_API_KEY:-}"
 
