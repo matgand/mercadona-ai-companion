@@ -4,8 +4,8 @@ set -euo pipefail
 # Automated deployment script for Google Cloud Run
 SERVICE_NAME="${SERVICE_NAME:-mercadona-ai-companion}"
 REGION="${REGION:-europe-west1}"
-PROJECT_ID="${PROJECT_ID:-$(gcloud config get-value project 2>/dev/null || true)}"
-ALLOWED_USERS="${ALLOWED_USERS:-matgand@gmail.com,mgandolfi@google.com,andrea.anaut@gmail.com}"
+PROJECT_ID="${PROJECT_ID:-mercadona-ia-companion}"
+ALLOWED_USERS="${ALLOWED_USERS:-matgand@gmail.com,mgandolfi@google.com,andrea.anaut@gmail.com,mattia@mgandolfi.altostrat.com}"
 GEMINI_MODEL="${GEMINI_MODEL:-gemini-3.8-flash}"
 
 if [[ -z "${PROJECT_ID}" ]]; then

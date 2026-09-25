@@ -38,6 +38,7 @@ DEFAULT_ALLOWED_USERS = [
     "matgand@gmail.com",
     "mgandolfi@google.com",
     "andrea.anaut@gmail.com",
+    "mattia@mgandolfi.altostrat.com",
 ]
 
 
