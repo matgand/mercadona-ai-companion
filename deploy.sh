@@ -31,6 +31,6 @@ gcloud run deploy "${SERVICE_NAME}" \
   --project "${PROJECT_ID}" \
   --region "${REGION}" \
   --allow-unauthenticated \
-  --set-env-vars="GEMINI_MODEL=${GEMINI_MODEL};ALLOWED_USERS=${ALLOWED_USERS};GEMINI_API_KEY=${GEMINI_API_KEY:-}"
+  --set-env-vars="^;^GEMINI_MODEL=${GEMINI_MODEL};ALLOWED_USERS=${ALLOWED_USERS};GEMINI_API_KEY=${GEMINI_API_KEY:-}"
 
 echo "==> ¡Despliegue completado!"
