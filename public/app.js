@@ -312,6 +312,7 @@ async function generatePlan(promptText) {
   state.loading = true;
   state.error = null;
   state.cartAddedResult = null;
+  state.lastSwapChange = null;
   state.varietyCounter += 1;
   render();
 
@@ -357,7 +358,11 @@ async function swapRecipe(recipeId) {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        currentMeals: state.plan.meals.map((m) => ({ day: m.day, recipeId: m.recipe_id })),
+        currentMeals: state.plan.meals.map((m) => ({
+          day: m.day,
+          recipe_id: m.recipe_id,
+          recipeId: m.recipe_id,
+        })),
         targetRecipeId: recipeId,
         constraints: state.plan.constraints,
         postalCode: state.postalCode,
@@ -367,6 +372,7 @@ async function swapRecipe(recipeId) {
     const data = await res.json();
     if (res.ok && data.replacement) {
       state.previousPlan = state.plan;
+      state.lastSwapChange = data.change;
       state.plan = {
         ...state.plan,
         meals: state.plan.meals.map((m) => (m.recipe_id === recipeId ? data.replacement : m)),
@@ -375,12 +381,14 @@ async function swapRecipe(recipeId) {
         budget_remaining: data.budget_remaining,
       };
       showToast(
-        `Receta cambiada (${data.change.day})`,
-        `Se sustituyó por '${data.change.to_recipe_name}' y se actualizó la cesta (${formatEUR(data.total)}).`
+        `Cambio rápido (${data.change.day})`,
+        `Se sustituyó solo esta receta por '${data.change.to_recipe_name}' y se actualizó la cesta (${formatEUR(data.total)}).`
       );
+    } else {
+      showToast("Error en Cambio rápido", data.error || "No se pudo cambiar la receta.");
     }
   } catch (err) {
-    showToast("Error al cambiar receta", "No se pudo encontrar otra receta con las mismas restricciones.");
+    showToast("Error en Cambio rápido", "No se pudo encontrar otra receta con las mismas restricciones.");
   } finally {
     state.swappingRecipeId = null;
     render();
@@ -667,6 +675,24 @@ function renderExperiencePanel() {
           : ""
       }
 
+      ${
+        state.lastSwapChange
+          ? `
+        <div class="plan-delta" role="status" style="margin-bottom: 16px;">
+          <div>
+            <span>Cambio rápido aplicado</span>
+            <strong>Solo se ha cambiado la cena del ${escapeHtml(state.lastSwapChange.day)}</strong>
+          </div>
+          <div class="plan-delta-facts">
+            <span>Anterior: ${escapeHtml(state.lastSwapChange.from_recipe_name)}</span>
+            <span>Nueva: ${escapeHtml(state.lastSwapChange.to_recipe_name)}</span>
+            <span>Cesta recalculada: ${formatEUR(p.total)}</span>
+          </div>
+        </div>
+      `
+          : ""
+      }
+
       <div class="meal-grid">
         ${p.meals
           .map((meal, idx) => {
@@ -703,9 +729,10 @@ function renderExperiencePanel() {
                     type="button"
                     class="quick-swap-button"
                     data-swap-recipe="${escapeHtml(meal.recipe_id)}"
+                    title="Cambiar solo esta receta sin regenerar el resto del menú semanal"
                     ${isSwapping ? "disabled" : ""}
                   >
-                    ${isSwapping ? "Buscando otra..." : "Cambiar cena"}
+                    ${isSwapping ? "Cambiando..." : "Cambio rápido"}
                     <span aria-hidden="true">↻</span>
                   </button>
                   <button
@@ -720,7 +747,7 @@ function renderExperiencePanel() {
                   </button>
                 </div>
                 <p class="quick-swap-helper">
-                  Abre la receta oficial en Cookidoo (${escapeHtml(meal.cookidoo_id)}) y añádela a tu Thermomix con un click.
+                  <strong>Cambio rápido</strong> sustituye solo esta cena manteniendo el resto del menú. <strong>Envía a tu Thermomix</strong> abre la receta (${escapeHtml(meal.cookidoo_id)}) en Cookidoo.
                 </p>
               </div>
             </article>

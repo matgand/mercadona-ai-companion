@@ -726,7 +726,7 @@ def swap_single_recipe(
     catalog, catalog_meta = get_catalog_for_postal_code(postal_code)
     pantry_map = _pantry_excluded_product_ids(constraints.get("pantryItems", []), catalog)
 
-    used_ids = {m["recipe_id"] for m in current_meals}
+    used_ids = {str(m.get("recipe_id") or m.get("recipeId") or "") for m in current_meals}
     excluded_allergens = set(constraints.get("excludedAllergens", []))
     max_minutes = constraints.get("maxMinutes") or 60
     max_cal = constraints.get("maxCaloriesPerServing")
@@ -743,6 +743,14 @@ def swap_single_recipe(
         and not excluded_allergens.intersection(set(r.get("allergens", [])))
     ]
     if not candidates:
+        candidates = [
+            r
+            for r in all_recipes
+            if r["recipe_id"] not in used_ids
+            and not excluded_allergens.intersection(set(r.get("allergens", [])))
+            and (not veg_only or r["is_vegetarian"])
+        ]
+    if not candidates:
         candidates = [r for r in all_recipes if r["recipe_id"] not in used_ids]
 
     chosen = candidates[rotation % len(candidates)]
@@ -752,13 +760,17 @@ def swap_single_recipe(
     by_id = {r["recipe_id"]: r for r in all_recipes}
 
     for m in current_meals:
-        rid = m["recipe_id"]
+        rid = str(m.get("recipe_id") or m.get("recipeId") or "")
         if rid == target_recipe_id:
-            target_day = m["day"]
+            target_day = m.get("day", "Lunes")
             from_name = by_id.get(rid, {}).get("name", rid)
-            updated_meals_raw.append({"day": m["day"], "recipe": chosen})
+            updated_meals_raw.append({"day": target_day, "recipe": chosen})
         else:
-            updated_meals_raw.append({"day": m["day"], "recipe": by_id.get(rid, chosen)})
+            updated_meals_raw.append({"day": m.get("day", "Lunes"), "recipe": by_id.get(rid, chosen)})
+
+    adults = constraints.get("adults", 2)
+    children = constraints.get("children", 1)
+    household_portions = adults + (0.75 * children)
 
     SHARED_STAPLES = {"4740", "69089", "69297", "31505", "5044", "34125"}
     qty_map: dict[str, int] = {}
@@ -768,6 +780,7 @@ def swap_single_recipe(
     for item in updated_meals_raw:
         dname = item["day"]
         r = item["recipe"]
+        scale = max(1, math.ceil(household_portions / max(1, r.get("cookidoo_servings", 4))))
         uses_from_home: list[str] = []
         active_pids: list[str] = []
         for pid in r["product_ids"]:
@@ -780,7 +793,7 @@ def swap_single_recipe(
             if pid in SHARED_STAPLES:
                 qty_map[pid] = max(qty_map.get(pid, 0), 1)
             else:
-                qty_map[pid] = qty_map.get(pid, 0) + 1
+                qty_map[pid] = qty_map.get(pid, 0) + scale
             used_days.setdefault(pid, []).append(dname)
 
         card = {
@@ -806,26 +819,43 @@ def swap_single_recipe(
         if r["recipe_id"] == chosen["recipe_id"]:
             replacement_card = card
 
-    basket_rows: list[dict[str, Any]] = []
-    for pid, qty in qty_map.items():
-        prod = catalog[pid]
-        basket_rows.append(
-            {
-                "id": pid,
-                "name": prod["name"],
-                "thumbnail": prod.get("thumbnail", ""),
-                "share_url": prod.get("share_url", f"https://tienda.mercadona.es/product/{pid}"),
-                "unit": prod.get("unit", "1 ud"),
-                "unit_price": prod["unit_price"],
-                "quantity": qty,
-                "line_total": round(prod["unit_price"] * qty, 2),
-                "allergens": prod.get("allergens", "Sin alérgenos declarados en la API"),
-                "used_in_days": used_days.get(pid, []),
-            }
-        )
-    basket_rows.sort(key=lambda x: (-x["line_total"], x["name"]))
-    total = round(sum(x["line_total"] for x in basket_rows), 2)
     max_budget = float(constraints.get("maxBudget", 65.0))
+
+    def build_swap_basket(qmap: dict[str, int]) -> tuple[list[dict[str, Any]], float]:
+        rows: list[dict[str, Any]] = []
+        for pid, qty in qmap.items():
+            if qty <= 0 or pid not in catalog:
+                continue
+            prod = catalog[pid]
+            rows.append(
+                {
+                    "id": pid,
+                    "name": prod["name"],
+                    "thumbnail": prod.get("thumbnail", ""),
+                    "share_url": prod.get("share_url", f"https://tienda.mercadona.es/product/{pid}"),
+                    "unit": prod.get("unit", "1 ud"),
+                    "unit_price": prod["unit_price"],
+                    "quantity": qty,
+                    "line_total": round(prod["unit_price"] * qty, 2),
+                    "allergens": prod.get("allergens", "Sin alérgenos declarados en la API"),
+                    "used_in_days": used_days.get(pid, []),
+                }
+            )
+        rows.sort(key=lambda x: (-x["line_total"], x["name"]))
+        tot = round(sum(x["line_total"] for x in rows), 2)
+        return rows, tot
+
+    basket_rows, total = build_swap_basket(qty_map)
+    if total > max_budget:
+        for pid in list(qty_map.keys()):
+            if qty_map[pid] > 1:
+                qty_map[pid] = 1
+                basket_rows, total = build_swap_basket(qty_map)
+                if total <= max_budget:
+                    break
+    if total > max_budget and "4740" in qty_map:
+        del qty_map["4740"]
+        basket_rows, total = build_swap_basket(qty_map)
 
     return {
         "replacement": replacement_card,
