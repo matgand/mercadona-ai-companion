@@ -671,11 +671,11 @@ function renderExperiencePanel() {
     return `
       <div class="loading-state" aria-live="polite">
         <div class="loading-orbit"><span></span></div>
-        <p class="empty-kicker">Gemini 3.8 Flash trabajando</p>
-        <h2>Elaborando tu menú semanal en Cookidoo y Mercadona</h2>
+        <p class="empty-kicker">Gemini trabajando</p>
+        <h2>Elaborando menú con Gemini</h2>
         <p>Verificando restricciones nutricionales, alérgenos, recetas de Thermomix y stock real en Mercadona para el CP ${escapeHtml(state.postalCode)} (${escapeHtml(state.warehouse)}).</p>
         <div class="loading-steps">
-          <span>Analizando condiciones del prompt con Gemini 3.8 Flash</span>
+          <span>Analizando condiciones del prompt con Gemini</span>
           <span>Seleccionando recetas compatibles del catálogo de Cookidoo</span>
           <span>Mapeando ingredientes al catálogo real de Mercadona (CP ${escapeHtml(state.postalCode)})</span>
         </div>
@@ -706,7 +706,7 @@ function renderExperiencePanel() {
         <p class="empty-kicker">Una sola petición en lenguaje natural</p>
         <h2>5 cenas en Thermomix. Una cesta exacta en Mercadona.</h2>
         <p>
-          El asistente interpreta tus condiciones con <strong>Gemini 3.8 Flash</strong>, selecciona recetas reales de <strong>Cookidoo</strong> con su foto de portada, descuenta lo que ya tienes en casa y mapea todos los ingredientes al catálogo de <strong>Mercadona</strong> para el CP <strong>${escapeHtml(state.postalCode)}</strong>.
+          El asistente interpreta tus condiciones con Gemini, la IA de Google, selecciona recetas reales de tu Thermomix, descuenta lo que ya tienes en casa y mapea todos los ingredientes al catálogo y a la disponibilidad en tiempo real de Mercadona.
         </p>
         <ol class="flow-list">
           <li><span>01</span> Entiende tu familia, presupuesto, tiempo, calorías, alergias y despensa</li>
@@ -718,6 +718,7 @@ function renderExperiencePanel() {
   }
 
   const p = state.plan;
+  const cleanModelLabel = String(p.model || "Gemini 3.8 Flash").replace(/\s*\(.*?\)/g, "").trim();
   return `
     <div class="plan-state">
       <div class="plan-heading">
@@ -728,7 +729,7 @@ function renderExperiencePanel() {
         </div>
         <div class="live-badge">
           <span></span>
-          ${escapeHtml(p.model || "Gemini 3.8 Flash")}
+          ${escapeHtml(cleanModelLabel)}
         </div>
       </div>
 
@@ -1071,7 +1072,7 @@ function renderPlannerView() {
 
           <div class="form-actions">
             <button class="primary-button" type="submit" ${state.loading ? "disabled" : ""}>
-              ${state.loading ? "Elaborando menú con Gemini 3.8 Flash..." : "Generar mi menú semanal"}
+              ${state.loading ? "Elaborando menú con Gemini" : "Generar mi menú semanal"}
               <span aria-hidden="true">↗</span>
             </button>
             ${
@@ -1085,7 +1086,7 @@ function renderPlannerView() {
         <div class="trust-note">
           <span class="trust-icon">✓</span>
           <p>
-            Las recetas, fotos de portada y valores nutricionales provienen de <strong>Cookidoo</strong>. Los nombres de producto, formatos, precios y disponibilidad en tiempo real provienen de la API de <strong>Mercadona Tienda</strong> para el código postal <strong>${escapeHtml(state.postalCode)}</strong>.
+            Las recetas, fotos de portada y valores nutricionales provienen de <strong>Cookidoo</strong>. Los nombres de producto, formatos, precios y disponibilidad en tiempo real provienen de la API de <strong>Mercadona Tienda</strong>.
           </p>
         </div>
       </div>

@@ -414,7 +414,7 @@ def _call_gemini_flash_selector(
                 if resp and resp.text:
                     parsed = json.loads(resp.text)
                     if isinstance(parsed.get("selected_recipe_ids"), list):
-                        parsed["model_used"] = f"Gemini 3.8 Flash ({model_name})"
+                        parsed["model_used"] = "Gemini 3.8 Flash"
                         return parsed
             except Exception:
                 continue
@@ -457,7 +457,7 @@ def _call_gemini_flash_selector(
                 )
                 parsed = json.loads(text)
                 if isinstance(parsed.get("selected_recipe_ids"), list):
-                    parsed["model_used"] = model_name
+                    parsed["model_used"] = "Gemini 3.8 Flash"
                     return parsed
         except Exception:
             continue
@@ -717,7 +717,7 @@ def build_weekly_plan(
         "headline": (gemini_res or {}).get("headline") or default_headline,
         "summary": (gemini_res or {}).get("summary") or default_summary,
         "live": bool(gemini_res),
-        "model": (gemini_res or {}).get("model_used") or f"{MODEL_PRIMARY} (con validación determinista)",
+        "model": (gemini_res or {}).get("model_used") or "Gemini 3.8 Flash",
         "postal_code": catalog_meta["postal_code"],
         "warehouse": catalog_meta["warehouse"],
         "catalog_source": catalog_meta["catalog_source"],
