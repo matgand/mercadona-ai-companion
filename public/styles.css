@@ -80,19 +80,36 @@
   text-decoration: underline;
   margin-left: 4px;
 }
-.gemini-lockup-badge {
+.gcloud-lockup-badge {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
-  font-weight: 700;
-  font-size: 14px;
-  color: var(--ink);
+  gap: 9px;
+  font-size: 16px;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+.gcloud-logo-icon {
+  width: 26px;
+  height: auto;
+  display: inline-block;
+  flex-shrink: 0;
+}
+.gcloud-wordmark {
+  display: inline-flex;
+  align-items: baseline;
+  font-weight: 600;
   letter-spacing: -0.02em;
 }
-.gemini-spark {
-  width: 20px;
-  height: 20px;
-  display: inline-block;
+.gcloud-wordmark .gc-g1 { color: #4285F4; font-weight: 700; }
+.gcloud-wordmark .gc-o1 { color: #EA4335; font-weight: 700; }
+.gcloud-wordmark .gc-o2 { color: #FBBC05; font-weight: 700; }
+.gcloud-wordmark .gc-g2 { color: #4285F4; font-weight: 700; }
+.gcloud-wordmark .gc-l  { color: #34A853; font-weight: 700; }
+.gcloud-wordmark .gc-e  { color: #EA4335; font-weight: 700; }
+.gcloud-wordmark .gc-cloud {
+  color: #5F6368;
+  font-weight: 600;
+  margin-left: 4px;
 }
 .auth-gate-overlay {
   position: fixed;
