@@ -3,22 +3,67 @@
 
 
 /* === Mercadona AI Companion (Gemini 3.8 Flash + Cookidoo + Mercadona) Extensions === */
+.companion-brand-bar,
+.marketing-brand-bar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  min-height: 78px;
+  padding: 12px 0;
+  flex-wrap: nowrap;
+}
+.companion-brand-bar .brand-lockup,
+.marketing-brand-bar .brand-lockup {
+  flex-shrink: 0;
+  white-space: nowrap;
+  gap: 14px;
+}
+.companion-brand-bar .mercadona-logo,
+.marketing-brand-bar .mercadona-logo {
+  width: 126px;
+  height: auto;
+  flex-shrink: 0;
+}
+.companion-brand-bar .top-navigation,
+.marketing-brand-bar .top-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(14px, 1.6vw, 26px);
+  margin-left: auto;
+  margin-right: auto;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+.top-navigation a {
+  white-space: nowrap;
+  flex-shrink: 0;
+  font-size: 13px;
+  line-height: 1.2;
+}
 .header-controls {
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin-left: auto;
-  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-left: 0;
+  flex-wrap: nowrap;
+  flex-shrink: 0;
 }
 .postal-selector {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
+  height: 36px;
   background: #f4faf7;
   border: 1px solid #cfded6;
   border-radius: 3px;
-  padding: 6px 10px;
+  padding: 0 8px;
   font-size: 12px;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 .postal-selector label {
   color: var(--muted);
@@ -26,13 +71,15 @@
   text-transform: uppercase;
   letter-spacing: 0.06em;
   font-size: 10px;
+  white-space: nowrap;
 }
 .postal-selector input {
-  width: 66px;
+  width: 56px;
+  height: 24px;
   border: 1px solid #b8d2c5;
   background: #fff;
   border-radius: 2px;
-  padding: 3px 6px;
+  padding: 2px 5px;
   font-family: var(--font-geist-mono), monospace;
   font-size: 12px;
   font-weight: 700;
@@ -43,25 +90,65 @@
   color: #fff;
   border: 0;
   border-radius: 2px;
-  padding: 4px 8px;
+  height: 24px;
+  padding: 0 8px;
   font-size: 11px;
   font-weight: 700;
+  white-space: nowrap;
 }
 .postal-selector .wh-pill {
   color: var(--green-dark);
   font-family: var(--font-geist-mono), monospace;
   font-size: 11px;
   font-weight: 700;
+  white-space: nowrap;
+}
+.header-controls .profile-selector {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 36px;
+  min-width: 0;
+  width: auto;
+  margin-left: 0;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  padding: 0 8px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.header-controls .profile-selector > span {
+  color: var(--muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 10px;
+  font-weight: 750;
+  white-space: nowrap;
+}
+.header-controls .profile-selector select {
+  border: 0;
+  min-height: 28px;
+  height: 28px;
+  color: var(--ink);
+  background: transparent;
+  padding: 0 4px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
 }
 .user-auth-pill {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
+  height: 36px;
   background: #fff;
   border: 1px solid var(--line);
   border-radius: 999px;
-  padding: 5px 12px 5px 6px;
+  padding: 0 10px 0 6px;
   font-size: 12px;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 .user-avatar {
   width: 24px;
@@ -73,23 +160,49 @@
   place-items: center;
   font-size: 11px;
   font-weight: 800;
+  flex-shrink: 0;
 }
 .user-auth-pill button {
   color: var(--muted);
   font-size: 11px;
   text-decoration: underline;
-  margin-left: 4px;
+  margin-left: 2px;
+  white-space: nowrap;
+}
+@media (width <= 1280px) {
+  .companion-brand-bar,
+  .marketing-brand-bar {
+    flex-wrap: wrap;
+    padding: 14px 0;
+  }
+  .companion-brand-bar .top-navigation,
+  .marketing-brand-bar .top-navigation {
+    border-top: 1px solid var(--line);
+    order: 3;
+    justify-content: flex-start;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    padding-top: 12px;
+    overflow-x: auto;
+  }
+  .header-controls {
+    margin-left: auto;
+    flex-wrap: wrap;
+  }
 }
 .gcloud-lockup-badge {
   display: inline-flex;
   align-items: center;
-  gap: 9px;
+  gap: 8px;
   font-size: 16px;
   letter-spacing: -0.02em;
   line-height: 1;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 .gcloud-logo-icon {
-  width: 26px;
+  width: 25px;
   height: auto;
   display: inline-block;
   flex-shrink: 0;
@@ -99,6 +212,7 @@
   align-items: baseline;
   font-weight: 600;
   letter-spacing: -0.02em;
+  white-space: nowrap;
 }
 .gcloud-wordmark .gc-g1 { color: #4285F4; font-weight: 700; }
 .gcloud-wordmark .gc-o1 { color: #EA4335; font-weight: 700; }

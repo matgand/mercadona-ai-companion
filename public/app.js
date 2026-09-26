@@ -637,13 +637,13 @@ function renderHeader() {
       </nav>
       <div class="header-controls">
         <form id="postal-code-form" class="postal-selector" title="Configura tu código postal para consultar disponibilidad en tiempo real en Mercadona">
-          <label for="header-pc-input">CP Mercadona</label>
+          <label for="header-pc-input">CP</label>
           <input id="header-pc-input" type="text" maxlength="5" value="${escapeHtml(state.postalCode)}" aria-label="Código postal" />
           <span class="wh-pill">(${escapeHtml(state.warehouse)})</span>
           <button type="submit">Actualizar</button>
         </form>
-        <label class="profile-selector" style="margin-left: 0;">
-          <span>Perfil familiar</span>
+        <label class="profile-selector">
+          <span>Perfil</span>
           <select id="profile-select" aria-label="Seleccionar perfil familiar">
             ${PROFILES.map(
               (p) => `<option value="${p.id}" ${p.id === activeProfile.id ? "selected" : ""}>${escapeHtml(p.name)}</option>`
@@ -653,9 +653,9 @@ function renderHeader() {
         ${
           state.auth.authenticated
             ? `
-          <div class="user-auth-pill">
+          <div class="user-auth-pill" title="${escapeHtml(state.auth.user)}">
             <span class="user-avatar">${escapeHtml(userInitial)}</span>
-            <span>${escapeHtml(state.auth.user)}</span>
+            <span class="user-email-text">${escapeHtml(state.auth.user)}</span>
             <button type="button" id="logout-btn">Salir</button>
           </div>
         `
