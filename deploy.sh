@@ -2,8 +2,9 @@
 set -euo pipefail
 export PATH="$HOME/google-cloud-sdk/bin:$PATH"
 
-# Automated deployment script for Google Cloud Run
+# Automated deployment script for Google Cloud Run (both mercadona-ai-companion and campaign-library microservices)
 SERVICE_NAME="${SERVICE_NAME:-mercadona-ai-companion}"
+CAMPAIGN_SERVICE_NAME="${CAMPAIGN_SERVICE_NAME:-campaign-library}"
 REGION="${REGION:-europe-west1}"
 PROJECT_ID="${PROJECT_ID:-mercadona-ia-companion}"
 ACCOUNT="${ACCOUNT:-mattia@mgandolfi.altostrat.com}"
@@ -17,33 +18,22 @@ gcloud config set account "${ACCOUNT}"
 CLOUDSDK_METRICS_ENVIRONMENT="${CLOUDSDK_METRICS_ENVIRONMENT:+$CLOUDSDK_METRICS_ENVIRONMENT }datacloud.jetski" \
 gcloud config set project "${PROJECT_ID}"
 
-echo "==> Habilitando APIs necesarias en ${PROJECT_ID} (Cloud Run, Cloud Build, Artifact Registry, Vertex AI)..."
-CLOUDSDK_METRICS_ENVIRONMENT="${CLOUDSDK_METRICS_ENVIRONMENT:+$CLOUDSDK_METRICS_ENVIRONMENT }datacloud.jetski" \
-gcloud services enable \
-  run.googleapis.com \
-  cloudbuild.googleapis.com \
-  artifactregistry.googleapis.com \
-  aiplatform.googleapis.com \
-  --project "${PROJECT_ID}"
-
-echo "==> Configurando permisos IAM para Cloud Build y Vertex AI en la cuenta de servicio por defecto..."
 PROJECT_NUMBER=$(CLOUDSDK_METRICS_ENVIRONMENT="${CLOUDSDK_METRICS_ENVIRONMENT:+$CLOUDSDK_METRICS_ENVIRONMENT }datacloud.jetski" gcloud projects describe "${PROJECT_ID}" --format="value(projectNumber)")
-COMPUTE_SA="${PROJECT_NUMBER}-compute@developer.gserviceaccount.com"
+COMPANION_URL="https://${SERVICE_NAME}-${PROJECT_NUMBER}.${REGION}.run.app"
+CAMPAIGN_LIBRARY_URL="https://${CAMPAIGN_SERVICE_NAME}-${PROJECT_NUMBER}.${REGION}.run.app"
 
-for ROLE in \
-  "roles/storage.admin" \
-  "roles/artifactregistry.writer" \
-  "roles/logging.logWriter" \
-  "roles/aiplatform.user"; do
-  CLOUDSDK_METRICS_ENVIRONMENT="${CLOUDSDK_METRICS_ENVIRONMENT:+$CLOUDSDK_METRICS_ENVIRONMENT }datacloud.jetski" \
-  gcloud projects add-iam-policy-binding "${PROJECT_ID}" \
-    --member="serviceAccount:${COMPUTE_SA}" \
-    --role="${ROLE}" \
-    --condition=None \
-    --quiet >/dev/null
-done
+echo "==> Desplegando microservicio 1/2: ${CAMPAIGN_SERVICE_NAME} en Google Cloud Run (${REGION})..."
+CLOUDSDK_METRICS_ENVIRONMENT="${CLOUDSDK_METRICS_ENVIRONMENT:+$CLOUDSDK_METRICS_ENVIRONMENT }datacloud.jetski" \
+gcloud run deploy "${CAMPAIGN_SERVICE_NAME}" \
+  --source . \
+  --project "${PROJECT_ID}" \
+  --region "${REGION}" \
+  --allow-unauthenticated \
+  --no-invoker-iam-check \
+  --quiet \
+  --set-env-vars="^;^SERVICE_ROLE=campaign-library;GOOGLE_CLOUD_PROJECT=${PROJECT_ID};GEMINI_MODEL=${GEMINI_MODEL};ALLOWED_USERS=${ALLOWED_USERS};COMPANION_APP_URL=${COMPANION_URL};CAMPAIGN_LIBRARY_URL=${CAMPAIGN_LIBRARY_URL};GEMINI_API_KEY=${GEMINI_API_KEY:-}"
 
-echo "==> Desplegando ${SERVICE_NAME} en Google Cloud Run (Proyecto: ${PROJECT_ID}, Región: ${REGION})..."
+echo "==> Desplegando microservicio 2/2: ${SERVICE_NAME} en Google Cloud Run (${REGION})..."
 CLOUDSDK_METRICS_ENVIRONMENT="${CLOUDSDK_METRICS_ENVIRONMENT:+$CLOUDSDK_METRICS_ENVIRONMENT }datacloud.jetski" \
 gcloud run deploy "${SERVICE_NAME}" \
   --source . \
@@ -52,6 +42,8 @@ gcloud run deploy "${SERVICE_NAME}" \
   --allow-unauthenticated \
   --no-invoker-iam-check \
   --quiet \
-  --set-env-vars="^;^GOOGLE_CLOUD_PROJECT=${PROJECT_ID};GEMINI_MODEL=${GEMINI_MODEL};ALLOWED_USERS=${ALLOWED_USERS};GEMINI_API_KEY=${GEMINI_API_KEY:-}"
+  --set-env-vars="^;^SERVICE_ROLE=companion;GOOGLE_CLOUD_PROJECT=${PROJECT_ID};GEMINI_MODEL=${GEMINI_MODEL};ALLOWED_USERS=${ALLOWED_USERS};COMPANION_APP_URL=${COMPANION_URL};CAMPAIGN_LIBRARY_URL=${CAMPAIGN_LIBRARY_URL};GEMINI_API_KEY=${GEMINI_API_KEY:-}"
 
 echo "==> ¡Despliegue completado!"
+echo "    - Mercadona AI Companion: ${COMPANION_URL}"
+echo "    - Campaign Library:       ${CAMPAIGN_LIBRARY_URL}"

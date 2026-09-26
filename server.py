@@ -1,6 +1,9 @@
-"""HTTP Server for Mercadona AI Companion (Gemini 3.8 Flash × Cookidoo × Mercadona).
+"""HTTP Server for Mercadona AI Companion & Campaign Library Microservices.
 
-Runs out-of-the-box with Python 3 standard library locally and in Google Cloud Run.
+Supports both microservices:
+  - mercadona-ai-companion (main customer planner app, SERVICE_ROLE=companion)
+  - campaign-library (Mercadona Marketing campaign microservice, SERVICE_ROLE=campaign-library)
+
 Enforces Google Identity allowlist for:
   - matgand@gmail.com
   - mgandolfi@google.com
@@ -21,10 +24,19 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from typing import Any
 
+from campaign_service import (
+    PROFILES_METADATA,
+    VALID_CATEGORIES,
+    VALID_STATUSES,
+    fetch_campaigns_from_remote_or_local,
+    generate_campaign_from_brief,
+    load_local_campaigns,
+    save_local_campaigns,
+    update_campaign_record,
+)
 from cookidoo_service import load_cookidoo_catalog, send_recipe_to_thermomix
 from gemini_planner import build_weekly_plan, format_constraint_pills, parse_constraints, swap_single_recipe
 from mercadona_service import (
-    get_catalog_for_postal_code,
     load_snapshot_products,
     prepare_mercadona_oneclick_cart,
     resolve_postal_code,
@@ -33,6 +45,10 @@ from mercadona_service import (
 PUBLIC_DIR = Path(__file__).resolve().parent / "public"
 SESSION_SECRET = os.environ.get("SESSION_SECRET", "mercadona-companion-secret-key-2026")
 GOOGLE_CLIENT_ID = os.environ.get("GOOGLE_CLIENT_ID", "")
+SERVICE_ROLE = os.environ.get("SERVICE_ROLE", "companion").strip().lower()
+
+DEFAULT_COMPANION_URL = "https://mercadona-ai-companion-905208270932.europe-west1.run.app"
+DEFAULT_CAMPAIGN_LIBRARY_URL = "https://campaign-library-905208270932.europe-west1.run.app"
 
 DEFAULT_ALLOWED_USERS = [
     "matgand@gmail.com",
@@ -47,6 +63,14 @@ def get_allowed_users() -> list[str]:
     if env_val:
         return [u.strip().lower() for u in env_val.split(",") if u.strip()]
     return DEFAULT_ALLOWED_USERS
+
+
+def get_companion_url() -> str:
+    return os.environ.get("COMPANION_APP_URL", DEFAULT_COMPANION_URL).strip().rstrip("/")
+
+
+def get_campaign_library_url() -> str:
+    return os.environ.get("CAMPAIGN_LIBRARY_URL", DEFAULT_CAMPAIGN_LIBRARY_URL).strip().rstrip("/")
 
 
 def sign_session_email(email: str) -> str:
@@ -82,13 +106,12 @@ def verify_google_id_token(id_token: str) -> str | None:
 
 
 class CompanionRequestHandler(BaseHTTPRequestHandler):
-    server_version = "MercadonaAICompanion/1.0"
+    server_version = "MercadonaAICompanion/2.0"
 
     def _get_authenticated_user(self) -> str | None:
         # 1. Check Google Cloud IAP / Cloud Run authenticated header
         iap_email = self.headers.get("X-Goog-Authenticated-User-Email", "")
         if iap_email:
-            # Format is usually "accounts.google.com:user@example.com"
             clean_iap = iap_email.split(":")[-1].strip().lower()
             if clean_iap in get_allowed_users():
                 return clean_iap
@@ -105,12 +128,18 @@ class CompanionRequestHandler(BaseHTTPRequestHandler):
                     return user
         return None
 
+    def _add_cors_headers(self) -> None:
+        self.send_header("Access-Control-Allow-Origin", "*")
+        self.send_header("Access-Control-Allow-Methods", "GET, POST, PATCH, OPTIONS")
+        self.send_header("Access-Control-Allow-Headers", "Content-Type, Authorization")
+
     def _send_json(self, status: int, payload: dict[str, Any], set_cookie: str | None = None) -> None:
         raw = json.dumps(payload, ensure_ascii=False).encode("utf-8")
         self.send_response(status)
         self.send_header("Content-Type", "application/json; charset=utf-8")
         self.send_header("Content-Length", str(len(raw)))
         self.send_header("Cache-Control", "no-store")
+        self._add_cors_headers()
         if set_cookie:
             self.send_header("Set-Cookie", set_cookie)
         self.end_headers()
@@ -120,15 +149,21 @@ class CompanionRequestHandler(BaseHTTPRequestHandler):
         length = int(self.headers.get("Content-Length", "0") or "0")
         if length <= 0:
             return {}
-        raw = self.rfile.read(min(length, 262144)).decode("utf-8", "ignore")
+        raw = self.rfile.read(min(length, 524288)).decode("utf-8", "ignore")
         try:
             return json.loads(raw)
         except Exception:
             return {}
 
+    def do_OPTIONS(self) -> None:
+        self.send_response(204)
+        self._add_cors_headers()
+        self.end_headers()
+
     def do_GET(self) -> None:
         parsed = urllib.parse.urlparse(self.path)
         path = parsed.path
+        qs = urllib.parse.parse_qs(parsed.query)
 
         if path == "/api/auth/session":
             user = self._get_authenticated_user()
@@ -139,12 +174,43 @@ class CompanionRequestHandler(BaseHTTPRequestHandler):
                     "user": user,
                     "allowed_users": get_allowed_users(),
                     "google_client_id": GOOGLE_CLIENT_ID,
+                    "service_role": SERVICE_ROLE,
+                    "companion_app_url": get_companion_url(),
+                    "campaign_library_url": get_campaign_library_url(),
+                },
+            )
+            return
+
+        if path == "/api/campaigns":
+            source = (qs.get("source") or [""])[0]
+            if source == "internal" or SERVICE_ROLE == "campaign-library":
+                campaigns = load_local_campaigns()
+            else:
+                campaigns = fetch_campaigns_from_remote_or_local()
+
+            status_filter = (qs.get("status") or [""])[0].strip()
+            category_filter = (qs.get("category") or [""])[0].strip()
+            if status_filter:
+                campaigns = [c for c in campaigns if c["status"].lower() == status_filter.lower()]
+            if category_filter:
+                campaigns = [c for c in campaigns if c["category"].lower() == category_filter.lower()]
+
+            self._send_json(
+                200,
+                {
+                    "service": "campaign-library",
+                    "campaigns": campaigns,
+                    "active_campaigns": [c for c in campaigns if c["status"] == "Activa"],
+                    "categories": VALID_CATEGORIES,
+                    "statuses": VALID_STATUSES,
+                    "profiles": PROFILES_METADATA,
+                    "companion_app_url": get_companion_url(),
+                    "campaign_library_url": get_campaign_library_url(),
                 },
             )
             return
 
         if path == "/api/catalog":
-            qs = urllib.parse.parse_qs(parsed.query)
             pc = (qs.get("postal_code") or ["28016"])[0]
             pc_info = resolve_postal_code(pc)
             products = list(load_snapshot_products().values())
@@ -162,19 +228,22 @@ class CompanionRequestHandler(BaseHTTPRequestHandler):
             return
 
         if path == "/api/parse-constraints":
-            qs = urllib.parse.parse_qs(parsed.query)
             prompt = (qs.get("q") or [""])[0]
             c = parse_constraints(prompt)
             self._send_json(200, {"constraints": c, "pills": format_constraint_pills(c)})
             return
 
         # Serve static files from public/
-        rel = path.lstrip("/") or "index.html"
-        if rel in ("sources", "catalog", "marketing", "agent"):
+        default_html = "marketing.html" if SERVICE_ROLE == "campaign-library" else "index.html"
+        rel = path.lstrip("/") or default_html
+        if rel == "marketing":
+            rel = "marketing.html"
+        elif rel in ("sources", "catalog", "agent"):
             rel = "index.html"
+
         file_path = (PUBLIC_DIR / rel).resolve()
         if not str(file_path).startswith(str(PUBLIC_DIR)) or not file_path.is_file():
-            file_path = PUBLIC_DIR / "index.html"
+            file_path = PUBLIC_DIR / default_html
 
         if not file_path.is_file():
             self.send_error(404, "Not Found")
@@ -189,6 +258,7 @@ class CompanionRequestHandler(BaseHTTPRequestHandler):
         self.send_response(200)
         self.send_header("Content-Type", ctype or "application/octet-stream")
         self.send_header("Content-Length", str(len(data)))
+        self._add_cors_headers()
         self.end_headers()
         self.wfile.write(data)
 
@@ -231,6 +301,55 @@ class CompanionRequestHandler(BaseHTTPRequestHandler):
         if path == "/api/auth/logout":
             cookie = "mercadona_session=; Path=/; HttpOnly; SameSite=Lax; Max-Age=0"
             self._send_json(200, {"authenticated": False, "user": None}, set_cookie=cookie)
+            return
+
+        # Internal microservice-to-microservice campaign synchronization endpoint
+        if path == "/api/campaigns/sync":
+            incoming = body.get("campaigns")
+            if isinstance(incoming, list) and len(incoming) > 0:
+                saved = save_local_campaigns(incoming)
+                self._send_json(200, {"ok": True, "count": len(saved)})
+            else:
+                self._send_json(400, {"error": "Lista de campañas inválida."})
+            return
+
+        # Campaign Library endpoints (can be called from campaign-library UI or via API)
+        if path == "/api/campaigns/generate":
+            brief = str(body.get("brief") or body.get("prompt") or "").strip()
+            category = body.get("category")
+            initial_status = str(body.get("status") or "Activa")
+            try:
+                created = generate_campaign_from_brief(
+                    brief=brief,
+                    category_hint=str(category) if category else None,
+                    initial_status=initial_status,
+                )
+                all_campaigns = load_local_campaigns()
+                self._send_json(200, {"campaign": created, "campaigns": all_campaigns})
+            except Exception as exc:
+                self._send_json(422, {"error": str(exc)})
+            return
+
+        if path == "/api/campaigns/status":
+            cid = str(body.get("id") or body.get("campaign_id") or "").strip()
+            new_status = str(body.get("status") or "").strip()
+            try:
+                updated = update_campaign_record(cid, {"status": new_status})
+                all_campaigns = load_local_campaigns()
+                self._send_json(200, {"campaign": updated, "campaigns": all_campaigns})
+            except Exception as exc:
+                self._send_json(422, {"error": str(exc)})
+            return
+
+        if path == "/api/campaigns/update":
+            cid = str(body.get("id") or body.get("campaign_id") or "").strip()
+            updates = body.get("updates") if isinstance(body.get("updates"), dict) else body
+            try:
+                updated = update_campaign_record(cid, updates)
+                all_campaigns = load_local_campaigns()
+                self._send_json(200, {"campaign": updated, "campaigns": all_campaigns})
+            except Exception as exc:
+                self._send_json(422, {"error": str(exc)})
             return
 
         # Require authentication for planner, postal code, Cookidoo, and Mercadona cart operations
@@ -319,7 +438,7 @@ class CompanionRequestHandler(BaseHTTPRequestHandler):
 def run_server() -> None:
     port = int(os.environ.get("PORT", "8080"))
     server = ThreadingHTTPServer(("0.0.0.0", port), CompanionRequestHandler)
-    print(f"Mercadona AI Companion listening on http://0.0.0.0:{port}")
+    print(f"Mercadona Service ({SERVICE_ROLE}) listening on http://0.0.0.0:{port}")
     server.serve_forever()
 
 

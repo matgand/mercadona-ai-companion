@@ -5,39 +5,49 @@
 
 const PROFILES = [
   {
-    id: "family-explorer",
-    name: "Family Explorer",
-    shortName: "Familia",
-    household: "2 adultos · 1 niño",
-    primaryNeed: "Variedad, ahorro y planificación sin fricción",
-    icon: "FE",
+    id: "familias",
+    name: "Familias",
+    shortName: "Familias",
+    household: "2 adultos · 1–2 niños",
+    primaryNeed: "Variedad, platos para todos los gustos, ahorro y planificación sin fricción",
+    icon: "FA",
   },
   {
-    id: "healthy-couple",
-    name: "Healthy Couple",
-    shortName: "Pareja saludable",
-    household: "2 adultos",
-    primaryNeed: "Nutrición transparente, productos frescos y control de calorías",
-    icon: "HC",
+    id: "saludables",
+    name: "Saludables",
+    shortName: "Saludables",
+    household: "1–2 adultos",
+    primaryNeed: "Nutrición transparente, productos frescos de temporada y control de calorías",
+    icon: "SA",
   },
   {
-    id: "convenience-professional",
-    name: "Convenience Professional",
-    shortName: "Profesional exprés",
-    household: "1 adulto",
-    primaryNeed: "Rapidez entre semana, simplicidad y cero desperdicio",
-    icon: "CP",
+    id: "rutina-rapida",
+    name: "Rutina rápida",
+    shortName: "Rutina rápida",
+    household: "1–2 adultos",
+    primaryNeed: "Rapidez entre semana (≤ 25 min), simplicidad en Thermomix y cero complicaciones",
+    icon: "RR",
+  },
+  {
+    id: "ahorro",
+    name: "Ahorro",
+    shortName: "Ahorro",
+    household: "2 adultos · 1–2 niños",
+    primaryNeed: "Presupuesto ajustado, máximo aprovechamiento de despensa y cero desperdicio",
+    icon: "AH",
   },
 ];
 
-const CAMPAIGNS = [
+const DEFAULT_CAMPAIGNS = [
   {
-    id: "summer-family-week",
+    id: "familias-semana-resuelta",
     title: "Tu semana familiar, resuelta",
-    tagline: "Cinco cenas familiares variadas. Una sola cesta en Mercadona. Más tiempo libre.",
-    occasion: "Semana familiar",
-    profileId: "family-explorer",
-    badge: "Recomendado para tu hogar",
+    tagline: "Cinco cenas familiares variadas en Thermomix. Una sola cesta en Mercadona. Más tiempo libre.",
+    category: "Familias",
+    occasion: "Familias",
+    profileId: "familias",
+    badge: "Recomendado para Familias",
+    status: "Activa",
     imageUrl: "/meals/lemon-hake-potatoes.webp",
     seedPrompt:
       "Planifica 5 cenas entre semana para 2 adultos y 1 niño. Mantén el presupuesto bajo 65€, prepara cada receta en 25 minutos o menos, incluye una cena de pescado y usa la pasta que ya tengo en casa.",
@@ -47,27 +57,31 @@ const CAMPAIGNS = [
     maxCaloriesPerServing: null,
   },
   {
-    id: "healthy-week-reset",
+    id: "saludables-ligeras-equilibradas",
     title: "Cenas ligeras y equilibradas",
-    tagline: "Cinco cenas saludables con calorías y presupuesto bajo control.",
-    occasion: "Saludable",
-    profileId: "healthy-couple",
-    badge: "Adaptado a tus objetivos",
+    tagline: "Cinco cenas saludables diseñadas por nutricionistas con calorías y presupuesto bajo control.",
+    category: "Saludables",
+    occasion: "Saludables",
+    profileId: "saludables",
+    badge: "Objetivo Saludable · ≤ 450 kcal",
+    status: "Activa",
     imageUrl: "/meals/pasta-chickpea-salad.webp",
     seedPrompt:
-      "Planifica 5 cenas para 2 adultos. Mantén el presupuesto bajo 60€, máximo 30 minutos por receta y menos de 450 kcal por ración.",
+      "Planifica 5 cenas saludables para 2 adultos. Mantén el presupuesto bajo 60€, máximo 30 minutos por receta y menos de 450 kcal por ración.",
     mealCount: 5,
     maxBudget: 60,
     maxMinutes: 30,
     maxCaloriesPerServing: 450,
   },
   {
-    id: "fast-workweek",
+    id: "rutina-rapida-25min",
     title: "Cena lista en menos de 25 minutos",
-    tagline: "Cinco cenas rápidas para semanas intensas aprovechando tu despensa.",
+    tagline: "Cinco cenas exprés para semanas intensas sin renunciar a comer casero.",
+    category: "Rutina rápida",
     occasion: "Rutina rápida",
-    profileId: "convenience-professional",
+    profileId: "rutina-rapida",
     badge: "Ideal para semanas con prisa",
+    status: "Activa",
     imageUrl: "/meals/quick-broccoli-salad.webp",
     seedPrompt:
       "Planifica 5 cenas rápidas para 2 adultos. Presupuesto máximo de 50€, máximo 25 minutos por receta, sin frutos secos y usa las espinacas y el arroz que ya tengo en casa.",
@@ -77,17 +91,19 @@ const CAMPAIGNS = [
     maxCaloriesPerServing: null,
   },
   {
-    id: "smart-pantry-week",
+    id: "ahorro-despensa-inteligente",
     title: "Aprovecha tu despensa, compra solo lo justo",
-    tagline: "Menú semanal de bajo desperdicio que descuenta lo que ya tienes en casa.",
-    occasion: "Ahorro y despensa",
-    profileId: "family-explorer",
-    badge: "Cero desperdicio",
+    tagline: "Menú semanal de máximo ahorro y cero desperdicio que descuenta lo que ya tienes en casa.",
+    category: "Ahorro",
+    occasion: "Ahorro",
+    profileId: "ahorro",
+    badge: "Máximo ahorro · Cero desperdicio",
+    status: "Activa",
     imageUrl: "/meals/chickpea-spinach-tomato-rice.webp",
     seedPrompt:
-      "Planifica 5 cenas para 2 adultos y 2 niños con presupuesto máximo de 55€, en 30 minutos o menos, sin lactosa y usa los huevos y las patatas que ya tengo en casa.",
+      "Planifica 5 cenas económicas para 2 adultos y 2 niños con presupuesto máximo de 48€, en 30 minutos o menos, sin lactosa y usa los huevos y las patatas que ya tengo en casa.",
     mealCount: 5,
-    maxBudget: 55,
+    maxBudget: 48,
     maxMinutes: 30,
     maxCaloriesPerServing: null,
   },
@@ -108,10 +124,12 @@ const state = {
     googleClientId: "",
     error: "",
   },
+  campaignLibraryUrl: "https://campaign-library-905208270932.europe-west1.run.app",
+  campaigns: [...DEFAULT_CAMPAIGNS],
   activeTab: "planner", // "planner" | "catalog" | "sources"
-  profileId: "family-explorer",
-  selectedCampaignId: "summer-family-week",
-  prompt: CAMPAIGNS[0].seedPrompt,
+  profileId: "familias",
+  selectedCampaignId: DEFAULT_CAMPAIGNS[0].id,
+  prompt: DEFAULT_CAMPAIGNS[0].seedPrompt,
   detectedPills: [
     "5 cenas",
     "≤ 25 min",
@@ -143,6 +161,11 @@ const state = {
   recipesPage: 1,
   toast: null,
 };
+
+function getActiveCampaigns() {
+  const active = (state.campaigns || []).filter((c) => !c.status || c.status === "Activa");
+  return active.length > 0 ? active : DEFAULT_CAMPAIGNS;
+}
 
 function formatEUR(value) {
   return new Intl.NumberFormat("es-ES", {
@@ -224,6 +247,66 @@ function detectPillsClientSide(text) {
   return pills;
 }
 
+async function fetchCampaignsFromLibrary() {
+  let loaded = null;
+  // 1. Try querying the campaign-library microservice directly via CORS if configured
+  if (state.campaignLibraryUrl) {
+    try {
+      const remoteRes = await fetch(`${state.campaignLibraryUrl}/api/campaigns`);
+      if (remoteRes.ok) {
+        const remoteData = await remoteRes.json();
+        if (Array.isArray(remoteData.campaigns) && remoteData.campaigns.length > 0) {
+          loaded = remoteData.campaigns;
+        }
+      }
+    } catch (e) {
+      // Fallback to local /api/campaigns
+    }
+  }
+  // 2. Fallback or sync via local /api/campaigns
+  if (!loaded) {
+    try {
+      const localRes = await fetch("/api/campaigns");
+      if (localRes.ok) {
+        const localData = await localRes.json();
+        if (localData.campaign_library_url) {
+          state.campaignLibraryUrl = localData.campaign_library_url;
+        }
+        if (Array.isArray(localData.campaigns) && localData.campaigns.length > 0) {
+          loaded = localData.campaigns;
+        }
+      }
+    } catch (e) {
+      // Keep default campaigns
+    }
+  }
+
+  if (loaded && loaded.length > 0) {
+    state.campaigns = loaded;
+    const params = new URLSearchParams(window.location.search);
+    const requestedId = params.get("campaign");
+    const activeList = getActiveCampaigns();
+    const target =
+      (requestedId && state.campaigns.find((c) => c.id === requestedId)) ||
+      activeList.find((c) => c.id === state.selectedCampaignId) ||
+      activeList.find((c) => c.profileId === state.profileId) ||
+      activeList[0];
+
+    if (target) {
+      const prevId = state.selectedCampaignId;
+      state.selectedCampaignId = target.id;
+      if (requestedId && target.profileId) {
+        state.profileId = target.profileId;
+      }
+      if (prevId !== target.id || requestedId) {
+        state.prompt = target.seedPrompt;
+        state.detectedPills = detectPillsClientSide(state.prompt);
+      }
+    }
+    render();
+  }
+}
+
 async function checkSession() {
   try {
     const res = await fetch("/api/auth/session");
@@ -233,11 +316,15 @@ async function checkSession() {
     state.auth.user = data.user || null;
     state.auth.allowedUsers = data.allowed_users || state.auth.allowedUsers;
     state.auth.googleClientId = data.google_client_id || "";
+    if (data.campaign_library_url) {
+      state.campaignLibraryUrl = data.campaign_library_url;
+    }
     render();
   } catch (err) {
     state.auth.checked = true;
     render();
   }
+  await fetchCampaignsFromLibrary();
 }
 
 async function loginWithEmail(email) {
@@ -546,6 +633,7 @@ function renderHeader() {
         <a href="#planner" data-tab="planner">Mi semana</a>
         <a href="#catalog" data-tab="catalog" ${state.activeTab === "catalog" ? 'aria-current="page"' : ""}>Catálogo Mercadona</a>
         <a href="#sources" data-tab="sources" ${state.activeTab === "sources" ? 'aria-current="page"' : ""}>Cookidoo &amp; APIs</a>
+        <a href="${escapeHtml(state.campaignLibraryUrl || "/marketing")}" target="_blank" rel="noopener">Campaign Library ↗</a>
       </nav>
       <div class="header-controls">
         <form id="postal-code-form" class="postal-selector" title="Configura tu código postal para consultar disponibilidad en tiempo real en Mercadona">
@@ -881,8 +969,11 @@ function renderExperiencePanel() {
 
 function renderPlannerView() {
   const activeProfile = PROFILES.find((p) => p.id === state.profileId) || PROFILES[0];
+  const activeCampaigns = getActiveCampaigns();
   const featuredCampaign =
-    CAMPAIGNS.find((c) => c.id === state.selectedCampaignId) || CAMPAIGNS[0];
+    state.campaigns.find((c) => c.id === state.selectedCampaignId) ||
+    activeCampaigns.find((c) => c.profileId === state.profileId) ||
+    activeCampaigns[0];
 
   return `
     <section class="personalised-hero" id="for-you">
@@ -912,7 +1003,7 @@ function renderPlannerView() {
           <div class="campaign-facts light">
             <span>${featuredCampaign.mealCount} cenas</span>
             <span>≤ ${featuredCampaign.maxMinutes} min</span>
-            <span>≤ €${featuredCampaign.maxBudget.toFixed(2)}</span>
+            <span>≤ €${Number(featuredCampaign.maxBudget).toFixed(2)}</span>
           </div>
           <button class="campaign-hero-button" type="button" id="hero-personalise-btn">
             Personalizar esta semana <span aria-hidden="true">→</span>
@@ -927,11 +1018,12 @@ function renderPlannerView() {
           <p class="eyebrow">Más ideas para tu semana</p>
           <h2 id="campaign-discovery-title">Olvida el buscador. Compra según tu estilo de vida.</h2>
         </div>
-        <span>${CAMPAIGNS.length} propuestas semanales</span>
+        <span>${activeCampaigns.length} propuestas semanales activas</span>
       </div>
       <div class="campaign-card-grid">
-        ${CAMPAIGNS.map(
-          (c) => `
+        ${activeCampaigns
+          .map(
+            (c) => `
           <button
             type="button"
             class="discovery-campaign-card ${c.id === featuredCampaign.id ? "selected" : ""}"
@@ -940,14 +1032,15 @@ function renderPlannerView() {
           >
             <img src="${escapeHtml(c.imageUrl)}" alt="" />
             <span class="discovery-campaign-copy">
-              <small>${escapeHtml(c.occasion)}</small>
+              <small>${escapeHtml(c.category || c.occasion)}</small>
               <strong>${escapeHtml(c.title)}</strong>
-              <span>${c.mealCount} cenas · ≤ ${c.maxMinutes} min · ≤ €${c.maxBudget.toFixed(2)}</span>
+              <span>${c.mealCount} cenas · ≤ ${c.maxMinutes} min · ≤ €${Number(c.maxBudget).toFixed(2)}</span>
             </span>
             <span class="discovery-arrow" aria-hidden="true">↗</span>
           </button>
         `
-        ).join("")}
+          )
+          .join("")}
       </div>
     </section>
 
@@ -1257,10 +1350,13 @@ function bindEvents() {
   if (profileSelect) {
     profileSelect.addEventListener("change", (e) => {
       state.profileId = e.target.value;
-      const matchingCampaign = CAMPAIGNS.find((c) => c.profileId === state.profileId) || CAMPAIGNS[0];
-      state.selectedCampaignId = matchingCampaign.id;
-      state.prompt = matchingCampaign.seedPrompt;
-      state.detectedPills = detectPillsClientSide(state.prompt);
+      const activeList = getActiveCampaigns();
+      const matchingCampaign = activeList.find((c) => c.profileId === state.profileId) || activeList[0];
+      if (matchingCampaign) {
+        state.selectedCampaignId = matchingCampaign.id;
+        state.prompt = matchingCampaign.seedPrompt;
+        state.detectedPills = detectPillsClientSide(state.prompt);
+      }
       render();
     });
   }
@@ -1269,9 +1365,13 @@ function bindEvents() {
   document.querySelectorAll("[data-campaign-id]").forEach((btn) => {
     btn.addEventListener("click", () => {
       const cid = btn.getAttribute("data-campaign-id");
-      const camp = CAMPAIGNS.find((c) => c.id === cid);
+      const activeList = getActiveCampaigns();
+      const camp = activeList.find((c) => c.id === cid) || state.campaigns.find((c) => c.id === cid);
       if (camp) {
         state.selectedCampaignId = camp.id;
+        if (camp.profileId) {
+          state.profileId = camp.profileId;
+        }
         state.prompt = camp.seedPrompt;
         state.detectedPills = detectPillsClientSide(state.prompt);
         render();
@@ -1445,5 +1545,8 @@ function bindEvents() {
   }
 }
 
-// Initialize app
+// Initialize app and auto-refresh campaigns when returning to the tab
 checkSession();
+window.addEventListener("focus", () => {
+  fetchCampaignsFromLibrary();
+});
