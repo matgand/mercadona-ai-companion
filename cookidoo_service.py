@@ -19,13 +19,29 @@ RECIPES_FILE = DATA_DIR / "cookidoo_recipes.json"
 _RECIPES_CACHE: list[dict[str, Any]] | None = None
 
 
+def sanitize_recipe_description(desc: str, ingredients: list[str] | None = None) -> str:
+    """Ensures recipe descriptions never contain 'Receta oficial de Thermomix Cookidoo'."""
+    cleaned = re.sub(
+        r"^Receta\s+oficial\s+de\s+Thermomix\s+Cookidoo\s*(?:\([^)]*\))?\s*(?:con\s+)?",
+        "",
+        str(desc or "").strip(),
+        flags=re.IGNORECASE,
+    ).strip()
+    if cleaned and cleaned != str(desc or "").strip():
+        return f"Plato casero elaborado con {cleaned[0].lower() + cleaned[1:]}"
+    return cleaned
+
+
 def load_cookidoo_catalog() -> list[dict[str, Any]]:
     """Loads the verified Cookidoo recipe catalog (5,000 Spanish recipes) with in-memory caching."""
     global _RECIPES_CACHE
     if _RECIPES_CACHE is not None:
         return _RECIPES_CACHE
     if RECIPES_FILE.exists():
-        _RECIPES_CACHE = json.loads(RECIPES_FILE.read_text(encoding="utf-8"))
+        loaded = json.loads(RECIPES_FILE.read_text(encoding="utf-8"))
+        for r in loaded:
+            r["description"] = sanitize_recipe_description(r.get("description", ""), r.get("ingredients"))
+        _RECIPES_CACHE = loaded
         return _RECIPES_CACHE
     return []
 

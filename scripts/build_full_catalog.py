@@ -440,8 +440,20 @@ def build_cookidoo_5000_catalog(products: dict[str, dict[str, Any]]) -> list[dic
                     cal = 410 + (h_seed % 210)
 
                 est_cost = round(sum(products[pid]["unit_price"] for pid in mapped_pids if pid in products), 2)
-                ing_summary = ", ".join(ing_titles[:5]) if ing_titles else "ingredientes frescos de Mercadona"
-                description = f"Receta oficial de Thermomix Cookidoo ({cat_label}) con {ing_summary}."
+                non_trivial = [
+                    x.strip()
+                    for x in ing_titles
+                    if x.strip() and x.strip().lower() not in {"sal", "agua", "pimienta", "pimienta molida", "pimienta negra", "pimienta negra molida"}
+                ][:4]
+                if not non_trivial:
+                    non_trivial = [x.strip() for x in ing_titles if x.strip()][:4]
+                if not non_trivial:
+                    ing_summary = "ingredientes frescos seleccionados"
+                elif len(non_trivial) == 1:
+                    ing_summary = non_trivial[0]
+                else:
+                    ing_summary = ", ".join(non_trivial[:-1]) + " y " + non_trivial[-1]
+                description = f"Plato casero elaborado con {ing_summary}."
 
                 by_rid[rid] = {
                     "recipe_id": rid,

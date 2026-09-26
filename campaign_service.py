@@ -19,7 +19,7 @@ from pathlib import Path
 from typing import Any
 
 from cookidoo_service import load_cookidoo_catalog
-from gemini_planner import MODEL_FALLBACK, MODEL_PRIMARY, parse_constraints
+from gemini_planner import MODEL_FALLBACK, MODEL_PRIMARY, parse_constraints, validate_meal_planning_prompt
 
 DATA_DIR = Path(__file__).resolve().parent / "data"
 CAMPAIGNS_FILE = DATA_DIR / "campaigns.json"
@@ -342,6 +342,9 @@ def generate_campaign_from_brief(
     clean_brief = brief.strip()
     if not clean_brief:
         raise ValueError("Escribe una descripción en lenguaje natural para generar la campaña.")
+    is_valid, scope_err = validate_meal_planning_prompt(clean_brief)
+    if not is_valid:
+        raise ValueError(scope_err)
 
     category = _infer_category_from_brief(clean_brief, category_hint)
     prof_id = CATEGORY_TO_PROFILE_ID.get(category, "familias")

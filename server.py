@@ -35,7 +35,13 @@ from campaign_service import (
     update_campaign_record,
 )
 from cookidoo_service import load_cookidoo_catalog, send_recipe_to_thermomix
-from gemini_planner import build_weekly_plan, format_constraint_pills, parse_constraints, swap_single_recipe
+from gemini_planner import (
+    build_weekly_plan,
+    format_constraint_pills,
+    parse_constraints,
+    swap_single_recipe,
+    validate_meal_planning_prompt,
+)
 from mercadona_service import (
     load_snapshot_products,
     prepare_mercadona_oneclick_cart,
@@ -385,6 +391,10 @@ class CompanionRequestHandler(BaseHTTPRequestHandler):
             variety_seed = str(body.get("varietySeed") or "1")
             if not prompt:
                 self._send_json(400, {"error": "Escribe una petición para planificar tu menú semanal."})
+                return
+            is_valid, scope_err = validate_meal_planning_prompt(prompt)
+            if not is_valid:
+                self._send_json(422, {"code": "OUT_OF_SCOPE_PROMPT", "error": scope_err})
                 return
             try:
                 plan = build_weekly_plan(

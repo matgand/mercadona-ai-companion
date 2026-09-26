@@ -207,6 +207,68 @@ def extract_pantry_items(prompt: str) -> list[str]:
     return found
 
 
+OFF_TOPIC_PATTERNS = re.compile(
+    r"\b(?:"
+    r"ignora\s+(?:las\s+|tus\s+)?instrucciones|olvida\s+(?:las\s+|tus\s+)?instrucciones|"
+    r"ignore\s+(?:all\s+|previous\s+)?instructions|system\s+prompt|act[uú]a\s+como|jailbreak|"
+    r"python|javascript|typescript|java\b|c\+\+|html|css|sql\b|react\b| código|codigo\s+fuente|script\b|algoritmo|compilar|regex|"
+    r"ecuaci[oó]n|derivada|integral\s+de|matem[aá]ticas|teorema|"
+    r"poema|poes[ií]a|chiste|canci[oó]n|novela|ensayo\s+sobre|redacci[oó]n|curr[ií]culum|hor[oó]scopo|"
+    r"traduce|traducir|resumen\s+del\s+libro|"
+    r"presidente|elecciones|pol[ií]tica|gobierno|ministro|diputado|"
+    r"f[uú]tbol|real\s+madrid|barcelona\s+fc|champions\s+league|mundial\s+de|nba\b|f[oó]rmula\s*1|"
+    r"capital\s+de|qui[eé]n\s+gan[oó]|qui[eé]n\s+fue|qui[eé]n\s+es\s+el|cu[aá]ntos\s+habitantes|"
+    r"qu[eé]\s+tiempo\s+hace|pron[oó]stico\s+del\s+tiempo|clima\s+en|"
+    r"bitcoin|criptomoneda|ethereum|bolsa\s+de\s+valores|hipoteca|declaraci[oó]n\s+de\s+la\s+renta"
+    r")\b",
+    re.IGNORECASE,
+)
+
+MEAL_PLANNING_DOMAIN_PATTERNS = re.compile(
+    r"(?:\b(?:"
+    r"cena|cenas|comida|comidas|men[uú]|men[uú]s|plan|planifica\w*|semana\w*|d[ií]as?|"
+    r"lunes|martes|mi[eé]rcoles|jueves|viernes|s[aá]bado|domingo|desayuno|almuerzo|merienda|"
+    r"plato|platos|receta|recetas|raci[oó]n|raciones|dinner\w*|meal\w*|weekly|recipe\w*|"
+    r"cocin\w*|prepar\w*|thermomix|cookidoo|varoma|horno|vapor|plancha|guiso|estofado|asad\w*|saltead\w*|"
+    r"minutos?|mins?|r[aá]pid\w*|f[aá]cil\w*|expr[eé]s|"
+    r"mercadona|hacendado|cesta|carrito|compra\w*|presupuesto|euros?|eur|ahorr\w*|barat\w*|econ[oó]mic\w*|"
+    r"adultos?|ni[ñn]os?|familia\w*|personas?|pareja|casa|despensa|nevera|tengo|aprovech\w*|ingredientes?|"
+    r"kcal|calor[ií]as?|saludable\w*|san[oa]s?|liger[oa]s?|dieta|nutrici[oó]n|prote[ií]nas?|fibra|"
+    r"vegetarian[oa]s?|vegan[oa]s?|alergi\w*|al[eé]rgic\w*|intoleran\w*|sin\s+gluten|cel[ií]ac\w*|"
+    r"sin\s+lactosa|l[aá]cteos?|frutos?\s+secos?|cacahuetes?|mariscos?|crust[aá]ceos?|moluscos?|soja|s[eé]samo|apio|mostaza|altramuces|sulfitos|"
+    r"pollo|pavo|ternera|cerdo|carne|pescado|merluza|salm[oó]n|bacalao|at[uú]n|dorada|lubina|"
+    r"gambas?|langostinos?|mejill\w*|calamar\w*|sepia|pulpo|huevos?|leche|queso|yogur|nata|mantequilla|"
+    r"pasta|macarrones|espaguetis|tallarines|fideos|lasa[ñn]a|[ñn]oquis|arroz|risotto|paella|quinoa|cusc[uú]s|avena|"
+    r"pan|harina|pizza|quiche|empanada|fajitas?|tacos?|wraps?|tortilla|"
+    r"lentejas|garbanzos|alubias|jud[ií]as|guisantes|tofu|edamame|"
+    r"verduras?|hortalizas?|ensaladas?|sopas?|cremas?|pur[eé]s?|caldos?|gazpacho|salmorejo|pisto|"
+    r"patatas?|boniato|tomates?|cebollas?|ajos?|pimientos?|zanahorias?|calabac[ií]n|berenjenas?|"
+    r"espinacas?|br[oó]coli|coliflor|kale|esp[aá]rragos?|champi[ñn]\w*|setas|aguacates?|pepinos?|lechuga|brotes|"
+    r"aceitunas?|aceite|lim[oó]n|naranja|manzanas?|pl[aá]tanos?|mango|fresas?|frutas?|"
+    r"jam[oó]n|beicon|chorizo|lomo|solomillo|carrilleras?|alb[oó]ndigas?|hamburguesas?|croquetas?|salsa|curry|pesto|hummus"
+    r")\b|€)",
+    re.IGNORECASE,
+)
+
+OUT_OF_SCOPE_MESSAGE = (
+    "Esta petición no está relacionada con la planificación de menús semanales. "
+    "Por favor, indica tus preferencias de comidas, ingredientes, número de días, "
+    "miembros de la familia, alergias, tiempo de cocina o presupuesto en Mercadona."
+)
+
+
+def validate_meal_planning_prompt(prompt: str) -> tuple[bool, str]:
+    """Deterministic pre-Gemini guardrail that blocks non-menu-planning requests before calling Gemini."""
+    cleaned = (prompt or "").strip()
+    if len(cleaned) < 4:
+        return False, OUT_OF_SCOPE_MESSAGE
+    if OFF_TOPIC_PATTERNS.search(cleaned):
+        return False, OUT_OF_SCOPE_MESSAGE
+    if not MEAL_PLANNING_DOMAIN_PATTERNS.search(cleaned):
+        return False, OUT_OF_SCOPE_MESSAGE
+    return True, ""
+
+
 def parse_constraints(prompt: str, base_constraints: dict[str, Any] | None = None) -> dict[str, Any]:
     """Parses all weekly menu planning conditions from natural language (Spanish & English)."""
     c = dict(
@@ -471,6 +533,10 @@ def build_weekly_plan(
     variety_seed: str = "default",
 ) -> dict[str, Any]:
     """Builds a complete weekly Cookidoo + Mercadona dinner plan adhering to all user constraints."""
+    is_valid, err_msg = validate_meal_planning_prompt(prompt)
+    if not is_valid:
+        raise ValueError(err_msg)
+
     base_c = current_plan.get("constraints") if current_plan else None
     constraints = parse_constraints(prompt, base_c)
 

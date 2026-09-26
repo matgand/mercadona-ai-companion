@@ -194,6 +194,38 @@ function showToast(title, body) {
   }, 5500);
 }
 
+const OFF_TOPIC_REGEX = /\b(?:ignora\s+(?:las\s+|tus\s+)?instrucciones|olvida\s+(?:las\s+|tus\s+)?instrucciones|ignore\s+(?:all\s+|previous\s+)?instructions|system\s+prompt|act[uú]a\s+como|jailbreak|python|javascript|typescript|java\b|c\+\+|html|css|sql\b|react\b|c[oó]digo|script\b|algoritmo|compilar|regex|ecuaci[oó]n|derivada|integral\s+de|matem[aá]ticas|teorema|poema|poes[ií]a|chiste|canci[oó]n|novela|ensayo\s+sobre|redacci[oó]n|curr[ií]culum|hor[oó]scopo|traduce|traducir|resumen\s+del\s+libro|presidente|elecciones|pol[ií]tica|gobierno|ministro|diputado|f[uú]tbol|real\s+madrid|barcelona\s+fc|champions\s+league|mundial\s+de|nba\b|f[oó]rmula\s*1|capital\s+de|qui[eé]n\s+gan[oó]|qui[eé]n\s+fue|qui[eé]n\s+es\s+el|cu[aá]ntos\s+habitantes|qu[eé]\s+tiempo\s+hace|pron[oó]stico\s+del\s+tiempo|clima\s+en|bitcoin|criptomoneda|ethereum|bolsa\s+de\s+valores|hipoteca|declaraci[oó]n\s+de\s+la\s+renta)\b/i;
+
+const MEAL_PLANNING_DOMAIN_REGEX = /(?:\b(?:cena|cenas|comida|comidas|men[uú]|men[uú]s|plan|planifica\w*|semana\w*|d[ií]as?|lunes|martes|mi[eé]rcoles|jueves|viernes|s[aá]bado|domingo|desayuno|almuerzo|merienda|plato|platos|receta|recetas|raci[oó]n|raciones|dinner\w*|meal\w*|weekly|recipe\w*|cocin\w*|prepar\w*|thermomix|cookidoo|varoma|horno|vapor|plancha|guiso|estofado|asad\w*|saltead\w*|minutos?|mins?|r[aá]pid\w*|f[aá]cil\w*|expr[eé]s|mercadona|hacendado|cesta|carrito|compra\w*|presupuesto|euros?|eur|ahorr\w*|barat\w*|econ[oó]mic\w*|adultos?|ni[ñn]os?|familia\w*|personas?|pareja|casa|despensa|nevera|tengo|aprovech\w*|ingredientes?|kcal|calor[ií]as?|saludable\w*|san[oa]s?|liger[oa]s?|dieta|nutrici[oó]n|prote[ií]nas?|fibra|vegetarian[oa]s?|vegan[oa]s?|alergi\w*|al[eé]rgic\w*|intoleran\w*|sin\s+gluten|cel[ií]ac\w*|sin\s+lactosa|l[aá]cteos?|frutos?\s+secos?|cacahuetes?|mariscos?|crust[aá]ceos?|moluscos?|soja|s[eé]samo|apio|mostaza|altramuces|sulfitos|pollo|pavo|ternera|cerdo|carne|pescado|merluza|salm[oó]n|bacalao|at[uú]n|dorada|lubina|gambas?|langostinos?|mejill\w*|calamar\w*|sepia|pulpo|huevos?|leche|queso|yogur|nata|mantequilla|pasta|macarrones|espaguetis|tallarines|fideos|lasa[ñn]a|[ñn]oquis|arroz|risotto|paella|quinoa|cusc[uú]s|avena|pan|harina|pizza|quiche|empanada|fajitas?|tacos?|wraps?|tortilla|lentejas|garbanzos|alubias|jud[ií]as|guisantes|tofu|edamame|verduras?|hortalizas?|ensaladas?|sopas?|cremas?|pur[eé]s?|caldos?|gazpacho|salmorejo|pisto|patatas?|boniato|tomates?|cebollas?|ajos?|pimientos?|zanahorias?|calabac[ií]n|berenjenas?|espinacas?|br[oó]coli|coliflor|kale|esp[aá]rragos?|champi[ñn]\w*|setas|aguacates?|pepinos?|lechuga|brotes|aceitunas?|aceite|lim[oó]n|naranja|manzanas?|pl[aá]tanos?|mango|fresas?|frutas?|jam[oó]n|beicon|chorizo|lomo|solomillo|carrilleras?|alb[oó]ndigas?|hamburguesas?|croquetas?|salsa|curry|pesto|hummus)\b|€)/i;
+
+const OUT_OF_SCOPE_PROMPT_MESSAGE =
+  "Esta petición no está relacionada con la planificación de menús semanales. Por favor, indica tus preferencias de comidas, ingredientes, número de días, miembros de la familia, alergias, tiempo de cocina o presupuesto en Mercadona.";
+
+function validateMealPlanningPrompt(text) {
+  const cleaned = String(text || "").trim();
+  if (cleaned.length < 4) {
+    return { valid: false, message: OUT_OF_SCOPE_PROMPT_MESSAGE };
+  }
+  if (OFF_TOPIC_REGEX.test(cleaned)) {
+    return { valid: false, message: OUT_OF_SCOPE_PROMPT_MESSAGE };
+  }
+  if (!MEAL_PLANNING_DOMAIN_REGEX.test(cleaned)) {
+    return { valid: false, message: OUT_OF_SCOPE_PROMPT_MESSAGE };
+  }
+  return { valid: true, message: "" };
+}
+
+function sanitizeRecipeDescription(desc) {
+  const raw = String(desc || "").trim();
+  const stripped = raw
+    .replace(/^Receta\s+oficial\s+de\s+Thermomix\s+Cookidoo\s*(?:\([^)]*\))?\s*(?:con\s+)?/i, "")
+    .trim();
+  if (stripped && stripped !== raw) {
+    return `Plato casero elaborado con ${stripped.charAt(0).toLowerCase() + stripped.slice(1)}`;
+  }
+  return stripped;
+}
+
 function detectPillsClientSide(text) {
   const pills = [];
   const mMeals = text.match(
@@ -398,6 +430,14 @@ async function generatePlan(promptText) {
   }
   const msg = (promptText || state.prompt || "").trim();
   if (!msg || state.loading) return;
+
+  const domainCheck = validateMealPlanningPrompt(msg);
+  if (!domainCheck.valid) {
+    state.error = domainCheck.message;
+    showToast("Petición fuera de alcance", domainCheck.message);
+    render();
+    return;
+  }
 
   state.loading = true;
   state.error = null;
@@ -801,7 +841,7 @@ function renderExperiencePanel() {
                   <div class="meal-day">${escapeHtml(meal.day)}</div>
                 </div>
                 <h3>${escapeHtml(meal.name)}</h3>
-                <p>${escapeHtml(meal.description)}</p>
+                <p>${escapeHtml(sanitizeRecipeDescription(meal.description))}</p>
                 <div class="meal-meta">
                   <span>${meal.minutes} min</span>
                   <span>${formatEUR(meal.estimated_cost)}</span>
@@ -1066,12 +1106,26 @@ function renderPlannerView() {
             placeholder="Ej.: Planifica 5 cenas para 2 adultos y 1 niño con presupuesto máximo de 65€, menos de 500 kcal por receta, en 25 minutos o menos, sin frutos secos y usando la pasta que ya tengo en casa."
           >${escapeHtml(state.prompt)}</textarea>
 
+          <div
+            id="scope-guard-banner"
+            class="scope-hint"
+            role="alert"
+            style="${validateMealPlanningPrompt(state.prompt).valid ? "display:none;" : "display:block;"}"
+          >
+            ${escapeHtml(OUT_OF_SCOPE_PROMPT_MESSAGE)}
+          </div>
+
           <div class="constraint-row" id="constraint-pills-row" aria-label="Condiciones detectadas">
             ${state.detectedPills.map((pill) => `<span>${escapeHtml(pill)}</span>`).join("")}
           </div>
 
           <div class="form-actions">
-            <button class="primary-button" type="submit" ${state.loading ? "disabled" : ""}>
+            <button
+              class="primary-button"
+              id="planner-submit-btn"
+              type="submit"
+              ${state.loading || !validateMealPlanningPrompt(state.prompt).valid ? "disabled" : ""}
+            >
               ${state.loading ? "Elaborando menú con Gemini" : "Generar mi menú semanal"}
               <span aria-hidden="true">↗</span>
             </button>
@@ -1226,7 +1280,7 @@ function renderSourcesView() {
                 <div class="meal-day">${escapeHtml(r.cookidoo_id)}</div>
               </div>
               <h3>${escapeHtml(r.name)}</h3>
-              <p>${escapeHtml(r.description)}</p>
+              <p>${escapeHtml(sanitizeRecipeDescription(r.description))}</p>
               <div class="meal-meta">
                 <span>${r.minutes} min</span>
                 <span>${formatEUR(r.estimated_cost)}</span>
@@ -1389,7 +1443,7 @@ function bindEvents() {
     });
   }
 
-  // Prompt textarea live pill detection
+  // Prompt textarea live pill detection & pre-Gemini domain guardrail
   const promptArea = document.getElementById("planner-request");
   if (promptArea) {
     promptArea.addEventListener("input", (e) => {
@@ -1398,6 +1452,15 @@ function bindEvents() {
       const pillRow = document.getElementById("constraint-pills-row");
       if (pillRow) {
         pillRow.innerHTML = state.detectedPills.map((p) => `<span>${escapeHtml(p)}</span>`).join("");
+      }
+      const check = validateMealPlanningPrompt(state.prompt);
+      const guardBanner = document.getElementById("scope-guard-banner");
+      if (guardBanner) {
+        guardBanner.style.display = check.valid ? "none" : "block";
+      }
+      const submitBtn = document.getElementById("planner-submit-btn");
+      if (submitBtn) {
+        submitBtn.disabled = state.loading || !check.valid;
       }
     });
   }
