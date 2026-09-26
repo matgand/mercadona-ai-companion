@@ -25,11 +25,18 @@ _LIVE_PRODUCT_CACHE: dict[tuple[str, str], tuple[float, dict[str, Any]]] = {}
 _CACHE_TTL_SECONDS = 900  # 15 minutes
 
 
+_SNAPSHOT_CACHE: dict[str, dict[str, Any]] | None = None
+
+
 def load_snapshot_products() -> dict[str, dict[str, Any]]:
-    """Loads the verified local snapshot of Mercadona products."""
+    """Loads the verified local snapshot of Mercadona products with in-memory caching."""
+    global _SNAPSHOT_CACHE
+    if _SNAPSHOT_CACHE is not None:
+        return _SNAPSHOT_CACHE
     if PRODUCTS_FILE.exists():
         items = json.loads(PRODUCTS_FILE.read_text(encoding="utf-8"))
-        return {str(p["id"]): p for p in items}
+        _SNAPSHOT_CACHE = {str(p["id"]): p for p in items}
+        return _SNAPSHOT_CACHE
     return {}
 
 

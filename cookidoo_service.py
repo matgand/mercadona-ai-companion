@@ -16,10 +16,17 @@ DATA_DIR = Path(__file__).resolve().parent / "data"
 RECIPES_FILE = DATA_DIR / "cookidoo_recipes.json"
 
 
+_RECIPES_CACHE: list[dict[str, Any]] | None = None
+
+
 def load_cookidoo_catalog() -> list[dict[str, Any]]:
-    """Loads the verified Cookidoo recipe catalog with cover photos and Mercadona mappings."""
+    """Loads the verified Cookidoo recipe catalog (5,000 Spanish recipes) with in-memory caching."""
+    global _RECIPES_CACHE
+    if _RECIPES_CACHE is not None:
+        return _RECIPES_CACHE
     if RECIPES_FILE.exists():
-        return json.loads(RECIPES_FILE.read_text(encoding="utf-8"))
+        _RECIPES_CACHE = json.loads(RECIPES_FILE.read_text(encoding="utf-8"))
+        return _RECIPES_CACHE
     return []
 
 

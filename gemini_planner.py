@@ -523,13 +523,38 @@ def build_weekly_plan(
 
     # Deterministic rotation based on variety_seed + prompt so plans feel dynamic and varied
     seed_int = int(hashlib.sha256(f"{prompt}:{variety_seed}".encode("utf-8")).hexdigest()[:8], 16)
-    # Score recipes to favor pantry reuse and budget fit
-    def score_recipe(idx_r: tuple[int, dict[str, Any]]) -> tuple[int, float, int]:
+    STOP_TOKENS = {
+        "para", "cenas", "cena", "semana", "semanal", "menu", "planifica", "quiero",
+        "adultos", "adulto", "ninos", "nino", "familia", "presupuesto", "bajo",
+        "menos", "maximo", "minutos", "receta", "recetas", "calorias", "racion",
+        "tengo", "casa", "usar", "incluye", "platos", "dias", "entre", "euros",
+    }
+
+    def _norm_str(s: str) -> str:
+        return (
+            s.lower()
+            .replace("á", "a")
+            .replace("é", "e")
+            .replace("í", "i")
+            .replace("ó", "o")
+            .replace("ú", "u")
+            .replace("ñ", "n")
+        )
+
+    prompt_tokens = [
+        t for t in re.findall(r"[a-z0-9]+", _norm_str(prompt)) if len(t) >= 4 and t not in STOP_TOKENS and not t.isdigit()
+    ]
+
+    # Score recipes across the 5,000-recipe catalog to favor main dishes, prompt keyword hits, pantry reuse, and budget fit
+    def score_recipe(idx_r: tuple[int, dict[str, Any]]) -> tuple[int, int, int, float, int]:
         idx, r = idx_r
+        is_dinner_rank = 0 if r.get("is_dinner", True) else 1
+        r_text = _norm_str(r["name"] + " " + " ".join(r.get("ingredients", [])))
+        kw_hits = sum(1 for tok in prompt_tokens if tok in r_text)
         pantry_hits = sum(1 for pid in r["product_ids"] if pid in pantry_map)
         net_cost = sum(catalog[pid]["unit_price"] for pid in r["product_ids"] if pid not in pantry_map)
-        jitter = (idx + seed_int) % 7
-        return (-pantry_hits, net_cost + jitter * 0.35, r["minutes"])
+        jitter = ((idx * 31) + seed_int) % 11
+        return (is_dinner_rank, -kw_hits, -pantry_hits, net_cost + jitter * 0.45, r["minutes"])
 
     sorted_candidates = [r for _, r in sorted(enumerate(eligible), key=score_recipe)]
 

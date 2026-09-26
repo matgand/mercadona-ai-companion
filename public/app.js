@@ -138,6 +138,9 @@ const state = {
   addingToCart: false,
   catalogData: null,
   catalogSearch: "",
+  catalogPage: 1,
+  recipesSearch: "",
+  recipesPage: 1,
   toast: null,
 };
 
@@ -1003,32 +1006,43 @@ function renderPlannerView() {
 
 function renderCatalogView() {
   const data = state.catalogData;
+  const allProducts = data?.products || [];
   const q = state.catalogSearch.trim().toLowerCase();
-  const products = (data?.products || []).filter(
+  const filtered = allProducts.filter(
     (p) => !q || p.name.toLowerCase().includes(q) || p.id.includes(q)
   );
+  const pageSize = 30;
+  const totalPages = Math.max(1, Math.ceil(filtered.length / pageSize));
+  const curPage = Math.min(Math.max(1, state.catalogPage), totalPages);
+  const startIdx = (curPage - 1) * pageSize;
+  const pageItems = filtered.slice(startIdx, startIdx + pageSize);
 
   return `
     <section class="source-section" style="max-width:1480px; margin:0 auto; padding: 48px 0;">
       <p class="eyebrow">API de Mercadona Tienda · CP ${escapeHtml(state.postalCode)} (${escapeHtml(state.warehouse)})</p>
-      <h1 style="font-size: clamp(42px, 5vw, 72px); margin-bottom: 18px;">Catálogo de Productos de Mercadona</h1>
+      <h1 style="font-size: clamp(42px, 5vw, 72px); margin-bottom: 18px;">Catálogo de Productos de Mercadona (${allProducts.length})</h1>
       <p class="hero-subtitle">
-        Productos verificados en la API de Mercadona (<code>tienda.mercadona.es/api/products/&lt;id&gt;/?lang=es&amp;wh=${escapeHtml(state.warehouse)}</code>) utilizados para el mapping de ingredientes del planificador.
+        Productos verificados en la API de Mercadona (<code>tienda.mercadona.es/api/categories/</code> y <code>/api/products/&lt;id&gt;/?lang=es&amp;wh=${escapeHtml(state.warehouse)}</code>) utilizados para el mapping de las 5.000 recetas.
       </p>
-      <div style="margin-bottom: 28px; max-width: 460px;">
-        <input
-          type="search"
-          id="catalog-filter-input"
-          placeholder="Buscar producto o ID (ej. Hacendado, pollo, 3400)..."
-          value="${escapeHtml(state.catalogSearch)}"
-          style="width:100%; border:1px solid var(--line); background:#fff; padding:12px 14px; font-size:14px; border-radius:3px;"
-        />
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; margin-bottom: 24px;">
+        <div style="flex:1; min-width: 280px; max-width: 480px;">
+          <input
+            type="search"
+            id="catalog-filter-input"
+            placeholder="Buscar entre ${allProducts.length} productos de Mercadona (ej. Hacendado, salmón, 3400)..."
+            value="${escapeHtml(state.catalogSearch)}"
+            style="width:100%; border:1px solid var(--line); background:#fff; padding:12px 14px; font-size:14px; border-radius:3px;"
+          />
+        </div>
+        <div style="font-size:13px; color:var(--muted);">
+          Mostrando <strong>${filtered.length ? startIdx + 1 : 0}–${Math.min(startIdx + pageSize, filtered.length)}</strong> de <strong>${filtered.length}</strong> productos
+        </div>
       </div>
       <div class="basket-list" style="background:#fff; border:1px solid var(--line); padding: 12px 24px;">
         ${
           !data
             ? `<p style="padding:24px 0;">Cargando catálogo de Mercadona...</p>`
-            : products
+            : pageItems
                 .map(
                   (p) => `
               <div class="basket-row">
@@ -1048,30 +1062,73 @@ function renderCatalogView() {
                 .join("")
         }
       </div>
+      ${
+        totalPages > 1
+          ? `
+        <div class="catalog-pagination">
+          <button type="button" id="cat-prev-btn" ${curPage <= 1 ? "disabled" : ""}>← Anterior</button>
+          <span>Página <strong>${curPage}</strong> de <strong>${totalPages}</strong></span>
+          <button type="button" id="cat-next-btn" ${curPage >= totalPages ? "disabled" : ""}>Siguiente →</button>
+        </div>
+      `
+          : ""
+      }
     </section>
   `;
 }
 
 function renderSourcesView() {
-  const recipes = state.catalogData?.recipes || [];
+  const allRecipes = state.catalogData?.recipes || [];
+  const q = state.recipesSearch.trim().toLowerCase();
+  const filtered = allRecipes.filter(
+    (r) =>
+      !q ||
+      r.name.toLowerCase().includes(q) ||
+      r.cookidoo_id.toLowerCase().includes(q) ||
+      (r.category && r.category.toLowerCase().includes(q)) ||
+      (r.ingredients && r.ingredients.some((i) => i.toLowerCase().includes(q)))
+  );
+  const pageSize = 24;
+  const totalPages = Math.max(1, Math.ceil(filtered.length / pageSize));
+  const curPage = Math.min(Math.max(1, state.recipesPage), totalPages);
+  const startIdx = (curPage - 1) * pageSize;
+  const pageItems = filtered.slice(startIdx, startIdx + pageSize);
+
   return `
     <section class="source-section" style="max-width:1480px; margin:0 auto; padding: 48px 0;">
-      <p class="eyebrow">Transparencia e Integraciones</p>
-      <h1 style="font-size: clamp(42px, 5vw, 72px); margin-bottom: 18px;">Catálogo de Recetas de Cookidoo (${recipes.length})</h1>
+      <p class="eyebrow">Transparencia e Integraciones · Cookidoo España</p>
+      <h1 style="font-size: clamp(42px, 5vw, 72px); margin-bottom: 18px;">Catálogo de Recetas de Cookidoo (${allRecipes.length})</h1>
       <p class="hero-subtitle">
-        Recetas conectadas mediante <code>miaucl/cookidoo-api</code> y metadatos oficiales de Cookidoo con foto de portada, calorías, tiempo de preparación y mapping garantizado al catálogo de Mercadona.
+        Las ${allRecipes.length} recetas de Cookidoo España conectadas mediante <code>miaucl/cookidoo-api</code> con foto de portada oficial, calorías, tiempo de preparación y mapping al catálogo de Mercadona.
       </p>
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; margin-bottom: 24px;">
+        <div style="flex:1; min-width: 280px; max-width: 520px;">
+          <input
+            type="search"
+            id="recipes-filter-input"
+            placeholder="Buscar entre las ${allRecipes.length} recetas por plato, ingrediente o ID (ej. merluza, lentejas, r55690)..."
+            value="${escapeHtml(state.recipesSearch)}"
+            style="width:100%; border:1px solid var(--line); background:#fff; padding:12px 14px; font-size:14px; border-radius:3px;"
+          />
+        </div>
+        <div style="font-size:13px; color:var(--muted);">
+          Mostrando <strong>${filtered.length ? startIdx + 1 : 0}–${Math.min(startIdx + pageSize, filtered.length)}</strong> de <strong>${filtered.length}</strong> recetas
+        </div>
+      </div>
       <div class="meal-grid" style="border-top:1px solid var(--line);">
-        ${recipes
-          .map(
-            (r, idx) => `
+        ${
+          !state.catalogData
+            ? `<p style="padding:24px;">Cargando las 5.000 recetas de Cookidoo España...</p>`
+            : pageItems
+                .map(
+                  (r, idx) => `
           <article class="meal-card">
             <figure class="meal-image">
               <img src="${escapeHtml(r.image_url)}" alt="${escapeHtml(r.name)}" loading="lazy" />
             </figure>
             <div class="meal-card-body">
               <div class="meal-card-topline">
-                <div class="meal-number">#${String(idx + 1).padStart(2, "0")}</div>
+                <div class="meal-number">#${String(startIdx + idx + 1).padStart(2, "0")}</div>
                 <div class="meal-day">${escapeHtml(r.cookidoo_id)}</div>
               </div>
               <h3>${escapeHtml(r.name)}</h3>
@@ -1096,9 +1153,21 @@ function renderSourcesView() {
             </div>
           </article>
         `
-          )
-          .join("")}
+                )
+                .join("")
+        }
       </div>
+      ${
+        totalPages > 1
+          ? `
+        <div class="catalog-pagination">
+          <button type="button" id="rec-prev-btn" ${curPage <= 1 ? "disabled" : ""}>← Anterior</button>
+          <span>Página <strong>${curPage}</strong> de <strong>${totalPages}</strong> (${filtered.length} recetas)</span>
+          <button type="button" id="rec-next-btn" ${curPage >= totalPages ? "disabled" : ""}>Siguiente →</button>
+        </div>
+      `
+          : ""
+      }
     </section>
   `;
 }
@@ -1311,17 +1380,67 @@ function bindEvents() {
     });
   });
 
-  // Catalog search input
+  // Catalog search input & pagination
   const catInput = document.getElementById("catalog-filter-input");
   if (catInput) {
     catInput.addEventListener("input", (e) => {
       state.catalogSearch = e.target.value;
+      state.catalogPage = 1;
       render();
       const refocused = document.getElementById("catalog-filter-input");
       if (refocused) {
         refocused.focus();
         refocused.setSelectionRange(refocused.value.length, refocused.value.length);
       }
+    });
+  }
+
+  const catPrev = document.getElementById("cat-prev-btn");
+  if (catPrev) {
+    catPrev.addEventListener("click", () => {
+      state.catalogPage = Math.max(1, state.catalogPage - 1);
+      render();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+  const catNext = document.getElementById("cat-next-btn");
+  if (catNext) {
+    catNext.addEventListener("click", () => {
+      state.catalogPage += 1;
+      render();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+
+  // Cookidoo recipes search input & pagination
+  const recInput = document.getElementById("recipes-filter-input");
+  if (recInput) {
+    recInput.addEventListener("input", (e) => {
+      state.recipesSearch = e.target.value;
+      state.recipesPage = 1;
+      render();
+      const refocused = document.getElementById("recipes-filter-input");
+      if (refocused) {
+        refocused.focus();
+        refocused.setSelectionRange(refocused.value.length, refocused.value.length);
+      }
+    });
+  }
+
+  const recPrev = document.getElementById("rec-prev-btn");
+  if (recPrev) {
+    recPrev.addEventListener("click", () => {
+      state.recipesPage = Math.max(1, state.recipesPage - 1);
+      render();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+  const recNext = document.getElementById("rec-next-btn");
+  if (recNext) {
+    recNext.addEventListener("click", () => {
+      state.recipesPage += 1;
+      render();
+      window.scrollTo({ top: 0, behavior: "smooth" });
     });
   }
 }
