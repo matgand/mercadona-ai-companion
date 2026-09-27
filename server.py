@@ -244,6 +244,8 @@ class CompanionRequestHandler(BaseHTTPRequestHandler):
         rel = path.lstrip("/") or default_html
         if rel == "marketing":
             rel = "marketing.html"
+        elif rel == "favicon.svg":
+            rel = "favicon.ico"
         elif rel in ("sources", "catalog", "agent"):
             rel = "index.html"
 
@@ -260,6 +262,8 @@ class CompanionRequestHandler(BaseHTTPRequestHandler):
             ctype = "image/svg+xml"
         elif file_path.suffix == ".webp":
             ctype = "image/webp"
+        elif file_path.suffix == ".ico":
+            ctype = "image/x-icon"
         data = file_path.read_bytes()
         self.send_response(200)
         self.send_header("Content-Type", ctype or "application/octet-stream")
