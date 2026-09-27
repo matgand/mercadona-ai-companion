@@ -120,7 +120,13 @@ const state = {
     checked: false,
     authenticated: false,
     user: null,
-    allowedUsers: ["matgand@gmail.com", "mgandolfi@google.com", "andrea.anaut@gmail.com"],
+    iapEmail: null,
+    allowedUsers: [
+      "matgand@gmail.com",
+      "mgandolfi@google.com",
+      "andrea.anaut@gmail.com",
+      "mattia@mgandolfi.altostrat.com",
+    ],
     googleClientId: "",
     error: "",
   },
@@ -281,36 +287,19 @@ function detectPillsClientSide(text) {
 
 async function fetchCampaignsFromLibrary() {
   let loaded = null;
-  // 1. Try querying the campaign-library microservice directly via CORS if configured
-  if (state.campaignLibraryUrl) {
-    try {
-      const remoteRes = await fetch(`${state.campaignLibraryUrl}/api/campaigns`);
-      if (remoteRes.ok) {
-        const remoteData = await remoteRes.json();
-        if (Array.isArray(remoteData.campaigns) && remoteData.campaigns.length > 0) {
-          loaded = remoteData.campaigns;
-        }
+  try {
+    const localRes = await fetch("/api/campaigns");
+    if (localRes.ok) {
+      const localData = await localRes.json();
+      if (localData.campaign_library_url) {
+        state.campaignLibraryUrl = localData.campaign_library_url;
       }
-    } catch (e) {
-      // Fallback to local /api/campaigns
-    }
-  }
-  // 2. Fallback or sync via local /api/campaigns
-  if (!loaded) {
-    try {
-      const localRes = await fetch("/api/campaigns");
-      if (localRes.ok) {
-        const localData = await localRes.json();
-        if (localData.campaign_library_url) {
-          state.campaignLibraryUrl = localData.campaign_library_url;
-        }
-        if (Array.isArray(localData.campaigns) && localData.campaigns.length > 0) {
-          loaded = localData.campaigns;
-        }
+      if (Array.isArray(localData.campaigns) && localData.campaigns.length > 0) {
+        loaded = localData.campaigns;
       }
-    } catch (e) {
-      // Keep default campaigns
     }
+  } catch (e) {
+    // Keep default campaigns
   }
 
   if (loaded && loaded.length > 0) {
@@ -346,6 +335,7 @@ async function checkSession() {
     state.auth.checked = true;
     state.auth.authenticated = Boolean(data.authenticated);
     state.auth.user = data.user || null;
+    state.auth.iapEmail = data.iap_email || null;
     state.auth.allowedUsers = data.allowed_users || state.auth.allowedUsers;
     state.auth.googleClientId = data.google_client_id || "";
     if (data.campaign_library_url) {
@@ -359,36 +349,13 @@ async function checkSession() {
   await fetchCampaignsFromLibrary();
 }
 
-async function loginWithEmail(email) {
-  state.auth.error = "";
-  try {
-    const res = await fetch("/api/auth/login", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email }),
-    });
-    const data = await res.json();
-    if (!res.ok) {
-      state.auth.error = data.error || "Acceso denegado.";
-      render();
-      return;
-    }
-    state.auth.authenticated = true;
-    state.auth.user = data.user;
-    state.auth.error = "";
-    showToast("Sesión iniciada con Google Identity", `Bienvenido/a, ${data.user}`);
-    render();
-  } catch (err) {
-    state.auth.error = "Error de red al verificar la identidad.";
-    render();
-  }
-}
-
 async function logoutUser() {
-  await fetch("/api/auth/logout", { method: "POST" });
-  state.auth.authenticated = false;
-  state.auth.user = null;
-  render();
+  try {
+    await fetch("/api/auth/logout", { method: "POST" });
+  } catch (err) {
+    // Ignore local session clear error before IAP sign-out redirect
+  }
+  window.location.href = "/_gcp_iap/clear_login_cookie";
 }
 
 async function updatePostalCode(newPc) {
@@ -617,6 +584,9 @@ function renderGoogleCloudLockup() {
 
 function renderAuthModal() {
   if (!state.auth.checked || state.auth.authenticated) return "";
+  const detectedAccount = state.auth.iapEmail
+    ? `<div class="auth-error-msg" role="alert" style="margin-bottom: 14px;">La cuenta autenticada (<strong>${escapeHtml(state.auth.iapEmail)}</strong>) no está en la allowlist de este proyecto.</div>`
+    : "";
   return `
     <div class="auth-gate-overlay" role="dialog" aria-modal="true" aria-labelledby="auth-gate-title">
       <div class="auth-gate-card">
@@ -625,28 +595,32 @@ function renderAuthModal() {
           <span class="brand-divider"></span>
           <img class="mercadona-logo" src="/brand/mercadona.svg" alt="Mercadona" style="width: 125px;" />
         </div>
-        <p class="eyebrow" style="margin-bottom: 6px;">Acceso Restringido · Google Identity</p>
-        <h2 id="auth-gate-title">Inicia sesión con tu cuenta de Google</h2>
+        <p class="eyebrow" style="margin-bottom: 6px;">Protegido por Google Cloud Identity-Aware Proxy (IAP)</p>
+        <h2 id="auth-gate-title">Autenticación Google obligatoria</h2>
         <p>
-          El acceso a este planificador está restringido exclusivamente a las cuentas de Google autorizadas en la lista blanca del proyecto.
+          El acceso a esta aplicación en Cloud Run está protegido mediante <strong>Google Cloud Identity-Aware Proxy (IAP)</strong> y restringido exclusivamente a las 4 cuentas de Google autorizadas en la allowlist:
         </p>
-        <div class="allowed-users-box">
-          <span>Usuarios Google autorizados (Click para entrar)</span>
+        ${detectedAccount}
+        <div class="allowed-users-box" aria-label="Cuentas de Google en la allowlist de IAP">
+          <span>Allowlist oficial de Identity-Aware Proxy (solo lectura)</span>
           ${state.auth.allowedUsers
             .map(
               (email) => `
-            <button type="button" class="allowed-user-btn" data-login-email="${escapeHtml(email)}">
+            <div class="allowed-user-btn" style="cursor: default; pointer-events: none;">
               <strong>${escapeHtml(email)}</strong>
-              <small>Entrar con Google →</small>
-            </button>
+              <small style="color: var(--muted);">Autorizado en IAM / IAP</small>
+            </div>
           `
             )
             .join("")}
         </div>
-        <form id="custom-login-form" class="custom-email-form">
-          <input type="email" id="custom-login-email" placeholder="Probar otro email de Google..." required />
-          <button type="submit">Verificar acceso</button>
-        </form>
+        <a
+          href="/_gcp_iap/clear_login_cookie"
+          class="primary-button"
+          style="width: 100%; justify-content: center; text-decoration: none; margin-top: 8px;"
+        >
+          Iniciar sesión con cuenta de Google (IAP)
+        </a>
         ${
           state.auth.error
             ? `<div class="auth-error-msg" role="alert">${escapeHtml(state.auth.error)}</div>`
@@ -1352,22 +1326,6 @@ function render() {
 }
 
 function bindEvents() {
-  // Auth buttons
-  document.querySelectorAll("[data-login-email]").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      loginWithEmail(btn.getAttribute("data-login-email"));
-    });
-  });
-
-  const customLoginForm = document.getElementById("custom-login-form");
-  if (customLoginForm) {
-    customLoginForm.addEventListener("submit", (e) => {
-      e.preventDefault();
-      const input = document.getElementById("custom-login-email");
-      if (input) loginWithEmail(input.value);
-    });
-  }
-
   const logoutBtn = document.getElementById("logout-btn");
   if (logoutBtn) {
     logoutBtn.addEventListener("click", logoutUser);

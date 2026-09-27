@@ -178,6 +178,30 @@ def save_local_campaigns(campaigns: list[dict[str, Any]]) -> list[dict[str, Any]
     return enriched
 
 
+def _get_service_headers(target_base_url: str) -> dict[str, str]:
+    """Builds headers including Cloud Run OIDC Identity Token for IAP-protected microservice-to-microservice calls."""
+    secret = os.environ.get("SESSION_SECRET", "mercadona-companion-secret-key-2026")
+    sync_token = hashlib.sha256(f"internal-sync:{secret}".encode("utf-8")).hexdigest()[:32]
+    headers = {
+        "User-Agent": "MercadonaCampaignSync/1.0",
+        "Accept": "application/json",
+        "X-Internal-Sync-Token": sync_token,
+    }
+    try:
+        meta_url = (
+            "http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/identity"
+            f"?audience={urllib.parse.quote(target_base_url)}"
+        )
+        req = urllib.request.Request(meta_url, headers={"Metadata-Flavor": "Google"})
+        with urllib.request.urlopen(req, timeout=1.5) as resp:
+            id_token = resp.read().decode("utf-8").strip()
+            if id_token:
+                headers["Authorization"] = f"Bearer {id_token}"
+    except Exception:
+        pass
+    return headers
+
+
 def fetch_campaigns_from_remote_or_local() -> list[dict[str, Any]]:
     """If CAMPAIGN_LIBRARY_URL is configured and points to a remote microservice, fetches live campaigns from it."""
     remote_url = os.environ.get("CAMPAIGN_LIBRARY_URL", "").strip().rstrip("/")
@@ -186,7 +210,7 @@ def fetch_campaigns_from_remote_or_local() -> list[dict[str, Any]]:
         try:
             req = urllib.request.Request(
                 f"{remote_url}/api/campaigns?source=internal",
-                headers={"User-Agent": "MercadonaAICompanion/1.0", "Accept": "application/json"},
+                headers=_get_service_headers(remote_url),
             )
             with urllib.request.urlopen(req, timeout=3.5) as resp:
                 data = json.loads(resp.read().decode("utf-8"))
@@ -214,11 +238,13 @@ def push_sync_to_peer_services(campaigns: list[dict[str, Any]]) -> None:
     payload = json.dumps({"campaigns": campaigns}, ensure_ascii=False).encode("utf-8")
     for base_url in peers:
         try:
+            hdrs = _get_service_headers(base_url)
+            hdrs["Content-Type"] = "application/json"
             req = urllib.request.Request(
                 f"{base_url}/api/campaigns/sync",
                 data=payload,
                 method="POST",
-                headers={"Content-Type": "application/json", "User-Agent": "MercadonaCampaignSync/1.0"},
+                headers=hdrs,
             )
             urllib.request.urlopen(req, timeout=3.0).read()
         except Exception:

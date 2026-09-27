@@ -41,7 +41,13 @@ const mState = {
     checked: false,
     authenticated: false,
     user: null,
-    allowedUsers: ["matgand@gmail.com", "mgandolfi@google.com", "andrea.anaut@gmail.com"],
+    iapEmail: null,
+    allowedUsers: [
+      "matgand@gmail.com",
+      "mgandolfi@google.com",
+      "andrea.anaut@gmail.com",
+      "mattia@mgandolfi.altostrat.com",
+    ],
     error: "",
   },
   companionAppUrl: "https://mercadona-ai-companion-905208270932.europe-west1.run.app",
@@ -99,6 +105,9 @@ function renderGoogleCloudLockup() {
 
 function renderAuthModal() {
   if (!mState.auth.checked || mState.auth.authenticated) return "";
+  const detectedAccount = mState.auth.iapEmail
+    ? `<div class="auth-error-msg" role="alert" style="margin-bottom: 14px;">La cuenta autenticada (<strong>${escapeHtml(mState.auth.iapEmail)}</strong>) no está en la allowlist de este proyecto.</div>`
+    : "";
   return `
     <div class="auth-gate-overlay" role="dialog" aria-modal="true" aria-labelledby="auth-gate-title">
       <div class="auth-gate-card">
@@ -107,28 +116,32 @@ function renderAuthModal() {
           <span class="brand-divider"></span>
           <img class="mercadona-logo" src="/brand/mercadona.svg" alt="Mercadona" style="width: 125px;" />
         </div>
-        <p class="eyebrow" style="margin-bottom: 6px;">Campaign Library · Google Identity</p>
-        <h2 id="auth-gate-title">Acceso Marketing Mercadona</h2>
+        <p class="eyebrow" style="margin-bottom: 6px;">Campaign Library · Google Cloud Identity-Aware Proxy (IAP)</p>
+        <h2 id="auth-gate-title">Autenticación Google obligatoria</h2>
         <p>
-          Inicia sesión con tu cuenta de Google autorizada para gestionar las campañas semanales conectadas con Mercadona AI Companion.
+          El acceso a Campaign Library en Cloud Run está protegido mediante <strong>Google Cloud Identity-Aware Proxy (IAP)</strong> y restringido exclusivamente a las 4 cuentas de Google autorizadas:
         </p>
-        <div class="allowed-users-box">
-          <span>Usuarios Google autorizados (Click para entrar)</span>
+        ${detectedAccount}
+        <div class="allowed-users-box" aria-label="Cuentas de Google en la allowlist de IAP">
+          <span>Allowlist oficial de Identity-Aware Proxy (solo lectura)</span>
           ${mState.auth.allowedUsers
             .map(
               (email) => `
-            <button type="button" class="allowed-user-btn" data-login-email="${escapeHtml(email)}">
+            <div class="allowed-user-btn" style="cursor: default; pointer-events: none;">
               <strong>${escapeHtml(email)}</strong>
-              <small>Entrar con Google →</small>
-            </button>
+              <small style="color: var(--muted);">Autorizado en IAM / IAP</small>
+            </div>
           `
             )
             .join("")}
         </div>
-        <form id="custom-login-form" class="custom-email-form">
-          <input type="email" id="custom-login-email" placeholder="Probar otro email de Google..." required />
-          <button type="submit">Verificar acceso</button>
-        </form>
+        <a
+          href="/_gcp_iap/clear_login_cookie"
+          class="primary-button"
+          style="width: 100%; justify-content: center; text-decoration: none; margin-top: 8px;"
+        >
+          Iniciar sesión con cuenta de Google (IAP)
+        </a>
         ${
           mState.auth.error
             ? `<div class="auth-error-msg" role="alert">${escapeHtml(mState.auth.error)}</div>`
@@ -147,6 +160,7 @@ async function initMarketingApp() {
       mState.auth.checked = true;
       mState.auth.authenticated = Boolean(authData.authenticated);
       mState.auth.user = authData.user || null;
+      mState.auth.iapEmail = authData.iap_email || null;
       mState.auth.allowedUsers = authData.allowed_users || mState.auth.allowedUsers;
     } else {
       mState.auth.checked = true;
@@ -177,34 +191,13 @@ async function loadCampaigns() {
   render();
 }
 
-async function loginWithEmail(email) {
-  mState.auth.error = "";
-  try {
-    const res = await fetch("/api/auth/login", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email }),
-    });
-    const data = await res.json();
-    if (!res.ok) {
-      mState.auth.error = data.error || "Acceso denegado.";
-      render();
-      return;
-    }
-    mState.auth.authenticated = true;
-    mState.auth.user = data.user;
-    render();
-  } catch (e) {
-    mState.auth.error = "Error de red al verificar identidad.";
-    render();
-  }
-}
-
 async function logoutUser() {
-  await fetch("/api/auth/logout", { method: "POST" });
-  mState.auth.authenticated = false;
-  mState.auth.user = null;
-  render();
+  try {
+    await fetch("/api/auth/logout", { method: "POST" });
+  } catch (e) {
+    // Ignore local session clear error before IAP sign-out redirect
+  }
+  window.location.href = "/_gcp_iap/clear_login_cookie";
 }
 
 async function handleGenerateCampaign(e) {
@@ -706,20 +699,6 @@ function render() {
 }
 
 function bindMarketingEvents() {
-  // Auth
-  document.querySelectorAll("[data-login-email]").forEach((btn) => {
-    btn.addEventListener("click", () => loginWithEmail(btn.getAttribute("data-login-email")));
-  });
-
-  const customLoginForm = document.getElementById("custom-login-form");
-  if (customLoginForm) {
-    customLoginForm.addEventListener("submit", (e) => {
-      e.preventDefault();
-      const input = document.getElementById("custom-login-email");
-      if (input) loginWithEmail(input.value);
-    });
-  }
-
   const logoutBtn = document.getElementById("logout-btn");
   if (logoutBtn) {
     logoutBtn.addEventListener("click", logoutUser);

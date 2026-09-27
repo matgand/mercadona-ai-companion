@@ -114,15 +114,34 @@ def verify_google_id_token(id_token: str) -> str | None:
 class CompanionRequestHandler(BaseHTTPRequestHandler):
     server_version = "MercadonaAICompanion/2.0"
 
-    def _get_authenticated_user(self) -> str | None:
-        # 1. Check Google Cloud IAP / Cloud Run authenticated header
-        iap_email = self.headers.get("X-Goog-Authenticated-User-Email", "")
+    def _get_iap_email(self) -> str | None:
+        iap_email = self.headers.get("X-Goog-Authenticated-User-Email", "").strip()
         if iap_email:
-            clean_iap = iap_email.split(":")[-1].strip().lower()
-            if clean_iap in get_allowed_users():
-                return clean_iap
+            return iap_email.split(":")[-1].strip().lower()
+        return None
 
-        # 2. Check signed session cookie
+    def _is_internal_service_sync(self) -> bool:
+        expected = hashlib.sha256(f"internal-sync:{SESSION_SECRET}".encode("utf-8")).hexdigest()[:32]
+        provided = self.headers.get("X-Internal-Sync-Token", "").strip()
+        return bool(provided and hmac.compare_digest(provided, expected))
+
+    def _get_authenticated_user(self) -> str | None:
+        allowed = get_allowed_users()
+
+        # 1. Google Cloud Identity-Aware Proxy (IAP) verified header (Primary on Cloud Run)
+        clean_iap = self._get_iap_email()
+        if clean_iap:
+            return clean_iap if clean_iap in allowed else None
+
+        # 2. Cryptographically verified Google OAuth2 Bearer ID Token
+        auth_hdr = self.headers.get("Authorization", "").strip()
+        if auth_hdr.lower().startswith("bearer "):
+            token = auth_hdr[7:].strip()
+            verified_email = verify_google_id_token(token)
+            if verified_email and verified_email in allowed:
+                return verified_email
+
+        # 3. Signed session cookie (issued only after verified Google ID token or IAP authentication)
         cookie_hdr = self.headers.get("Cookie", "")
         if cookie_hdr:
             jar = http.cookies.SimpleCookie()
@@ -173,11 +192,14 @@ class CompanionRequestHandler(BaseHTTPRequestHandler):
 
         if path == "/api/auth/session":
             user = self._get_authenticated_user()
+            iap_email = self._get_iap_email()
             self._send_json(
                 200,
                 {
                     "authenticated": bool(user),
                     "user": user,
+                    "iap_email": iap_email,
+                    "auth_mode": "iap",
                     "allowed_users": get_allowed_users(),
                     "google_client_id": GOOGLE_CLIENT_ID,
                     "service_role": SERVICE_ROLE,
@@ -281,26 +303,47 @@ class CompanionRequestHandler(BaseHTTPRequestHandler):
         body = self._read_json_body()
 
         if path == "/api/auth/login":
+            # Only allow cryptographically verified Google Identity JWT or Cloud Run IAP header.
+            # Unverified plain-text email selection is strictly forbidden.
             id_token = str(body.get("credential") or "").strip()
             email = ""
             if id_token:
                 verified = verify_google_id_token(id_token)
                 if not verified:
-                    self._send_json(401, {"error": "No se pudo verificar el token de Google Identity."})
+                    self._send_json(
+                        401,
+                        {
+                            "code": "INVALID_GOOGLE_TOKEN",
+                            "error": "Token de Google Identity inválido o no verificado.",
+                        },
+                    )
                     return
                 email = verified
             else:
-                email = str(body.get("email") or "").strip().lower()
+                iap_email = self._get_iap_email()
+                if not iap_email:
+                    self._send_json(
+                        401,
+                        {
+                            "code": "IAP_REQUIRED",
+                            "error": (
+                                "La autenticación directa sin verificar está deshabilitada. "
+                                "Inicia sesión con tu cuenta de Google a través de Cloud Run Identity-Aware Proxy (IAP)."
+                            ),
+                        },
+                    )
+                    return
+                email = iap_email
 
             allowed = get_allowed_users()
-            if not email or email not in allowed:
+            if email not in allowed:
                 self._send_json(
                     403,
                     {
                         "code": "USER_NOT_ALLOWED",
                         "error": (
-                            f"Acceso restringido: la cuenta '{email or 'desconocida'}' no está en la lista de "
-                            f"usuarios autorizados ({', '.join(allowed)})."
+                            f"Acceso restringido por Identity-Aware Proxy: la cuenta '{email}' no está en la allowlist "
+                            f"de usuarios autorizados ({', '.join(allowed)})."
                         ),
                     },
                 )
@@ -318,6 +361,9 @@ class CompanionRequestHandler(BaseHTTPRequestHandler):
 
         # Internal microservice-to-microservice campaign synchronization endpoint
         if path == "/api/campaigns/sync":
+            if not (self._is_internal_service_sync() or self._get_authenticated_user()):
+                self._send_json(401, {"error": "No autorizado para sincronización interna."})
+                return
             incoming = body.get("campaigns")
             if isinstance(incoming, list) and len(incoming) > 0:
                 saved = save_local_campaigns(incoming)
@@ -326,7 +372,24 @@ class CompanionRequestHandler(BaseHTTPRequestHandler):
                 self._send_json(400, {"error": "Lista de campañas inválida."})
             return
 
-        # Campaign Library endpoints (can be called from campaign-library UI or via API)
+        # Require real Google Cloud IAP / verified Google authentication for BOTH main app AND Campaign Library
+        user = self._get_authenticated_user()
+        if not user:
+            iap_raw = self._get_iap_email()
+            self._send_json(
+                403 if iap_raw else 401,
+                {
+                    "code": "USER_NOT_ALLOWED" if iap_raw else "AUTHENTICATION_REQUIRED",
+                    "error": (
+                        f"La cuenta '{iap_raw}' no está autorizada en la allowlist de Identity-Aware Proxy."
+                        if iap_raw
+                        else "Autenticación requerida mediante Google Cloud Identity-Aware Proxy (IAP)."
+                    ),
+                },
+            )
+            return
+
+        # Campaign Library endpoints (protected by the same IAP + 4-user allowlist)
         if path == "/api/campaigns/generate":
             brief = str(body.get("brief") or body.get("prompt") or "").strip()
             category = body.get("category")
@@ -363,18 +426,6 @@ class CompanionRequestHandler(BaseHTTPRequestHandler):
                 self._send_json(200, {"campaign": updated, "campaigns": all_campaigns})
             except Exception as exc:
                 self._send_json(422, {"error": str(exc)})
-            return
-
-        # Require authentication for planner, postal code, Cookidoo, and Mercadona cart operations
-        user = self._get_authenticated_user()
-        if not user:
-            self._send_json(
-                401,
-                {
-                    "code": "AUTHENTICATION_REQUIRED",
-                    "error": "Inicia sesión con una cuenta de Google autorizada para utilizar el planificador.",
-                },
-            )
             return
 
         if path == "/api/postal-code":
