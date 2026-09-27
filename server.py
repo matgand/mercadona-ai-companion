@@ -43,9 +43,12 @@ from gemini_planner import (
     validate_meal_planning_prompt,
 )
 from mercadona_service import (
+    clear_mercadona_session,
+    get_mercadona_session_status,
     load_snapshot_products,
     prepare_mercadona_oneclick_cart,
     resolve_postal_code,
+    verify_and_save_mercadona_session,
 )
 
 PUBLIC_DIR = Path(__file__).resolve().parent / "public"
@@ -205,8 +208,14 @@ class CompanionRequestHandler(BaseHTTPRequestHandler):
                     "service_role": SERVICE_ROLE,
                     "companion_app_url": get_companion_url(),
                     "campaign_library_url": get_campaign_library_url(),
+                    "mercadona_session": get_mercadona_session_status(user or "default"),
                 },
             )
+            return
+
+        if path == "/api/mercadona/session":
+            user = self._get_authenticated_user()
+            self._send_json(200, get_mercadona_session_status(user or "default"))
             return
 
         if path == "/api/campaigns":
@@ -493,10 +502,37 @@ class CompanionRequestHandler(BaseHTTPRequestHandler):
             self._send_json(200, res)
             return
 
+        if path == "/api/mercadona/session":
+            action = str(body.get("action") or "").strip().lower()
+            if action == "disconnect":
+                res = clear_mercadona_session(user or "default")
+                self._send_json(200, res)
+                return
+            auth_input = str(body.get("auth_input") or body.get("mercadona_auth") or "").strip()
+            postal_code = str(body.get("postal_code") or "28016").strip()
+            try:
+                res = verify_and_save_mercadona_session(
+                    raw_input=auth_input,
+                    postal_code=postal_code,
+                    user_email=user or "default",
+                )
+                self._send_json(200, res)
+            except Exception as exc:
+                self._send_json(422, {"connected": False, "error": str(exc)})
+            return
+
         if path == "/api/mercadona/cart":
             basket = body.get("basket") or []
             postal_code = str(body.get("postal_code") or "28016")
-            res = prepare_mercadona_oneclick_cart(basket, postal_code)
+            mercadona_auth = str(body.get("mercadona_auth") or "").strip() or None
+            mode = str(body.get("mode") or "add").strip().lower()
+            res = prepare_mercadona_oneclick_cart(
+                basket=basket,
+                postal_code=postal_code,
+                user_email=user or "default",
+                raw_auth_input=mercadona_auth,
+                mode=mode if mode in ("add", "replace") else "add",
+            )
             self._send_json(200, res)
             return
 

@@ -158,6 +158,18 @@ const state = {
   cookidooModalOpen: false,
   cookidooEmail: "",
   cookidooPassword: "",
+  mercadonaSession: {
+    connected: false,
+    customer_id: null,
+    warehouse: null,
+    has_refresh_token: false,
+    masked_token: null,
+  },
+  mercadonaModalOpen: false,
+  mercadonaAuthInput: "",
+  mercadonaSyncMode: "add", // "add" | "replace"
+  mercadonaVerifying: false,
+  mercadonaVerifyError: "",
   cartAddedResult: null,
   addingToCart: false,
   catalogData: null,
@@ -341,6 +353,15 @@ async function checkSession() {
     if (data.campaign_library_url) {
       state.campaignLibraryUrl = data.campaign_library_url;
     }
+    if (data.mercadona_session) {
+      state.mercadonaSession = {
+        ...state.mercadonaSession,
+        ...data.mercadona_session,
+      };
+      if (data.mercadona_session.warehouse) {
+        state.warehouse = data.mercadona_session.warehouse;
+      }
+    }
     render();
   } catch (err) {
     state.auth.checked = true;
@@ -515,9 +536,78 @@ async function sendToThermomix(recipeId, cookidooUrl, recipeName) {
   }
 }
 
+async function connectMercadonaSession() {
+  const input = (state.mercadonaAuthInput || "").trim();
+  if (!input) {
+    state.mercadonaVerifyError =
+      "Pega tu Bearer token JWT, refresh_token o comando 'Copy as cURL' de tienda.mercadona.es.";
+    render();
+    return;
+  }
+  state.mercadonaVerifying = true;
+  state.mercadonaVerifyError = "";
+  render();
+  try {
+    const res = await fetch("/api/mercadona/session", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        auth_input: input,
+        postal_code: state.postalCode,
+      }),
+    });
+    const data = await res.json();
+    if (res.ok && data.connected) {
+      state.mercadonaSession = {
+        connected: true,
+        customer_id: data.customer_id,
+        warehouse: data.warehouse || state.warehouse,
+        has_refresh_token: Boolean(data.has_refresh_token),
+        masked_token: data.masked_token,
+      };
+      if (data.warehouse) {
+        state.warehouse = data.warehouse;
+      }
+      state.mercadonaAuthInput = "";
+      state.mercadonaModalOpen = false;
+      showToast("Cuenta de Mercadona.es conectada", data.message);
+    } else {
+      state.mercadonaVerifyError = data.error || "No se pudo verificar el token con tienda.mercadona.es.";
+    }
+  } catch (err) {
+    state.mercadonaVerifyError = err.message || "Error al conectar con tienda.mercadona.es.";
+  } finally {
+    state.mercadonaVerifying = false;
+    render();
+  }
+}
+
+async function disconnectMercadonaSession() {
+  try {
+    await fetch("/api/mercadona/session", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ action: "disconnect" }),
+    });
+    state.mercadonaSession = {
+      connected: false,
+      customer_id: null,
+      warehouse: null,
+      has_refresh_token: false,
+      masked_token: null,
+    };
+    state.cartAddedResult = null;
+    showToast("Sesión desvinculada", "Se ha desvinculado tu sesión de tienda.mercadona.es.");
+    render();
+  } catch (err) {
+    render();
+  }
+}
+
 async function addBasketToMercadonaOneClick() {
   if (!state.plan || state.addingToCart) return;
   state.addingToCart = true;
+  state.mercadonaVerifyError = "";
   render();
   try {
     const res = await fetch("/api/mercadona/cart", {
@@ -526,12 +616,30 @@ async function addBasketToMercadonaOneClick() {
       body: JSON.stringify({
         basket: state.plan.basket,
         postal_code: state.postalCode,
+        mercadona_auth: state.mercadonaAuthInput || undefined,
+        mode: state.mercadonaSyncMode || "add",
       }),
     });
     const data = await res.json();
     if (res.ok) {
       state.cartAddedResult = data;
-      showToast("¡Cesta añadida a Mercadona!", data.message);
+      if (data.live_synced) {
+        state.mercadonaSession = {
+          ...state.mercadonaSession,
+          connected: true,
+          customer_id: data.customer_id || state.mercadonaSession.customer_id,
+          warehouse: data.warehouse || state.warehouse,
+        };
+        state.mercadonaAuthInput = "";
+        state.mercadonaModalOpen = false;
+        showToast("¡Añadido a tu carrito real de Mercadona.es!", data.message);
+      } else {
+        state.mercadonaModalOpen = true;
+        if (data.auth_error) {
+          state.mercadonaVerifyError = data.auth_error;
+        }
+        showToast("Conecta tu cuenta de Mercadona.es", data.message);
+      }
     }
   } catch (err) {
     showToast("Error al sincronizar carrito", "Inténtalo de nuevo en unos segundos.");
@@ -922,13 +1030,95 @@ function renderExperiencePanel() {
           <p>${escapeHtml(p.allergen_notice)}</p>
         </div>
 
+        <div style="display:flex; justify-content:space-between; align-items:center; padding: 14px 0 10px; border-top: 1px solid var(--line); flex-wrap: wrap; gap: 10px; margin-top: 10px;">
+          <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+            <span style="display:inline-block; width:8px; height:8px; border-radius:50%; background:${state.mercadonaSession.connected ? "#007a33" : "#9aa5a0"};"></span>
+            <span style="font-size:12px; color:var(--ink); font-weight:600;">
+              ${
+                state.mercadonaSession.connected
+                  ? `Sesión Mercadona.es conectada (Cliente ${escapeHtml(state.mercadonaSession.customer_id || "activo")} · ${escapeHtml(state.mercadonaSession.warehouse || p.warehouse)}${state.mercadonaSession.has_refresh_token ? " · Auto-refresh activo" : ""})`
+                  : "Sincronización directa con tu carrito real de tienda.mercadona.es"
+              }
+            </span>
+          </div>
+          <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap;">
+            <label style="font-size:12px; color:var(--muted); display:flex; align-items:center; gap:6px;">
+              Modo:
+              <select id="mercadona-sync-mode-select" style="border:1px solid var(--line); background:#fff; padding:4px 8px; font-size:12px; border-radius:2px;">
+                <option value="add" ${state.mercadonaSyncMode === "add" ? "selected" : ""}>Sumar a mi carrito actual</option>
+                <option value="replace" ${state.mercadonaSyncMode === "replace" ? "selected" : ""}>Reemplazar mi carrito</option>
+              </select>
+            </label>
+            <button type="button" class="text-button" id="toggle-mercadona-session-btn">
+              ${
+                state.mercadonaModalOpen
+                  ? "Ocultar configuración Mercadona.es"
+                  : state.mercadonaSession.connected
+                  ? "Cambiar / Desvincular cuenta Mercadona.es"
+                  : "🔗 Conectar cuenta Mercadona.es"
+              }
+            </button>
+          </div>
+        </div>
+
+        ${
+          state.mercadonaModalOpen
+            ? `
+          <div style="background:#f4faf7; border:1px solid #cfded6; padding:16px; margin-bottom:16px; border-radius:3px;">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:10px; flex-wrap:wrap; margin-bottom:8px;">
+              <strong style="font-size:13px;">Conexión directa con la API de carrito de <code>tienda.mercadona.es</code> (<code>PUT /api/customers/&lt;id&gt;/cart/</code>)</strong>
+              ${
+                state.mercadonaSession.connected
+                  ? `<button type="button" class="text-button" id="disconnect-mercadona-session-btn" style="color:#b42318; font-size:12px;">Desvincular sesión actual</button>`
+                  : ""
+              }
+            </div>
+            <ol style="font-size:12px; color:var(--muted); margin: 0 0 12px 18px; padding:0; line-height:1.55;">
+              <li>Inicia sesión en <a href="https://tienda.mercadona.es" target="_blank" rel="noreferrer" style="text-decoration:underline; font-weight:600;">tienda.mercadona.es ↗</a> en tu navegador.</li>
+              <li>Abre las herramientas de desarrollador (<code>F12</code> → pestaña <strong>Network / Red</strong>), haz clic derecho sobre cualquier petición a <code>/api/</code> y elige <strong>Copy → Copy as cURL</strong> (o pega directamente tu <code>Bearer token</code> JWT / <code>refresh_token</code>).</li>
+              <li>Pégalo aquí abajo: el servidor extraerá tu <code>customer_uuid</code> y escribirá los productos directamente en tu carrito real al pulsar el botón 1-Click.</li>
+            </ol>
+            <textarea
+              id="mercadona-auth-input"
+              rows="3"
+              placeholder="Pega aquí el comando 'Copy as cURL' de tienda.mercadona.es, tu Bearer token (eyJ...) o el JSON con refresh_token..."
+              style="width:100%; border:1px solid var(--line); background:#fff; padding:10px; font-size:12px; font-family:monospace; border-radius:2px; margin-bottom:10px;"
+            >${escapeHtml(state.mercadonaAuthInput)}</textarea>
+            ${
+              state.mercadonaVerifyError
+                ? `<div style="color:#b42318; background:#fef3f2; border:1px solid #fecdca; padding:8px 10px; font-size:12px; border-radius:2px; margin-bottom:10px;">${escapeHtml(state.mercadonaVerifyError)}</div>`
+                : ""
+            }
+            <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+              <button
+                type="button"
+                class="primary-button"
+                id="verify-mercadona-session-btn"
+                style="padding: 8px 14px; font-size: 12px;"
+                ${state.mercadonaVerifying ? "disabled" : ""}
+              >
+                ${state.mercadonaVerifying ? "Verificando con tienda.mercadona.es..." : "Verificar y vincular cuenta Mercadona.es"}
+              </button>
+              <span style="font-size:11px; color:var(--muted);">
+                El token JWT de Mercadona dura ~6 semanas (y se renueva automáticamente si incluyes <code>refresh_token</code>).
+              </span>
+            </div>
+          </div>
+        `
+            : ""
+        }
+
         <div class="mercadona-oneclick-bar">
           <div>
             <strong style="display:block; font-size:15px; margin-bottom:4px;">
               Añadir todos los productos al carrito de Mercadona
             </strong>
             <span style="font-size:12px; color:var(--muted);">
-              Sincroniza los ${p.basket.length} productos disponibles en el CP ${escapeHtml(p.postal_code)} (${escapeHtml(p.warehouse)}) por ${formatEUR(p.total)}.
+              ${
+                state.mercadonaSession.connected
+                  ? `Se inyectarán directamente los ${p.basket.length} productos (${formatEUR(p.total)}) en tu carrito real de tienda.mercadona.es.`
+                  : `Sincroniza los ${p.basket.length} productos disponibles en el CP ${escapeHtml(p.postal_code)} (${escapeHtml(p.warehouse)}) por ${formatEUR(p.total)}.`
+              }
             </span>
           </div>
           <button
@@ -939,9 +1129,9 @@ function renderExperiencePanel() {
           >
             ${
               state.addingToCart
-                ? "Sincronizando con Mercadona..."
-                : state.cartAddedResult
-                ? "✓ Productos añadidos al carrito de Mercadona"
+                ? "Sincronizando con Mercadona.es..."
+                : state.cartAddedResult && state.cartAddedResult.live_synced
+                ? "✓ Añadidos a tu carrito real de Mercadona.es"
                 : "Añadir al carrito de Mercadona (1-Click)"
             }
             <span aria-hidden="true">→</span>
@@ -952,15 +1142,28 @@ function renderExperiencePanel() {
           state.cartAddedResult
             ? `
           <div class="confirmation-state" role="status" style="margin-top:14px;">
-            <span>✓</span>
+            <span>${state.cartAddedResult.live_synced ? "✓" : "i"}</span>
             <div>
               <strong>${escapeHtml(state.cartAddedResult.message)}</strong>
-              <p>
-                Puedes revisar cada producto directamente en
-                <a href="https://tienda.mercadona.es/" target="_blank" rel="noreferrer" style="text-decoration:underline; font-weight:700;">
-                  tienda.mercadona.es (CP ${escapeHtml(state.cartAddedResult.postal_code)}) ↗
-                </a>
-              </p>
+              ${
+                state.cartAddedResult.live_synced
+                  ? `
+                <p style="margin-top:4px;">
+                  Carrito en vivo actualizado (${escapeHtml(String(state.cartAddedResult.remote_products_count || state.cartAddedResult.unique_products))} productos · Total en Mercadona: <strong>${escapeHtml(String(state.cartAddedResult.remote_cart_total || state.cartAddedResult.total))} €</strong>).
+                  <a href="https://tienda.mercadona.es/" target="_blank" rel="noreferrer" style="text-decoration:underline; font-weight:700; margin-left:6px;">
+                    Abrir mi carrito en tienda.mercadona.es ↗
+                  </a>
+                </p>
+              `
+                  : `
+                <p style="margin-top:4px;">
+                  Pega tu sesión arriba en <strong>Conectar cuenta Mercadona.es</strong> y vuelve a pulsar el botón para inyectarlos automáticamente en
+                  <a href="https://tienda.mercadona.es/" target="_blank" rel="noreferrer" style="text-decoration:underline; font-weight:700;">
+                    tienda.mercadona.es (CP ${escapeHtml(state.cartAddedResult.postal_code)}) ↗
+                  </a>
+                </p>
+              `
+              }
             </div>
           </div>
         `
@@ -1479,6 +1682,36 @@ function bindEvents() {
   if (cPass) {
     cPass.addEventListener("input", (e) => {
       state.cookidooPassword = e.target.value;
+    });
+  }
+
+  // Mercadona session toggle & inputs
+  const toggleMercadonaBtn = document.getElementById("toggle-mercadona-session-btn");
+  if (toggleMercadonaBtn) {
+    toggleMercadonaBtn.addEventListener("click", () => {
+      state.mercadonaModalOpen = !state.mercadonaModalOpen;
+      state.mercadonaVerifyError = "";
+      render();
+    });
+  }
+  const mAuthInput = document.getElementById("mercadona-auth-input");
+  if (mAuthInput) {
+    mAuthInput.addEventListener("input", (e) => {
+      state.mercadonaAuthInput = e.target.value;
+    });
+  }
+  const verifyMercadonaBtn = document.getElementById("verify-mercadona-session-btn");
+  if (verifyMercadonaBtn) {
+    verifyMercadonaBtn.addEventListener("click", connectMercadonaSession);
+  }
+  const disconnectMercadonaBtn = document.getElementById("disconnect-mercadona-session-btn");
+  if (disconnectMercadonaBtn) {
+    disconnectMercadonaBtn.addEventListener("click", disconnectMercadonaSession);
+  }
+  const syncModeSelect = document.getElementById("mercadona-sync-mode-select");
+  if (syncModeSelect) {
+    syncModeSelect.addEventListener("change", (e) => {
+      state.mercadonaSyncMode = e.target.value;
     });
   }
 
