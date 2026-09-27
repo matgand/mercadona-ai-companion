@@ -18,7 +18,7 @@ flowchart TB
   end
 
   subgraph Security["2. Perímetro de Seguridad Zero-Trust (Google Cloud)"]
-    IAP["🛡️ Google Cloud Identity-Aware Proxy (Direct Cloud Run IAP)<br/>OAuth 2.0 External Client + IAM roles/iap.httpsResourceAccessor<br/>Allowlist: matgand@gmail.com · mgandolfi@google.com · andrea.anaut@gmail.com · mattia@mgandolfi.altostrat.com"]
+    IAP["🛡️ Google Cloud Identity-Aware Proxy (Direct Cloud Run IAP)<br/>OAuth 2.0 External Client + IAM roles/iap.httpsResourceAccessor<br/>Acceso restringido exclusivamente a usuarios autorizados en la Allowlist"]
   end
 
   subgraph CloudRun["3. Cómputo Serverless · Google Cloud Run (europe-west1)"]
@@ -64,7 +64,7 @@ flowchart TB
 
 | Capa | Servicio / Componente | Archivo(s) Clave | Función Principal |
 | :--- | :--- | :--- | :--- |
-| **Seguridad y Autenticación** | **Google Cloud Identity-Aware Proxy (IAP)** + **Google OAuth 2.0** | `server.py`, `campaign_service.py` | Protege ambos servicios en Cloud Run (`--iap --no-allow-unauthenticated`). Verifica identidad Google (`X-Goog-Authenticated-User-Email`) y restringe el acceso a los 4 usuarios de la allowlist tanto en IAM (`roles/iap.httpsResourceAccessor`) como en el backend. |
+| **Seguridad y Autenticación** | **Google Cloud Identity-Aware Proxy (IAP)** + **Google OAuth 2.0** | `server.py`, `campaign_service.py` | Protege ambos servicios en Cloud Run (`--iap --no-allow-unauthenticated`). Verifica identidad Google (`X-Goog-Authenticated-User-Email`) y restringe el acceso únicamente a los usuarios autorizados en la allowlist tanto en IAM (`roles/iap.httpsResourceAccessor`) como en el backend. |
 | **Microservicio Principal** | **`mercadona-ai-companion`** (Cloud Run `europe-west1`) | `server.py`, `gemini_planner.py`, `public/app.js`, `public/index.html` | Experiencia para clientes: muestra campañas activas según el perfil familiar, valida que el prompt sea de ámbito culinario antes de invocar a Gemini, genera menús semanales personalizados, permite **Cambio rápido** de un plato y **Rescate de ingrediente sin stock**. |
 | **Microservicio de Marketing** | **`campaign-library`** (Cloud Run `europe-west1`) | `campaign_service.py`, `public/marketing.js`, `public/marketing.html`, `data/campaigns.json` | Estudio para el equipo de Marketing de Mercadona: permite crear campañas en lenguaje natural por perfil (*Familias*, *Saludables*, *Rutina rápida*, *Ahorro*), cambiar su estado (*Activa*, *Planificada*, *Borrador*, *Terminada*) y publicarlas en vivo en la sección *«Más ideas para tu semana»* de la app principal. |
 | **Inteligencia Artificial** | **Google Gemini (`google-genai` SDK)** | `gemini_planner.py`, `campaign_service.py` | Interpreta peticiones en lenguaje natural con salidas estructuradas (JSON Schema), filtra alérgenos/calorías/tiempos/presupuesto, justifica nutricionalmente la elección de platos y diseña campañas temáticas para Marketing. |
@@ -86,11 +86,7 @@ flowchart TB
    - Indexación en memoria al arranque del contenedor para filtrado instantáneo (`< 5 ms`) sin penalización de latencia.
    - Botón **«Envía a tu Thermomix»** en cada receta y botón **«Añadir al carrito de Mercadona (1-Click)»** para toda la compra semanal.
 4. **Autenticación Zero-Trust con Google Cloud Identity-Aware Proxy (IAP)**:
-   - Protege tanto `mercadona-ai-companion` como `campaign-library` con login real de Google y allowlist restringida a:
-     - `matgand@gmail.com`
-     - `mgandolfi@google.com`
-     - `andrea.anaut@gmail.com`
-     - `mattia@mgandolfi.altostrat.com`
+   - Protege tanto `mercadona-ai-companion` como `campaign-library` con login real de Google OAuth 2.0 y lista blanca (`ALLOWED_USERS`) configurada en IAM (`roles/iap.httpsResourceAccessor`) y en el backend.
 
 ---
 

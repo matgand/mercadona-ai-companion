@@ -99,11 +99,10 @@
 
     <!-- Allowlist box inside IAP -->
     <rect x="1125" y="323" width="412" height="82" rx="6" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
-    <text x="1141" y="342" fill="#1e3a8a" font-size="11" font-weight="800" letter-spacing="0.8">ALLOWLIST OFICIAL DE USUARIOS AUTORIZADOS (4):</text>
-    <text x="1141" y="361" fill="#111827" font-size="12" font-family="monospace" font-weight="700">✓ matgand@gmail.com</text>
-    <text x="1335" y="361" fill="#111827" font-size="12" font-family="monospace" font-weight="700">✓ mgandolfi@google.com</text>
-    <text x="1141" y="381" fill="#111827" font-size="12" font-family="monospace" font-weight="700">✓ andrea.anaut@gmail.com</text>
-    <text x="1141" y="398" fill="#006f4a" font-size="11.5" font-family="monospace" font-weight="700">✓ mattia@mgandolfi.altostrat.com</text>
+    <text x="1141" y="342" fill="#1e3a8a" font-size="11" font-weight="800" letter-spacing="0.8">POLÍTICA DE ACCESO ALLOWLIST (IAM + BACKEND):</text>
+    <text x="1141" y="361" fill="#111827" font-size="11.5" font-family="monospace" font-weight="700">✓ Usuarios autorizados en IAM (IAP Accessor)</text>
+    <text x="1141" y="379" fill="#111827" font-size="11.5" font-family="monospace" font-weight="700">✓ Verificación de cabecera firmada por IAP</text>
+    <text x="1141" y="396" fill="#006f4a" font-size="11.5" font-family="monospace" font-weight="700">✓ Bloqueo por defecto a accesos no autorizados</text>
   </g>
 
   <!-- Arrows from IAP to Cloud Run Services -->
