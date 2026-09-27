@@ -647,7 +647,7 @@ function renderHeader() {
         <a href="#planner" data-tab="planner">Mi semana</a>
         <a href="#catalog" data-tab="catalog" ${state.activeTab === "catalog" ? 'aria-current="page"' : ""}>Catálogo Mercadona</a>
         <a href="#sources" data-tab="sources" ${state.activeTab === "sources" ? 'aria-current="page"' : ""}>Cookidoo &amp; APIs</a>
-        <a href="${escapeHtml(state.campaignLibraryUrl || "/marketing")}" target="_blank" rel="noopener">Campaign Library ↗</a>
+        <a href="${escapeHtml(state.campaignLibraryUrl || "/marketing")}">Campaign Library</a>
       </nav>
       <div class="header-controls">
         <form id="postal-code-form" class="postal-selector" title="Configura tu código postal para consultar disponibilidad en tiempo real en Mercadona">
