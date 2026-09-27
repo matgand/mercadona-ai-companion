@@ -568,16 +568,12 @@ async function loadSourcesTab() {
 function renderGoogleCloudLockup() {
   return `
     <span class="gcloud-lockup-badge" aria-label="Google Cloud">
-      <svg class="gcloud-logo-icon" viewBox="0 0 64 52" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path d="M40.6 14.2L47.8 7C43.5 3.1 37.9 0.8 31.8 0.8C20.5 0.8 10.9 7.8 7.3 17.8L16.8 25.1C18.7 18.8 24.7 14.2 31.8 14.2C35.1 14.2 38.2 15.2 40.6 14.2Z" fill="#EA4335"/>
-        <path d="M55.7 17.8C53.6 12.1 49.7 7.2 44.6 4.1L36.8 11.9C40.6 14.1 43.4 17.9 44.2 22.4V23.8C49.2 23.8 53.2 27.8 53.2 32.8C53.2 37.8 49.2 41.8 44.2 41.8H31.8L29.1 47.2L31.8 51.8H44.2C54.7 51.8 63.2 43.3 63.2 32.8C63.2 26.3 59.9 20.6 55.7 17.8Z" fill="#4285F4"/>
-        <path d="M19.4 51.8H44.2V41.8H19.4C17.8 41.8 16.3 41.4 15 40.6L7.8 47.8C11.1 50.3 15.1 51.8 19.4 51.8Z" fill="#34A853"/>
-        <path d="M19.4 13.8C8.9 13.8 0.4 22.3 0.4 32.8C0.4 38.9 3.3 44.3 7.8 47.8L15 40.6C12.2 38.8 10.4 36 10.4 32.8C10.4 27.8 14.4 23.8 19.4 23.8C22.6 23.8 25.4 25.6 27.2 28.4L34.4 21.2C30.9 16.7 25.5 13.8 19.4 13.8Z" fill="#FBBC05"/>
-      </svg>
-      <span class="gcloud-wordmark">
-        <span class="gc-g1">G</span><span class="gc-o1">o</span><span class="gc-o2">o</span><span class="gc-g2">g</span><span class="gc-l">l</span><span class="gc-e">e</span>
-        <span class="gc-cloud">Cloud</span>
-      </span>
+      <img
+        class="gcloud-logo-img"
+        src="https://sites.google.com/u/0/sitesv-images-rt/AMxu72ubGyFeeA9phYacPQqAz0Bq475_Kn_Ew-K2e82TOf1XvvIgqx0SgKPxoxr76yQOZ3GjLwqgKYBCv-A8bD7jTlrwIOQ80rsyBj6sLAPUqNen1DEfVbwYXXHl1NGnv3DM4WgLo2J7Ictra80hTtgZ-YV7pus7pIzo0jdkio0hKt7Ptht4DduV_j3ePk7wavS1OjWhN59Ze9BsiiPKqzVpRwB6kFOyroijkcomHFDsON8=w1280"
+        onerror="this.onerror=null;this.src='/brand/google-cloud.svg';"
+        alt="Google Cloud"
+      />
     </span>
   `;
 }

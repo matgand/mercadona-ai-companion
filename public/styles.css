@@ -207,6 +207,14 @@
   display: inline-block;
   flex-shrink: 0;
 }
+.gcloud-logo-img {
+  height: 24px;
+  width: auto;
+  max-width: 158px;
+  object-fit: contain;
+  display: block;
+  flex-shrink: 0;
+}
 .gcloud-wordmark {
   display: inline-flex;
   align-items: baseline;
