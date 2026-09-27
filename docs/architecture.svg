@@ -1,0 +1,262 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1140" width="100%" height="100%" font-family="'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f7f7f2"/>
+      <stop offset="100%" stop-color="#eef5f1"/>
+    </linearGradient>
+    <linearGradient id="gcpHeader" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0c3327"/>
+      <stop offset="100%" stop-color="#006f4a"/>
+    </linearGradient>
+    <linearGradient id="iapGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#e8f0fe"/>
+      <stop offset="100%" stop-color="#f1f6ff"/>
+    </linearGradient>
+    <linearGradient id="runGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f4faf7"/>
+    </linearGradient>
+    <linearGradient id="geminiGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#eef4ff"/>
+      <stop offset="100%" stop-color="#e2ecff"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-4%" y="-4%" width="108%" height="110%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#11221a" flood-opacity="0.08"/>
+    </filter>
+    <marker id="arrowGreen" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#007e4a"/>
+    </marker>
+    <marker id="arrowBlue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#1a73e8"/>
+    </marker>
+    <marker id="arrowOrange" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#d97706"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1600" height="1140" rx="14" fill="url(#bgGrad)" stroke="#d5ddd8" stroke-width="2"/>
+
+  <!-- Top Title Banner -->
+  <rect x="28" y="24" width="1544" height="84" rx="10" fill="url(#gcpHeader)" filter="url(#cardShadow)"/>
+  <text x="56" y="60" fill="#84e1bd" font-size="12" font-weight="800" letter-spacing="2">ARQUITECTURA DE SISTEMA · GOOGLE CLOUD × COOKIDOO × MERCADONA</text>
+  <text x="56" y="88" fill="#ffffff" font-size="25" font-weight="800">Mercadona AI Shopping Companion &amp; Campaign Library Microservice</text>
+
+  <!-- Right badge in header -->
+  <rect x="1210" y="42" width="336" height="48" rx="24" fill="#ffffff" fill-opacity="0.12" stroke="#84e1bd" stroke-width="1"/>
+  <circle cx="1236" cy="66" r="6" fill="#4ade80"/>
+  <text x="1252" y="62" fill="#ffffff" font-size="12" font-weight="700">Proyecto GCP: mercadona-ia-companion</text>
+  <text x="1252" y="78" fill="#d1fae5" font-size="11">Región: europe-west1 · Cloud Run + IAP</text>
+
+  <!-- ==================== LAYER 1: USERS & CHANNELS ==================== -->
+  <text x="44" y="140" fill="#006f4a" font-size="12" font-weight="800" letter-spacing="1.5">1. CAPA DE USUARIOS Y CANALES DE ACCESO</text>
+
+  <!-- User Card 1: Clientes / Familias -->
+  <g filter="url(#cardShadow)">
+    <rect x="44" y="152" width="730" height="106" rx="8" fill="#ffffff" stroke="#b9decb" stroke-width="1.5"/>
+    <rect x="44" y="152" width="8" height="106" rx="4" fill="#008f61"/>
+    <circle cx="94" cy="205" r="28" fill="#dff3e9"/>
+    <text x="94" y="212" text-anchor="middle" fill="#006f4a" font-size="19" font-weight="800">FAM</text>
+    <text x="138" y="180" fill="#11110f" font-size="16.5" font-weight="800">Cliente / Hogar Mercadona (Experiencia Planificador Semanal)</text>
+    <text x="138" y="201" fill="#4b5563" font-size="12.5">• Petición en lenguaje natural (días, adultos/niños, presupuesto €, kcal, minutos, 14 alérgenos UE, despensa)</text>
+    <text x="138" y="220" fill="#4b5563" font-size="12.5">• Explora campañas activas por perfil («Para ti»), hace Cambio Rápido de receta y Rescate de producto agotado</text>
+    <text x="138" y="239" fill="#006f4a" font-size="12" font-weight="700">• Envía recetas en 1-Click a su Thermomix (Cookidoo) y transfiere la cesta a tienda.mercadona.es</text>
+  </g>
+
+  <!-- User Card 2: Equipo de Marketing -->
+  <g filter="url(#cardShadow)">
+    <rect x="826" y="152" width="730" height="106" rx="8" fill="#ffffff" stroke="#b9decb" stroke-width="1.5"/>
+    <rect x="826" y="152" width="8" height="106" rx="4" fill="#f3a13b"/>
+    <circle cx="876" cy="205" r="28" fill="#fef3c7"/>
+    <text x="876" y="212" text-anchor="middle" fill="#b45309" font-size="18" font-weight="800">MKT</text>
+    <text x="920" y="180" fill="#11110f" font-size="16.5" font-weight="800">Equipo de Marketing de Mercadona (Campaign Library Studio)</text>
+    <text x="920" y="201" fill="#4b5563" font-size="12.5">• Crea campañas semanales en lenguaje natural por perfil: Familias, Saludables, Rutina rápida, Ahorro</text>
+    <text x="920" y="220" fill="#4b5563" font-size="12.5">• Gestiona estados en tiempo real: Activa, Planificada, Borrador, Terminada</text>
+    <text x="920" y="239" fill="#b45309" font-size="12" font-weight="700">• Previsualiza el menú generado, coste en Mercadona y publica al instante en la app principal</text>
+  </g>
+
+  <!-- Arrows from Users to IAP -->
+  <line x1="560" y1="258" x2="560" y2="306" stroke="#1a73e8" stroke-width="2.5" marker-end="url(#arrowBlue)"/>
+  <text x="572" y="286" fill="#1a73e8" font-size="11.5" font-weight="700">HTTPS + Google OAuth 2.0</text>
+
+  <line x1="1191" y1="258" x2="1191" y2="306" stroke="#1a73e8" stroke-width="2.5" marker-end="url(#arrowBlue)"/>
+  <text x="1202" y="286" fill="#1a73e8" font-size="11.5" font-weight="700">HTTPS + Google OAuth 2.0</text>
+
+  <!-- ==================== LAYER 2: GOOGLE CLOUD IAP ==================== -->
+  <text x="44" y="298" fill="#1a73e8" font-size="12" font-weight="800" letter-spacing="1.5">2. PERÍMETRO DE SEGURIDAD Y CONTROL DE ACCESO (ZERO-TRUST)</text>
+
+  <g filter="url(#cardShadow)">
+    <rect x="44" y="310" width="1512" height="108" rx="10" fill="url(#iapGrad)" stroke="#60a5fa" stroke-width="2"/>
+    <!-- Shield icon badge -->
+    <rect x="66" y="330" width="64" height="68" rx="10" fill="#1a73e8"/>
+    <text x="98" y="362" text-anchor="middle" fill="#ffffff" font-size="16" font-weight="800">IAP</text>
+    <text x="98" y="382" text-anchor="middle" fill="#dbeafe" font-size="10" font-weight="700">OAuth 2.0</text>
+
+    <text x="150" y="340" fill="#1e3a8a" font-size="16.5" font-weight="800">Google Cloud Identity-Aware Proxy (Direct Cloud Run IAP) + Custom External OAuth Client</text>
+    <text x="150" y="362" fill="#1e40af" font-size="12.5">• Autenticación obligatoria con cuenta de Google antes de alcanzar los contenedores (--iap --no-allow-unauthenticated)</text>
+    <text x="150" y="382" fill="#1e40af" font-size="12.5">• Políticas IAM (roles/iap.httpsResourceAccessor) + Cabeceras firmadas: X-Goog-Authenticated-User-Email &amp; X-Goog-IAP-JWT-Assertion</text>
+    <text x="150" y="402" fill="#1d4ed8" font-size="12" font-weight="700">• Doble validación de Allowlist (IAM en Cloud Run + verificación en backend server.py y campaign_service.py)</text>
+
+    <!-- Allowlist box inside IAP -->
+    <rect x="1125" y="323" width="412" height="82" rx="6" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+    <text x="1141" y="342" fill="#1e3a8a" font-size="11" font-weight="800" letter-spacing="0.8">ALLOWLIST OFICIAL DE USUARIOS AUTORIZADOS (4):</text>
+    <text x="1141" y="361" fill="#111827" font-size="12" font-family="monospace" font-weight="700">✓ matgand@gmail.com</text>
+    <text x="1335" y="361" fill="#111827" font-size="12" font-family="monospace" font-weight="700">✓ mgandolfi@google.com</text>
+    <text x="1141" y="381" fill="#111827" font-size="12" font-family="monospace" font-weight="700">✓ andrea.anaut@gmail.com</text>
+    <text x="1141" y="398" fill="#006f4a" font-size="11.5" font-family="monospace" font-weight="700">✓ mattia@mgandolfi.altostrat.com</text>
+  </g>
+
+  <!-- Arrows from IAP to Cloud Run Services -->
+  <line x1="409" y1="418" x2="409" y2="462" stroke="#007e4a" stroke-width="2.5" marker-end="url(#arrowGreen)"/>
+  <text x="420" y="444" fill="#006f4a" font-size="11.5" font-weight="700">Tráfico autenticado (roles/run.invoker → IAP Service Agent)</text>
+
+  <line x1="1191" y1="418" x2="1191" y2="462" stroke="#007e4a" stroke-width="2.5" marker-end="url(#arrowGreen)"/>
+  <text x="1202" y="444" fill="#006f4a" font-size="11.5" font-weight="700">Tráfico autenticado (X-Goog-Authenticated-User-Email)</text>
+
+  <!-- ==================== LAYER 3: GOOGLE CLOUD RUN MICROSERVICES ==================== -->
+  <rect x="34" y="454" width="1532" height="332" rx="12" fill="#e6f4ed" fill-opacity="0.55" stroke="#88bca7" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <text x="52" y="478" fill="#006f4a" font-size="12" font-weight="800" letter-spacing="1.5">3. CAPA DE CÓMPUTO SERVERLESS · GOOGLE CLOUD RUN (REGIÓN: EUROPE-WEST1)</text>
+
+  <!-- Microservice 1: mercadona-ai-companion -->
+  <g filter="url(#cardShadow)">
+    <rect x="52" y="490" width="690" height="276" rx="10" fill="url(#runGrad)" stroke="#008f61" stroke-width="2"/>
+    <rect x="52" y="490" width="690" height="40" rx="10" fill="#008f61"/>
+    <text x="72" y="515" fill="#ffffff" font-size="15" font-weight="800">Microservicio 1: mercadona-ai-companion (App Principal)</text>
+    <text x="505" y="514" fill="#dff3e9" font-size="11.5" font-family="monospace">mercadona-ai-companion-*.run.app</text>
+
+    <!-- Frontend Box -->
+    <rect x="68" y="544" width="322" height="114" rx="6" fill="#ffffff" stroke="#cfded6" stroke-width="1.2"/>
+    <text x="82" y="564" fill="#006f4a" font-size="12.5" font-weight="800">Frontend SPA (public/index.html + app.js)</text>
+    <text x="82" y="583" fill="#374151" font-size="11.5">• Vistas: «Para ti», «Mi semana», «Catálogo», «Cookidoo»</text>
+    <text x="82" y="600" fill="#374151" font-size="11.5">• Selector CP en vivo + Selector Perfil Familiar</text>
+    <text x="82" y="617" fill="#374151" font-size="11.5">• Guardrail cliente pre-Gemini (valida dominio)</text>
+    <text x="82" y="634" fill="#006f4a" font-size="11.5" font-weight="700">• Tarjetas de Receta + Cesta Mercadona + Sustitución</text>
+
+    <!-- Backend Box -->
+    <rect x="404" y="544" width="322" height="114" rx="6" fill="#ffffff" stroke="#cfded6" stroke-width="1.2"/>
+    <text x="418" y="564" fill="#006f4a" font-size="12.5" font-weight="800">Backend API (server.py + gemini_planner.py)</text>
+    <text x="418" y="583" fill="#374151" font-size="11" font-family="monospace">• POST /api/plan (Planificador semanal IA)</text>
+    <text x="418" y="600" fill="#374151" font-size="11" font-family="monospace">• POST /api/plan/swap-meal (Cambio rápido)</text>
+    <text x="418" y="617" fill="#374151" font-size="11" font-family="monospace">• POST /api/plan/rescue (Rescate sin stock)</text>
+    <text x="418" y="634" fill="#374151" font-size="11" font-family="monospace">• POST /api/postal-code · GET /api/catalog</text>
+
+    <!-- Bottom bar inside MS1: In-memory cache & Guardrails -->
+    <rect x="68" y="670" width="658" height="80" rx="6" fill="#eff9f4" stroke="#b8ddca" stroke-width="1.2"/>
+    <text x="84" y="690" fill="#0c3327" font-size="12.5" font-weight="800">Motor de Reglas, Caché en Memoria y Validación Pre-Gemini (gemini_planner.py)</text>
+    <text x="84" y="709" fill="#374151" font-size="11.5">• Guardrail de Dominio: Bloquea peticiones fuera de planificación de menús/compra antes de llamar a Gemini (HTTP 422)</text>
+    <text x="84" y="726" fill="#374151" font-size="11.5">• Filtrado estricto: 14 alérgenos UE, tiempo máx., kcal máx., descuento de despensa y ajuste a presupuesto en Mercadona</text>
+    <text x="84" y="742" fill="#006f4a" font-size="11.5" font-weight="700">• Índice en RAM (&lt;5 ms): 5.000 recetas de Cookidoo España + 1.595 productos de Mercadona pre-indexados</text>
+  </g>
+
+  <!-- Bidirectional Sync Arrow between MS1 and MS2 -->
+  <path d="M 744 605 L 856 605" stroke="#007e4a" stroke-width="3" marker-end="url(#arrowGreen)" marker-start="url(#arrowGreen)"/>
+  <rect x="752" y="556" width="96" height="36" rx="5" fill="#ffffff" stroke="#008f61" stroke-width="1.2"/>
+  <text x="800" y="572" text-anchor="middle" fill="#006f4a" font-size="10" font-weight="800">REST JSON</text>
+  <text x="800" y="585" text-anchor="middle" fill="#374151" font-size="9.5" font-family="monospace">/api/campaigns</text>
+  <text x="800" y="624" text-anchor="middle" fill="#006f4a" font-size="10" font-weight="700">Campañas</text>
+  <text x="800" y="636" text-anchor="middle" fill="#006f4a" font-size="10" font-weight="700">Activas en vivo</text>
+
+  <!-- Microservice 2: campaign-library -->
+  <g filter="url(#cardShadow)">
+    <rect x="858" y="490" width="690" height="276" rx="10" fill="url(#runGrad)" stroke="#0c3327" stroke-width="2"/>
+    <rect x="858" y="490" width="690" height="40" rx="10" fill="#0c3327"/>
+    <text x="878" y="515" fill="#ffffff" font-size="15" font-weight="800">Microservicio 2: campaign-library (Marketing Studio)</text>
+    <text x="1325" y="514" fill="#84e1bd" font-size="11.5" font-family="monospace">campaign-library-*.run.app</text>
+
+    <!-- Frontend Box MS2 -->
+    <rect x="876" y="544" width="320" height="114" rx="6" fill="#ffffff" stroke="#cfded6" stroke-width="1.2"/>
+    <text x="890" y="564" fill="#0c3327" font-size="12.5" font-weight="800">Frontend Studio (marketing.html + marketing.js)</text>
+    <text x="890" y="583" fill="#374151" font-size="11.5">• Columna 1: Portfolio y filtros por perfil/estado</text>
+    <text x="890" y="600" fill="#374151" font-size="11.5">• Columna 2: Generador IA en lenguaje natural</text>
+    <text x="890" y="617" fill="#374151" font-size="11.5">• Columna 3: Anteprima en vivo de la campaña</text>
+    <text x="890" y="634" fill="#006f4a" font-size="11.5" font-weight="700">• Cambio instantáneo: Activa / Planificada / Borrador</text>
+
+    <!-- Backend Box MS2 -->
+    <rect x="1210" y="544" width="320" height="114" rx="6" fill="#ffffff" stroke="#cfded6" stroke-width="1.2"/>
+    <text x="1224" y="564" fill="#0c3327" font-size="12.5" font-weight="800">Backend API (campaign_service.py)</text>
+    <text x="1224" y="583" fill="#374151" font-size="11" font-family="monospace">• GET  /api/campaigns (Catálogo campañas)</text>
+    <text x="1224" y="600" fill="#374151" font-size="11" font-family="monospace">• POST /api/campaigns/generate (Brief → IA)</text>
+    <text x="1224" y="617" fill="#374151" font-size="11" font-family="monospace">• POST /api/campaigns/status (Estado)</text>
+    <text x="1224" y="634" fill="#374151" font-size="11" font-family="monospace">• POST /api/campaigns/delete</text>
+
+    <!-- Bottom bar inside MS2 -->
+    <rect x="876" y="670" width="654" height="80" rx="6" fill="#fefce8" stroke="#fde68a" stroke-width="1.2"/>
+    <text x="892" y="690" fill="#92400e" font-size="12.5" font-weight="800">Segmentación por Estilo de Vida y Publicación en «Más ideas para tu semana»</text>
+    <text x="892" y="709" fill="#374151" font-size="11.5">• Perfiles: Familias (family-week) · Saludables (light-balance) · Rutina rápida (quick-routine) · Ahorro (smart-budget)</text>
+    <text x="892" y="726" fill="#374151" font-size="11.5">• Calcula automáticamente el presupuesto real sumando los ingredientes mapeados al catálogo de Mercadona</text>
+    <text x="892" y="742" fill="#b45309" font-size="11.5" font-weight="700">• Al pasar una campaña a «Activa», aparece al instante en la portada del Planificador de Clientes</text>
+  </g>
+
+  <!-- Arrows from Cloud Run to External Services & AI -->
+  <!-- Arrow to Cookidoo -->
+  <line x1="260" y1="766" x2="260" y2="842" stroke="#007e4a" stroke-width="2.5" marker-end="url(#arrowGreen)"/>
+  <text x="272" y="810" fill="#006f4a" font-size="11" font-weight="700">Recetas, Fotos, Kcal &amp; Handoff</text>
+
+  <!-- Arrow to Gemini from MS1 and MS2 -->
+  <line x1="620" y1="766" x2="740" y2="842" stroke="#1a73e8" stroke-width="2.5" marker-end="url(#arrowBlue)"/>
+  <line x1="980" y1="766" x2="860" y2="842" stroke="#1a73e8" stroke-width="2.5" marker-end="url(#arrowBlue)"/>
+  <text x="720" y="808" fill="#1a73e8" font-size="11" font-weight="700">google-genai SDK (JSON Schema)</text>
+
+  <!-- Arrow to Mercadona API -->
+  <line x1="1310" y1="766" x2="1310" y2="842" stroke="#d97706" stroke-width="2.5" marker-end="url(#arrowOrange)"/>
+  <path d="M 530 766 L 530 793 L 1280 793 L 1280 842" fill="none" stroke="#d97706" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#arrowOrange)"/>
+  <text x="1322" y="810" fill="#b45309" font-size="11" font-weight="700">Stock CP, Precios y Carrito</text>
+
+  <!-- ==================== LAYER 4: AI, DATA & EXTERNAL APIS ==================== -->
+  <text x="44" y="832" fill="#0c3327" font-size="12" font-weight="800" letter-spacing="1.5">4. CAPA DE INTELIGENCIA ARTIFICIAL, CATÁLOGOS Y APIS EXTERNAS EN TIEMPO REAL</text>
+
+  <!-- Box 4A: Cookidoo España -->
+  <g filter="url(#cardShadow)">
+    <rect x="44" y="846" width="476" height="248" rx="10" fill="#ffffff" stroke="#008f61" stroke-width="2"/>
+    <rect x="44" y="846" width="476" height="38" rx="10" fill="#006f4a"/>
+    <text x="64" y="870" fill="#ffffff" font-size="14.5" font-weight="800">Thermomix Cookidoo España (cookidoo_service.py)</text>
+
+    <text x="64" y="906" fill="#11110f" font-size="13" font-weight="800">Catálogo Completo de España (data/cookidoo_recipes.json)</text>
+    <text x="64" y="926" fill="#374151" font-size="12">• 5.000 recetas reales de Cookidoo España (es-ES)</text>
+    <text x="64" y="945" fill="#374151" font-size="12">• Fotos oficiales de portada (assets.tmecosys.com)</text>
+    <text x="64" y="964" fill="#374151" font-size="12">• Tiempos de preparación, kcal/ración, dificultad y raciones</text>
+    <text x="64" y="983" fill="#374151" font-size="12">• Etiquetado de los 14 alérgenos oficiales de la UE</text>
+
+    <rect x="62" y="1000" width="440" height="76" rx="6" fill="#f4faf7" stroke="#b8ddca" stroke-width="1"/>
+    <text x="76" y="1020" fill="#006f4a" font-size="12" font-weight="800">Integración en Vivo con Thermomix (miaucl/cookidoo-api)</text>
+    <text x="76" y="1039" fill="#374151" font-size="11.5">• POST /api/cookidoo/send-to-thermomix</text>
+    <text x="76" y="1058" fill="#374151" font-size="11.5">• Añade recetas a marcadores/colección del usuario en cookidoo.es</text>
+  </g>
+
+  <!-- Box 4B: Google Gemini AI -->
+  <g filter="url(#cardShadow)">
+    <rect x="552" y="846" width="496" height="248" rx="10" fill="url(#geminiGrad)" stroke="#3b82f6" stroke-width="2"/>
+    <rect x="552" y="846" width="496" height="38" rx="10" fill="#1d4ed8"/>
+    <text x="572" y="870" fill="#ffffff" font-size="14.5" font-weight="800">Google Gemini AI (SDK google-genai · Gemini Flash)</text>
+
+    <text x="572" y="906" fill="#1e3a8a" font-size="13" font-weight="800">Capacidades Cognitivas y Razonamiento Estructurado</text>
+    <text x="572" y="926" fill="#1e40af" font-size="12">• Interpretación semántica de condiciones familiares complejas</text>
+    <text x="572" y="945" fill="#1e40af" font-size="12">• Extracción de restricciones con JSON Schema determinista:</text>
+    <text x="586" y="963" fill="#374151" font-size="11.5" font-family="monospace">{ days, adults, children, max_budget_eur, max_calories,</text>
+    <text x="586" y="979" fill="#374151" font-size="11.5" font-family="monospace">  max_minutes, allergens_to_avoid, pantry_items }</text>
+
+    <rect x="570" y="994" width="460" height="82" rx="6" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+    <text x="584" y="1014" fill="#1e3a8a" font-size="12" font-weight="800">3 Casos de Uso impulsados por Gemini:</text>
+    <text x="584" y="1032" fill="#374151" font-size="11.5">1. Selección óptima de menús semanales + justificación nutricional</text>
+    <text x="584" y="1050" fill="#374151" font-size="11.5">2. Cambio rápido de plato y Rescate inteligente de ingrediente agotado</text>
+    <text x="584" y="1068" fill="#374151" font-size="11.5">3. Diseño de campañas semanales para Marketing desde lenguaje natural</text>
+  </g>
+
+  <!-- Box 4C: Mercadona Tienda API -->
+  <g filter="url(#cardShadow)">
+    <rect x="1080" y="846" width="476" height="248" rx="10" fill="#ffffff" stroke="#d97706" stroke-width="2"/>
+    <rect x="1080" y="846" width="476" height="38" rx="10" fill="#b45309"/>
+    <text x="1100" y="870" fill="#ffffff" font-size="14.5" font-weight="800">API Mercadona Tienda (mercadona_service.py)</text>
+
+    <text x="1100" y="906" fill="#11110f" font-size="13" font-weight="800">Catálogo y Stock Real (data/mercadona_products.json)</text>
+    <text x="1100" y="926" fill="#374151" font-size="12">• 1.595 productos reales mapeados a ingredientes de recetas</text>
+    <text x="1100" y="945" fill="#374151" font-size="12">• Precios unitarios (€), formatos, fotos y enlaces a tienda.mercadona.es</text>
+    <text x="1100" y="964" fill="#374151" font-size="12">• Resolución dinámica de Código Postal → Almacén (Colmena):</text>
+    <text x="1114" y="982" fill="#b45309" font-size="11.5" font-family="monospace">CP 28016 → mad3 | CP 46001 → vlc1 | CP 08001 → bcn1</text>
+
+    <rect x="1098" y="1000" width="440" height="76" rx="6" fill="#fffbeb" stroke="#fcd34d" stroke-width="1"/>
+    <text x="1112" y="1020" fill="#92400e" font-size="12" font-weight="800">Endpoints Oficiales Conectados (tienda.mercadona.es/api)</text>
+    <text x="1112" y="1039" fill="#374151" font-size="11" font-family="monospace">• PUT /api/postal-codes/actions/change-pc/</text>
+    <text x="1112" y="1058" fill="#374151" font-size="11" font-family="monospace">• GET /api/products/{id}/?lang=es&amp;wh={warehouse}</text>
+  </g>
+</svg>
