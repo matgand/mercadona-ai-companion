@@ -264,10 +264,13 @@ class CompanionRequestHandler(BaseHTTPRequestHandler):
             ctype = "image/webp"
         elif file_path.suffix == ".ico":
             ctype = "image/x-icon"
+        elif file_path.suffix == ".png":
+            ctype = "image/png"
         data = file_path.read_bytes()
         self.send_response(200)
         self.send_header("Content-Type", ctype or "application/octet-stream")
         self.send_header("Content-Length", str(len(data)))
+        self.send_header("Cache-Control", "no-store, no-cache, must-revalidate, max-age=0")
         self._add_cors_headers()
         self.end_headers()
         self.wfile.write(data)

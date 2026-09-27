@@ -816,4 +816,21 @@ function bindMarketingEvents() {
   }
 }
 
+function ensureMercadonaFavicon() {
+  document.querySelectorAll('link[rel*="icon"]').forEach((el) => el.remove());
+  const pngLink = document.createElement("link");
+  pngLink.rel = "icon";
+  pngLink.type = "image/png";
+  pngLink.sizes = "48x48";
+  pngLink.href = "/favicon.png?v=mercadona-basket-2026";
+  document.head.appendChild(pngLink);
+
+  const icoLink = document.createElement("link");
+  icoLink.rel = "shortcut icon";
+  icoLink.type = "image/x-icon";
+  icoLink.href = "/favicon.ico?v=mercadona-basket-2026";
+  document.head.appendChild(icoLink);
+}
+
+ensureMercadonaFavicon();
 initMarketingApp();
