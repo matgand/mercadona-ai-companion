@@ -361,6 +361,9 @@ async function checkSession() {
       if (data.mercadona_session.warehouse) {
         state.warehouse = data.mercadona_session.warehouse;
       }
+      if (data.mercadona_session.postal_code) {
+        state.postalCode = data.mercadona_session.postal_code;
+      }
     }
     render();
   } catch (err) {
@@ -562,11 +565,15 @@ async function connectMercadonaSession() {
         connected: true,
         customer_id: data.customer_id,
         warehouse: data.warehouse || state.warehouse,
+        postal_code: data.postal_code || state.postalCode,
         has_refresh_token: Boolean(data.has_refresh_token),
         masked_token: data.masked_token,
       };
       if (data.warehouse) {
         state.warehouse = data.warehouse;
+      }
+      if (data.postal_code) {
+        state.postalCode = data.postal_code;
       }
       state.mercadonaAuthInput = "";
       state.mercadonaModalOpen = false;
@@ -593,6 +600,7 @@ async function disconnectMercadonaSession() {
       connected: false,
       customer_id: null,
       warehouse: null,
+      postal_code: null,
       has_refresh_token: false,
       masked_token: null,
     };
@@ -629,7 +637,14 @@ async function addBasketToMercadonaOneClick() {
           connected: true,
           customer_id: data.customer_id || state.mercadonaSession.customer_id,
           warehouse: data.warehouse || state.warehouse,
+          postal_code: data.postal_code || state.postalCode,
         };
+        if (data.warehouse) {
+          state.warehouse = data.warehouse;
+        }
+        if (data.postal_code) {
+          state.postalCode = data.postal_code;
+        }
         state.mercadonaAuthInput = "";
         state.mercadonaModalOpen = false;
         showToast("¡Añadido a tu carrito real de Mercadona.es!", data.message);

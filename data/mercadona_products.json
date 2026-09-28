@@ -2071,17 +2071,6 @@
     "warehouse": "mad3"
   },
   {
-    "id": "3422",
-    "name": "Melocotones amarillos",
-    "unit_price": 2.18,
-    "unit": "0.75 kg",
-    "thumbnail": "https://prod-mercadona.imgix.net/images/7505b5345e81af9cf2639506cbbb10ab.jpeg?fit=crop&h=300&w=300",
-    "share_url": "https://tienda.mercadona.es/product/3422/melocotones-amarillos-mini-bandeja",
-    "allergens": "Sin alérgenos declarados en la API",
-    "available": true,
-    "warehouse": "mad3"
-  },
-  {
     "id": "3433",
     "name": "Melocotón amarillo",
     "unit_price": 0.83,
@@ -8105,17 +8094,6 @@
     "unit": "Pieza 0.35 kg",
     "thumbnail": "https://prod-mercadona.imgix.net/images/1bdc83cbb5f54b2f53090ffd0055964a.jpg?fit=crop&h=300&w=300",
     "share_url": "https://tienda.mercadona.es/product/50927/queso-tierno-cabra-hacendado-pieza",
-    "allergens": "Contiene leche y sus derivados (incluida la lactosa).",
-    "available": true,
-    "warehouse": "mad3"
-  },
-  {
-    "id": "50933",
-    "name": "Snack de queso madurado de vaca Hacendado",
-    "unit_price": 3.0,
-    "unit": "Paquete 0.2 kg",
-    "thumbnail": "https://prod-mercadona.imgix.net/images/42015f68de5e9b209cad653bc79f3275.jpg?fit=crop&h=300&w=300",
-    "share_url": "https://tienda.mercadona.es/product/50933/snack-queso-madurado-vaca-hacendado-paquete",
     "allergens": "Contiene leche y sus derivados (incluida la lactosa).",
     "available": true,
     "warehouse": "mad3"
