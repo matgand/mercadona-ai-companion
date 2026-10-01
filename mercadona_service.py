@@ -359,7 +359,7 @@ def _extract_mo_da_from_cookie(cookie_str: str) -> tuple[str, str]:
     """Extracts (warehouse, postal_code) from Mercadona's `__mo_da` delivery cookie if present."""
     if not cookie_str or "__mo_da" not in cookie_str:
         return "", ""
-    m = re.search(r"__mo_da=([^;\s'\"]+)", cookie_str)
+    m = re.search(r"__mo_da=(\{[^}]+\}|[^;\s'\"]+)", cookie_str)
     if not m:
         return "", ""
     raw_val = m.group(1).strip()
@@ -377,9 +377,11 @@ def _extract_mo_da_from_cookie(cookie_str: str) -> tuple[str, str]:
 
 def parse_mercadona_auth_input(raw_input: str) -> dict[str, str]:
     """Extracts access_token, refresh_token, cookie, customer_id, and warehouse from any user input:
-    - DevTools 'Copy as cURL' command
-    - DevTools HAR export or JSON token payload ({access_token, refresh_token, customer_id})
-    - Raw Bearer JWT token (access_token or refresh_token)
+    - 1-Click Bookmarklet payload (JSON or Base64 `#mercadona_connect=...` containing `MO-user` from localStorage)
+    - Mercadona native `MO-user` localStorage JSON (`{uuid, token, refreshToken, userUuid}`)
+    - DevTools 'Copy as cURL' command (specifically requests to `/api/customers/<uuid>/cart/`)
+    - DevTools HAR export or JSON token payload (`{access_token, refresh_token, customer_id}`)
+    - Raw Bearer JWT token (`access_token` or `refresh_token`)
     """
     text = str(raw_input or "").strip()
     result = {
@@ -392,20 +394,81 @@ def parse_mercadona_auth_input(raw_input: str) -> dict[str, str]:
     if not text:
         return result
 
-    # 1. Try parsing as JSON / HAR first if it starts with '{'
+    # 0. Unwrap Base64 `#mercadona_connect=<b64>` URL or raw Base64 JSON if provided
+    if "mercadona_connect=" in text:
+        m_hash = re.search(r"mercadona_connect=([^&\s#]+)", text)
+        if m_hash:
+            b64_part = urllib.parse.unquote(m_hash.group(1).strip())
+            try:
+                pad = "=" * ((4 - len(b64_part) % 4) % 4)
+                decoded_bytes = base64.urlsafe_b64decode((b64_part + pad).encode("ascii"))
+                decoded_str = decoded_bytes.decode("utf-8", "ignore").strip()
+                if decoded_str.startswith("{"):
+                    text = decoded_str
+                else:
+                    unquoted = urllib.parse.unquote(decoded_str).strip()
+                    if unquoted.startswith("{"):
+                        text = unquoted
+            except Exception:
+                pass
+
+    # Strip surrounding quotes if user copied a string literal from DevTools Local Storage / Console
+    if len(text) >= 2 and ((text[0] == "'" and text[-1] == "'") or (text[0] == '"' and text[-1] == '"')):
+        inner = text[1:-1].strip()
+        if inner.startswith("{") or inner.startswith("eyJ"):
+            text = inner.replace('\\"', '"')
+
+    # 1. Try parsing as JSON / MO-user / HAR first if it starts with '{'
     if text.startswith("{"):
         try:
             obj = json.loads(text)
             if isinstance(obj, dict):
-                # Direct token JSON
-                if obj.get("access_token") or obj.get("refresh_token") or obj.get("token"):
-                    result["access_token"] = str(obj.get("access_token") or obj.get("token") or "").strip()
-                    result["refresh_token"] = str(obj.get("refresh_token") or "").strip()
-                    result["cookie"] = str(obj.get("cookie") or "").strip()
-                    cid = str(obj.get("customer_id") or obj.get("customer_uuid") or "").strip()
+                # Unwrap nested `mo_user` from 1-Click Bookmarklet if present
+                mo_user_raw = obj.get("mo_user") or obj.get("MO-user") or obj.get("moUser")
+                mo_user: dict[str, Any] = {}
+                if isinstance(mo_user_raw, dict):
+                    mo_user = mo_user_raw
+                elif isinstance(mo_user_raw, str) and mo_user_raw.strip().startswith("{"):
+                    try:
+                        parsed_inner = json.loads(mo_user_raw.strip())
+                        if isinstance(parsed_inner, dict):
+                            mo_user = parsed_inner
+                    except Exception:
+                        pass
+
+                merged_auth = {**mo_user, **obj}
+                tok_val = (
+                    merged_auth.get("access_token")
+                    or merged_auth.get("accessToken")
+                    or merged_auth.get("token")
+                    or mo_user.get("token")
+                    or ""
+                )
+                ref_val = (
+                    merged_auth.get("refresh_token")
+                    or merged_auth.get("refreshToken")
+                    or mo_user.get("refreshToken")
+                    or ""
+                )
+                cid_val = (
+                    merged_auth.get("customer_id")
+                    or merged_auth.get("customer_uuid")
+                    or merged_auth.get("customerUuid")
+                    or merged_auth.get("uuid")
+                    or merged_auth.get("userUuid")
+                    or mo_user.get("uuid")
+                    or mo_user.get("userUuid")
+                    or ""
+                )
+                # Direct token or MO-user JSON
+                if tok_val or ref_val:
+                    result["access_token"] = str(tok_val).strip()
+                    result["refresh_token"] = str(ref_val).strip()
+                    result["cookie"] = str(merged_auth.get("cookie") or merged_auth.get("cookies") or "").strip()
+                    cid = str(cid_val).strip()
                     if cid and cid.lower() != "me":
                         result["customer_id"] = cid
-                    result["warehouse"] = str(obj.get("warehouse") or obj.get("wh") or "").strip().lower()
+                    result["warehouse"] = str(merged_auth.get("warehouse") or merged_auth.get("wh") or "").strip().lower()
                 # HAR format (`log.entries`)
                 elif isinstance(obj.get("log"), dict) and isinstance(obj["log"].get("entries"), list):
                     for entry in obj["log"]["entries"]:
@@ -417,12 +480,19 @@ def parse_mercadona_auth_input(raw_input: str) -> dict[str, str]:
                             if content_text:
                                 try:
                                     auth_body = json.loads(content_text)
-                                    if auth_body.get("access_token"):
-                                        result["access_token"] = str(auth_body["access_token"]).strip()
-                                    if auth_body.get("refresh_token"):
-                                        result["refresh_token"] = str(auth_body["refresh_token"]).strip()
+                                    if auth_body.get("access_token") or auth_body.get("token"):
+                                        result["access_token"] = str(
+                                            auth_body.get("access_token") or auth_body.get("token")
+                                        ).strip()
+                                    if auth_body.get("refresh_token") or auth_body.get("refreshToken"):
+                                        result["refresh_token"] = str(
+                                            auth_body.get("refresh_token") or auth_body.get("refreshToken")
+                                        ).strip()
                                     cid = str(
-                                        auth_body.get("customer_id") or auth_body.get("customer_uuid") or ""
+                                        auth_body.get("customer_id")
+                                        or auth_body.get("customer_uuid")
+                                        or auth_body.get("uuid")
+                                        or ""
                                     ).strip()
                                     if cid and cid.lower() != "me":
                                         result["customer_id"] = cid
@@ -450,11 +520,20 @@ def parse_mercadona_auth_input(raw_input: str) -> dict[str, str]:
         except Exception:
             pass
 
-    # 2. Extract from cURL command or headers if not already populated
+    # 2. Extract from cURL command, headers, or embedded JSON snippets if not already populated
     if not result["access_token"]:
         m_bearer = re.search(r"(?i)authorization\s*:\s*bearer\s+([A-Za-z0-9._~+/=-]+)", text)
         if m_bearer:
             result["access_token"] = m_bearer.group(1).strip()
+        else:
+            m_tok_json = re.search(r'"(?:access_token|accessToken|token)"\s*:\s*"(eyJ[A-Za-z0-9._~+/=-]+)"', text)
+            if m_tok_json:
+                result["access_token"] = m_tok_json.group(1).strip()
+
+    if not result["refresh_token"]:
+        m_ref_json = re.search(r'"(?:refresh_token|refreshToken)"\s*:\s*"([A-Za-z0-9._~+/=-]+)"', text)
+        if m_ref_json:
+            result["refresh_token"] = m_ref_json.group(1).strip()
 
     if not result["cookie"]:
         m_cookie_b = re.search(r"(?:^|\s)(?:-b|--cookie)\s+['\"]([^'\"]+)['\"]", text)
@@ -469,6 +548,12 @@ def parse_mercadona_auth_input(raw_input: str) -> dict[str, str]:
         m_cust = re.search(r"/api/customers/([^/'\"\s?&]+)/", text)
         if m_cust and m_cust.group(1).lower() != "me":
             result["customer_id"] = m_cust.group(1).strip()
+        else:
+            m_uuid_json = re.search(
+                r'"(?:customer_id|customer_uuid|customerUuid|uuid|userUuid)"\s*:\s*"([^"\s]+)"', text
+            )
+            if m_uuid_json and m_uuid_json.group(1).lower() != "me":
+                result["customer_id"] = m_uuid_json.group(1).strip()
 
     if not result["warehouse"]:
         m_wh = re.search(r"[?&]wh=([a-z0-9]+)", text, re.I)
@@ -810,7 +895,7 @@ def verify_and_save_mercadona_session(
     if not parsed["access_token"] and not parsed["refresh_token"]:
         raise ValueError(
             "No se detectó ningún Bearer token, refresh_token ni comando 'Copy as cURL' válido. "
-            "Copia una petición a /api/ desde tienda.mercadona.es (Copy as cURL) o pega tu Bearer token JWT."
+            "Usa el botón '🔗 Vincular con Mercadona.es (1-Click)' o, si usas DevTools → Network, filtra por 'customers' (o 'cart') y copia esa petición (Copy as cURL)."
         )
 
     if not parsed["access_token"] and parsed["refresh_token"]:

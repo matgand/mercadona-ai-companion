@@ -209,6 +209,88 @@ function saveLocalRecipePreferences(prefs) {
   }
 }
 
+function saveLocalActivePlan() {
+  try {
+    if (!state.plan) {
+      window.localStorage.removeItem("mercadona_active_plan_v1");
+      return;
+    }
+    window.localStorage.setItem(
+      "mercadona_active_plan_v1",
+      JSON.stringify({
+        savedAt: Date.now(),
+        plan: state.plan,
+        prompt: state.prompt,
+        postalCode: state.postalCode,
+        warehouse: state.warehouse,
+        profileId: state.profileId,
+        selectedCampaignId: state.selectedCampaignId,
+        detectedPills: state.detectedPills,
+      })
+    );
+  } catch (e) {
+    // Ignore storage quota or private mode errors
+  }
+}
+
+function restoreLocalActivePlan() {
+  try {
+    const raw = window.localStorage.getItem("mercadona_active_plan_v1");
+    if (!raw) return;
+    const parsed = JSON.parse(raw);
+    const maxAgeMs = 12 * 60 * 60 * 1000; // 12 hours
+    if (!parsed || !parsed.plan || !parsed.savedAt || Date.now() - parsed.savedAt > maxAgeMs) {
+      window.localStorage.removeItem("mercadona_active_plan_v1");
+      return;
+    }
+    state.plan = parsed.plan;
+    if (parsed.prompt) state.prompt = parsed.prompt;
+    if (parsed.postalCode) state.postalCode = parsed.postalCode;
+    if (parsed.warehouse) state.warehouse = parsed.warehouse;
+    if (parsed.profileId) state.profileId = parsed.profileId;
+    if (parsed.selectedCampaignId) state.selectedCampaignId = parsed.selectedCampaignId;
+    if (Array.isArray(parsed.detectedPills) && parsed.detectedPills.length > 0) {
+      state.detectedPills = parsed.detectedPills;
+    }
+  } catch (e) {
+    // Ignore storage read errors
+  }
+}
+
+function buildMercadonaBookmarkletHref() {
+  const appOrigin = window.location.origin;
+  return (
+    `javascript:(function(){` +
+    `try{` +
+    `if(location.hostname.indexOf("mercadona.es")===-1){` +
+    `if(confirm("Para vincular tu carrito, primero debes estar en tienda.mercadona.es con tu sesion iniciada. ¿Quieres abrir tienda.mercadona.es ahora? Cuando estes alli, vuelve a pulsar este marcador.")){` +
+    `location.href="https://tienda.mercadona.es/";` +
+    `}` +
+    `return;` +
+    `}` +
+    `var raw=localStorage.getItem("MO-user");` +
+    `var parsed=null;` +
+    `try{parsed=raw?JSON.parse(raw):null;}catch(e){}` +
+    `if(!raw||!parsed||(!parsed.token&&!parsed.refreshToken)){` +
+    `alert("No se ha detectado una sesion iniciada en tienda.mercadona.es. Por favor, inicia sesion en tu cuenta de Mercadona y vuelve a pulsar este marcador.");` +
+    `return;` +
+    `}` +
+    `var payload=JSON.stringify({mo_user:parsed,cookie:document.cookie||"",ts:Date.now()});` +
+    `var b64=btoa(unescape(encodeURIComponent(payload))).split("+").join("-").split("/").join("_").split("=").join("");` +
+    `location.href=${JSON.stringify(appOrigin)}+"/#mercadona_connect="+b64;` +
+    `}catch(err){` +
+    `alert("Error al leer la sesion de Mercadona: "+err.message);` +
+    `}` +
+    `})();`
+  );
+}
+
+function buildMercadonaConsoleSnippet() {
+  const appOrigin = window.location.origin;
+  return `(function(){var r=localStorage.getItem("MO-user");if(!r){alert("Inicia sesion primero en tienda.mercadona.es");return;}var p=JSON.stringify({mo_user:JSON.parse(r),cookie:document.cookie||""});var b=btoa(unescape(encodeURIComponent(p))).split("+").join("-").split("/").join("_").split("=").join("");location.href=${JSON.stringify(appOrigin)}+"/#mercadona_connect="+b;})();`;
+}
+
+
 function getActiveCampaigns() {
   const active = (state.campaigns || []).filter((c) => !c.status || c.status === "Activa");
   return active.length > 0 ? active : DEFAULT_CAMPAIGNS;
@@ -369,7 +451,28 @@ async function fetchCampaignsFromLibrary() {
   }
 }
 
+async function consumeMercadonaConnectHash() {
+  const hash = String(window.location.hash || "");
+  const match = hash.match(/mercadona_connect=([A-Za-z0-9+/=_-]+)/);
+  if (!match) return false;
+
+  const rawConnectToken = `#mercadona_connect=${match[1]}`;
+  // Immediately clean URL hash so the token does not remain in the address bar
+  try {
+    window.history.replaceState(null, document.title, window.location.pathname + window.location.search);
+  } catch (e) {
+    window.location.hash = "";
+  }
+
+  state.mercadonaAuthInput = rawConnectToken;
+  await connectMercadonaSession({ fromBookmarklet: true });
+  return true;
+}
+
 async function checkSession() {
+  if (!state.plan) {
+    restoreLocalActivePlan();
+  }
   try {
     const res = await fetch("/api/auth/session");
     const data = await res.json();
@@ -412,6 +515,7 @@ async function checkSession() {
     state.auth.checked = true;
     render();
   }
+  await consumeMercadonaConnectHash();
   await fetchCampaignsFromLibrary();
 }
 
@@ -507,6 +611,7 @@ async function generatePlan(promptText) {
     state.postalCode = data.postal_code || state.postalCode;
     state.warehouse = data.warehouse || state.warehouse;
     state.detectedPills = data.constraint_pills || state.detectedPills;
+    saveLocalActivePlan();
   } catch (err) {
     state.error = err.message || "Error al conectar con el planificador Gemini 3.8 Flash.";
   } finally {
@@ -553,6 +658,7 @@ async function swapRecipe(recipeId, options = {}) {
         total: data.total,
         budget_remaining: data.budget_remaining,
       };
+      saveLocalActivePlan();
       showToast(
         options.fromDownvote
           ? `Receta descartada y sustituida (${data.change.day})`
@@ -657,11 +763,11 @@ async function sendToThermomix(recipeId, cookidooUrl, recipeName) {
   }
 }
 
-async function connectMercadonaSession() {
+async function connectMercadonaSession(options = {}) {
   const input = (state.mercadonaAuthInput || "").trim();
   if (!input) {
     state.mercadonaVerifyError =
-      "Pega tu Bearer token JWT, refresh_token o comando 'Copy as cURL' de tienda.mercadona.es.";
+      "Usa el botón 1-Click en tu barra de marcadores desde tienda.mercadona.es o pega tu sesión abajo.";
     render();
     return;
   }
@@ -695,11 +801,29 @@ async function connectMercadonaSession() {
       }
       state.mercadonaAuthInput = "";
       state.mercadonaModalOpen = false;
-      showToast("Cuenta de Mercadona.es conectada", data.message);
+      try {
+        window.localStorage.setItem("mercadona_session_sync_v1", String(Date.now()));
+      } catch (e) {}
+      showToast(
+        options.fromBookmarklet
+          ? "¡Cuenta de Mercadona.es vinculada en 1-Click!"
+          : "Cuenta de Mercadona.es conectada",
+        data.message || "Tu carrito de tienda.mercadona.es ya está vinculado y listo para sincronizar."
+      );
+      if (options.fromBookmarklet && state.plan) {
+        setTimeout(() => {
+          document.getElementById("mercadona-cart-section")?.scrollIntoView({ behavior: "smooth", block: "center" });
+        }, 180);
+      }
     } else {
+      state.mercadonaModalOpen = true;
       state.mercadonaVerifyError = data.error || "No se pudo verificar el token con tienda.mercadona.es.";
+      if (options.fromBookmarklet) {
+        showToast("No se pudo vincular automáticamente", state.mercadonaVerifyError);
+      }
     }
   } catch (err) {
+    state.mercadonaModalOpen = true;
     state.mercadonaVerifyError = err.message || "Error al conectar con tienda.mercadona.es.";
   } finally {
     state.mercadonaVerifying = false;
@@ -723,6 +847,9 @@ async function disconnectMercadonaSession() {
       masked_token: null,
     };
     state.cartAddedResult = null;
+    try {
+      window.localStorage.setItem("mercadona_session_sync_v1", String(Date.now()));
+    } catch (e) {}
     showToast("Sesión desvinculada", "Se ha desvinculado tu sesión de tienda.mercadona.es.");
     render();
   } catch (err) {
@@ -893,6 +1020,19 @@ function renderHeader() {
           <span class="wh-pill">(${escapeHtml(state.warehouse)})</span>
           <button type="submit">Actualizar</button>
         </form>
+        <button
+          type="button"
+          id="header-mercadona-connect-btn"
+          class="mercadona-header-pill ${state.mercadonaSession.connected ? "is-connected" : ""}"
+          title="${
+            state.mercadonaSession.connected
+              ? `Carrito de tienda.mercadona.es vinculado (Cliente ${state.mercadonaSession.customer_id || "activo"})`
+              : "Vincular tu cuenta de tienda.mercadona.es en 1-Click"
+          }"
+        >
+          <span class="mercadona-header-dot"></span>
+          <span>${state.mercadonaSession.connected ? "Carrito Mercadona ✓" : "Vincular Carrito"}</span>
+        </button>
         <label class="profile-selector">
           <span>Perfil</span>
           <select id="profile-select" aria-label="Seleccionar perfil familiar">
@@ -914,6 +1054,120 @@ function renderHeader() {
         }
       </div>
     </header>
+  `;
+}
+
+function renderMercadonaConnectBox() {
+  if (!state.mercadonaModalOpen) return "";
+  const bookmarkletHref = buildMercadonaBookmarkletHref();
+  const forceManualOpen = Boolean(state.mercadonaVerifyError || state.mercadonaAuthInput);
+  return `
+    <div id="mercadona-connect-box" class="mercadona-connect-panel">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:10px; flex-wrap:wrap; margin-bottom:10px;">
+        <div>
+          <strong style="font-size:13.5px; display:block; color:var(--ink);">
+            🔗 Vincular tu cuenta de <code>tienda.mercadona.es</code> en 1-Click (Configuración única)
+          </strong>
+          <span style="font-size:12px; color:var(--muted);">
+            ${
+              state.mercadonaSession.connected
+                ? `Actualmente conectada: Cliente ${escapeHtml(state.mercadonaSession.customer_id || "activo")} · Almacén ${escapeHtml(state.mercadonaSession.warehouse || state.warehouse)}${state.mercadonaSession.has_refresh_token ? " · Renovación automática activa" : ""}`
+                : "Vincula tu cuenta una sola vez sin tener que buscar ni copiar peticiones de red."
+            }
+          </span>
+        </div>
+        <div style="display:flex; align-items:center; gap:12px;">
+          ${
+            state.mercadonaSession.connected
+              ? `<button type="button" class="text-button" id="disconnect-mercadona-session-btn" style="color:#b42318; font-size:12px;">Desvincular sesión actual</button>`
+              : ""
+          }
+          <button type="button" class="text-button" id="close-mercadona-modal-btn" style="font-size:12px;">Cerrar ✕</button>
+        </div>
+      </div>
+
+      ${
+        state.mercadonaVerifyError
+          ? `<div style="color:#b42318; background:#fef3f2; border:1px solid #fecdca; padding:9px 12px; font-size:12px; border-radius:3px; margin-bottom:12px;">${escapeHtml(state.mercadonaVerifyError)}</div>`
+          : ""
+      }
+
+      <div class="mercadona-bookmarklet-steps">
+        <div class="mercadona-step-card">
+          <span class="mercadona-step-num">1</span>
+          <div>
+            <strong>Arrastra este botón a tu barra de marcadores</strong>
+            <p>Haz clic sin soltar sobre el botón verde y arrástralo arriba a la barra de marcadores de tu navegador (si está oculta, pulsa <code>Ctrl+Shift+B</code> o <code>⌘+Shift+B</code> en Mac).</p>
+            <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-top:8px;">
+              <a
+                href="${escapeHtml(bookmarkletHref)}"
+                id="mercadona-bookmarklet-link"
+                class="mercadona-bookmarklet-btn"
+                draggable="true"
+                title="Arrástrame a tu barra de marcadores y púlsame cuando estés en tienda.mercadona.es"
+              >
+                🔗 Vincular con Mercadona.es
+              </a>
+              <button
+                type="button"
+                class="secondary-button"
+                id="copy-mercadona-connector-btn"
+                style="padding: 7px 11px; font-size: 11.5px;"
+                title="Si no usas barra de marcadores, copia este comando para pegarlo en la Consola de tienda.mercadona.es"
+              >
+                📋 Copiar conector para Consola
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="mercadona-step-card">
+          <span class="mercadona-step-num">2</span>
+          <div>
+            <strong>Abre Mercadona con tu sesión iniciada y pulsa el marcador</strong>
+            <p>
+              Entra en <a href="https://tienda.mercadona.es/" target="_blank" rel="noreferrer" style="text-decoration:underline; font-weight:700; color:var(--green-dark);">tienda.mercadona.es ↗</a>, asegúrate de haber iniciado sesión y haz clic en el marcador <strong>“🔗 Vincular con Mercadona.es”</strong> en tu barra.
+            </p>
+            <p style="margin-top:4px; font-size:11.5px; color:var(--muted);">
+              El marcador leerá automáticamente tu sesión activa (<code>MO-user</code> + <code>refreshToken</code>) y volverá aquí con tu cuenta vinculada y renovación automática activada.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <details ${forceManualOpen ? "open" : ""} style="margin-top:12px; border-top:1px solid #d5e5dc; padding-top:10px;">
+        <summary style="font-size:12px; font-weight:600; color:var(--ink); cursor:pointer;">
+          ¿Prefieres pegar la sesión manualmente desde F12 (Application / Network)?
+        </summary>
+        <div style="margin-top:10px;">
+          <div style="font-size:11.5px; color:var(--muted); line-height:1.55; margin-bottom:10px; background:#ffffff; border:1px solid #dfeae4; padding:10px 12px; border-radius:3px;">
+            <strong style="color:var(--ink); display:block; margin-bottom:4px;">¿Cómo encontrar la sesión en <code>tienda.mercadona.es</code>?</strong>
+            • <strong>Opción A — Pestaña Application (la más rápida):</strong> Pulsa <code>F12</code> → pestaña <strong>Application</strong> (o <em>Aplicación</em>) → <strong>Local Storage</strong> → <code>https://tienda.mercadona.es</code>, haz doble clic en el valor de la clave <strong><code>MO-user</code></strong>, cópialo y pégalo abajo.<br/>
+            • <strong>Opción B — Pestaña Network (Copy as cURL):</strong> En <code>F12</code> → <strong>Network (Red)</strong>, escribe <strong><code>customers</code></strong> o <strong><code>cart</code></strong> en el buscador de filtro arriba a la izquierda (las peticiones a <code>/api/categories/</code> o <code>/api/products/</code> son públicas y no llevan tu token), recarga la página (<code>F5</code>), haz clic derecho sobre la petición → <strong>Copy → Copy as cURL</strong> y pégalo abajo.
+          </div>
+          <textarea
+            id="mercadona-auth-input"
+            rows="3"
+            placeholder="Pega aquí el JSON de 'MO-user', tu comando 'Copy as cURL' (filtrado por 'customers' o 'cart'), o tu Bearer token..."
+            style="width:100%; border:1px solid var(--line); background:#fff; padding:10px; font-size:12px; font-family:monospace; border-radius:2px; margin-bottom:10px;"
+          >${escapeHtml(state.mercadonaAuthInput)}</textarea>
+          <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+            <button
+              type="button"
+              class="primary-button"
+              id="verify-mercadona-session-btn"
+              style="padding: 8px 14px; font-size: 12px;"
+              ${state.mercadonaVerifying ? "disabled" : ""}
+            >
+              ${state.mercadonaVerifying ? "Verificando con tienda.mercadona.es..." : "Verificar y vincular cuenta Mercadona.es"}
+            </button>
+            <span style="font-size:11px; color:var(--muted);">
+              Si pegas el JSON de <code>MO-user</code>, incluye tu <code>refreshToken</code> y se renovará automáticamente.
+            </span>
+          </div>
+        </div>
+      </details>
+    </div>
   `;
 }
 
@@ -947,6 +1201,7 @@ function renderExperiencePanel() {
 
   if (!state.plan) {
     return `
+      ${renderMercadonaConnectBox()}
       <div class="empty-state">
         <div class="abstract-basket" aria-hidden="true">
           <span class="basket-handle"></span>
@@ -1132,7 +1387,7 @@ function renderExperiencePanel() {
         “Envía a tu Thermomix” conecta con la receta oficial en <strong>cookidoo.es</strong> y con <code>miaucl/cookidoo-api</code> para que puedas enviarla en un solo click a tu cuenta de Cookidoo.
       </p>
 
-      <div class="basket-section">
+      <div class="basket-section" id="mercadona-cart-section">
         <div class="basket-header">
           <div>
             <p class="empty-kicker">Mapping al catálogo de Mercadona</p>
@@ -1217,58 +1472,14 @@ function renderExperiencePanel() {
                   ? "Ocultar configuración Mercadona.es"
                   : state.mercadonaSession.connected
                   ? "Cambiar / Desvincular cuenta Mercadona.es"
-                  : "🔗 Conectar cuenta Mercadona.es"
+                  : "🔗 Vincular cuenta Mercadona.es (1-Click)"
               }
             </button>
           </div>
         </div>
 
-        ${
-          state.mercadonaModalOpen
-            ? `
-          <div style="background:#f4faf7; border:1px solid #cfded6; padding:16px; margin-bottom:16px; border-radius:3px;">
-            <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:10px; flex-wrap:wrap; margin-bottom:8px;">
-              <strong style="font-size:13px;">Conexión directa con la API de carrito de <code>tienda.mercadona.es</code> (<code>PUT /api/customers/&lt;id&gt;/cart/</code>)</strong>
-              ${
-                state.mercadonaSession.connected
-                  ? `<button type="button" class="text-button" id="disconnect-mercadona-session-btn" style="color:#b42318; font-size:12px;">Desvincular sesión actual</button>`
-                  : ""
-              }
-            </div>
-            <ol style="font-size:12px; color:var(--muted); margin: 0 0 12px 18px; padding:0; line-height:1.55;">
-              <li>Inicia sesión en <a href="https://tienda.mercadona.es" target="_blank" rel="noreferrer" style="text-decoration:underline; font-weight:600;">tienda.mercadona.es ↗</a> en tu navegador.</li>
-              <li>Abre las herramientas de desarrollador (<code>F12</code> → pestaña <strong>Network / Red</strong>), haz clic derecho sobre cualquier petición a <code>/api/</code> y elige <strong>Copy → Copy as cURL</strong> (o pega directamente tu <code>Bearer token</code> JWT / <code>refresh_token</code>).</li>
-              <li>Pégalo aquí abajo: el servidor extraerá tu <code>customer_uuid</code> y escribirá los productos directamente en tu carrito real al pulsar el botón 1-Click.</li>
-            </ol>
-            <textarea
-              id="mercadona-auth-input"
-              rows="3"
-              placeholder="Pega aquí el comando 'Copy as cURL' de tienda.mercadona.es, tu Bearer token (eyJ...) o el JSON con refresh_token..."
-              style="width:100%; border:1px solid var(--line); background:#fff; padding:10px; font-size:12px; font-family:monospace; border-radius:2px; margin-bottom:10px;"
-            >${escapeHtml(state.mercadonaAuthInput)}</textarea>
-            ${
-              state.mercadonaVerifyError
-                ? `<div style="color:#b42318; background:#fef3f2; border:1px solid #fecdca; padding:8px 10px; font-size:12px; border-radius:2px; margin-bottom:10px;">${escapeHtml(state.mercadonaVerifyError)}</div>`
-                : ""
-            }
-            <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
-              <button
-                type="button"
-                class="primary-button"
-                id="verify-mercadona-session-btn"
-                style="padding: 8px 14px; font-size: 12px;"
-                ${state.mercadonaVerifying ? "disabled" : ""}
-              >
-                ${state.mercadonaVerifying ? "Verificando con tienda.mercadona.es..." : "Verificar y vincular cuenta Mercadona.es"}
-              </button>
-              <span style="font-size:11px; color:var(--muted);">
-                El token JWT de Mercadona dura ~6 semanas (y se renueva automáticamente si incluyes <code>refresh_token</code>).
-              </span>
-            </div>
-          </div>
-        `
-            : ""
-        }
+        ${renderMercadonaConnectBox()}
+
 
         <div class="mercadona-oneclick-bar">
           <div>
@@ -1816,6 +2027,7 @@ function bindEvents() {
       state.plan = null;
       state.error = null;
       state.cartAddedResult = null;
+      saveLocalActivePlan();
       render();
     });
   }
@@ -1883,12 +2095,59 @@ function bindEvents() {
   }
 
   // Mercadona session toggle & inputs
+  const headerMercadonaBtn = document.getElementById("header-mercadona-connect-btn");
+  if (headerMercadonaBtn) {
+    headerMercadonaBtn.addEventListener("click", () => {
+      state.activeTab = "planner";
+      state.mercadonaModalOpen = !state.mercadonaModalOpen;
+      state.mercadonaVerifyError = "";
+      render();
+      if (state.mercadonaModalOpen) {
+        setTimeout(() => {
+          document.getElementById("mercadona-connect-box")?.scrollIntoView({ behavior: "smooth", block: "center" });
+        }, 80);
+      }
+    });
+  }
   const toggleMercadonaBtn = document.getElementById("toggle-mercadona-session-btn");
   if (toggleMercadonaBtn) {
     toggleMercadonaBtn.addEventListener("click", () => {
       state.mercadonaModalOpen = !state.mercadonaModalOpen;
       state.mercadonaVerifyError = "";
       render();
+    });
+  }
+  const closeMercadonaModalBtn = document.getElementById("close-mercadona-modal-btn");
+  if (closeMercadonaModalBtn) {
+    closeMercadonaModalBtn.addEventListener("click", () => {
+      state.mercadonaModalOpen = false;
+      state.mercadonaVerifyError = "";
+      render();
+    });
+  }
+  const bookmarkletLink = document.getElementById("mercadona-bookmarklet-link");
+  if (bookmarkletLink) {
+    bookmarkletLink.addEventListener("click", (e) => {
+      e.preventDefault();
+      showToast(
+        "Arrástralo a tu barra de marcadores",
+        "Haz clic sin soltar sobre el botón verde '🔗 Vincular con Mercadona.es', arrástralo a tu barra de marcadores arriba y púlsalo cuando estés en tienda.mercadona.es."
+      );
+    });
+  }
+  const copyConnectorBtn = document.getElementById("copy-mercadona-connector-btn");
+  if (copyConnectorBtn) {
+    copyConnectorBtn.addEventListener("click", async () => {
+      const snippet = buildMercadonaConsoleSnippet();
+      try {
+        await navigator.clipboard.writeText(snippet);
+        showToast(
+          "Conector 1-Click copiado al portapapeles",
+          "Abre tienda.mercadona.es, pulsa F12 → pestaña Console, pega el comando (Ctrl+V) y pulsa Enter."
+        );
+      } catch (e) {
+        showToast("No se pudo copiar automáticamente", "Arrastra el botón verde a tu barra de marcadores.");
+      }
     });
   }
   const mAuthInput = document.getElementById("mercadona-auth-input");
@@ -1899,7 +2158,7 @@ function bindEvents() {
   }
   const verifyMercadonaBtn = document.getElementById("verify-mercadona-session-btn");
   if (verifyMercadonaBtn) {
-    verifyMercadonaBtn.addEventListener("click", connectMercadonaSession);
+    verifyMercadonaBtn.addEventListener("click", () => connectMercadonaSession());
   }
   const disconnectMercadonaBtn = document.getElementById("disconnect-mercadona-session-btn");
   if (disconnectMercadonaBtn) {
@@ -2009,9 +2268,18 @@ function ensureMercadonaFavicon() {
   document.head.appendChild(icoLink);
 }
 
-// Initialize app and auto-refresh campaigns when returning to the tab
+// Initialize app and auto-refresh campaigns/session when returning to the tab
 ensureMercadonaFavicon();
 checkSession();
+window.addEventListener("hashchange", () => {
+  consumeMercadonaConnectHash();
+});
+window.addEventListener("storage", (e) => {
+  if (e.key === "mercadona_session_sync_v1") {
+    checkSession();
+  }
+});
 window.addEventListener("focus", () => {
   fetchCampaignsFromLibrary();
 });
+

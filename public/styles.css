@@ -556,3 +556,111 @@
   gap: 10px;
   flex-wrap: wrap;
 }
+
+/* Mercadona 1-Click Bookmarklet & Header Connection Pill */
+.mercadona-header-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  border: 1px solid #cfded6;
+  background: #f4faf7;
+  color: var(--ink);
+  font-size: 11.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+.mercadona-header-pill:hover {
+  border-color: var(--green);
+  background: var(--green-soft);
+}
+.mercadona-header-pill.is-connected {
+  border-color: #98d8b2;
+  background: #eaf7ef;
+  color: var(--green-dark);
+}
+.mercadona-header-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #9aa5a0;
+}
+.mercadona-header-pill.is-connected .mercadona-header-dot {
+  background: #007a33;
+  box-shadow: 0 0 0 2px rgba(0, 122, 51, 0.22);
+}
+
+.mercadona-connect-panel {
+  background: #f4faf7;
+  border: 1px solid #c5ddd0;
+  padding: 16px 18px;
+  margin-bottom: 16px;
+  border-radius: 4px;
+}
+.mercadona-bookmarklet-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
+}
+.mercadona-step-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: #ffffff;
+  border: 1px solid #dfeae4;
+  border-radius: 4px;
+  padding: 12px 14px;
+}
+.mercadona-step-card strong {
+  display: block;
+  font-size: 12.5px;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+.mercadona-step-card p {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.5;
+  margin: 0;
+}
+.mercadona-step-num {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--green);
+  color: #ffffff;
+  font-size: 11.5px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1px;
+}
+.mercadona-bookmarklet-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 13px;
+  border-radius: 999px;
+  background: var(--green);
+  color: #ffffff !important;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none !important;
+  border: 1px dashed rgba(255, 255, 255, 0.55);
+  box-shadow: 0 2px 6px rgba(0, 122, 51, 0.24);
+  cursor: grab;
+  user-select: none;
+  transition: transform 0.12s ease, background 0.15s ease;
+}
+.mercadona-bookmarklet-btn:hover {
+  background: var(--green-dark);
+  transform: translateY(-1px);
+}
+.mercadona-bookmarklet-btn:active {
+  cursor: grabbing;
+}
+
