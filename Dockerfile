@@ -13,6 +13,14 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
+RUN groupadd -g 10001 appgroup && \
+    useradd -u 10001 -g appgroup -m -s /usr/sbin/nologin appuser && \
+    mkdir -p /app/data && \
+    chmod 700 /app/data && \
+    chown -R appuser:appgroup /app
+
+USER appuser
+
 EXPOSE 8080
 
 CMD ["python3", "server.py"]

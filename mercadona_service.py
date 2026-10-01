@@ -11,6 +11,8 @@ import base64
 import json
 import os
 import re
+import tempfile
+import threading
 import time
 import urllib.error
 import urllib.parse
@@ -34,11 +36,33 @@ MERCADONA_DEFAULT_VERSION = "v9800"
 ALGOLIA_APP_ID = os.environ.get("MERCADONA_ALGOLIA_APP_ID", "7UZJKL1DJ0")
 ALGOLIA_API_KEY = os.environ.get("MERCADONA_ALGOLIA_API_KEY", "9d8f2e39e90df472b4f2e559a116fe17")
 
+# Input validation patterns to prevent path traversal / URL injection / SSRF
+_WAREHOUSE_RE = re.compile(r"^[a-z0-9_]{2,12}$")
+_CUSTOMER_ID_RE = re.compile(r"^[a-zA-Z0-9_-]{1,64}$")
+_PRODUCT_ID_RE = re.compile(r"^[a-zA-Z0-9_.-]{1,32}$")
+
 # In-memory cache for postal code -> warehouse, live product lookups, and user Mercadona sessions
 _PC_CACHE: dict[str, dict[str, str]] = {"28016": {"postal_code": "28016", "warehouse": "mad3"}}
 _LIVE_PRODUCT_CACHE: dict[tuple[str, str], tuple[float, dict[str, Any]]] = {}
 _MERCADONA_SESSIONS: dict[str, dict[str, Any]] = {}
+_SESSIONS_LOCK = threading.RLock()
 _CACHE_TTL_SECONDS = 900  # 15 minutes
+
+
+def _sanitize_warehouse(warehouse: str, default: str = "mad3") -> str:
+    """Validates and normalizes a Mercadona warehouse code (`wh`) against `[a-z0-9_]{2,12}`."""
+    wh = str(warehouse or "").strip().lower()
+    if wh and _WAREHOUSE_RE.match(wh):
+        return wh
+    return default
+
+
+def _validate_customer_id(customer_id: str) -> str:
+    """Validates a Mercadona customer_id / customer_uuid against `[a-zA-Z0-9_-]{1,64}`."""
+    cid = str(customer_id or "").strip()
+    if not cid or cid.lower() == "me" or not _CUSTOMER_ID_RE.match(cid):
+        raise ValueError("Formato de customer_id inválido.")
+    return cid
 
 
 _SNAPSHOT_CACHE: dict[str, dict[str, Any]] | None = None
@@ -155,7 +179,7 @@ def fetch_algolia_products_batch(
     warehouse: str = "mad3",
 ) -> dict[str, dict[str, Any]]:
     """Fetches live product data for multiple product_ids in a single batch call from Mercadona's Algolia index."""
-    wh = (warehouse or "mad3").strip().lower()
+    wh = _sanitize_warehouse(warehouse, default="mad3")
     now = time.time()
     snapshot = load_snapshot_products()
     found: dict[str, dict[str, Any]] = {}
@@ -163,7 +187,7 @@ def fetch_algolia_products_batch(
 
     for raw_pid in product_ids:
         pid = str(raw_pid).strip()
-        if not pid:
+        if not pid or not _PRODUCT_ID_RE.match(pid):
             continue
         cache_key = (pid, wh)
         if cache_key in _LIVE_PRODUCT_CACHE:
@@ -227,7 +251,7 @@ def search_algolia_replacement(
     clean_name = str(product_name or "").strip()
     if not clean_name:
         return None
-    wh = (warehouse or "mad3").strip().lower()
+    wh = _sanitize_warehouse(warehouse, default="mad3")
     url = f"https://{ALGOLIA_APP_ID.lower()}-dsn.algolia.net/1/indexes/products_prod_{wh}_es/query"
 
     # Build progressive query candidates: full name first, then simplified 3-word and 2-word core names
@@ -246,7 +270,7 @@ def search_algolia_replacement(
     now = time.time()
     for q in candidate_queries:
         payload = json.dumps(
-            {"params": f"query={urllib.parse.quote(q)}&hitsPerPage=6"}
+            {"params": f"query={urllib.parse.quote(q, safe='')}&hitsPerPage=6"}
         ).encode("utf-8")
         req = urllib.request.Request(
             url,
@@ -275,7 +299,9 @@ def search_algolia_replacement(
 def fetch_live_product(product_id: str, warehouse: str = "mad3") -> dict[str, Any] | None:
     """Fetches real-time availability, price, pack size, and allergens for a Mercadona product."""
     pid = str(product_id).strip()
-    wh = (warehouse or "mad3").strip().lower()
+    if not pid or not _PRODUCT_ID_RE.match(pid):
+        return None
+    wh = _sanitize_warehouse(warehouse, default="mad3")
     cache_key = (pid, wh)
     now = time.time()
     if cache_key in _LIVE_PRODUCT_CACHE:
@@ -596,6 +622,14 @@ def parse_mercadona_auth_input(raw_input: str) -> dict[str, str]:
                     result["customer_id"] = cid
                     break
 
+    # Sanitize extracted tokens, cookies, warehouse, and customer_id against CRLF / path injection
+    result["access_token"] = re.sub(r"[\r\n]+", "", result["access_token"]).strip()
+    result["refresh_token"] = re.sub(r"[\r\n]+", "", result["refresh_token"]).strip()
+    result["cookie"] = re.sub(r"[\r\n]+", "", result["cookie"]).strip()
+    result["warehouse"] = _sanitize_warehouse(result["warehouse"], default="")
+    if result["customer_id"] and not _CUSTOMER_ID_RE.match(result["customer_id"]):
+        result["customer_id"] = ""
+
     return result
 
 
@@ -647,36 +681,46 @@ def refresh_mercadona_token(refresh_token: str, cookie: str = "") -> dict[str, s
 
 def _load_saved_sessions() -> dict[str, dict[str, Any]]:
     global _MERCADONA_SESSIONS
-    if _MERCADONA_SESSIONS:
+    with _SESSIONS_LOCK:
+        if _MERCADONA_SESSIONS:
+            return _MERCADONA_SESSIONS
+        if SESSIONS_FILE.exists():
+            try:
+                data = json.loads(SESSIONS_FILE.read_text(encoding="utf-8"))
+                if isinstance(data, dict):
+                    _MERCADONA_SESSIONS = data
+            except Exception:
+                pass
         return _MERCADONA_SESSIONS
-    if SESSIONS_FILE.exists():
-        try:
-            data = json.loads(SESSIONS_FILE.read_text(encoding="utf-8"))
-            if isinstance(data, dict):
-                _MERCADONA_SESSIONS = data
-        except Exception:
-            pass
-    return _MERCADONA_SESSIONS
 
 
 def _save_sessions_to_disk() -> None:
-    try:
-        DATA_DIR.mkdir(parents=True, exist_ok=True)
-        SESSIONS_FILE.write_text(
-            json.dumps(_MERCADONA_SESSIONS, ensure_ascii=False, indent=2),
-            encoding="utf-8",
-        )
-    except Exception:
-        pass
+    with _SESSIONS_LOCK:
+        try:
+            DATA_DIR.mkdir(parents=True, exist_ok=True)
+            fd, tmp_path = tempfile.mkstemp(
+                dir=str(DATA_DIR), prefix=".mercadona_sessions_", suffix=".tmp"
+            )
+            try:
+                os.fchmod(fd, 0o600)
+            except AttributeError:
+                os.chmod(tmp_path, 0o600)
+            with os.fdopen(fd, "w", encoding="utf-8") as f:
+                json.dump(_MERCADONA_SESSIONS, f, ensure_ascii=False, indent=2)
+            os.replace(tmp_path, SESSIONS_FILE)
+            os.chmod(SESSIONS_FILE, 0o600)
+        except Exception:
+            pass
 
 
 def get_active_mercadona_session(user_email: str = "default") -> dict[str, str] | None:
-    """Returns the active Mercadona session for the given user (or env fallback)."""
-    sessions = _load_saved_sessions()
-    key = (user_email or "default").strip().lower()
-    sess = sessions.get(key) or sessions.get("default")
-    if sess and (sess.get("access_token") or sess.get("refresh_token")):
-        return dict(sess)
+    """Returns the active Mercadona session strictly isolated to the given user (or env fallback)."""
+    with _SESSIONS_LOCK:
+        sessions = _load_saved_sessions()
+        key = (str(user_email) if user_email else "default").strip().lower()
+        sess = sessions.get(key)
+        if sess and (sess.get("access_token") or sess.get("refresh_token")):
+            return dict(sess)
 
     env_tok = os.environ.get("MERCADONA_TOKEN", "").strip()
     env_ref = os.environ.get("MERCADONA_REFRESH_TOKEN", "").strip()
@@ -723,12 +767,13 @@ def get_mercadona_session_status(user_email: str = "default") -> dict[str, Any]:
 
 
 def clear_mercadona_session(user_email: str = "default") -> dict[str, Any]:
-    """Removes the stored Mercadona session for the user."""
-    sessions = _load_saved_sessions()
-    key = (user_email or "default").strip().lower()
-    sessions.pop(key, None)
-    sessions.pop("default", None)
-    _save_sessions_to_disk()
+    """Removes the stored Mercadona session strictly for the requesting user."""
+    with _SESSIONS_LOCK:
+        sessions = _load_saved_sessions()
+        key = str(user_email or "").strip().lower()
+        if key:
+            sessions.pop(key, None)
+        _save_sessions_to_disk()
     return {"connected": False, "message": "Sesión de Mercadona.es desvinculada correctamente."}
 
 
@@ -767,7 +812,7 @@ def _mercadona_authed_request(
             with urllib.request.urlopen(req, timeout=10) as resp:
                 resp_headers = getattr(resp, "headers", None)
                 if resp_headers:
-                    resp_wh = (resp_headers.get("x-customer-wh") or "").strip().lower()
+                    resp_wh = _sanitize_warehouse(resp_headers.get("x-customer-wh") or "", default="")
                     resp_pc = (resp_headers.get("x-customer-pc") or "").strip()
                     if resp_wh:
                         session["server_wh"] = resp_wh
@@ -789,9 +834,12 @@ def _mercadona_authed_request(
                 session["refresh_token"] = refreshed["refresh_token"]
                 if refreshed.get("customer_id"):
                     session["customer_id"] = refreshed["customer_id"]
-                sessions = _load_saved_sessions()
-                sessions[(user_email or "default").strip().lower()] = session
-                _save_sessions_to_disk()
+                with _SESSIONS_LOCK:
+                    sessions = _load_saved_sessions()
+                    key = str(user_email or "").strip().lower()
+                    if key:
+                        sessions[key] = session
+                        _save_sessions_to_disk()
                 continue
             raise RuntimeError(f"Mercadona API HTTP {e.code}: {err_body[:280] or e.reason}") from e
     return {}
@@ -809,6 +857,7 @@ def _detect_customer_warehouse_and_pc(
 
     # 1. Check `__mo_da` cookie if present in session
     mo_wh, mo_pc = _extract_mo_da_from_cookie(str(session.get("cookie") or ""))
+    mo_wh = _sanitize_warehouse(mo_wh, default="")
     if mo_wh:
         session["warehouse"] = mo_wh
         if mo_pc:
@@ -816,11 +865,11 @@ def _detect_customer_warehouse_and_pc(
         return mo_wh, mo_pc or str(session.get("postal_code") or fallback_pc)
 
     # 2. Check if customer has saved delivery addresses on tienda.mercadona.es
-    if customer_id:
+    if customer_id and _CUSTOMER_ID_RE.match(customer_id):
         try:
             addr_data = _mercadona_authed_request(
                 "GET",
-                f"/api/customers/{urllib.parse.quote(customer_id)}/addresses/?lang=es",
+                f"/api/customers/{urllib.parse.quote(customer_id, safe='')}/addresses/?lang=es",
                 session,
                 user_email=user_email,
             )
@@ -835,12 +884,12 @@ def _detect_customer_warehouse_and_pc(
                     addr_pc = str(chosen_addr.get("postal_code") or "").strip()
                     if len(addr_pc) == 5:
                         pc_info = resolve_postal_code(addr_pc)
-                        wh = session.get("server_wh") or pc_info["warehouse"]
+                        wh = _sanitize_warehouse(session.get("server_wh") or pc_info["warehouse"])
                         session["warehouse"] = wh
                         session["postal_code"] = addr_pc
                         return wh, addr_pc
             if session.get("server_wh"):
-                wh = str(session["server_wh"]).strip().lower()
+                wh = _sanitize_warehouse(session["server_wh"])
                 pc = str(session.get("server_pc") or session.get("postal_code") or fallback_pc)
                 session["warehouse"] = wh
                 session["postal_code"] = pc
@@ -850,7 +899,7 @@ def _detect_customer_warehouse_and_pc(
 
     # 3. Use explicitly stored warehouse or resolve fallback postal code
     pc_info = resolve_postal_code(str(session.get("postal_code") or fallback_pc))
-    wh = str(session.get("warehouse") or pc_info["warehouse"]).strip().lower()
+    wh = _sanitize_warehouse(session.get("warehouse") or pc_info["warehouse"], default=pc_info["warehouse"])
     pc = str(session.get("postal_code") or pc_info["postal_code"]).strip()
     return wh, pc
 
@@ -863,8 +912,8 @@ def validate_cart_lines_anonymous(
     """Calls `POST https://tienda.mercadona.es/api/carts/?lang=es&wh=<wh>` (`wd.validate` in the SPA)
     to validate cart lines and inspect which products are published in `<wh>`.
     """
-    wh = (warehouse or "mad3").strip().lower()
-    url = f"{MERCADONA_BASE_URL}/api/carts/?lang=es&wh={urllib.parse.quote(wh)}"
+    wh = _sanitize_warehouse(warehouse, default="mad3")
+    url = f"{MERCADONA_BASE_URL}/api/carts/?lang=es&wh={urllib.parse.quote(wh, safe='')}"
     payload = json.dumps(
         {
             "id": cart_id or str(uuid.uuid4()),
@@ -914,38 +963,48 @@ def verify_and_save_mercadona_session(
             "Asegúrate de pegar el token JWT completo o el comando 'Copy as cURL' de una petición a /api/customers/<id>/cart/."
         )
 
+    validated_cid = _validate_customer_id(parsed["customer_id"])
+    parsed["customer_id"] = validated_cid
+
     _, mo_pc = _extract_mo_da_from_cookie(parsed["cookie"] or str(raw_input or ""))
 
     session_record: dict[str, Any] = {
         "access_token": parsed["access_token"],
         "refresh_token": parsed["refresh_token"],
         "cookie": parsed["cookie"],
-        "customer_id": parsed["customer_id"],
-        "warehouse": parsed["warehouse"],
+        "customer_id": validated_cid,
+        "warehouse": _sanitize_warehouse(parsed["warehouse"], default=""),
         "postal_code": mo_pc or postal_code,
         "updated_at": int(time.time()),
     }
 
     # Verify live against GET /api/customers/<id>/cart/
-    wh = parsed["warehouse"] or resolve_postal_code(mo_pc or postal_code)["warehouse"]
-    cart_path = f"/api/customers/{urllib.parse.quote(parsed['customer_id'])}/cart/?lang=es&wh={urllib.parse.quote(wh)}"
+    wh = _sanitize_warehouse(
+        parsed["warehouse"] or resolve_postal_code(mo_pc or postal_code)["warehouse"],
+        default="mad3",
+    )
+    cart_path = (
+        f"/api/customers/{urllib.parse.quote(validated_cid, safe='')}/cart/"
+        f"?lang=es&wh={urllib.parse.quote(wh, safe='')}"
+    )
     cart_data = _mercadona_authed_request("GET", cart_path, session_record, user_email=user_email)
 
     # If the cart response header indicates a specific customer warehouse, honor it
     resolved_pc = mo_pc or postal_code
     if session_record.get("server_wh") and not parsed["warehouse"]:
-        wh = str(session_record["server_wh"]).strip().lower()
+        wh = _sanitize_warehouse(session_record["server_wh"], default=wh)
     if session_record.get("server_pc") and not mo_pc:
         resolved_pc = str(session_record["server_pc"]).strip()
 
     session_record["warehouse"] = wh
     session_record["postal_code"] = resolved_pc
 
-    sessions = _load_saved_sessions()
-    key = (user_email or "default").strip().lower()
-    sessions[key] = session_record
-    sessions["default"] = session_record
-    _save_sessions_to_disk()
+    with _SESSIONS_LOCK:
+        sessions = _load_saved_sessions()
+        key = str(user_email or "default").strip().lower()
+        if key:
+            sessions[key] = session_record
+            _save_sessions_to_disk()
 
     products_count = int(cart_data.get("products_count") or len(cart_data.get("lines") or []))
     cart_total = str((cart_data.get("summary") or {}).get("total") or "0.00")
@@ -993,7 +1052,7 @@ def prepare_mercadona_oneclick_cart(
     so the Cart Drawer on tienda.mercadona.es renders all lines cleanly.
     """
     pc_info = resolve_postal_code(postal_code)
-    wh = pc_info["warehouse"]
+    wh = _sanitize_warehouse(pc_info["warehouse"], default="mad3")
 
     # If the user supplied fresh auth input inline, verify and save it first
     inline_auth_error = None
@@ -1014,7 +1073,7 @@ def prepare_mercadona_oneclick_cart(
 
     if session and not inline_auth_error:
         if session.get("warehouse"):
-            target_wh = str(session["warehouse"]).strip().lower()
+            target_wh = _sanitize_warehouse(session["warehouse"], default=wh)
             target_pc = str(session.get("postal_code") or target_pc).strip()
         else:
             target_wh, target_pc = _detect_customer_warehouse_and_pc(
@@ -1083,10 +1142,10 @@ def prepare_mercadona_oneclick_cart(
             customer_id = customer_from_jwt(session["access_token"])
             session["customer_id"] = customer_id
 
-        if customer_id:
+        if customer_id and _CUSTOMER_ID_RE.match(customer_id):
             cart_path = (
-                f"/api/customers/{urllib.parse.quote(customer_id)}/cart/"
-                f"?lang=es&wh={urllib.parse.quote(target_wh)}"
+                f"/api/customers/{urllib.parse.quote(customer_id, safe='')}/cart/"
+                f"?lang=es&wh={urllib.parse.quote(target_wh, safe='')}"
             )
             try:
                 # 1. GET current real cart from tienda.mercadona.es

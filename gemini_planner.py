@@ -7,6 +7,8 @@ import json
 import math
 import os
 import re
+import tempfile
+import threading
 import urllib.request
 from pathlib import Path
 from typing import Any
@@ -20,41 +22,57 @@ MODEL_FALLBACK = "gemini-2.5-flash"
 DATA_DIR = Path(__file__).resolve().parent / "data"
 PREFERENCES_FILE = DATA_DIR / "user_preferences.json"
 _USER_PREFERENCES: dict[str, dict[str, list[str]]] = {}
+_PREFS_LOCK = threading.RLock()
+_RECIPE_ID_RE = re.compile(r"^r\d{1,10}$")
 
 
 def _load_preferences_store() -> dict[str, dict[str, list[str]]]:
     global _USER_PREFERENCES
-    if _USER_PREFERENCES:
+    with _PREFS_LOCK:
+        if _USER_PREFERENCES:
+            return _USER_PREFERENCES
+        if PREFERENCES_FILE.exists():
+            try:
+                data = json.loads(PREFERENCES_FILE.read_text(encoding="utf-8"))
+                if isinstance(data, dict):
+                    _USER_PREFERENCES = data
+            except Exception:
+                pass
         return _USER_PREFERENCES
-    if PREFERENCES_FILE.exists():
-        try:
-            data = json.loads(PREFERENCES_FILE.read_text(encoding="utf-8"))
-            if isinstance(data, dict):
-                _USER_PREFERENCES = data
-        except Exception:
-            pass
-    return _USER_PREFERENCES
 
 
 def _save_preferences_store() -> None:
-    try:
-        DATA_DIR.mkdir(parents=True, exist_ok=True)
-        PREFERENCES_FILE.write_text(
-            json.dumps(_USER_PREFERENCES, ensure_ascii=False, indent=2),
-            encoding="utf-8",
-        )
-    except Exception:
-        pass
+    with _PREFS_LOCK:
+        try:
+            DATA_DIR.mkdir(parents=True, exist_ok=True)
+            fd, tmp_path = tempfile.mkstemp(
+                dir=str(DATA_DIR), prefix=".user_preferences_", suffix=".tmp"
+            )
+            try:
+                os.fchmod(fd, 0o600)
+            except AttributeError:
+                os.chmod(tmp_path, 0o600)
+            with os.fdopen(fd, "w", encoding="utf-8") as f:
+                json.dump(_USER_PREFERENCES, f, ensure_ascii=False, indent=2)
+            os.replace(tmp_path, PREFERENCES_FILE)
+            os.chmod(PREFERENCES_FILE, 0o600)
+        except Exception:
+            pass
 
 
 def get_user_recipe_preferences(user_email: str = "default") -> dict[str, list[str]]:
     """Returns {'liked': [...], 'disliked': [...]} for the given user."""
-    store = _load_preferences_store()
-    key = (user_email or "default").strip().lower()
-    entry = store.get(key) or {"liked": [], "disliked": []}
-    liked = [str(r).strip() for r in (entry.get("liked") or []) if str(r).strip()]
-    disliked = [str(r).strip() for r in (entry.get("disliked") or []) if str(r).strip() and str(r).strip() not in liked]
-    return {"liked": list(dict.fromkeys(liked)), "disliked": list(dict.fromkeys(disliked))}
+    with _PREFS_LOCK:
+        store = _load_preferences_store()
+        key = (user_email or "default").strip().lower()
+        entry = store.get(key) or {"liked": [], "disliked": []}
+        liked = [str(r).strip() for r in (entry.get("liked") or []) if str(r).strip()]
+        disliked = [
+            str(r).strip()
+            for r in (entry.get("disliked") or [])
+            if str(r).strip() and str(r).strip() not in liked
+        ]
+        return {"liked": list(dict.fromkeys(liked)), "disliked": list(dict.fromkeys(disliked))}
 
 
 def save_user_recipe_preferences(
@@ -64,20 +82,34 @@ def save_user_recipe_preferences(
     merge: bool = True,
 ) -> dict[str, list[str]]:
     """Updates and persists the user's liked/disliked recipe IDs."""
-    store = _load_preferences_store()
-    key = (user_email or "default").strip().lower()
-    current = get_user_recipe_preferences(key) if merge else {"liked": [], "disliked": []}
+    with _PREFS_LOCK:
+        store = _load_preferences_store()
+        key = (user_email or "default").strip().lower()
+        current = get_user_recipe_preferences(key) if merge else {"liked": [], "disliked": []}
 
-    in_liked = [str(r).strip() for r in (liked_recipe_ids or []) if str(r).strip()]
-    in_disliked = [str(r).strip() for r in (disliked_recipe_ids or []) if str(r).strip()]
+        in_liked = [
+            str(r).strip()
+            for r in (liked_recipe_ids or [])
+            if str(r).strip() and _RECIPE_ID_RE.match(str(r).strip())
+        ]
+        in_disliked = [
+            str(r).strip()
+            for r in (disliked_recipe_ids or [])
+            if str(r).strip() and _RECIPE_ID_RE.match(str(r).strip())
+        ]
 
-    liked = list(dict.fromkeys([r for r in current["liked"] if r not in in_disliked] + in_liked))
-    disliked = list(dict.fromkeys([r for r in current["disliked"] if r not in in_liked] + [r for r in in_disliked if r not in in_liked]))
+        liked = list(dict.fromkeys([r for r in current["liked"] if r not in in_disliked] + in_liked))
+        disliked = list(
+            dict.fromkeys(
+                [r for r in current["disliked"] if r not in in_liked]
+                + [r for r in in_disliked if r not in in_liked]
+            )
+        )
 
-    updated = {"liked": liked, "disliked": disliked}
-    store[key] = updated
-    _save_preferences_store()
-    return updated
+        updated = {"liked": liked, "disliked": disliked}
+        store[key] = updated
+        _save_preferences_store()
+        return updated
 
 
 def record_recipe_vote(
@@ -87,31 +119,35 @@ def record_recipe_vote(
 ) -> dict[str, list[str]]:
     """Records a single recipe vote ('up', 'down', or 'none') for the user."""
     rid = str(recipe_id or "").strip()
-    if not rid:
+    if rid.isdigit():
+        rid = f"r{rid}"
+    if not rid or not _RECIPE_ID_RE.match(rid):
         return get_user_recipe_preferences(user_email)
-    store = _load_preferences_store()
-    key = (user_email or "default").strip().lower()
-    curr = get_user_recipe_preferences(key)
-    liked = [r for r in curr["liked"] if r != rid]
-    disliked = [r for r in curr["disliked"] if r != rid]
-    v = (vote or "none").strip().lower()
-    if v in ("up", "like", "liked", "1", "true"):
-        liked.append(rid)
-    elif v in ("down", "dislike", "disliked", "-1", "false"):
-        disliked.append(rid)
-    updated = {"liked": liked, "disliked": disliked}
-    store[key] = updated
-    _save_preferences_store()
-    return updated
+    with _PREFS_LOCK:
+        store = _load_preferences_store()
+        key = (user_email or "default").strip().lower()
+        curr = get_user_recipe_preferences(key)
+        liked = [r for r in curr["liked"] if r != rid]
+        disliked = [r for r in curr["disliked"] if r != rid]
+        v = (vote or "none").strip().lower()
+        if v in ("up", "like", "liked", "1", "true"):
+            liked.append(rid)
+        elif v in ("down", "dislike", "disliked", "-1", "false"):
+            disliked.append(rid)
+        updated = {"liked": liked, "disliked": disliked}
+        store[key] = updated
+        _save_preferences_store()
+        return updated
 
 
 def clear_user_recipe_preferences(user_email: str = "default") -> dict[str, list[str]]:
     """Clears all liked and disliked recipe preferences for the user."""
-    store = _load_preferences_store()
-    key = (user_email or "default").strip().lower()
-    store[key] = {"liked": [], "disliked": []}
-    _save_preferences_store()
-    return {"liked": [], "disliked": []}
+    with _PREFS_LOCK:
+        store = _load_preferences_store()
+        key = (user_email or "default").strip().lower()
+        store[key] = {"liked": [], "disliked": []}
+        _save_preferences_store()
+        return {"liked": [], "disliked": []}
 
 DAYS_ES = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"]
 DAYS_EN_TO_ES = {

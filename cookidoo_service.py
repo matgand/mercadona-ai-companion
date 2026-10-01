@@ -132,7 +132,11 @@ def send_recipe_to_thermomix(
     password: str | None = None,
 ) -> dict[str, Any]:
     """Sends a recipe to the user's Cookidoo account via `cookidoo-api` or prepares a 1-click web handoff."""
-    clean_id = recipe_id.strip()
+    clean_id = str(recipe_id or "").strip()
+    if clean_id.isdigit():
+        clean_id = f"r{clean_id}"
+    if not re.match(r"^r\d{1,10}$", clean_id):
+        raise ValueError("ID de receta de Cookidoo inválido.")
     cookidoo_url = f"https://cookidoo.es/recipes/recipe/es-ES/{clean_id}"
     eff_email = (email or os.environ.get("COOKIDOO_EMAIL") or "").strip()
     eff_password = (password or os.environ.get("COOKIDOO_PASSWORD") or "").strip()

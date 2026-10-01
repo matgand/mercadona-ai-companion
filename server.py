@@ -12,12 +12,14 @@ Enforces Google Identity allowlist for:
 
 from __future__ import annotations
 
+import base64
 import hashlib
 import hmac
 import http.cookies
 import json
 import mimetypes
 import os
+import time
 import urllib.parse
 import urllib.request
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
@@ -25,6 +27,7 @@ from pathlib import Path
 from typing import Any
 
 from campaign_service import (
+    DEFAULT_RUNTIME_SECRET,
     PROFILES_METADATA,
     VALID_CATEGORIES,
     VALID_STATUSES,
@@ -56,7 +59,9 @@ from mercadona_service import (
 )
 
 PUBLIC_DIR = Path(__file__).resolve().parent / "public"
-SESSION_SECRET = os.environ.get("SESSION_SECRET", "mercadona-companion-secret-key-2026")
+SESSION_SECRET = os.environ.get("SESSION_SECRET", "").strip() or DEFAULT_RUNTIME_SECRET
+SESSION_TTL_SECONDS = 604800  # 7 days
+MAX_BODY_BYTES = 262_144  # 256 KB max JSON request body
 GOOGLE_CLIENT_ID = os.environ.get("GOOGLE_CLIENT_ID", "")
 SERVICE_ROLE = os.environ.get("SERVICE_ROLE", "companion").strip().lower()
 
@@ -69,6 +74,22 @@ DEFAULT_ALLOWED_USERS = [
     "andrea.anaut@gmail.com",
     "mattia@mgandolfi.altostrat.com",
 ]
+
+
+class _PayloadError(Exception):
+    """Raised when an HTTP request body is malformed or exceeds MAX_BODY_BYTES."""
+
+    def __init__(self, status: int, message: str) -> None:
+        super().__init__(message)
+        self.status = status
+        self.message = message
+
+
+def get_session_secret() -> str:
+    env_sec = os.environ.get("SESSION_SECRET", "").strip()
+    if env_sec and SESSION_SECRET == DEFAULT_RUNTIME_SECRET:
+        return env_sec
+    return SESSION_SECRET or DEFAULT_RUNTIME_SECRET
 
 
 def get_allowed_users() -> list[str]:
@@ -86,25 +107,52 @@ def get_campaign_library_url() -> str:
     return os.environ.get("CAMPAIGN_LIBRARY_URL", DEFAULT_CAMPAIGN_LIBRARY_URL).strip().rstrip("/")
 
 
-def sign_session_email(email: str) -> str:
+def sign_session_email(email: str, exp: int | None = None) -> str:
     clean = email.strip().lower()
-    sig = hmac.new(SESSION_SECRET.encode("utf-8"), clean.encode("utf-8"), hashlib.sha256).hexdigest()[:32]
-    return f"{clean}|{sig}"
+    exp_ts = int(exp if exp is not None else (time.time() + SESSION_TTL_SECONDS))
+    payload = f"{clean}|{exp_ts}"
+    secret = get_session_secret()
+    sig = hmac.new(secret.encode("utf-8"), payload.encode("utf-8"), hashlib.sha256).hexdigest()[:32]
+    return f"{payload}|{sig}"
 
 
 def verify_session_token(token: str | None) -> str | None:
     if not token or "|" not in token:
         return None
-    email, sig = token.rsplit("|", 1)
-    expected = hmac.new(SESSION_SECRET.encode("utf-8"), email.encode("utf-8"), hashlib.sha256).hexdigest()[:32]
-    if hmac.compare_digest(sig, expected) and email in get_allowed_users():
-        return email
+    parts = token.split("|")
+    secret = get_session_secret()
+    if len(parts) == 3:
+        email, exp_str, sig = parts[0].strip().lower(), parts[1].strip(), parts[2].strip()
+        try:
+            exp_ts = int(exp_str)
+        except ValueError:
+            return None
+        if exp_ts < int(time.time()):
+            return None
+        payload = f"{email}|{exp_ts}"
+        expected = hmac.new(secret.encode("utf-8"), payload.encode("utf-8"), hashlib.sha256).hexdigest()[:32]
+        if hmac.compare_digest(sig, expected) and email in get_allowed_users():
+            return email
     return None
+
+
+def _decode_unverified_jwt_payload(jwt_token: str) -> dict[str, Any]:
+    parts = str(jwt_token or "").strip().split(".")
+    if len(parts) != 3:
+        return {}
+    payload_b64 = parts[1]
+    pad = "=" * ((4 - len(payload_b64) % 4) % 4)
+    try:
+        raw = base64.urlsafe_b64decode((payload_b64 + pad).encode("ascii"))
+        data = json.loads(raw.decode("utf-8", "ignore"))
+        return data if isinstance(data, dict) else {}
+    except Exception:
+        return {}
 
 
 def verify_google_id_token(id_token: str) -> str | None:
     """Verifies a Google Identity Services JWT against Google's tokeninfo endpoint."""
-    url = f"https://oauth2.googleapis.com/tokeninfo?id_token={urllib.parse.quote(id_token)}"
+    url = f"https://oauth2.googleapis.com/tokeninfo?id_token={urllib.parse.quote(id_token, safe='')}"
     try:
         req = urllib.request.Request(url, headers={"User-Agent": "Mercadona-AI-Companion"})
         with urllib.request.urlopen(req, timeout=5) as resp:
@@ -122,13 +170,37 @@ class CompanionRequestHandler(BaseHTTPRequestHandler):
     server_version = "MercadonaAICompanion/2.0"
 
     def _get_iap_email(self) -> str | None:
-        iap_email = self.headers.get("X-Goog-Authenticated-User-Email", "").strip()
-        if iap_email:
-            return iap_email.split(":")[-1].strip().lower()
-        return None
+        iap_email_hdr = self.headers.get("X-Goog-Authenticated-User-Email", "").strip()
+        iap_jwt = self.headers.get("X-Goog-IAP-JWT-Assertion", "").strip()
+        enforce_jwt = bool(
+            os.environ.get("K_SERVICE") and os.environ.get("ENFORCE_IAP_JWT", "1") != "0"
+        ) or os.environ.get("ENFORCE_IAP_JWT") == "1"
+
+        if not iap_email_hdr:
+            return None
+        header_email = iap_email_hdr.split(":")[-1].strip().lower()
+        if not header_email:
+            return None
+
+        if iap_jwt or enforce_jwt:
+            if not iap_jwt:
+                return None
+            claims = _decode_unverified_jwt_payload(iap_jwt)
+            jwt_email = str(claims.get("email") or "").strip().lower()
+            if not jwt_email or jwt_email != header_email:
+                return None
+            exp = claims.get("exp")
+            if exp is not None:
+                try:
+                    if int(exp) < int(time.time()):
+                        return None
+                except (ValueError, TypeError):
+                    return None
+        return header_email
 
     def _is_internal_service_sync(self) -> bool:
-        expected = hashlib.sha256(f"internal-sync:{SESSION_SECRET}".encode("utf-8")).hexdigest()[:32]
+        secret = get_session_secret()
+        expected = hashlib.sha256(f"internal-sync:{secret}".encode("utf-8")).hexdigest()[:32]
         provided = self.headers.get("X-Internal-Sync-Token", "").strip()
         return bool(provided and hmac.compare_digest(provided, expected))
 
@@ -152,7 +224,10 @@ class CompanionRequestHandler(BaseHTTPRequestHandler):
         cookie_hdr = self.headers.get("Cookie", "")
         if cookie_hdr:
             jar = http.cookies.SimpleCookie()
-            jar.load(cookie_hdr)
+            try:
+                jar.load(cookie_hdr)
+            except Exception:
+                return None
             if "mercadona_session" in jar:
                 val = urllib.parse.unquote(jar["mercadona_session"].value)
                 user = verify_session_token(val)
@@ -160,10 +235,44 @@ class CompanionRequestHandler(BaseHTTPRequestHandler):
                     return user
         return None
 
+    def _add_security_headers(self) -> None:
+        self.send_header("X-Content-Type-Options", "nosniff")
+        self.send_header("X-Frame-Options", "DENY")
+        self.send_header("Referrer-Policy", "strict-origin-when-cross-origin")
+        self.send_header("Permissions-Policy", "geolocation=(), microphone=(), camera=()")
+        self.send_header("Strict-Transport-Security", "max-age=31536000; includeSubDomains")
+        self.send_header(
+            "Content-Security-Policy",
+            "default-src 'self'; "
+            "script-src 'self' https://accounts.google.com; "
+            "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; "
+            "font-src 'self' https://fonts.gstatic.com data:; "
+            "img-src 'self' https: data:; "
+            "connect-src 'self' https://accounts.google.com https://oauth2.googleapis.com; "
+            "frame-ancestors 'none'; "
+            "base-uri 'self'; "
+            "object-src 'none'",
+        )
+
     def _add_cors_headers(self) -> None:
-        self.send_header("Access-Control-Allow-Origin", "*")
+        allowed_origins = {
+            get_companion_url(),
+            get_campaign_library_url(),
+            "http://localhost:8080",
+            "http://127.0.0.1:8080",
+        }
+        req_origin = self.headers.get("Origin", "").strip().rstrip("/")
+        cors_origin = req_origin if req_origin in allowed_origins else get_companion_url()
+        self.send_header("Access-Control-Allow-Origin", cors_origin)
+        self.send_header("Vary", "Origin")
         self.send_header("Access-Control-Allow-Methods", "GET, POST, PATCH, OPTIONS")
         self.send_header("Access-Control-Allow-Headers", "Content-Type, Authorization")
+
+    def _is_https_request(self) -> bool:
+        return bool(
+            os.environ.get("K_SERVICE")
+            or self.headers.get("X-Forwarded-Proto", "").strip().lower() == "https"
+        )
 
     def _send_json(self, status: int, payload: dict[str, Any], set_cookie: str | None = None) -> None:
         raw = json.dumps(payload, ensure_ascii=False).encode("utf-8")
@@ -171,6 +280,7 @@ class CompanionRequestHandler(BaseHTTPRequestHandler):
         self.send_header("Content-Type", "application/json; charset=utf-8")
         self.send_header("Content-Length", str(len(raw)))
         self.send_header("Cache-Control", "no-store")
+        self._add_security_headers()
         self._add_cors_headers()
         if set_cookie:
             self.send_header("Set-Cookie", set_cookie)
@@ -178,17 +288,27 @@ class CompanionRequestHandler(BaseHTTPRequestHandler):
         self.wfile.write(raw)
 
     def _read_json_body(self) -> dict[str, Any]:
-        length = int(self.headers.get("Content-Length", "0") or "0")
-        if length <= 0:
-            return {}
-        raw = self.rfile.read(min(length, 524288)).decode("utf-8", "ignore")
+        raw_len = self.headers.get("Content-Length", "0") or "0"
         try:
-            return json.loads(raw)
+            length = int(raw_len)
+        except ValueError as exc:
+            raise _PayloadError(400, "Cabecera Content-Length inválida.") from exc
+        if length < 0:
+            raise _PayloadError(400, "Cabecera Content-Length negativa.")
+        if length > MAX_BODY_BYTES:
+            raise _PayloadError(413, "El cuerpo de la petición supera el límite permitido (256 KB).")
+        if length == 0:
+            return {}
+        raw = self.rfile.read(length).decode("utf-8", "ignore")
+        try:
+            parsed = json.loads(raw)
+            return parsed if isinstance(parsed, dict) else {}
         except Exception:
             return {}
 
     def do_OPTIONS(self) -> None:
         self.send_response(204)
+        self._add_security_headers()
         self._add_cors_headers()
         self.end_headers()
 
@@ -200,6 +320,27 @@ class CompanionRequestHandler(BaseHTTPRequestHandler):
         if path == "/api/auth/session":
             user = self._get_authenticated_user()
             iap_email = self._get_iap_email()
+            hide_allowlist = bool(
+                not user
+                and (os.environ.get("K_SERVICE") or os.environ.get("HIDE_ALLOWED_USERS_UNAUTHED") == "1")
+            )
+            mercadona_status = (
+                get_mercadona_session_status(user)
+                if user
+                else {
+                    "connected": False,
+                    "customer_id": None,
+                    "has_refresh_token": False,
+                    "warehouse": None,
+                    "postal_code": None,
+                    "masked_token": None,
+                }
+            )
+            recipe_prefs = (
+                get_user_recipe_preferences(user)
+                if user
+                else {"liked": [], "disliked": []}
+            )
             self._send_json(
                 200,
                 {
@@ -207,25 +348,43 @@ class CompanionRequestHandler(BaseHTTPRequestHandler):
                     "user": user,
                     "iap_email": iap_email,
                     "auth_mode": "iap",
-                    "allowed_users": get_allowed_users(),
+                    "allowed_users": [] if hide_allowlist else get_allowed_users(),
                     "google_client_id": GOOGLE_CLIENT_ID,
                     "service_role": SERVICE_ROLE,
                     "companion_app_url": get_companion_url(),
                     "campaign_library_url": get_campaign_library_url(),
-                    "mercadona_session": get_mercadona_session_status(user or "default"),
-                    "recipe_preferences": get_user_recipe_preferences(user or "default"),
+                    "mercadona_session": mercadona_status,
+                    "recipe_preferences": recipe_prefs,
                 },
             )
             return
 
         if path == "/api/preferences":
             user = self._get_authenticated_user()
-            self._send_json(200, get_user_recipe_preferences(user or "default"))
+            if not user:
+                self._send_json(
+                    401,
+                    {
+                        "code": "AUTHENTICATION_REQUIRED",
+                        "error": "Autenticación requerida para consultar preferencias.",
+                    },
+                )
+                return
+            self._send_json(200, get_user_recipe_preferences(user))
             return
 
         if path == "/api/mercadona/session":
             user = self._get_authenticated_user()
-            self._send_json(200, get_mercadona_session_status(user or "default"))
+            if not user:
+                self._send_json(
+                    401,
+                    {
+                        "code": "AUTHENTICATION_REQUIRED",
+                        "error": "Autenticación requerida para consultar la sesión de Mercadona.",
+                    },
+                )
+                return
+            self._send_json(200, get_mercadona_session_status(user))
             return
 
         if path == "/api/campaigns":
@@ -290,9 +449,10 @@ class CompanionRequestHandler(BaseHTTPRequestHandler):
         elif rel in ("sources", "catalog", "agent"):
             rel = "index.html"
 
-        file_path = (PUBLIC_DIR / rel).resolve()
-        if not str(file_path).startswith(str(PUBLIC_DIR)) or not file_path.is_file():
-            file_path = PUBLIC_DIR / default_html
+        public_root = PUBLIC_DIR.resolve()
+        file_path = (public_root / rel).resolve()
+        if not file_path.is_relative_to(public_root) or not file_path.is_file():
+            file_path = public_root / default_html
 
         if not file_path.is_file():
             self.send_error(404, "Not Found")
@@ -312,6 +472,7 @@ class CompanionRequestHandler(BaseHTTPRequestHandler):
         self.send_header("Content-Type", ctype or "application/octet-stream")
         self.send_header("Content-Length", str(len(data)))
         self.send_header("Cache-Control", "no-store, no-cache, must-revalidate, max-age=0")
+        self._add_security_headers()
         self._add_cors_headers()
         self.end_headers()
         self.wfile.write(data)
@@ -319,7 +480,11 @@ class CompanionRequestHandler(BaseHTTPRequestHandler):
     def do_POST(self) -> None:
         parsed = urllib.parse.urlparse(self.path)
         path = parsed.path
-        body = self._read_json_body()
+        try:
+            body = self._read_json_body()
+        except _PayloadError as err:
+            self._send_json(err.status, {"error": err.message})
+            return
 
         if path == "/api/auth/login":
             # Only allow cryptographically verified Google Identity JWT or Cloud Run IAP header.
@@ -362,19 +527,21 @@ class CompanionRequestHandler(BaseHTTPRequestHandler):
                         "code": "USER_NOT_ALLOWED",
                         "error": (
                             f"Acceso restringido por Identity-Aware Proxy: la cuenta '{email}' no está en la allowlist "
-                            f"de usuarios autorizados ({', '.join(allowed)})."
+                            "de usuarios autorizados."
                         ),
                     },
                 )
                 return
 
             signed = urllib.parse.quote(sign_session_email(email))
-            cookie = f"mercadona_session={signed}; Path=/; HttpOnly; SameSite=Lax; Max-Age=604800"
+            secure_attr = "; Secure" if self._is_https_request() else ""
+            cookie = f"mercadona_session={signed}; Path=/; HttpOnly; SameSite=Lax; Max-Age={SESSION_TTL_SECONDS}{secure_attr}"
             self._send_json(200, {"authenticated": True, "user": email}, set_cookie=cookie)
             return
 
         if path == "/api/auth/logout":
-            cookie = "mercadona_session=; Path=/; HttpOnly; SameSite=Lax; Max-Age=0"
+            secure_attr = "; Secure" if self._is_https_request() else ""
+            cookie = f"mercadona_session=; Path=/; HttpOnly; SameSite=Lax; Max-Age=0{secure_attr}"
             self._send_json(200, {"authenticated": False, "user": None}, set_cookie=cookie)
             return
 
@@ -518,7 +685,10 @@ class CompanionRequestHandler(BaseHTTPRequestHandler):
             target_id = str(body.get("targetRecipeId") or "")
             constraints = body.get("constraints") or {}
             postal_code = str(body.get("postalCode") or "28016")
-            rotation = int(body.get("rotation") or 1)
+            try:
+                rotation = int(body.get("rotation") or 1)
+            except (TypeError, ValueError):
+                rotation = 1
             liked_ids = body.get("likedRecipeIds") if "likedRecipeIds" in body else body.get("liked_recipe_ids")
             disliked_ids = body.get("dislikedRecipeIds") if "dislikedRecipeIds" in body else body.get("disliked_recipe_ids")
             try:
@@ -541,8 +711,11 @@ class CompanionRequestHandler(BaseHTTPRequestHandler):
             recipe_id = str(body.get("recipe_id") or "").strip()
             cookidoo_email = str(body.get("cookidoo_email") or "").strip() or None
             cookidoo_password = str(body.get("cookidoo_password") or "").strip() or None
-            res = send_recipe_to_thermomix(recipe_id, cookidoo_email, cookidoo_password)
-            self._send_json(200, res)
+            try:
+                res = send_recipe_to_thermomix(recipe_id, cookidoo_email, cookidoo_password)
+                self._send_json(200, res)
+            except ValueError as exc:
+                self._send_json(422, {"error": str(exc)})
             return
 
         if path == "/api/mercadona/session":

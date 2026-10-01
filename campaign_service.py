@@ -12,6 +12,8 @@ import hashlib
 import json
 import os
 import re
+import secrets
+import tempfile
 import threading
 import urllib.parse
 import urllib.request
@@ -23,7 +25,25 @@ from gemini_planner import MODEL_FALLBACK, MODEL_PRIMARY, parse_constraints, val
 
 DATA_DIR = Path(__file__).resolve().parent / "data"
 CAMPAIGNS_FILE = DATA_DIR / "campaigns.json"
-_LOCK = threading.Lock()
+_LOCK = threading.RLock()
+DEFAULT_RUNTIME_SECRET = secrets.token_hex(32)
+
+
+def get_shared_session_secret() -> str:
+    """Returns the configured SESSION_SECRET or a strong per-process random fallback."""
+    return os.environ.get("SESSION_SECRET", "").strip() or DEFAULT_RUNTIME_SECRET
+
+
+def _sanitize_image_url(raw_url: Any, fallback: str = "/meals/lemon-hake-potatoes.webp") -> str:
+    """Validates campaign image URLs to prevent javascript: or data: URI injection."""
+    val = str(raw_url or "").strip()
+    if not val or any(ch in val for ch in ('"', "'", "<", ">", "\r", "\n", " ")):
+        return fallback
+    if val.startswith(("/meals/", "/brand/")) and ".." not in val:
+        return val
+    if val.startswith("https://"):
+        return val
+    return fallback
 
 VALID_CATEGORIES = ["Familias", "Saludables", "Rutina rápida", "Ahorro"]
 VALID_STATUSES = ["Activa", "Planificada", "Borrador", "Terminada"]
@@ -142,7 +162,7 @@ def _enrich_campaign(c: dict[str, Any]) -> dict[str, Any]:
         "badge": str(c.get("badge") or f"Recomendado · {cat}"),
         "status": status,
         "statusClass": STATUS_TO_CSS_CLASS.get(status, "live"),
-        "imageUrl": str(c.get("imageUrl") or "/meals/lemon-hake-potatoes.webp"),
+        "imageUrl": _sanitize_image_url(c.get("imageUrl"), "/meals/lemon-hake-potatoes.webp"),
         "seedPrompt": str(c.get("seedPrompt") or ""),
         "mealCount": int(c.get("mealCount") or 5),
         "maxBudget": float(c.get("maxBudget") or 60),
@@ -173,14 +193,27 @@ def load_local_campaigns() -> list[dict[str, Any]]:
 def save_local_campaigns(campaigns: list[dict[str, Any]]) -> list[dict[str, Any]]:
     enriched = [_enrich_campaign(c) for c in campaigns]
     with _LOCK:
-        DATA_DIR.mkdir(parents=True, exist_ok=True)
-        CAMPAIGNS_FILE.write_text(json.dumps(enriched, ensure_ascii=False, indent=2), encoding="utf-8")
+        try:
+            DATA_DIR.mkdir(parents=True, exist_ok=True)
+            fd, tmp_path = tempfile.mkstemp(
+                dir=str(DATA_DIR), prefix=".campaigns_", suffix=".tmp"
+            )
+            try:
+                os.fchmod(fd, 0o600)
+            except AttributeError:
+                os.chmod(tmp_path, 0o600)
+            with os.fdopen(fd, "w", encoding="utf-8") as f:
+                json.dump(enriched, f, ensure_ascii=False, indent=2)
+            os.replace(tmp_path, CAMPAIGNS_FILE)
+            os.chmod(CAMPAIGNS_FILE, 0o600)
+        except Exception:
+            pass
     return enriched
 
 
 def _get_service_headers(target_base_url: str) -> dict[str, str]:
     """Builds headers including Cloud Run OIDC Identity Token for IAP-protected microservice-to-microservice calls."""
-    secret = os.environ.get("SESSION_SECRET", "mercadona-companion-secret-key-2026")
+    secret = get_shared_session_secret()
     sync_token = hashlib.sha256(f"internal-sync:{secret}".encode("utf-8")).hexdigest()[:32]
     headers = {
         "User-Agent": "MercadonaCampaignSync/1.0",

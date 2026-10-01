@@ -69,7 +69,23 @@ function escapeHtml(str) {
     .replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;");
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+function sanitizeUrl(url, fallback = "#") {
+  const raw = String(url ?? "").trim();
+  if (!raw) return fallback;
+  if (raw.startsWith("/") && !raw.startsWith("//")) return raw;
+  try {
+    const parsed = new URL(raw, window.location.origin);
+    if (parsed.protocol === "https:" || parsed.protocol === "http:") {
+      return parsed.href;
+    }
+  } catch (e) {
+    // Ignore malformed URL
+  }
+  return fallback;
 }
 
 function formatEUR(val) {
@@ -643,7 +659,7 @@ function render() {
               ? `
             <article class="campaign-preview-card">
               <figure>
-                <img src="${escapeHtml(selected.imageUrl)}" alt="${escapeHtml(selected.title)}" />
+                <img src="${escapeHtml(sanitizeUrl(selected.imageUrl, "/meals/lemon-hake-potatoes.webp"))}" alt="${escapeHtml(selected.title)}" />
               </figure>
               <div class="campaign-preview-body">
                 <div style="display:flex; justify-content:space-between; align-items:center; gap:8px; margin-bottom:14px; flex-wrap:wrap;">

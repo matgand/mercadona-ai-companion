@@ -309,7 +309,23 @@ function escapeHtml(str) {
     .replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;");
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+function sanitizeUrl(url, fallback = "#") {
+  const raw = String(url ?? "").trim();
+  if (!raw) return fallback;
+  if (raw.startsWith("/") && !raw.startsWith("//")) return raw;
+  try {
+    const parsed = new URL(raw, window.location.origin);
+    if (parsed.protocol === "https:" || parsed.protocol === "http:") {
+      return parsed.href;
+    }
+  } catch (e) {
+    // Ignore malformed URL
+  }
+  return fallback;
 }
 
 function showToast(title, body) {
@@ -742,7 +758,10 @@ async function clearRecipePreferences() {
 
 async function sendToThermomix(recipeId, cookidooUrl, recipeName) {
   // Open the official Cookidoo recipe page in a new tab immediately on user click
-  window.open(cookidooUrl, "_blank", "noopener,noreferrer");
+  const safeUrl = sanitizeUrl(cookidooUrl, "");
+  if (safeUrl) {
+    window.open(safeUrl, "_blank", "noopener,noreferrer");
+  }
   try {
     const res = await fetch("/api/cookidoo/send", {
       method: "POST",
@@ -1301,7 +1320,7 @@ function renderExperiencePanel() {
             return `
             <article class="meal-card" aria-busy="${isSwapping}">
               <figure class="meal-image">
-                <img src="${escapeHtml(meal.image_url)}" alt="${escapeHtml(meal.image_alt)}" loading="lazy" />
+                <img src="${escapeHtml(sanitizeUrl(meal.image_url, "/meals/lemon-hake-potatoes.webp"))}" alt="${escapeHtml(meal.image_alt)}" loading="lazy" />
                 ${isLiked ? `<span class="meal-fav-badge">★ Favorita</span>` : ""}
                 <div class="meal-vote-overlay" role="group" aria-label="Valorar receta ${escapeHtml(meal.name)}">
                   <button
@@ -1366,7 +1385,7 @@ function renderExperiencePanel() {
                     type="button"
                     class="thermomix-send-btn ${isSent ? "sent" : ""}"
                     data-thermomix-id="${escapeHtml(meal.recipe_id)}"
-                    data-thermomix-url="${escapeHtml(meal.cookidoo_url)}"
+                    data-thermomix-url="${escapeHtml(sanitizeUrl(meal.cookidoo_url, "https://cookidoo.es"))}"
                     data-thermomix-name="${escapeHtml(meal.name)}"
                   >
                     ${isSent ? "Enviada a Thermomix" : "Envía a tu Thermomix"}
@@ -1418,12 +1437,12 @@ function renderExperiencePanel() {
               <div class="basket-product-mark" aria-hidden="true">
                 ${
                   item.thumbnail
-                    ? `<img src="${escapeHtml(item.thumbnail)}" alt="" loading="lazy" />`
+                    ? `<img src="${escapeHtml(sanitizeUrl(item.thumbnail, ""))}" alt="" loading="lazy" />`
                     : escapeHtml(item.name.charAt(0))
                 }
               </div>
               <div class="basket-product-copy">
-                <a href="${escapeHtml(item.share_url)}" target="_blank" rel="noreferrer">
+                <a href="${escapeHtml(sanitizeUrl(item.share_url, "https://tienda.mercadona.es/"))}" target="_blank" rel="noreferrer">
                   ${escapeHtml(item.name)} <span aria-hidden="true">↗</span>
                 </a>
                 <span>
@@ -1581,7 +1600,7 @@ function renderPlannerView() {
 
       <article class="featured-campaign-card">
         <figure>
-          <img src="${escapeHtml(featuredCampaign.imageUrl)}" alt="${escapeHtml(featuredCampaign.title)}" />
+          <img src="${escapeHtml(sanitizeUrl(featuredCampaign.imageUrl, "/meals/lemon-hake-potatoes.webp"))}" alt="${escapeHtml(featuredCampaign.title)}" />
         </figure>
         <div class="featured-campaign-overlay">
           <span class="campaign-badge">${escapeHtml(featuredCampaign.badge)}</span>
@@ -1617,7 +1636,7 @@ function renderPlannerView() {
             data-campaign-id="${escapeHtml(c.id)}"
             aria-pressed="${c.id === featuredCampaign.id}"
           >
-            <img src="${escapeHtml(c.imageUrl)}" alt="" />
+            <img src="${escapeHtml(sanitizeUrl(c.imageUrl, "/meals/lemon-hake-potatoes.webp"))}" alt="" />
             <span class="discovery-campaign-copy">
               <small>${escapeHtml(c.category || c.occasion)}</small>
               <strong>${escapeHtml(c.title)}</strong>
