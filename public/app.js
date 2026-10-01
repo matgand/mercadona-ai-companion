@@ -177,8 +177,37 @@ const state = {
   catalogPage: 1,
   recipesSearch: "",
   recipesPage: 1,
+  recipePreferences: loadLocalRecipePreferences(),
   toast: null,
 };
+
+function loadLocalRecipePreferences() {
+  try {
+    const raw = window.localStorage.getItem("mercadona_recipe_prefs_v1");
+    if (raw) {
+      const parsed = JSON.parse(raw);
+      const liked = Array.isArray(parsed?.liked) ? parsed.liked.map(String) : [];
+      const disliked = Array.isArray(parsed?.disliked)
+        ? parsed.disliked.map(String).filter((id) => !liked.includes(id))
+        : [];
+      return { liked: [...new Set(liked)], disliked: [...new Set(disliked)] };
+    }
+  } catch (e) {
+    // Ignore localStorage read errors
+  }
+  return { liked: [], disliked: [] };
+}
+
+function saveLocalRecipePreferences(prefs) {
+  const liked = [...new Set((prefs?.liked || []).map(String))];
+  const disliked = [...new Set((prefs?.disliked || []).map(String).filter((id) => !liked.includes(id)))];
+  state.recipePreferences = { liked, disliked };
+  try {
+    window.localStorage.setItem("mercadona_recipe_prefs_v1", JSON.stringify(state.recipePreferences));
+  } catch (e) {
+    // Ignore localStorage write errors
+  }
+}
 
 function getActiveCampaigns() {
   const active = (state.campaigns || []).filter((c) => !c.status || c.status === "Activa");
@@ -365,6 +394,19 @@ async function checkSession() {
         state.postalCode = data.mercadona_session.postal_code;
       }
     }
+    if (data.recipe_preferences) {
+      const mergedLiked = [
+        ...new Set([...(state.recipePreferences.liked || []), ...(data.recipe_preferences.liked || [])]),
+      ];
+      const mergedDisliked = [
+        ...new Set(
+          [...(state.recipePreferences.disliked || []), ...(data.recipe_preferences.disliked || [])].filter(
+            (id) => !mergedLiked.includes(id)
+          )
+        ),
+      ];
+      saveLocalRecipePreferences({ liked: mergedLiked, disliked: mergedDisliked });
+    }
     render();
   } catch (err) {
     state.auth.checked = true;
@@ -446,6 +488,8 @@ async function generatePlan(promptText) {
         postalCode: state.postalCode,
         currentPlan: state.plan,
         varietySeed: `${state.profileId}:${state.selectedCampaignId}:${state.varietyCounter}`,
+        likedRecipeIds: state.recipePreferences.liked,
+        dislikedRecipeIds: state.recipePreferences.disliked,
       }),
     });
     const data = await res.json();
@@ -454,6 +498,9 @@ async function generatePlan(promptText) {
       state.loading = false;
       render();
       return;
+    }
+    if (data.recipe_preferences) {
+      saveLocalRecipePreferences(data.recipe_preferences);
     }
     state.previousPlan = state.plan;
     state.plan = data;
@@ -468,7 +515,7 @@ async function generatePlan(promptText) {
   }
 }
 
-async function swapRecipe(recipeId) {
+async function swapRecipe(recipeId, options = {}) {
   if (!state.plan || state.loading || state.swappingRecipeId) return;
   state.swappingRecipeId = recipeId;
   state.cartAddedResult = null;
@@ -488,10 +535,15 @@ async function swapRecipe(recipeId) {
         constraints: state.plan.constraints,
         postalCode: state.postalCode,
         rotation: state.varietyCounter++,
+        likedRecipeIds: state.recipePreferences.liked,
+        dislikedRecipeIds: state.recipePreferences.disliked,
       }),
     });
     const data = await res.json();
     if (res.ok && data.replacement) {
+      if (data.recipe_preferences) {
+        saveLocalRecipePreferences(data.recipe_preferences);
+      }
       state.previousPlan = state.plan;
       state.lastSwapChange = data.change;
       state.plan = {
@@ -502,8 +554,12 @@ async function swapRecipe(recipeId) {
         budget_remaining: data.budget_remaining,
       };
       showToast(
-        `Cambio rápido (${data.change.day})`,
-        `Se sustituyó solo esta receta por '${data.change.to_recipe_name}' y se actualizó la cesta (${formatEUR(data.total)}).`
+        options.fromDownvote
+          ? `Receta descartada y sustituida (${data.change.day})`
+          : `Cambio rápido (${data.change.day})`,
+        options.fromDownvote
+          ? `'${data.change.from_recipe_name}' no volverá a proponerse. Sustituida por '${data.change.to_recipe_name}' (${formatEUR(data.total)}).`
+          : `Se sustituyó solo esta receta por '${data.change.to_recipe_name}' y se actualizó la cesta (${formatEUR(data.total)}).`
       );
     } else {
       showToast("Error en Cambio rápido", data.error || "No se pudo cambiar la receta.");
@@ -514,6 +570,68 @@ async function swapRecipe(recipeId) {
     state.swappingRecipeId = null;
     render();
   }
+}
+
+async function voteRecipe(recipeId, voteType, recipeName) {
+  const rid = String(recipeId || "").trim();
+  if (!rid) return;
+
+  const isCurrentlyLiked = state.recipePreferences.liked.includes(rid);
+  const isCurrentlyDisliked = state.recipePreferences.disliked.includes(rid);
+
+  let nextVote = voteType;
+  if (voteType === "up" && isCurrentlyLiked) {
+    nextVote = "none";
+  } else if (voteType === "down" && isCurrentlyDisliked) {
+    nextVote = "none";
+  }
+
+  const nextLiked = state.recipePreferences.liked.filter((id) => id !== rid);
+  const nextDisliked = state.recipePreferences.disliked.filter((id) => id !== rid);
+  if (nextVote === "up") {
+    nextLiked.push(rid);
+  } else if (nextVote === "down") {
+    nextDisliked.push(rid);
+  }
+  saveLocalRecipePreferences({ liked: nextLiked, disliked: nextDisliked });
+
+  // Sync vote asynchronously with backend
+  fetch("/api/preferences", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ recipe_id: rid, vote: nextVote }),
+  }).catch(() => {});
+
+  if (nextVote === "down") {
+    // Automatically swap the downvoted recipe out of the current weekly menu
+    await swapRecipe(rid, { fromDownvote: true });
+    return;
+  }
+
+  if (nextVote === "up") {
+    showToast(
+      "¡Guardada en tus favoritas! 👍",
+      `Tendremos más en cuenta '${recipeName || rid}' en tus próximas generaciones de menú.`
+    );
+  } else {
+    showToast("Preferencia actualizada", `Se ha quitado el voto de '${recipeName || rid}'.`);
+  }
+  render();
+}
+
+async function clearRecipePreferences() {
+  saveLocalRecipePreferences({ liked: [], disliked: [] });
+  try {
+    await fetch("/api/preferences", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ action: "clear" }),
+    });
+  } catch (e) {
+    // Ignore network error
+  }
+  showToast("Gustos reiniciados", "Se han borrado tus recetas favoritas y descartadas.");
+  render();
 }
 
 async function sendToThermomix(recipeId, cookidooUrl, recipeName) {
@@ -923,10 +1041,39 @@ function renderExperiencePanel() {
           .map((meal, idx) => {
             const isSwapping = state.swappingRecipeId === meal.recipe_id;
             const isSent = Boolean(state.sentThermomixIds[meal.recipe_id]);
+            const isLiked = state.recipePreferences.liked.includes(meal.recipe_id) || Boolean(meal.liked_by_user);
+            const isDisliked = state.recipePreferences.disliked.includes(meal.recipe_id);
             return `
             <article class="meal-card" aria-busy="${isSwapping}">
               <figure class="meal-image">
                 <img src="${escapeHtml(meal.image_url)}" alt="${escapeHtml(meal.image_alt)}" loading="lazy" />
+                ${isLiked ? `<span class="meal-fav-badge">★ Favorita</span>` : ""}
+                <div class="meal-vote-overlay" role="group" aria-label="Valorar receta ${escapeHtml(meal.name)}">
+                  <button
+                    type="button"
+                    class="meal-vote-btn vote-up ${isLiked ? "active" : ""}"
+                    data-vote-recipe="${escapeHtml(meal.recipe_id)}"
+                    data-vote-type="up"
+                    data-vote-name="${escapeHtml(meal.name)}"
+                    title="${isLiked ? "Quitar de favoritas" : "Me gusta: priorizar esta receta e ingredientes similares en futuros menús"}"
+                    aria-pressed="${isLiked}"
+                    ${isSwapping ? "disabled" : ""}
+                  >
+                    <span aria-hidden="true">👍</span>
+                  </button>
+                  <button
+                    type="button"
+                    class="meal-vote-btn vote-down ${isDisliked ? "active" : ""}"
+                    data-vote-recipe="${escapeHtml(meal.recipe_id)}"
+                    data-vote-type="down"
+                    data-vote-name="${escapeHtml(meal.name)}"
+                    title="No me gusta: no volver a proponer y sustituir ahora por otra receta"
+                    aria-pressed="${isDisliked}"
+                    ${isSwapping ? "disabled" : ""}
+                  >
+                    <span aria-hidden="true">👎</span>
+                  </button>
+                </div>
               </figure>
               <div class="meal-card-body">
                 <div class="meal-card-topline">
@@ -1307,6 +1454,23 @@ function renderPlannerView() {
             ${state.detectedPills.map((pill) => `<span>${escapeHtml(pill)}</span>`).join("")}
           </div>
 
+          ${
+            state.recipePreferences.liked.length > 0 || state.recipePreferences.disliked.length > 0
+              ? `
+            <div class="recipe-prefs-bar" role="status">
+              <div class="recipe-prefs-counts">
+                <span class="pref-pill liked">👍 ${state.recipePreferences.liked.length} ${state.recipePreferences.liked.length === 1 ? "receta favorita" : "recetas favoritas"}</span>
+                <span class="pref-pill disliked">👎 ${state.recipePreferences.disliked.length} ${state.recipePreferences.disliked.length === 1 ? "receta descartada" : "recetas descartadas"}</span>
+                <span style="color:var(--muted);">Se tendrán en cuenta al generar o cambiar recetas</span>
+              </div>
+              <button type="button" class="text-button" id="clear-recipe-prefs-btn" style="font-size:12px;">
+                Limpiar historial de gustos
+              </button>
+            </div>
+          `
+              : ""
+          }
+
           <div class="form-actions">
             <button
               class="primary-button"
@@ -1667,6 +1831,24 @@ function bindEvents() {
       swapRecipe(btn.getAttribute("data-swap-recipe"));
     });
   });
+
+  // Vote recipe buttons (thumbs up / down overlay)
+  document.querySelectorAll("[data-vote-recipe]").forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      voteRecipe(
+        btn.getAttribute("data-vote-recipe"),
+        btn.getAttribute("data-vote-type"),
+        btn.getAttribute("data-vote-name")
+      );
+    });
+  });
+
+  // Clear recipe preferences button
+  const clearPrefsBtn = document.getElementById("clear-recipe-prefs-btn");
+  if (clearPrefsBtn) {
+    clearPrefsBtn.addEventListener("click", clearRecipePreferences);
+  }
 
   // Send to Thermomix buttons
   document.querySelectorAll("[data-thermomix-id]").forEach((btn) => {

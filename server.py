@@ -37,8 +37,12 @@ from campaign_service import (
 from cookidoo_service import load_cookidoo_catalog, send_recipe_to_thermomix
 from gemini_planner import (
     build_weekly_plan,
+    clear_user_recipe_preferences,
     format_constraint_pills,
+    get_user_recipe_preferences,
     parse_constraints,
+    record_recipe_vote,
+    save_user_recipe_preferences,
     swap_single_recipe,
     validate_meal_planning_prompt,
 )
@@ -209,8 +213,14 @@ class CompanionRequestHandler(BaseHTTPRequestHandler):
                     "companion_app_url": get_companion_url(),
                     "campaign_library_url": get_campaign_library_url(),
                     "mercadona_session": get_mercadona_session_status(user or "default"),
+                    "recipe_preferences": get_user_recipe_preferences(user or "default"),
                 },
             )
+            return
+
+        if path == "/api/preferences":
+            user = self._get_authenticated_user()
+            self._send_json(200, get_user_recipe_preferences(user or "default"))
             return
 
         if path == "/api/mercadona/session":
@@ -451,11 +461,36 @@ class CompanionRequestHandler(BaseHTTPRequestHandler):
             )
             return
 
+        if path == "/api/preferences":
+            action = str(body.get("action") or "").strip().lower()
+            if action == "clear":
+                prefs = clear_user_recipe_preferences(user or "default")
+                self._send_json(200, prefs)
+                return
+            recipe_id = str(body.get("recipe_id") or body.get("recipeId") or "").strip()
+            if recipe_id:
+                vote = str(body.get("vote") or "none").strip()
+                prefs = record_recipe_vote(user or "default", recipe_id, vote)
+                self._send_json(200, prefs)
+                return
+            in_liked = body.get("liked_recipe_ids") or body.get("likedRecipeIds") or []
+            in_disliked = body.get("disliked_recipe_ids") or body.get("dislikedRecipeIds") or []
+            prefs = save_user_recipe_preferences(
+                user_email=user or "default",
+                liked_recipe_ids=in_liked if isinstance(in_liked, list) else [],
+                disliked_recipe_ids=in_disliked if isinstance(in_disliked, list) else [],
+                merge=bool(body.get("merge", False)),
+            )
+            self._send_json(200, prefs)
+            return
+
         if path == "/api/plan":
             prompt = str(body.get("message") or body.get("prompt") or "").strip()
             postal_code = str(body.get("postalCode") or body.get("postal_code") or "28016").strip()
             current_plan = body.get("currentPlan")
             variety_seed = str(body.get("varietySeed") or "1")
+            liked_ids = body.get("likedRecipeIds") if "likedRecipeIds" in body else body.get("liked_recipe_ids")
+            disliked_ids = body.get("dislikedRecipeIds") if "dislikedRecipeIds" in body else body.get("disliked_recipe_ids")
             if not prompt:
                 self._send_json(400, {"error": "Escribe una petición para planificar tu menú semanal."})
                 return
@@ -469,6 +504,9 @@ class CompanionRequestHandler(BaseHTTPRequestHandler):
                     postal_code=postal_code,
                     current_plan=current_plan,
                     variety_seed=variety_seed,
+                    liked_recipe_ids=liked_ids if isinstance(liked_ids, list) else None,
+                    disliked_recipe_ids=disliked_ids if isinstance(disliked_ids, list) else None,
+                    user_email=user or "default",
                 )
                 self._send_json(200, plan)
             except Exception as exc:
@@ -481,6 +519,8 @@ class CompanionRequestHandler(BaseHTTPRequestHandler):
             constraints = body.get("constraints") or {}
             postal_code = str(body.get("postalCode") or "28016")
             rotation = int(body.get("rotation") or 1)
+            liked_ids = body.get("likedRecipeIds") if "likedRecipeIds" in body else body.get("liked_recipe_ids")
+            disliked_ids = body.get("dislikedRecipeIds") if "dislikedRecipeIds" in body else body.get("disliked_recipe_ids")
             try:
                 res = swap_single_recipe(
                     current_meals=current_meals,
@@ -488,6 +528,9 @@ class CompanionRequestHandler(BaseHTTPRequestHandler):
                     constraints=constraints,
                     postal_code=postal_code,
                     rotation=rotation,
+                    liked_recipe_ids=liked_ids if isinstance(liked_ids, list) else None,
+                    disliked_recipe_ids=disliked_ids if isinstance(disliked_ids, list) else None,
+                    user_email=user or "default",
                 )
                 self._send_json(200, res)
             except Exception as exc:

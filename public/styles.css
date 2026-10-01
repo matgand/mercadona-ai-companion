@@ -468,3 +468,91 @@
   color: var(--green-dark);
 }
 
+/* Recipe image overlay for thumbs-up / thumbs-down voting */
+.meal-image {
+  position: relative;
+}
+.meal-vote-overlay {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px;
+  border-radius: 999px;
+  background: rgba(18, 28, 23, 0.62);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+  z-index: 2;
+}
+.meal-vote-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.14s ease, background 0.15s ease, border-color 0.15s ease;
+}
+.meal-vote-btn:hover:not(:disabled) {
+  transform: scale(1.08);
+  background: rgba(255, 255, 255, 0.28);
+  border-color: rgba(255, 255, 255, 0.55);
+}
+.meal-vote-btn.vote-up.active {
+  background: #007a33;
+  border-color: #36b368;
+  box-shadow: 0 0 0 2px rgba(0, 122, 51, 0.35);
+}
+.meal-vote-btn.vote-down:hover:not(:disabled),
+.meal-vote-btn.vote-down.active {
+  background: #b42318;
+  border-color: #f04438;
+}
+.meal-fav-badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: 10.5px;
+  font-weight: 700;
+  color: #ffffff;
+  background: rgba(0, 122, 51, 0.88);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
+  z-index: 2;
+}
+.recipe-prefs-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+  padding: 7px 11px;
+  background: #f4faf7;
+  border: 1px solid #d5e6dc;
+  border-radius: 4px;
+  font-size: 11.5px;
+  color: var(--ink);
+}
+.recipe-prefs-counts {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}

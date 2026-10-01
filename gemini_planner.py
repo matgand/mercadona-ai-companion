@@ -8,6 +8,7 @@ import math
 import os
 import re
 import urllib.request
+from pathlib import Path
 from typing import Any
 
 from cookidoo_service import load_cookidoo_catalog
@@ -15,6 +16,102 @@ from mercadona_service import get_catalog_for_postal_code
 
 MODEL_PRIMARY = os.environ.get("GEMINI_MODEL", "gemini-3.8-flash")
 MODEL_FALLBACK = "gemini-2.5-flash"
+
+DATA_DIR = Path(__file__).resolve().parent / "data"
+PREFERENCES_FILE = DATA_DIR / "user_preferences.json"
+_USER_PREFERENCES: dict[str, dict[str, list[str]]] = {}
+
+
+def _load_preferences_store() -> dict[str, dict[str, list[str]]]:
+    global _USER_PREFERENCES
+    if _USER_PREFERENCES:
+        return _USER_PREFERENCES
+    if PREFERENCES_FILE.exists():
+        try:
+            data = json.loads(PREFERENCES_FILE.read_text(encoding="utf-8"))
+            if isinstance(data, dict):
+                _USER_PREFERENCES = data
+        except Exception:
+            pass
+    return _USER_PREFERENCES
+
+
+def _save_preferences_store() -> None:
+    try:
+        DATA_DIR.mkdir(parents=True, exist_ok=True)
+        PREFERENCES_FILE.write_text(
+            json.dumps(_USER_PREFERENCES, ensure_ascii=False, indent=2),
+            encoding="utf-8",
+        )
+    except Exception:
+        pass
+
+
+def get_user_recipe_preferences(user_email: str = "default") -> dict[str, list[str]]:
+    """Returns {'liked': [...], 'disliked': [...]} for the given user."""
+    store = _load_preferences_store()
+    key = (user_email or "default").strip().lower()
+    entry = store.get(key) or {"liked": [], "disliked": []}
+    liked = [str(r).strip() for r in (entry.get("liked") or []) if str(r).strip()]
+    disliked = [str(r).strip() for r in (entry.get("disliked") or []) if str(r).strip() and str(r).strip() not in liked]
+    return {"liked": list(dict.fromkeys(liked)), "disliked": list(dict.fromkeys(disliked))}
+
+
+def save_user_recipe_preferences(
+    user_email: str = "default",
+    liked_recipe_ids: list[str] | None = None,
+    disliked_recipe_ids: list[str] | None = None,
+    merge: bool = True,
+) -> dict[str, list[str]]:
+    """Updates and persists the user's liked/disliked recipe IDs."""
+    store = _load_preferences_store()
+    key = (user_email or "default").strip().lower()
+    current = get_user_recipe_preferences(key) if merge else {"liked": [], "disliked": []}
+
+    in_liked = [str(r).strip() for r in (liked_recipe_ids or []) if str(r).strip()]
+    in_disliked = [str(r).strip() for r in (disliked_recipe_ids or []) if str(r).strip()]
+
+    liked = list(dict.fromkeys([r for r in current["liked"] if r not in in_disliked] + in_liked))
+    disliked = list(dict.fromkeys([r for r in current["disliked"] if r not in in_liked] + [r for r in in_disliked if r not in in_liked]))
+
+    updated = {"liked": liked, "disliked": disliked}
+    store[key] = updated
+    _save_preferences_store()
+    return updated
+
+
+def record_recipe_vote(
+    user_email: str = "default",
+    recipe_id: str = "",
+    vote: str = "none",
+) -> dict[str, list[str]]:
+    """Records a single recipe vote ('up', 'down', or 'none') for the user."""
+    rid = str(recipe_id or "").strip()
+    if not rid:
+        return get_user_recipe_preferences(user_email)
+    store = _load_preferences_store()
+    key = (user_email or "default").strip().lower()
+    curr = get_user_recipe_preferences(key)
+    liked = [r for r in curr["liked"] if r != rid]
+    disliked = [r for r in curr["disliked"] if r != rid]
+    v = (vote or "none").strip().lower()
+    if v in ("up", "like", "liked", "1", "true"):
+        liked.append(rid)
+    elif v in ("down", "dislike", "disliked", "-1", "false"):
+        disliked.append(rid)
+    updated = {"liked": liked, "disliked": disliked}
+    store[key] = updated
+    _save_preferences_store()
+    return updated
+
+
+def clear_user_recipe_preferences(user_email: str = "default") -> dict[str, list[str]]:
+    """Clears all liked and disliked recipe preferences for the user."""
+    store = _load_preferences_store()
+    key = (user_email or "default").strip().lower()
+    store[key] = {"liked": [], "disliked": []}
+    _save_preferences_store()
+    return {"liked": [], "disliked": []}
 
 DAYS_ES = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"]
 DAYS_EN_TO_ES = {
@@ -421,8 +518,10 @@ def _call_gemini_flash_selector(
     prompt: str,
     constraints: dict[str, Any],
     candidates: list[dict[str, Any]],
+    liked_set: set[str] | None = None,
 ) -> dict[str, Any] | None:
     """Calls Gemini 3.8 Flash (with automatic fallback to gemini-2.5-flash) via Vertex AI or AI Studio."""
+    liked_lookup = liked_set or set()
     compact_candidates = [
         {
             "recipe_id": r["recipe_id"],
@@ -433,6 +532,7 @@ def _call_gemini_flash_selector(
             "is_fish": r["is_fish"],
             "is_vegetarian": r["is_vegetarian"],
             "allergens": r["allergens"],
+            "liked_by_user": r["recipe_id"] in liked_lookup,
         }
         for r in candidates[:30]
     ]
@@ -441,8 +541,10 @@ def _call_gemini_flash_selector(
         "Eres el planificador oficial de menús semanales de Mercadona × Thermomix Cookidoo impulsado por Gemini 3.8 Flash. "
         "Debes seleccionar exactamente `mealCount` recetas distintas de la lista `candidates` que cumplan todas las condiciones "
         "del usuario (tiempo, calorías, presupuesto, alérgenos, familia y despensa). "
+        "Si en `candidates` hay recetas con `liked_by_user: true` (votadas positivamente por el usuario con 👍), "
+        "favorece incluir entre 1 y 2 de ellas en la semana manteniendo variedad con recetas nuevas en el resto de días. "
         "Devuelve exclusivamente un objeto JSON válido con las claves: "
-        "`headline` (string en español), `summary` (string en español explicando cómo se adaptó el menú y el ahorro de despensa), "
+        "`headline` (string en español), `summary` (string en español explicando cómo se adaptó el menú, los gustos del usuario y el ahorro de despensa), "
         "y `selected_recipe_ids` (array de strings con los `recipe_id` elegidos en orden de Lunes a Viernes)."
     )
 
@@ -531,11 +633,27 @@ def build_weekly_plan(
     postal_code: str = "28016",
     current_plan: dict[str, Any] | None = None,
     variety_seed: str = "default",
+    liked_recipe_ids: list[str] | None = None,
+    disliked_recipe_ids: list[str] | None = None,
+    user_email: str = "default",
 ) -> dict[str, Any]:
-    """Builds a complete weekly Cookidoo + Mercadona dinner plan adhering to all user constraints."""
+    """Builds a complete weekly Cookidoo + Mercadona dinner plan adhering to all user constraints and recipe votes."""
     is_valid, err_msg = validate_meal_planning_prompt(prompt)
     if not is_valid:
         raise ValueError(err_msg)
+
+    if liked_recipe_ids is not None or disliked_recipe_ids is not None:
+        prefs = save_user_recipe_preferences(
+            user_email=user_email,
+            liked_recipe_ids=liked_recipe_ids,
+            disliked_recipe_ids=disliked_recipe_ids,
+            merge=True,
+        )
+    else:
+        prefs = get_user_recipe_preferences(user_email)
+
+    disliked_set = set(prefs.get("disliked") or [])
+    liked_set = set(prefs.get("liked") or []) - disliked_set
 
     base_c = current_plan.get("constraints") if current_plan else None
     constraints = parse_constraints(prompt, base_c)
@@ -550,10 +668,13 @@ def build_weekly_plan(
     veg_only = bool(constraints.get("vegetarianOnly"))
 
     # Filter Cookidoo recipes:
+    # 0) Never propose recipes voted 👎 (`disliked_set`)
     # 1) All mapped ingredients must be available in Mercadona API for this postal code
     # 2) Must satisfy maxMinutes, maxCaloriesPerServing, vegetarianOnly, and excludedAllergens
     eligible: list[dict[str, Any]] = []
     for r in all_recipes:
+        if r["recipe_id"] in disliked_set:
+            continue
         if not all(pid in catalog and catalog[pid].get("available", True) for pid in r["product_ids"]):
             continue
         if r["minutes"] > max_minutes:
@@ -570,7 +691,7 @@ def build_weekly_plan(
     meal_count = constraints.get("mealCount", 5)
     if len(eligible) < meal_count:
         for r in all_recipes:
-            if r in eligible:
+            if r["recipe_id"] in disliked_set or r in eligible:
                 continue
             if not all(pid in catalog for pid in r["product_ids"]):
                 continue
@@ -611,32 +732,61 @@ def build_weekly_plan(
         t for t in re.findall(r"[a-z0-9]+", _norm_str(prompt)) if len(t) >= 4 and t not in STOP_TOKENS and not t.isdigit()
     ]
 
-    # Score recipes across the 5,000-recipe catalog to favor main dishes, prompt keyword hits, pantry reuse, and budget fit
-    def score_recipe(idx_r: tuple[int, dict[str, Any]]) -> tuple[int, int, int, float, int]:
+    # Shared staples (like olive oil, onion, garlic, eggs, rice, pasta)
+    SHARED_STAPLES = {"4740", "69089", "69297", "31505", "5044", "34125"}
+
+    # Build ingredient affinity from user's liked recipes
+    liked_affinity_pids: set[str] = set()
+    if liked_set:
+        for r in all_recipes:
+            if r["recipe_id"] in liked_set:
+                for pid in r.get("product_ids", []):
+                    if pid not in SHARED_STAPLES:
+                        liked_affinity_pids.add(pid)
+
+    # Select up to `max_liked_repeats` (max 2 for a 5-meal plan) from eligible liked recipes, rotating across seeds
+    max_liked_repeats = max(1, min(2, meal_count // 2)) if meal_count >= 2 else 1
+    eligible_liked = [r["recipe_id"] for r in eligible if r["recipe_id"] in liked_set]
+    promoted_liked_ids: set[str] = set()
+    if eligible_liked:
+        start_idx = seed_int % len(eligible_liked)
+        rotated_liked = eligible_liked[start_idx:] + eligible_liked[:start_idx]
+        promoted_liked_ids = set(rotated_liked[:max_liked_repeats])
+
+    # Score recipes across the 5,000-recipe catalog to favor promoted liked dishes, prompt keyword hits, pantry reuse, ingredient affinity, and budget fit
+    def score_recipe(idx_r: tuple[int, dict[str, Any]]) -> tuple[int, int, int, int, int, float, int]:
         idx, r = idx_r
         is_dinner_rank = 0 if r.get("is_dinner", True) else 1
+        liked_rank = 0 if r["recipe_id"] in promoted_liked_ids else (1 if r["recipe_id"] in liked_set else 2)
         r_text = _norm_str(r["name"] + " " + " ".join(r.get("ingredients", [])))
         kw_hits = sum(1 for tok in prompt_tokens if tok in r_text)
         pantry_hits = sum(1 for pid in r["product_ids"] if pid in pantry_map)
+        affinity_hits = sum(1 for pid in r["product_ids"] if pid in liked_affinity_pids)
         net_cost = sum(catalog[pid]["unit_price"] for pid in r["product_ids"] if pid not in pantry_map)
         jitter = ((idx * 31) + seed_int) % 11
-        return (is_dinner_rank, -kw_hits, -pantry_hits, net_cost + jitter * 0.45, r["minutes"])
+        return (is_dinner_rank, liked_rank, -kw_hits, -pantry_hits, -affinity_hits, net_cost + jitter * 0.45, r["minutes"])
 
     sorted_candidates = [r for _, r in sorted(enumerate(eligible), key=score_recipe)]
 
     # Call Gemini 3.8 Flash if API key is configured
-    gemini_res = _call_gemini_flash_selector(prompt, constraints, sorted_candidates)
+    gemini_res = _call_gemini_flash_selector(prompt, constraints, sorted_candidates, liked_set=liked_set)
     cand_by_id = {r["recipe_id"]: r for r in sorted_candidates}
 
     selected: list[dict[str, Any]] = []
+    liked_included_count = 0
     if gemini_res and gemini_res.get("selected_recipe_ids"):
         for rid in gemini_res["selected_recipe_ids"]:
             if rid in cand_by_id and cand_by_id[rid] not in selected:
+                is_lk = rid in liked_set
+                if is_lk and liked_included_count >= max_liked_repeats and len(eligible) - len(liked_set) >= meal_count:
+                    continue
                 selected.append(cand_by_id[rid])
+                if is_lk:
+                    liked_included_count += 1
                 if len(selected) == meal_count:
                     break
 
-    # Fill remaining slots deterministically
+    # Fill remaining slots deterministically respecting exploration/exploitation quota
     if constraints.get("requiredFish") and not any(r["is_fish"] for r in selected):
         fish_cands = [r for r in sorted_candidates if r["is_fish"] and r not in selected]
         if fish_cands:
@@ -644,12 +794,27 @@ def build_weekly_plan(
                 selected[-1] = fish_cands[0]
             else:
                 selected.append(fish_cands[0])
+                if fish_cands[0]["recipe_id"] in liked_set:
+                    liked_included_count += 1
 
     for r in sorted_candidates:
         if len(selected) >= meal_count:
             break
         if r not in selected:
+            is_lk = r["recipe_id"] in liked_set
+            if is_lk and liked_included_count >= max_liked_repeats and (len(eligible) - len(liked_set)) >= meal_count:
+                continue
             selected.append(r)
+            if is_lk:
+                liked_included_count += 1
+
+    # Fallback if quota skipped too many and we still need slots
+    if len(selected) < meal_count:
+        for r in sorted_candidates:
+            if len(selected) >= meal_count:
+                break
+            if r not in selected:
+                selected.append(r)
 
     # Scale quantities based on family size (adults + children*0.75)
     adults = constraints.get("adults", 2)
@@ -659,9 +824,6 @@ def build_weekly_plan(
     meals_out: list[dict[str, Any]] = []
     product_quantities: dict[str, int] = {}
     product_used_in_days: dict[str, list[str]] = {}
-
-    # Shared staples (like olive oil, onion, garlic, eggs, rice, pasta) only need 1 pack across the week unless heavily used
-    SHARED_STAPLES = {"4740", "69089", "69297", "31505", "5044", "34125"}
 
     for idx, r in enumerate(selected[:meal_count]):
         day_name = DAYS_ES[idx % len(DAYS_ES)]
@@ -703,6 +865,7 @@ def build_weekly_plan(
                 "uses_from_home": uses_from_home,
                 "is_fish": r["is_fish"],
                 "is_vegetarian": r["is_vegetarian"],
+                "liked_by_user": r["recipe_id"] in liked_set,
             }
         )
 
@@ -763,10 +926,16 @@ def build_weekly_plan(
         if constraints.get("pantryItems")
         else ""
     )
+    fav_in_menu = [m["name"] for m in meals_out if m.get("liked_by_user")]
+    fav_note = (
+        f" Incluye {'tu receta favorita' if len(fav_in_menu) == 1 else 'tus recetas favoritas'} ({', '.join(fav_in_menu)})."
+        if fav_in_menu
+        else ""
+    )
     default_summary = (
         f"Menú semanal elaborado con Gemini 3.8 Flash seleccionando recetas oficiales de Cookidoo "
         f"cuyos ingredientes están verificados en tiempo real en Mercadona para el código postal "
-        f"{catalog_meta['postal_code']} (almacén {catalog_meta['warehouse']}).{pantry_note}"
+        f"{catalog_meta['postal_code']} (almacén {catalog_meta['warehouse']}).{pantry_note}{fav_note}"
     )
 
     allergen_labels = [
@@ -795,6 +964,10 @@ def build_weekly_plan(
         "total": total,
         "budget_remaining": budget_remaining,
         "allergen_notice": allergen_notice,
+        "recipe_preferences": {
+            "liked": list(liked_set),
+            "disliked": list(disliked_set),
+        },
         "trace": [
             "gemini_3_8_flash_planner",
             "search_cookidoo",
@@ -811,13 +984,29 @@ def swap_single_recipe(
     constraints: dict[str, Any],
     postal_code: str = "28016",
     rotation: int = 1,
+    liked_recipe_ids: list[str] | None = None,
+    disliked_recipe_ids: list[str] | None = None,
+    user_email: str = "default",
 ) -> dict[str, Any]:
-    """Swaps a single Cookidoo dinner and recalculates the Mercadona basket."""
+    """Swaps a single Cookidoo dinner (respecting liked/disliked preferences) and recalculates the Mercadona basket."""
+    if liked_recipe_ids is not None or disliked_recipe_ids is not None:
+        prefs = save_user_recipe_preferences(
+            user_email=user_email,
+            liked_recipe_ids=liked_recipe_ids,
+            disliked_recipe_ids=disliked_recipe_ids,
+            merge=True,
+        )
+    else:
+        prefs = get_user_recipe_preferences(user_email)
+
+    disliked_set = set(prefs.get("disliked") or [])
+    liked_set = set(prefs.get("liked") or []) - disliked_set
+
     all_recipes = load_cookidoo_catalog()
     catalog, catalog_meta = get_catalog_for_postal_code(postal_code)
     pantry_map = _pantry_excluded_product_ids(constraints.get("pantryItems", []), catalog)
 
-    used_ids = {str(m.get("recipe_id") or m.get("recipeId") or "") for m in current_meals}
+    used_ids = {str(m.get("recipe_id") or m.get("recipeId") or "") for m in current_meals} | disliked_set
     excluded_allergens = set(constraints.get("excludedAllergens", []))
     max_minutes = constraints.get("maxMinutes") or 60
     max_cal = constraints.get("maxCaloriesPerServing")
@@ -843,6 +1032,26 @@ def swap_single_recipe(
         ]
     if not candidates:
         candidates = [r for r in all_recipes if r["recipe_id"] not in used_ids]
+    if not candidates:
+        candidates = [r for r in all_recipes if r["recipe_id"] != target_recipe_id]
+
+    SHARED_STAPLES = {"4740", "69089", "69297", "31505", "5044", "34125"}
+    liked_affinity_pids: set[str] = set()
+    if liked_set:
+        for r in all_recipes:
+            if r["recipe_id"] in liked_set:
+                for pid in r.get("product_ids", []):
+                    if pid not in SHARED_STAPLES:
+                        liked_affinity_pids.add(pid)
+
+    def _swap_rank(r: dict[str, Any]) -> tuple[int, int, int]:
+        is_liked = 0 if r["recipe_id"] in liked_set else 1
+        affinity = -sum(1 for pid in r.get("product_ids", []) if pid in liked_affinity_pids)
+        pantry_hits = -sum(1 for pid in r.get("product_ids", []) if pid in pantry_map)
+        return (is_liked, affinity, pantry_hits)
+
+    if liked_set:
+        candidates = sorted(candidates, key=_swap_rank)
 
     chosen = candidates[rotation % len(candidates)]
     target_day = "Lunes"
@@ -863,7 +1072,6 @@ def swap_single_recipe(
     children = constraints.get("children", 1)
     household_portions = adults + (0.75 * children)
 
-    SHARED_STAPLES = {"4740", "69089", "69297", "31505", "5044", "34125"}
     qty_map: dict[str, int] = {}
     used_days: dict[str, list[str]] = {}
     replacement_card: dict[str, Any] | None = None
@@ -906,6 +1114,7 @@ def swap_single_recipe(
             "uses_from_home": uses_from_home,
             "is_fish": r["is_fish"],
             "is_vegetarian": r["is_vegetarian"],
+            "liked_by_user": r["recipe_id"] in liked_set,
         }
         if r["recipe_id"] == chosen["recipe_id"]:
             replacement_card = card
@@ -956,6 +1165,10 @@ def swap_single_recipe(
         "postal_code": catalog_meta["postal_code"],
         "warehouse": catalog_meta["warehouse"],
         "catalog_source": catalog_meta["catalog_source"],
+        "recipe_preferences": {
+            "liked": list(liked_set),
+            "disliked": list(disliked_set),
+        },
         "change": {
             "day": target_day,
             "from_recipe_id": target_recipe_id,
@@ -965,3 +1178,4 @@ def swap_single_recipe(
         },
         "trace": ["deterministic_recipe_filter", "deterministic_catalog_validation", "deterministic_basket_pricing"],
     }
+
