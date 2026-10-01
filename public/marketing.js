@@ -107,8 +107,7 @@ function renderGoogleCloudLockup() {
     <span class="gcloud-lockup-badge" aria-label="Google Cloud">
       <img
         class="gcloud-logo-img"
-        src="https://sites.google.com/u/0/sitesv-images-rt/AMxu72ubGyFeeA9phYacPQqAz0Bq475_Kn_Ew-K2e82TOf1XvvIgqx0SgKPxoxr76yQOZ3GjLwqgKYBCv-A8bD7jTlrwIOQ80rsyBj6sLAPUqNen1DEfVbwYXXHl1NGnv3DM4WgLo2J7Ictra80hTtgZ-YV7pus7pIzo0jdkio0hKt7Ptht4DduV_j3ePk7wavS1OjWhN59Ze9BsiiPKqzVpRwB6kFOyroijkcomHFDsON8=w1280"
-        onerror="this.onerror=null;this.src='/brand/google-cloud.svg';"
+        src="/brand/google-cloud.svg"
         alt="Google Cloud"
       />
     </span>
