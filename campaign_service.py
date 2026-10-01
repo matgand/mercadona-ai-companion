@@ -193,10 +193,12 @@ def load_local_campaigns() -> list[dict[str, Any]]:
 def save_local_campaigns(campaigns: list[dict[str, Any]]) -> list[dict[str, Any]]:
     enriched = [_enrich_campaign(c) for c in campaigns]
     with _LOCK:
+        tmp_path: str | None = None
         try:
-            DATA_DIR.mkdir(parents=True, exist_ok=True)
+            target_dir = CAMPAIGNS_FILE.parent
+            target_dir.mkdir(parents=True, exist_ok=True)
             fd, tmp_path = tempfile.mkstemp(
-                dir=str(DATA_DIR), prefix=".campaigns_", suffix=".tmp"
+                dir=str(target_dir), prefix=".campaigns_", suffix=".tmp"
             )
             try:
                 os.fchmod(fd, 0o600)
@@ -205,9 +207,14 @@ def save_local_campaigns(campaigns: list[dict[str, Any]]) -> list[dict[str, Any]
             with os.fdopen(fd, "w", encoding="utf-8") as f:
                 json.dump(enriched, f, ensure_ascii=False, indent=2)
             os.replace(tmp_path, CAMPAIGNS_FILE)
+            tmp_path = None
             os.chmod(CAMPAIGNS_FILE, 0o600)
         except Exception:
-            pass
+            if tmp_path:
+                try:
+                    os.unlink(tmp_path)
+                except OSError:
+                    pass
     return enriched
 
 

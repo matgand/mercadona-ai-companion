@@ -43,10 +43,12 @@ def _load_preferences_store() -> dict[str, dict[str, list[str]]]:
 
 def _save_preferences_store() -> None:
     with _PREFS_LOCK:
+        tmp_path: str | None = None
         try:
-            DATA_DIR.mkdir(parents=True, exist_ok=True)
+            target_dir = PREFERENCES_FILE.parent
+            target_dir.mkdir(parents=True, exist_ok=True)
             fd, tmp_path = tempfile.mkstemp(
-                dir=str(DATA_DIR), prefix=".user_preferences_", suffix=".tmp"
+                dir=str(target_dir), prefix=".user_preferences_", suffix=".tmp"
             )
             try:
                 os.fchmod(fd, 0o600)
@@ -55,9 +57,14 @@ def _save_preferences_store() -> None:
             with os.fdopen(fd, "w", encoding="utf-8") as f:
                 json.dump(_USER_PREFERENCES, f, ensure_ascii=False, indent=2)
             os.replace(tmp_path, PREFERENCES_FILE)
+            tmp_path = None
             os.chmod(PREFERENCES_FILE, 0o600)
         except Exception:
-            pass
+            if tmp_path:
+                try:
+                    os.unlink(tmp_path)
+                except OSError:
+                    pass
 
 
 def get_user_recipe_preferences(user_email: str = "default") -> dict[str, list[str]]:

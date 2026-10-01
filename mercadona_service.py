@@ -696,10 +696,12 @@ def _load_saved_sessions() -> dict[str, dict[str, Any]]:
 
 def _save_sessions_to_disk() -> None:
     with _SESSIONS_LOCK:
+        tmp_path: str | None = None
         try:
-            DATA_DIR.mkdir(parents=True, exist_ok=True)
+            target_dir = SESSIONS_FILE.parent
+            target_dir.mkdir(parents=True, exist_ok=True)
             fd, tmp_path = tempfile.mkstemp(
-                dir=str(DATA_DIR), prefix=".mercadona_sessions_", suffix=".tmp"
+                dir=str(target_dir), prefix=".mercadona_sessions_", suffix=".tmp"
             )
             try:
                 os.fchmod(fd, 0o600)
@@ -708,9 +710,14 @@ def _save_sessions_to_disk() -> None:
             with os.fdopen(fd, "w", encoding="utf-8") as f:
                 json.dump(_MERCADONA_SESSIONS, f, ensure_ascii=False, indent=2)
             os.replace(tmp_path, SESSIONS_FILE)
+            tmp_path = None
             os.chmod(SESSIONS_FILE, 0o600)
         except Exception:
-            pass
+            if tmp_path:
+                try:
+                    os.unlink(tmp_path)
+                except OSError:
+                    pass
 
 
 def get_active_mercadona_session(user_email: str = "default") -> dict[str, str] | None:
