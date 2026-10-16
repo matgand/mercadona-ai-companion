@@ -6,11 +6,17 @@
 # and a shared cryptographic SESSION_SECRET for internal service-to-service sync.
 
 set -euo pipefail
+export PATH="$HOME/google-cloud-sdk/bin:$PATH"
+export CLOUDSDK_METRICS_ENVIRONMENT="${CLOUDSDK_METRICS_ENVIRONMENT:+$CLOUDSDK_METRICS_ENVIRONMENT }datacloud.jetski"
 
 PROJECT_ID="${PROJECT_ID:-mercadona-ia-companion}"
+ACCOUNT="${ACCOUNT:-mattia@mgandolfi.altostrat.com}"
 REGION="${REGION:-europe-west1}"
 COMPANION_SERVICE="${SERVICE_NAME:-mercadona-ai-companion}"
 LIBRARY_SERVICE="${LIBRARY_SERVICE_NAME:-campaign-library}"
+
+gcloud config set account "$ACCOUNT" >/dev/null
+gcloud config set project "$PROJECT_ID" >/dev/null
 
 DEFAULT_ALLOWED="matgand@gmail.com,mgandolfi@google.com,andrea.anaut@gmail.com,mattia@mgandolfi.altostrat.com,barea@google.com,estherarribas@google.com,iolalla@google.com,jamarmu@google.com,lauramarse@google.com,cmartintomas@google.com,veronicapg@google.com,mikelju@gmail.com"
 ALLOWED_USERS="${ALLOWED_USERS:-$DEFAULT_ALLOWED}"
@@ -43,7 +49,7 @@ gcloud beta run deploy "$LIBRARY_SERVICE" \
   --memory 512Mi \
   --cpu 1 \
   --timeout 60s \
-  --set-env-vars="^;^SERVICE_ROLE=campaign-library;GOOGLE_CLOUD_PROJECT=${PROJECT_ID};ALLOWED_USERS=${ALLOWED_USERS};ENFORCE_IAP_JWT=1;HIDE_ALLOWED_USERS_UNAUTHED=1;ALLOW_LOCAL_DEV_FALLBACK=0;SESSION_SECRET=${SESSION_SECRET}"
+  --update-env-vars="^;^SERVICE_ROLE=campaign-library;GOOGLE_CLOUD_PROJECT=${PROJECT_ID};GCP_PROJECT_ID=${PROJECT_ID};GCP_LOCATION=${REGION};ALLOWED_USERS=${ALLOWED_USERS};ENFORCE_IAP_JWT=1;HIDE_ALLOWED_USERS_UNAUTHED=1;ALLOW_LOCAL_DEV_FALLBACK=0;SESSION_SECRET=${SESSION_SECRET}"
 
 LIBRARY_URL="$(gcloud run services describe "$LIBRARY_SERVICE" --project "$PROJECT_ID" --region "$REGION" --format 'value(status.url)')"
 echo "Library Service URL: ${LIBRARY_URL}"
@@ -67,7 +73,7 @@ gcloud beta run deploy "$COMPANION_SERVICE" \
   --memory 512Mi \
   --cpu 1 \
   --timeout 60s \
-  --set-env-vars="^;^SERVICE_ROLE=companion;CAMPAIGN_LIBRARY_URL=${LIBRARY_URL};GOOGLE_CLOUD_PROJECT=${PROJECT_ID};ALLOWED_USERS=${ALLOWED_USERS};ENFORCE_IAP_JWT=1;HIDE_ALLOWED_USERS_UNAUTHED=1;ALLOW_LOCAL_DEV_FALLBACK=0;SESSION_SECRET=${SESSION_SECRET}"
+  --update-env-vars="^;^SERVICE_ROLE=companion;CAMPAIGN_LIBRARY_URL=${LIBRARY_URL};GOOGLE_CLOUD_PROJECT=${PROJECT_ID};GCP_PROJECT_ID=${PROJECT_ID};GCP_LOCATION=${REGION};ALLOWED_USERS=${ALLOWED_USERS};ENFORCE_IAP_JWT=1;HIDE_ALLOWED_USERS_UNAUTHED=1;ALLOW_LOCAL_DEV_FALLBACK=0;SESSION_SECRET=${SESSION_SECRET}"
 
 COMPANION_URL="$(gcloud run services describe "$COMPANION_SERVICE" --project "$PROJECT_ID" --region "$REGION" --format 'value(status.url)')"
 
