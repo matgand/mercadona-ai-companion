@@ -160,7 +160,7 @@ def _enrich_campaign(c: dict[str, Any]) -> dict[str, Any]:
     prof_id = CATEGORY_TO_PROFILE_ID.get(cat, "familias")
     prof_meta = next((p for p in PROFILES_METADATA if p["id"] == prof_id), PROFILES_METADATA[0])
     default_sponsors = {
-        "Familias": ("Pescadería ECI & Buitoni", "15% bonificación en frescos de mostrador familiar"),
+        "Familias": ("Pescadería Mercadona & Hacendado", "15% bonificación en frescos de mostrador familiar"),
         "Saludables": ("Mercadona Bio & Naturgreen", "10% dto. directo en gama Ecológica y Bio"),
         "Rutina rápida": ("Mercadona Selection & Luengo", "Envío gratis Mercadona Plus en menús exprés"),
         "Ahorro": ("Marca Mercadona & Aliada", "Precio garantizado y formato ahorro familiar"),
@@ -169,7 +169,7 @@ def _enrich_campaign(c: dict[str, Any]) -> dict[str, Any]:
     return {
         "id": str(c.get("id") or "campaign-1"),
         "title": str(c.get("title") or "Campaña Semanal Mercadona"),
-        "tagline": str(c.get("tagline") or "Cinco cenas en Thermomix mapeadas al catálogo real del Mercadona."),
+        "tagline": str(c.get("tagline") or "Cinco cenas en Thermomix mapeadas al catálogo real dMercadona."),
         "category": cat,
         "occasion": cat,
         "profileId": prof_id,
@@ -362,9 +362,9 @@ def _infer_category_from_brief(brief: str, category_hint: str | None = None) -> 
 
 def _call_gemini_campaign_generator(brief: str, category: str, parsed_constraints: dict[str, Any]) -> dict[str, Any] | None:
     sys_instruction = (
-        "Eres el Copiloto de Campañas IA del equipo de Marketing del Mercadona (impulsado por Google Cloud y Google Gemini). "
+        "Eres el Copiloto de Campañas IA del equipo de Marketing dMercadona (impulsado por Google Cloud y Google Gemini). "
         "A partir de un brief en lenguaje natural del equipo de Marketing, diseña una campaña semanal de cenas para los clientes de Mercadona "
-        "que conecte el catálogo de recetas de Thermomix Cookidoo con la cesta del Mercadona. "
+        "que conecte el catálogo de recetas de Thermomix Cookidoo con la cesta dMercadona. "
         "La categoría de perfil debe ser una de: 'Familias', 'Saludables', 'Rutina rápida', 'Ahorro'. "
         "Devuelve EXCLUSIVAMENTE un objeto JSON válido con las claves:\n"
         "- `title`: título editorial atractivo y breve en español (máx 55 caracteres, estilo Mercadona)\n"
@@ -372,7 +372,7 @@ def _call_gemini_campaign_generator(brief: str, category: str, parsed_constraint
         "- `category`: una de ['Familias', 'Saludables', 'Rutina rápida', 'Ahorro']\n"
         "- `badge`: etiqueta corta destacada (ej. 'Recomendado para Familias', 'Menos de 450 kcal', 'Cero desperdicio', 'En 20 minutos')\n"
         "- `seedPrompt`: prompt completo en primera persona en español listo para el planificador semanal (incluyendo número de cenas, adultos/niños, presupuesto máximo en €, tiempo máximo en minutos, calorías si aplica, alergias e ingredientes en casa)\n"
-        "- `whyProfile`: explicación de 1 frase para el equipo de marketing sobre por qué esta campaña encaja con ese perfil y qué productos del Mercadona impulsa."
+        "- `whyProfile`: explicación de 1 frase para el equipo de marketing sobre por qué esta campaña encaja con ese perfil y qué productos dMercadona impulsa."
     )
 
     user_payload = json.dumps(
@@ -465,7 +465,7 @@ def generate_campaign_from_brief(
     if not tagline:
         tagline = (
             f"{meal_count} cenas de Thermomix pensadas para el perfil {category}, en menos de {max_minutes} min "
-            f"y con cesta completa en el Mercadona bajo {int(max_budget)}€."
+            f"y con cesta completa en Mercadona bajo {int(max_budget)}€."
         )
 
     if not badge:
@@ -495,7 +495,7 @@ def generate_campaign_from_brief(
     if not why_profile:
         why_profile = (
             f"Adaptada al perfil {category} ({prof_meta['household']}): combina recetas oficiales de Cookidoo "
-            f"en ≤ {max_minutes} min con productos frescos del Mercadona por menos de {int(max_budget)}€."
+            f"en ≤ {max_minutes} min con productos frescos dMercadona por menos de {int(max_budget)}€."
         )
 
     slug_base = re.sub(r"[^a-z0-9]+", "-", title.lower()).strip("-")[:28] or "campana"
@@ -609,7 +609,7 @@ def get_demand_sensing_analytics() -> dict[str, Any]:
                 "postal_code": "08028 · Barcelona Diagonal",
                 "center": "Mercadona Diagonal",
                 "top_intent": "Menú saludable ≤ 450 kcal · Sin lactosa",
-                "trending_fresh": "Verduras ecológicas La Huerta ECI y Huevos camperos Bio",
+                "trending_fresh": "Verduras ecológicas Huerta Mercadona y Huevos camperos Bio",
                 "dominant_tier": "Gama Bio & Ecológicos (51%)",
                 "avg_ticket": "61,50 €",
             },
@@ -617,8 +617,8 @@ def get_demand_sensing_analytics() -> dict[str, Any]:
                 "postal_code": "41001 · Sevilla Duque / Nervión",
                 "center": "Mercadona Nervión",
                 "top_intent": "Ahorro semanal familiar ≤ 50 € · Despensa",
-                "trending_fresh": "Legumbres Selección ECI, Arroz redondo y Pollo de corral",
-                "dominant_tier": "Ahorro Marca ECI (58%)",
+                "trending_fresh": "Legumbres Hacendado, Arroz redondo y Pollo de corral",
+                "dominant_tier": "Ahorro Hacendado (58%)",
                 "avg_ticket": "48,90 €",
             },
         ],

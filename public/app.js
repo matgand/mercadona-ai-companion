@@ -140,8 +140,8 @@ const state = {
     "En casa: pasta",
   ],
   postalCode: "28001",
-  warehouse: "0130-DELIVERY",
-  centerName: "Madrid · Centro Logístico Cedial II (0130)",
+  warehouse: "mad1",
+  centerName: "Madrid · Colmena Mercadona Online (mad1)",
   deliveryAvailable: true,
   verifyingStock: false,
   lastStockVerifiedAt: null,
@@ -598,7 +598,7 @@ async function sendWhatsAppMessage(rawText, options = {}) {
       if (data.action && data.action !== "view_menu") {
         showToast(
           "💬 Cambio aplicado desde WhatsApp",
-          `Tu menú semanal y tu cesta del Mercadona (${formatEUR(state.plan?.total || 0)}) se han actualizado en vivo.`
+          `Tu menú semanal y tu cesta de Mercadona (${formatEUR(state.plan?.total || 0)}) se han actualizado en vivo.`
         );
       }
     }
@@ -824,7 +824,7 @@ async function runFridgeVision({ imageBase64 = null, mimeType = "image/jpeg", pr
       const kwList = (data.fridge_vision?.keywords || []).join(", ");
       showToast(
         `📸 Nevera Vision aplicada (-${formatEUR(data.fridge_vision?.estimated_savings_eur || 8.45)})`,
-        `Google Gemini ha detectado: ${kwList}. Se han priorizado recetas que los aprovechan y se han descontado de tu cesta ECI.`
+        `Google Gemini ha detectado: ${kwList}. Se han priorizado recetas que los aprovechan y se han descontado de tu cesta Mercadona.`
       );
       setTimeout(() => {
         document.querySelector(".experience-panel")?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -1179,7 +1179,7 @@ async function updatePostalCode(newPc) {
       state.catalogData = null;
       showToast(
         `Código Postal ${data.postal_code} activo`,
-        data.message || `Conectado en tiempo real al centro '${state.centerName}' del Mercadona.`
+        data.message || `Conectado en tiempo real al centro '${state.centerName}' de Mercadona.`
       );
       if (state.plan) {
         await generatePlan(state.prompt);
@@ -1709,7 +1709,7 @@ async function loadSourcesTab() {
 }
 
 function renderGoogleCloudLockup(white = false) {
-  const src = white ? "/brand/google-cloud-white.svg?v=mercadona-md3-2026" : "/brand/google-cloud.svg?v=mercadona-md3-2026";
+  const src = white ? "/brand/google-cloud-white.svg?v=mercadona-md3-2026" : "/brand/google-cloud.svg?v=mercadona-brand-2026";
   return `
     <span class="gcloud-lockup-badge" aria-label="Google Cloud">
       <img
@@ -1732,7 +1732,7 @@ function renderAuthModal() {
         <div class="brand-lockup" style="margin-bottom: 18px;">
           ${renderGoogleCloudLockup()}
           <span class="brand-divider"></span>
-          <img class="dia-logo" src="/brand/mercadona.svg?v=mercadona-md3-2026" alt="Mercadona" style="width: 125px;" />
+          <img class="mercadona-logo" src="/brand/mercadona.svg?v=mercadona-brand-2026" alt="Mercadona" style="width: 125px;" />
         </div>
         <p class="eyebrow" style="margin-bottom: 6px;">Protegido por Google Cloud Identity-Aware Proxy (IAP)</p>
         <h2 id="auth-gate-title">Autenticación Google obligatoria</h2>
@@ -1779,7 +1779,7 @@ function renderHeader() {
       <a href="#for-you" class="brand-lockup" id="nav-home-logo" aria-label="Google Cloud y Mercadona">
         ${renderGoogleCloudLockup(true)}
         <span class="brand-divider" aria-hidden="true"></span>
-        <img class="dia-logo" src="/brand/mercadona-white.svg?v=mercadona-md3-2026" alt="Mercadona" />
+        <img class="mercadona-logo" src="/brand/mercadona.svg?v=mercadona-brand-2026" alt="Mercadona" />
       </a>
       <nav class="top-navigation" aria-label="Navegación principal">
         <a href="#for-you" data-tab="planner" ${state.activeTab === "planner" ? 'aria-current="page"' : ""}>Para ti</a>
@@ -1851,7 +1851,7 @@ function renderDiaConnectBox() {
       <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:10px; flex-wrap:wrap; margin-bottom:10px;">
         <div>
           <strong style="font-size:13.5px; display:block; color:var(--ink);">
-            🛒 1-Click a tu Cesta del Mercadona (Sin extensiones externas)
+            🛒 1-Click a tu Cesta de Mercadona (Sin extensiones externas)
           </strong>
           <span style="font-size:12px; color:var(--muted);">
             ${
@@ -1909,7 +1909,7 @@ function renderDiaConnectBox() {
         <div class="dia-step-card">
           <span class="dia-step-num">2</span>
           <div>
-            <strong>Abre el Mercadona y pulsa el marcador</strong>
+            <strong>Abre Mercadona y pulsa el marcador</strong>
             <p>
               Entra en <a href="https://tienda.mercadona.es/" target="_blank" rel="noreferrer" style="text-decoration:underline; font-weight:700; color:var(--green-dark);">tienda.mercadona.es ↗</a> y haz clic en el marcador <strong>“🔗 Vincular Cesta Mercadona”</strong>.
             </p>
@@ -2408,7 +2408,7 @@ function renderExperiencePanel() {
 
         <div class="basket-header">
           <div>
-            <p class="empty-kicker">Mapping al catálogo del Mercadona</p>
+            <p class="empty-kicker">Mapping al catálogo de Mercadona</p>
             <h3>${p.basket.length} productos de Mercadona · ${formatEUR(p.total)}</h3>
             <div class="catalog-source-badge">
               <span></span>
@@ -2604,7 +2604,7 @@ function renderExperiencePanel() {
 
         <div style="display:flex; justify-content:space-between; align-items:center; padding: 14px 0 10px; border-top: 1px solid var(--line); flex-wrap: wrap; gap: 10px; margin-top: 10px;">
           <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
-            <span style="display:inline-block; width:8px; height:8px; border-radius:50%; background:${state.diaSession.connected ? "#007a33" : "#9aa5a0"};"></span>
+            <span style="display:inline-block; width:8px; height:8px; border-radius:50%; background:${state.diaSession.connected ? "#008f61" : "#9aa5a0"};"></span>
             <span style="font-size:12px; color:var(--ink); font-weight:600;">
               ${
                 state.diaSession.connected
@@ -2762,7 +2762,7 @@ function renderPlannerView() {
         <p class="eyebrow">Personalizado para tu familia</p>
         <h1>Deja de llenar carritos. Empieza a planificar semanas.</h1>
         <p class="hero-subtitle">
-          Diseñado por nutricionistas expertos. A la medida de tu dieta y tu bolsillo. Te lo lleva el Mercadona.
+          Diseñado por nutricionistas expertos. A la medida de tu dieta y tu bolsillo. Te lo lleva Mercadona.
         </p>
         <div class="profile-explanation">
           <span class="profile-monogram" aria-hidden="true">${escapeHtml(activeProfile.icon)}</span>
@@ -3026,7 +3026,7 @@ function renderCatalogView() {
   return `
     <section class="source-section" style="max-width:1480px; margin:0 auto; padding: 48px 0;">
       <p class="eyebrow">API de Mercadona (tienda.mercadona.es) · CP ${escapeHtml(state.postalCode)} (${escapeHtml(state.warehouse)})</p>
-      <h1 style="font-size: clamp(42px, 5vw, 72px); margin-bottom: 18px;">Catálogo de Productos del Mercadona (${allProducts.length})</h1>
+      <h1 style="font-size: clamp(42px, 5vw, 72px); margin-bottom: 18px;">Catálogo de Productos de Mercadona (${allProducts.length})</h1>
       <p class="hero-subtitle">
         Productos verificados en la API de Mercadona (<code>tienda.mercadona.es/api/v1/plp-back/reduced</code>, <code>/api/v1/pdp-back/&lt;sku&gt;</code> y <code>Parse.bot Dia ES API</code> (tienda <code>${escapeHtml(state.warehouse)}</code>)) utilizados para el mapping de las 5.000 recetas.
       </p>
@@ -3047,7 +3047,7 @@ function renderCatalogView() {
       <div class="basket-list" style="background:#fff; border:1px solid var(--line); padding: 12px 24px;">
         ${
           !data
-            ? `<p style="padding:24px 0;">Cargando catálogo del Mercadona...</p>`
+            ? `<p style="padding:24px 0;">Cargando catálogo de Mercadona...</p>`
             : pageItems
                 .map(
                   (p) => `
@@ -3105,7 +3105,7 @@ function renderSourcesView() {
       <p class="eyebrow">Transparencia e Integraciones · Cookidoo España</p>
       <h1 style="font-size: clamp(42px, 5vw, 72px); margin-bottom: 18px;">Catálogo de Recetas de Cookidoo (${allRecipes.length})</h1>
       <p class="hero-subtitle">
-        Las ${allRecipes.length} recetas de Cookidoo España conectadas mediante <code>miaucl/cookidoo-api</code> con foto de portada oficial, calorías, tiempo de preparación y mapping al catálogo del Mercadona.
+        Las ${allRecipes.length} recetas de Cookidoo España conectadas mediante <code>miaucl/cookidoo-api</code> con foto de portada oficial, calorías, tiempo de preparación y mapping al catálogo de Mercadona.
       </p>
       <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; margin-bottom: 24px;">
         <div style="flex:1; min-width: 280px; max-width: 520px;">
@@ -3284,7 +3284,7 @@ function renderWhatsAppDrawer() {
 
         <div class="wa-chat-messages" id="wa-chat-messages">
           <div class="wa-encryption-pill">
-            🔒 Los mensajes se procesan con Google Gemini y sincronizan tu menú semanal y tu cesta del Mercadona en vivo.
+            🔒 Los mensajes se procesan con Google Gemini y sincronizan tu menú semanal y tu cesta de Mercadona en vivo.
           </div>
           ${
             messages.length === 0 && !state.whatsappSending
@@ -3851,7 +3851,7 @@ function bindEvents() {
         window.open("https://tienda.mercadona.es/", "_blank", "noopener,noreferrer");
         showToast(
           "Comando 1-Click copiado · Abriendo Mercadona",
-          "En la pestaña del Mercadona, pulsa F12 → Console, pega (Ctrl+V) y pulsa Enter para cargar tu cesta."
+          "En la pestaña de Mercadona, pulsa F12 → Console, pega (Ctrl+V) y pulsa Enter para cargar tu cesta."
         );
       } catch (e) {
         window.open("https://tienda.mercadona.es/", "_blank", "noopener,noreferrer");
@@ -4098,10 +4098,10 @@ function bindEvents() {
         toastTitle: labels[tier] || "Nivel de cesta actualizado",
         toastBody:
           tier === "bio"
-            ? "Se han sustituido los ingredientes compatibles por productos reales de Mercadona Bio y La Huerta ECI."
+            ? "Se han sustituido los ingredientes compatibles por productos reales de Mercadona Bio y Huerta Mercadona."
             : tier === "gourmet"
             ? "Se han seleccionado referencias de Club del Gourmet, Mercadona Selection y el maridaje del Sumiller IA."
-            : "Se han priorizado las referencias de mejor precio de Marca Mercadona y Aliada.",
+            : "Se han priorizado las referencias de mejor precio de Hacendado y Proveedores Totaler.",
       });
     });
   });

@@ -99,7 +99,7 @@ function showNotice(msg, isError = false) {
 }
 
 function renderGoogleCloudLockup(white = false) {
-  const src = white ? "/brand/google-cloud-white.svg?v=mercadona-md3-2026" : "/brand/google-cloud.svg?v=mercadona-md3-2026";
+  const src = white ? "/brand/google-cloud-white.svg?v=mercadona-md3-2026" : "/brand/google-cloud.svg?v=mercadona-brand-2026";
   return `
     <span class="gcloud-lockup-badge" aria-label="Google Cloud">
       <img
@@ -122,7 +122,7 @@ function renderAuthModal() {
         <div class="brand-lockup" style="margin-bottom: 18px;">
           ${renderGoogleCloudLockup()}
           <span class="brand-divider"></span>
-          <img class="dia-logo" src="/brand/mercadona.svg?v=mercadona-md3-2026" alt="Mercadona" style="width: 125px;" />
+          <img class="mercadona-logo" src="/brand/mercadona.svg?v=mercadona-brand-2026" alt="Mercadona" style="width: 125px;" />
         </div>
         <p class="eyebrow" style="margin-bottom: 6px;">Campaign Library · Google Cloud Identity-Aware Proxy (IAP)</p>
         <h2 id="auth-gate-title">Autenticación Google obligatoria</h2>
@@ -499,7 +499,7 @@ function render() {
         <a class="brand-lockup" href="${escapeHtml(mState.companionAppUrl)}" aria-label="Google Cloud y Mercadona">
           ${renderGoogleCloudLockup(true)}
           <span class="brand-divider" aria-hidden="true"></span>
-          <img class="dia-logo" src="/brand/mercadona-white.svg?v=mercadona-md3-2026" alt="Mercadona" />
+          <img class="mercadona-logo" src="/brand/mercadona.svg?v=mercadona-brand-2026" alt="Mercadona" />
         </a>
         <nav class="top-navigation" aria-label="Navegación entre microservicios">
           <a href="${escapeHtml(mState.companionAppUrl)}">Experiencia Cliente (Planificador)</a>

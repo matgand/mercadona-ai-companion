@@ -256,7 +256,7 @@ def format_plan_for_whatsapp(plan: dict[str, Any]) -> str:
     counter_items = [b for b in (plan.get("basket") or []) if b.get("counter_prep")]
     if counter_items:
         lines.append("")
-        lines.append(f"🔪 *Notas de Mostrador Frescos ECI ({len(counter_items)} incluidas):*")
+        lines.append(f"🔪 *Notas de Mostrador Frescos Mercadona ({len(counter_items)} incluidas):*")
         for ci in counter_items[:3]:
             cp = ci["counter_prep"]
             lines.append(f"• {cp.get('icon', '🔪')} *{ci['name'][:38]}*: _{cp.get('selected_cut')}_")
@@ -264,7 +264,7 @@ def format_plan_for_whatsapp(plan: dict[str, Any]) -> str:
     sommelier = plan.get("sommelier_pairing")
     if sommelier and (tier == "GOURMET" or sommelier.get("included")):
         lines.append("")
-        lines.append(f"🍷 *Sumiller IA Bodega ECI:* _{sommelier.get('wine_name', '')}_")
+        lines.append(f"🍷 *Sumiller IA Bodega Mercadona:* _{sommelier.get('wine_name', '')}_")
 
     lines.append("")
     lines.append(
@@ -333,7 +333,7 @@ def process_whatsapp_user_message(
             {"id": "cmd:menu", "title": "📋 Ver Menú"},
             {"id": "cmd:swap_miercoles", "title": "🔄 Cambiar Miércoles"},
             {"id": "cmd:gourmet", "title": "🥂 Modo Gourmet"},
-            {"id": "cmd:cart", "title": "🛒 Carrito ECI"},
+            {"id": "cmd:cart", "title": "🛒 Carrito Mercadona"},
         ]
         action_taken = "view_menu"
 
@@ -376,7 +376,7 @@ def process_whatsapp_user_message(
                 if b.get("counter_prep")
             ]
             notes_block = (
-                "\n\n🔪 *Instrucciones enviadas a Mostrador de Frescos ECI:*\n" + "\n".join(counter_notes[:4])
+                "\n\n🔪 *Instrucciones enviadas a Mostrador de Frescos Mercadona:*\n" + "\n".join(counter_notes[:4])
                 if counter_notes
                 else ""
             )
@@ -385,7 +385,7 @@ def process_whatsapp_user_message(
                 f"• *Productos sincronizados:* {cart_res.get('unique_products', len(plan.get('basket', [])))} referencias\n"
                 f"• *Centro logístico:* {plan.get('center_name') or plan.get('warehouse')} (CP {pc})\n"
                 f"• *Importe total:* *{float(plan.get('total', 0.0)):.2f} €*\n"
-                f"• *ID Cesta ECI:* `{cart_res.get('food_order_attempt_id', 'activa')}`"
+                f"• *ID Cesta Mercadona:* `{cart_res.get('food_order_attempt_id', 'activa')}`"
                 f"{notes_block}\n\n"
                 f"👉 Abre directamente tu compra en:\n{cart_res.get('checkout_url', 'https://www.elcorteingles.es/supermercado/')}"
             )
@@ -444,7 +444,7 @@ def process_whatsapp_user_message(
             reply_text = (
                 f"✨ *Cesta actualizada a {tier_titles.get(new_tier, new_tier)}*\n"
                 f"Se han actualizado *{plan.get('upgraded_count', 0)} productos* a referencias seleccionadas de Mercadona.{sommelier_line}\n\n"
-                f"🛒 *Nuevo total cesta ECI:* *{float(plan.get('total', 0.0)):.2f} €*"
+                f"🛒 *Nuevo total cesta Mercadona:* *{float(plan.get('total', 0.0)):.2f} €*"
             )
             action_taken = f"tier_{new_tier}"
 

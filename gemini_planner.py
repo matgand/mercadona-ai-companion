@@ -319,10 +319,10 @@ RETAIL_MEDIA_PROMOTIONS: dict[str, dict[str, Any]] = {
     "Pescanova": {
         "badge": "🎯 Retail Media · ¡Súper Precio! -15%",
         "discount_pct": 0.15,
-        "campaign_tag": "Feria del Marisco y Pescado Pescanova × ECI",
+        "campaign_tag": "Feria del Marisco y Pescado Pescanova × Mercadona",
     },
     "Asturiana": {
-        "badge": "🎯 Retail Media · 2ª ud. -50% Club ECI",
+        "badge": "🎯 Retail Media · 2ª ud. -50% Mercadona",
         "discount_pct": 0.12,
         "campaign_tag": "Semana Láctea Central Lechera Asturiana",
     },

@@ -1033,7 +1033,7 @@ def _build_ics_calendar_data_uri(scheduled_days: list[dict[str, Any]]) -> str:
     lines = [
         "BEGIN:VCALENDAR",
         "VERSION:2.0",
-        "PRODID:-//Supermercado El Corte Ingles x Cookidoo//AI Meal Planner//ES",
+        "PRODID:-//Mercadona x Cookidoo//AI Meal Planner//ES",
         "CALSCALE:GREGORIAN",
         "METHOD:PUBLISH",
     ]
@@ -1049,7 +1049,7 @@ def _build_ics_calendar_data_uri(scheduled_days: list[dict[str, Any]]) -> str:
                 f"DTSTART:{dt_clean}T203000",
                 f"DTEND:{dt_clean}T210000",
                 f"SUMMARY:🍽️ Cena Thermomix ({item.get('day', '')}): {name}",
-                f"DESCRIPTION:Receta Cookidoo {rid} planificada desde Supermercado El Corte Inglés AI Meal Planner. Abrir en Cookidoo: {url}",
+                f"DESCRIPTION:Receta Cookidoo {rid} planificada desde Mercadona AI Meal Planner. Abrir en Cookidoo: {url}",
                 f"URL:{url}",
                 "END:VEVENT",
             ]
