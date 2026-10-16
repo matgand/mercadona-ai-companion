@@ -13,4 +13,3 @@ scripts/
 data/*_sessions.json
 data/*_state.json
 data/user_preferences.json
-data/dia_products.json
