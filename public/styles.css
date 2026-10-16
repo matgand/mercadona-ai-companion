@@ -673,9 +673,9 @@
   gap: 6px;
   padding: 4px 9px;
   border-radius: 999px;
-  border: 1.5px solid #b8d8c8;
-  background: #f4faf7;
-  color: #006f4a;
+  border: 1px solid rgba(255, 255, 255, 0.30);
+  background: rgba(255, 255, 255, 0.14);
+  color: #ffffff;
   font-family: var(--font-geist-sans), sans-serif;
   font-size: 11px;
   font-weight: 700;
@@ -684,19 +684,19 @@
   transition: border-color 0.15s ease, background 0.15s ease;
 }
 .dia-header-pill:hover {
-  border-color: #008f61;
-  background: #dff3e9;
+  border-color: rgba(255, 255, 255, 0.52);
+  background: rgba(255, 255, 255, 0.24);
 }
 .dia-header-pill.is-connected {
-  border-color: #008f61;
-  background: #dff3e9;
+  border-color: #ffffff;
+  background: rgba(255, 255, 255, 0.94);
   color: #006f4a;
 }
 .dia-header-dot {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: #9aa5a0;
+  background: rgba(255, 255, 255, 0.78);
 }
 .dia-header-pill.is-connected .dia-header-dot {
   background: #008f61;
@@ -800,24 +800,22 @@
 }
 
 
-/* === Mercadona Corporate Material Design 3 Header (Light Elevated Surface + Roig Emerald & Warm Orange) === */
+/* === Mercadona Corporate Gradient Header (Roig Emerald + Warm Orange Accent) === */
 .companion-brand-bar,
 .marketing-brand-bar,
 .source-brand-bar,
 .catalog-header {
-  background: #ffffff;
+  background-image: linear-gradient(90deg, #006f4a 0%, #009660 50%, #006f4a 100%);
   width: calc(100% + 8vw);
   max-width: none;
   margin-left: -4vw;
   margin-right: -4vw;
-  padding: 10px 2vw;
+  padding: 11px 1.6vw;
   box-sizing: border-box;
-  border-top: 4px solid #009660;
   border-bottom: 3px solid #f3a13b;
-  border-radius: 0 0 22px 22px;
-  box-shadow: 0 8px 26px rgba(0, 111, 74, 0.09);
+  box-shadow: 0 6px 20px rgba(0, 111, 74, 0.18);
   flex-wrap: nowrap;
-  gap: 8px;
+  gap: 6px;
 }
 .companion-brand-bar .brand-lockup,
 .marketing-brand-bar .brand-lockup,
@@ -827,12 +825,21 @@
   padding: 0;
   border-radius: 0;
   box-shadow: none;
-  gap: 8px;
+  gap: 7px;
+}
+.companion-brand-bar .gcloud-logo-img,
+.marketing-brand-bar .gcloud-logo-img {
+  width: 114px !important;
+  height: 19px !important;
+  max-width: none !important;
+  object-fit: contain;
+  display: block;
+  flex-shrink: 0;
 }
 .companion-brand-bar .brand-divider,
 .marketing-brand-bar .brand-divider,
 .source-brand-bar .brand-divider {
-  background: #cfe3d8;
+  background: rgba(255, 255, 255, 0.38);
 }
 .companion-brand-bar .top-navigation,
 .marketing-brand-bar .top-navigation {
@@ -842,20 +849,19 @@
 }
 .companion-brand-bar .top-navigation a,
 .marketing-brand-bar .top-navigation a {
-  color: #24332c;
+  color: rgba(255, 255, 255, 0.88);
   font-weight: 700;
-  font-size: 11.5px;
-  padding: 5px 8px;
+  font-size: 11px;
+  padding: 5px 6px;
   border-radius: 999px;
-  border-bottom: 0;
   transition: background 0.18s ease, color 0.18s ease;
 }
 .companion-brand-bar .top-navigation a:hover,
 .companion-brand-bar .top-navigation a[aria-current=page],
 .marketing-brand-bar .top-navigation a:hover,
 .marketing-brand-bar .top-navigation a[aria-current=page] {
-  background: #dff3e9;
-  color: #006f4a;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.16);
 }
 .companion-brand-bar .top-navigation a[aria-current=page]:after,
 .marketing-brand-bar .top-navigation a[aria-current=page]:after {
@@ -866,8 +872,8 @@
   flex-wrap: nowrap;
 }
 .companion-brand-bar .postal-selector {
-  background: #f4faf7;
-  border: 1.5px solid #b8d8c8;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.30);
   border-radius: 999px !important;
   padding: 2px 7px;
   height: 32px;
@@ -876,13 +882,13 @@
 }
 .companion-brand-bar .postal-selector label,
 .companion-brand-bar .postal-selector .wh-pill {
-  color: #006f4a;
+  color: rgba(255, 255, 255, 0.92);
   font-weight: 700;
   font-size: 10px;
 }
 .companion-brand-bar .postal-selector input {
-  background: #ffffff;
-  border: 1px solid #b8d8c8;
+  background: rgba(255, 255, 255, 0.96);
+  border: 0;
   color: #006f4a;
   border-radius: 999px;
   width: 46px;
@@ -890,8 +896,8 @@
   padding: 2px 5px;
 }
 .companion-brand-bar .postal-selector button {
-  background: #008f61;
-  color: #ffffff;
+  background: #ffffff;
+  color: #006f4a;
   border-radius: 999px;
   font-weight: 700;
   font-size: 10.5px;
@@ -899,9 +905,9 @@
 }
 .companion-brand-bar .dia-header-pill,
 .companion-brand-bar .mercadona-header-pill {
-  background: #f4faf7;
-  border: 1.5px solid #b8d8c8;
-  color: #006f4a;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.30);
+  color: #ffffff;
   height: 32px;
   padding: 3px 9px;
   font-size: 10.5px;
@@ -909,34 +915,34 @@
 }
 .companion-brand-bar .dia-header-pill:hover,
 .companion-brand-bar .mercadona-header-pill:hover {
-  background: #dff3e9;
-  border-color: #008f61;
+  background: rgba(255, 255, 255, 0.24);
+  border-color: rgba(255, 255, 255, 0.52);
 }
 .companion-brand-bar .dia-header-pill.is-connected,
 .companion-brand-bar .mercadona-header-pill.is-connected {
-  background: #dff3e9;
-  border-color: #008f61;
+  background: rgba(255, 255, 255, 0.95);
+  border-color: #ffffff;
   color: #006f4a;
 }
 .companion-brand-bar .dia-header-dot,
 .companion-brand-bar .mercadona-header-dot {
-  background: #008f61;
+  background: rgba(255, 255, 255, 0.78);
 }
 .companion-brand-bar .header-controls .profile-selector {
-  background: #f4faf7;
-  border: 1.5px solid #b8d8c8;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.30);
   border-radius: 999px !important;
   padding: 2px 8px;
   height: 32px;
   font-size: 10.5px;
 }
 .companion-brand-bar .header-controls .profile-selector > span {
-  color: #4a6358;
+  color: rgba(255, 255, 255, 0.84);
   font-weight: 600;
   font-size: 10px;
 }
 .companion-brand-bar .header-controls .profile-selector select {
-  color: #006f4a;
+  color: #ffffff;
   font-weight: 700;
   font-size: 10.5px;
 }
@@ -946,9 +952,9 @@
 }
 .companion-brand-bar .user-auth-pill,
 .marketing-brand-bar .user-auth-pill {
-  background: #f4faf7;
-  border: 1.5px solid #b8d8c8;
-  color: #006f4a;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.30);
+  color: #ffffff;
   border-radius: 999px !important;
   height: 32px;
   padding: 2px 8px;
@@ -971,25 +977,25 @@
 }
 .companion-brand-bar .user-avatar,
 .marketing-brand-bar .user-avatar {
-  background: #008f61;
-  color: #ffffff;
+  background: #ffffff;
+  color: #006f4a;
 }
 .companion-brand-bar .user-auth-pill button,
 .marketing-brand-bar .user-auth-pill button {
-  color: #006f4a;
+  color: rgba(255, 255, 255, 0.90);
   font-weight: 700;
 }
 .marketing-brand-bar .internal-pill {
-  background: #fff4e5;
-  border: 1.5px solid #f3a13b;
-  color: #9a5000;
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  color: #ffffff;
   border-radius: 999px;
   font-weight: 700;
 }
 .source-brand-bar .source-back,
 .catalog-header .catalog-back,
 .catalog-header .catalog-location {
-  color: #006f4a;
+  color: #ffffff;
 }
 .catalog-hero {
   background-image: linear-gradient(90deg, #006f4a, #009660, #006f4a);
@@ -1015,7 +1021,7 @@
 .marketing-brand-bar .mercadona-logo,
 .companion-brand-bar .dia-logo,
 .marketing-brand-bar .dia-logo {
-  width: 118px !important;
+  width: 112px !important;
   height: auto;
   flex-shrink: 0;
 }
@@ -1718,24 +1724,24 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  background: linear-gradient(90deg, #008f61, #006f4a) !important;
-  color: #ffffff !important;
-  border: 1px solid #006f4a !important;
+  background: rgba(255, 255, 255, 0.96) !important;
+  color: #006f4a !important;
+  border: 1.5px solid #f3a13b !important;
   border-radius: 999px !important;
   padding: 5px 10px;
   font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 11px;
+  font-size: 10.5px;
   font-weight: 800;
   cursor: pointer;
   transition: transform 0.16s ease, filter 0.16s ease, box-shadow 0.16s ease;
-  box-shadow: 0 3px 10px rgba(0, 143, 97, 0.22);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.14);
 }
 
 .whatsapp-header-pill:hover,
 .whatsapp-header-pill.is-connected {
-  filter: brightness(1.07);
-  color: #ffffff !important;
-  border-color: #008f61 !important;
+  background: #ffffff !important;
+  color: #006f4a !important;
+  border-color: #ffffff !important;
   transform: translateY(-1px);
 }
 
