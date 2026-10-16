@@ -1,0 +1,7212 @@
+[
+  {
+    "ingredient": "pan",
+    "count": 57,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "verduras variadas",
+    "count": 46,
+    "matched_pid": "69433",
+    "matched_product_name": "Preparado de verduras para sofreír cortado y lavado",
+    "match_method": "TOKEN_verduras"
+  },
+  {
+    "ingredient": "gambones crudos enteros",
+    "count": 45,
+    "matched_pid": "23560",
+    "matched_product_name": "Chipirones rellenos enteros en aceite de girasol Hacendado",
+    "match_method": "TOKEN_enteros"
+  },
+  {
+    "ingredient": "caramelo líquido",
+    "count": 42,
+    "matched_pid": "70741",
+    "matched_product_name": "Edulcorante líquido sacarina Hacendado",
+    "match_method": "TOKEN_liquido"
+  },
+  {
+    "ingredient": "judías blancas cocidas (en conserva)",
+    "count": 41,
+    "matched_pid": "16315",
+    "matched_product_name": "Judías verdes redondas Hacendado",
+    "match_method": "TOKEN_judias"
+  },
+  {
+    "ingredient": "sal en escamas",
+    "count": 40,
+    "matched_pid": "23037",
+    "matched_product_name": "Queso grana padano Hacendado en escamas",
+    "match_method": "TOKEN_escamas"
+  },
+  {
+    "ingredient": "salsa inglesa (salsa Worcestershire)",
+    "count": 37,
+    "matched_pid": "35839",
+    "matched_product_name": "Salsa Original Ligeresa",
+    "match_method": "TOKEN_salsa"
+  },
+  {
+    "ingredient": "batatas",
+    "count": 34,
+    "matched_pid": "69465",
+    "matched_product_name": "Batatas para microondas",
+    "match_method": "TOKEN_batatas"
+  },
+  {
+    "ingredient": "dátiles sin hueso",
+    "count": 32,
+    "matched_pid": "22606",
+    "matched_product_name": "Dátiles en rama Hacendado",
+    "match_method": "TOKEN_datiles"
+  },
+  {
+    "ingredient": "clavos enteros",
+    "count": 31,
+    "matched_pid": "23560",
+    "matched_product_name": "Chipirones rellenos enteros en aceite de girasol Hacendado",
+    "match_method": "TOKEN_enteros"
+  },
+  {
+    "ingredient": "batata",
+    "count": 29,
+    "matched_pid": "69239",
+    "matched_product_name": "Batata",
+    "match_method": "TOKEN_batata"
+  },
+  {
+    "ingredient": "palitos de surimi",
+    "count": 28,
+    "matched_pid": "69877",
+    "matched_product_name": "Palitos de zanahoria",
+    "match_method": "TOKEN_palitos"
+  },
+  {
+    "ingredient": "colorante amarillo",
+    "count": 27,
+    "matched_pid": "34182",
+    "matched_product_name": "Colorante alimentario Hacendado",
+    "match_method": "TOKEN_colorante"
+  },
+  {
+    "ingredient": "pipas de girasol",
+    "count": 27,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "TOKEN_pipas"
+  },
+  {
+    "ingredient": "hojas de gelatina",
+    "count": 27,
+    "matched_pid": "16275",
+    "matched_product_name": "Gelatina neutra en láminas Foodsy",
+    "match_method": "TOKEN_gelatina"
+  },
+  {
+    "ingredient": "lemon grass fresco",
+    "count": 26,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "salsa de ostras",
+    "count": 24,
+    "matched_pid": "35839",
+    "matched_product_name": "Salsa Original Ligeresa",
+    "match_method": "TOKEN_salsa"
+  },
+  {
+    "ingredient": "orejones de albaricoque",
+    "count": 24,
+    "matched_pid": "13877",
+    "matched_product_name": "Orejones albaricoque Hacendado",
+    "match_method": "TOKEN_orejones"
+  },
+  {
+    "ingredient": "arándanos rojos deshidratados",
+    "count": 23,
+    "matched_pid": "5501",
+    "matched_product_name": "Arándanos",
+    "match_method": "TOKEN_arandanos"
+  },
+  {
+    "ingredient": "mango maduro",
+    "count": 22,
+    "matched_pid": "3050",
+    "matched_product_name": "Mango",
+    "match_method": "TOKEN_mango"
+  },
+  {
+    "ingredient": "rabanitos",
+    "count": 21,
+    "matched_pid": "69117",
+    "matched_product_name": "Rabanitos",
+    "match_method": "TOKEN_rabanitos"
+  },
+  {
+    "ingredient": "masa filo",
+    "count": 21,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "masa de hojaldre",
+    "count": 20,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "lámina de masa de hojaldre",
+    "count": 19,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "ciruelas pasas sin hueso",
+    "count": 18,
+    "matched_pid": "5962",
+    "matched_product_name": "Ciruelas Claudia",
+    "match_method": "TOKEN_ciruelas"
+  },
+  {
+    "ingredient": "salsa sriracha",
+    "count": 18,
+    "matched_pid": "35839",
+    "matched_product_name": "Salsa Original Ligeresa",
+    "match_method": "TOKEN_salsa"
+  },
+  {
+    "ingredient": "salsa barbacoa",
+    "count": 17,
+    "matched_pid": "35839",
+    "matched_product_name": "Salsa Original Ligeresa",
+    "match_method": "TOKEN_salsa"
+  },
+  {
+    "ingredient": "picatostes",
+    "count": 17,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "trigo sarraceno en grano",
+    "count": 17,
+    "matched_pid": "80859",
+    "matched_product_name": "Tortillas de trigo Hacendado",
+    "match_method": "TOKEN_trigo"
+  },
+  {
+    "ingredient": "piña fresca",
+    "count": 16,
+    "matched_pid": "51619",
+    "matched_product_name": "Queso rulo con piña y almendra Liptana",
+    "match_method": "TOKEN_pina"
+  },
+  {
+    "ingredient": "garam masala",
+    "count": 16,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "2 garlic cloves",
+    "count": 15,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "fresas",
+    "count": 15,
+    "matched_pid": "3723",
+    "matched_product_name": "Fresas",
+    "match_method": "TOKEN_fresas"
+  },
+  {
+    "ingredient": "alga kombu",
+    "count": 15,
+    "matched_pid": "69383",
+    "matched_product_name": "Wakame ensalada de alga marina Hacendado congelada",
+    "match_method": "TOKEN_alga"
+  },
+  {
+    "ingredient": "judías rojas cocidas (en conserva)",
+    "count": 14,
+    "matched_pid": "16315",
+    "matched_product_name": "Judías verdes redondas Hacendado",
+    "match_method": "TOKEN_judias"
+  },
+  {
+    "ingredient": "foie mi-cuit de pato",
+    "count": 14,
+    "matched_pid": "23990",
+    "matched_product_name": "Foie gras de pato fresco",
+    "match_method": "TOKEN_foie"
+  },
+  {
+    "ingredient": "angulas de surimi",
+    "count": 14,
+    "matched_pid": "62502",
+    "matched_product_name": "Palitos de surimi Hacendado",
+    "match_method": "TOKEN_surimi"
+  },
+  {
+    "ingredient": "clavo entero",
+    "count": 13,
+    "matched_pid": "34122",
+    "matched_product_name": "Clavo en grano Hacendado",
+    "match_method": "TOKEN_clavo"
+  },
+  {
+    "ingredient": "condimento mexicano para fajitas y tacos",
+    "count": 13,
+    "matched_pid": "80859",
+    "matched_product_name": "Tortillas de trigo Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "cebollitas francesas",
+    "count": 13,
+    "matched_pid": "33141",
+    "matched_product_name": "Cebollitas Hacendado",
+    "match_method": "TOKEN_cebollitas"
+  },
+  {
+    "ingredient": "higos secos",
+    "count": 12,
+    "matched_pid": "8905",
+    "matched_product_name": "Higos",
+    "match_method": "TOKEN_higos"
+  },
+  {
+    "ingredient": "jarabe de agave",
+    "count": 12,
+    "matched_pid": "19860",
+    "matched_product_name": "Sirope de agave Hacendado",
+    "match_method": "TOKEN_agave"
+  },
+  {
+    "ingredient": "mijo en grano",
+    "count": 12,
+    "matched_pid": "34172",
+    "matched_product_name": "Pimienta negra en grano Hacendado",
+    "match_method": "TOKEN_grano"
+  },
+  {
+    "ingredient": "alga nori",
+    "count": 12,
+    "matched_pid": "69383",
+    "matched_product_name": "Wakame ensalada de alga marina Hacendado congelada",
+    "match_method": "TOKEN_alga"
+  },
+  {
+    "ingredient": "pasas",
+    "count": 11,
+    "matched_pid": "82665",
+    "matched_product_name": "Pan tostado pasas Hacendado",
+    "match_method": "TOKEN_pasas"
+  },
+  {
+    "ingredient": "edamame",
+    "count": 11,
+    "matched_pid": "70740",
+    "matched_product_name": "Edamame soja verde Hacendado ultracongelada",
+    "match_method": "TOKEN_edamame"
+  },
+  {
+    "ingredient": "½ tsp salt",
+    "count": 10,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "magrets de pato",
+    "count": 10,
+    "matched_pid": "23990",
+    "matched_product_name": "Foie gras de pato fresco",
+    "match_method": "TOKEN_pato"
+  },
+  {
+    "ingredient": "verduras variadas congeladas",
+    "count": 10,
+    "matched_pid": "69433",
+    "matched_product_name": "Preparado de verduras para sofreír cortado y lavado",
+    "match_method": "TOKEN_verduras"
+  },
+  {
+    "ingredient": "salsa hoisin",
+    "count": 10,
+    "matched_pid": "35839",
+    "matched_product_name": "Salsa Original Ligeresa",
+    "match_method": "TOKEN_salsa"
+  },
+  {
+    "ingredient": "alga wakame deshidratada",
+    "count": 10,
+    "matched_pid": "69383",
+    "matched_product_name": "Wakame ensalada de alga marina Hacendado congelada",
+    "match_method": "TOKEN_alga"
+  },
+  {
+    "ingredient": "endibias",
+    "count": 10,
+    "matched_pid": "69591",
+    "matched_product_name": "Endibias",
+    "match_method": "TOKEN_endibias"
+  },
+  {
+    "ingredient": "½ tsp fine sea salt",
+    "count": 9,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "lacón",
+    "count": 9,
+    "matched_pid": "59216",
+    "matched_product_name": "Lacón al horno Noel lonchas",
+    "match_method": "TOKEN_lacon"
+  },
+  {
+    "ingredient": "ras el hanout",
+    "count": 9,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "rodajas de piña en su jugo",
+    "count": 9,
+    "matched_pid": "3024",
+    "matched_product_name": "Piña natural a rodajas",
+    "match_method": "TOKEN_rodajas"
+  },
+  {
+    "ingredient": "arándanos frescos",
+    "count": 9,
+    "matched_pid": "5501",
+    "matched_product_name": "Arándanos",
+    "match_method": "TOKEN_arandanos"
+  },
+  {
+    "ingredient": "habas congeladas",
+    "count": 9,
+    "matched_pid": "15896",
+    "matched_product_name": "Habas fritas con sal Hacendado",
+    "match_method": "TOKEN_habas"
+  },
+  {
+    "ingredient": "rodaballo",
+    "count": 9,
+    "matched_pid": "87163",
+    "matched_product_name": "Filete de rodaballo",
+    "match_method": "TOKEN_rodaballo"
+  },
+  {
+    "ingredient": "sémola de trigo",
+    "count": 9,
+    "matched_pid": "13045",
+    "matched_product_name": "Sémola de trigo Hacendado",
+    "match_method": "TOKEN_semola"
+  },
+  {
+    "ingredient": "baguette",
+    "count": 9,
+    "matched_pid": "83230",
+    "matched_product_name": "Baguette masa madre",
+    "match_method": "TOKEN_baguette"
+  },
+  {
+    "ingredient": "500 g water",
+    "count": 8,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "½ tsp ground black pepper",
+    "count": 8,
+    "matched_pid": "17587",
+    "matched_product_name": "Patatas prefritas Pepper Sticks Hacendado rebozadas con sal y pimienta",
+    "match_method": "TOKEN_pepper"
+  },
+  {
+    "ingredient": "judías negras cocidas (en conserva)",
+    "count": 8,
+    "matched_pid": "16315",
+    "matched_product_name": "Judías verdes redondas Hacendado",
+    "match_method": "TOKEN_judias"
+  },
+  {
+    "ingredient": "hortalizas para sofrito",
+    "count": 8,
+    "matched_pid": "7021",
+    "matched_product_name": "Caldo de marisco o fideuá para paella Hacendado con sofrito",
+    "match_method": "TOKEN_sofrito"
+  },
+  {
+    "ingredient": "kiwis",
+    "count": 8,
+    "matched_pid": "3832",
+    "matched_product_name": "Kiwis verdes",
+    "match_method": "TOKEN_kiwis"
+  },
+  {
+    "ingredient": "codornices",
+    "count": 8,
+    "matched_pid": "2796",
+    "matched_product_name": "Codornices",
+    "match_method": "TOKEN_codornices"
+  },
+  {
+    "ingredient": "chucrut en conserva",
+    "count": 8,
+    "matched_pid": "16717",
+    "matched_product_name": "Chucrut al estilo bávaro Hengstenberg",
+    "match_method": "TOKEN_chucrut"
+  },
+  {
+    "ingredient": "cecina",
+    "count": 8,
+    "matched_pid": "59101",
+    "matched_product_name": "Cecina ahumada natural Embutidos Pajariel lonchas",
+    "match_method": "TOKEN_cecina"
+  },
+  {
+    "ingredient": "frutos secos variados",
+    "count": 8,
+    "matched_pid": "13240",
+    "matched_product_name": "Ensalada de pollo, queso y frutos secos Listo para Comer",
+    "match_method": "TOKEN_frutos"
+  },
+  {
+    "ingredient": "seitán",
+    "count": 8,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "mejorana seca",
+    "count": 8,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "láminas de masa de hojaldre",
+    "count": 8,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "ajetes",
+    "count": 8,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "gambones frescos",
+    "count": 8,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "filetes de lenguado",
+    "count": 8,
+    "matched_pid": "3400",
+    "matched_product_name": "Filetes pechuga de pollo corte fino",
+    "match_method": "TOKEN_filetes"
+  },
+  {
+    "ingredient": "cigalas enteras crudas",
+    "count": 8,
+    "matched_pid": "3682",
+    "matched_product_name": "Pechugas enteras familiar de pollo",
+    "match_method": "TOKEN_enteras"
+  },
+  {
+    "ingredient": "pak choi",
+    "count": 8,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "quesitos en porciones",
+    "count": 8,
+    "matched_pid": "87200",
+    "matched_product_name": "Porciones de merluza",
+    "match_method": "TOKEN_porciones"
+  },
+  {
+    "ingredient": "cebada perlada",
+    "count": 8,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "berros",
+    "count": 8,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 tsp salt",
+    "count": 7,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "salsa teriyaki",
+    "count": 7,
+    "matched_pid": "35839",
+    "matched_product_name": "Salsa Original Ligeresa",
+    "match_method": "TOKEN_salsa"
+  },
+  {
+    "ingredient": "ramilletes de broccolini",
+    "count": 7,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "panko",
+    "count": 7,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "vodka",
+    "count": 7,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "margarina",
+    "count": 7,
+    "matched_pid": "20846",
+    "matched_product_name": "Margarina Hacendado",
+    "match_method": "TOKEN_margarina"
+  },
+  {
+    "ingredient": "agua caliente",
+    "count": 7,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "psyllium",
+    "count": 7,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "coles de Bruselas congeladas",
+    "count": 7,
+    "matched_pid": "61248",
+    "matched_product_name": "Coles de Bruselas Hacendado ultracongeladas",
+    "match_method": "TOKEN_coles"
+  },
+  {
+    "ingredient": "pez espada",
+    "count": 7,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "vieiras",
+    "count": 7,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "coñac",
+    "count": 7,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "congrio",
+    "count": 7,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "pulpa de melón",
+    "count": 7,
+    "matched_pid": "3427",
+    "matched_product_name": "Nectarina pulpa amarilla",
+    "match_method": "TOKEN_pulpa"
+  },
+  {
+    "ingredient": "1 pinch ground black pepper",
+    "count": 6,
+    "matched_pid": "17587",
+    "matched_product_name": "Patatas prefritas Pepper Sticks Hacendado rebozadas con sal y pimienta",
+    "match_method": "TOKEN_pepper"
+  },
+  {
+    "ingredient": "1 garlic clove",
+    "count": 6,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "mermelada de arándanos",
+    "count": 6,
+    "matched_pid": "86755",
+    "matched_product_name": "Mermelada de fresa Hacendado",
+    "match_method": "TOKEN_mermelada"
+  },
+  {
+    "ingredient": "kion",
+    "count": 6,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "clavo molido",
+    "count": 6,
+    "matched_pid": "34122",
+    "matched_product_name": "Clavo en grano Hacendado",
+    "match_method": "TOKEN_clavo"
+  },
+  {
+    "ingredient": "frutos secos enteros variados",
+    "count": 6,
+    "matched_pid": "13240",
+    "matched_product_name": "Ensalada de pollo, queso y frutos secos Listo para Comer",
+    "match_method": "TOKEN_frutos"
+  },
+  {
+    "ingredient": "ciruela pasa sin hueso",
+    "count": 6,
+    "matched_pid": "3601",
+    "matched_product_name": "Ciruela roja",
+    "match_method": "TOKEN_ciruela"
+  },
+  {
+    "ingredient": "uvas",
+    "count": 6,
+    "matched_pid": "11968",
+    "matched_product_name": "Vino blanco Chardonnay Mar de Uvas",
+    "match_method": "TOKEN_uvas"
+  },
+  {
+    "ingredient": "frutos rojos frescos variados",
+    "count": 6,
+    "matched_pid": "13240",
+    "matched_product_name": "Ensalada de pollo, queso y frutos secos Listo para Comer",
+    "match_method": "TOKEN_frutos"
+  },
+  {
+    "ingredient": "frambuesas frescas",
+    "count": 6,
+    "matched_pid": "5500",
+    "matched_product_name": "Frambuesas",
+    "match_method": "TOKEN_frambuesas"
+  },
+  {
+    "ingredient": "chirivías",
+    "count": 6,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "chirivía",
+    "count": 6,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "cogollos de Tudela",
+    "count": 6,
+    "matched_pid": "69581",
+    "matched_product_name": "Cogollos de lechuga",
+    "match_method": "TOKEN_cogollos"
+  },
+  {
+    "ingredient": "caballa fresca limpia",
+    "count": 6,
+    "matched_pid": "13628",
+    "matched_product_name": "Filetes de caballa del sur en aceite de oliva Hacendado",
+    "match_method": "TOKEN_caballa"
+  },
+  {
+    "ingredient": "coles de Bruselas",
+    "count": 6,
+    "matched_pid": "61248",
+    "matched_product_name": "Coles de Bruselas Hacendado ultracongeladas",
+    "match_method": "TOKEN_coles"
+  },
+  {
+    "ingredient": "nécoras",
+    "count": 6,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "bogavantes",
+    "count": 6,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "col china",
+    "count": 6,
+    "matched_pid": "13326",
+    "matched_product_name": "Ensalada china Hacendado con mazorquitas",
+    "match_method": "TOKEN_china"
+  },
+  {
+    "ingredient": "navajas",
+    "count": 6,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "trufa negra fresca",
+    "count": 6,
+    "matched_pid": "4883",
+    "matched_product_name": "Queso curado mezcla con trufa Hacendado",
+    "match_method": "TOKEN_trufa"
+  },
+  {
+    "ingredient": "nachos de maíz fritos",
+    "count": 6,
+    "matched_pid": "69469",
+    "matched_product_name": "Maíz dulce en mazorca cocido",
+    "match_method": "TOKEN_maiz"
+  },
+  {
+    "ingredient": "huevas de mújol",
+    "count": 6,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "biscotes",
+    "count": 6,
+    "matched_pid": "82117",
+    "matched_product_name": "Mini biscotes de trigo Hacendado",
+    "match_method": "TOKEN_biscotes"
+  },
+  {
+    "ingredient": "pie de masa",
+    "count": 6,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "1 tsp fine sea salt",
+    "count": 5,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "¼ tsp ground black pepper",
+    "count": 5,
+    "matched_pid": "17587",
+    "matched_product_name": "Patatas prefritas Pepper Sticks Hacendado rebozadas con sal y pimienta",
+    "match_method": "TOKEN_pepper"
+  },
+  {
+    "ingredient": "1 tsp sugar",
+    "count": 5,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "magrets de pato con piel sin hueso",
+    "count": 5,
+    "matched_pid": "23990",
+    "matched_product_name": "Foie gras de pato fresco",
+    "match_method": "TOKEN_pato"
+  },
+  {
+    "ingredient": "grelos",
+    "count": 5,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "copos de maíz",
+    "count": 5,
+    "matched_pid": "82150",
+    "matched_product_name": "Pan tostado con copos de avena Vitalité Kaura Wasa",
+    "match_method": "TOKEN_copos"
+  },
+  {
+    "ingredient": "cerezas",
+    "count": 5,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "castañas cocidas peladas",
+    "count": 5,
+    "matched_pid": "34194",
+    "matched_product_name": "Castañas cocidas y peladas Hacendado",
+    "match_method": "TOKEN_castanas"
+  },
+  {
+    "ingredient": "confit de pato",
+    "count": 5,
+    "matched_pid": "23990",
+    "matched_product_name": "Foie gras de pato fresco",
+    "match_method": "TOKEN_pato"
+  },
+  {
+    "ingredient": "foie gras de pato crudo",
+    "count": 5,
+    "matched_pid": "23990",
+    "matched_product_name": "Foie gras de pato fresco",
+    "match_method": "TOKEN_foie"
+  },
+  {
+    "ingredient": "vermut blanco",
+    "count": 5,
+    "matched_pid": "69339",
+    "matched_product_name": "Calabacín blanco",
+    "match_method": "TOKEN_blanco"
+  },
+  {
+    "ingredient": "melocotón",
+    "count": 5,
+    "matched_pid": "3433",
+    "matched_product_name": "Melocotón amarillo",
+    "match_method": "TOKEN_melocoton"
+  },
+  {
+    "ingredient": "uvas blancas",
+    "count": 5,
+    "matched_pid": "11968",
+    "matched_product_name": "Vino blanco Chardonnay Mar de Uvas",
+    "match_method": "TOKEN_uvas"
+  },
+  {
+    "ingredient": "palometa",
+    "count": 5,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "sandía",
+    "count": 5,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "borrajas",
+    "count": 5,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "algas variadas deshidratadas",
+    "count": 5,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "galets",
+    "count": 5,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "proteínas en polvo",
+    "count": 5,
+    "matched_pid": "10676",
+    "matched_product_name": "Leche desnatada +Proteínas & calcio",
+    "match_method": "TOKEN_proteinas"
+  },
+  {
+    "ingredient": "crema de balsámico",
+    "count": 5,
+    "matched_pid": "51181",
+    "matched_product_name": "Crema de queso camembert Hacendado",
+    "match_method": "TOKEN_crema"
+  },
+  {
+    "ingredient": "crackers",
+    "count": 5,
+    "matched_pid": "82626",
+    "matched_product_name": "Crackers integrales de espelta Bachman",
+    "match_method": "TOKEN_crackers"
+  },
+  {
+    "ingredient": "gelatina neutra en polvo",
+    "count": 5,
+    "matched_pid": "16275",
+    "matched_product_name": "Gelatina neutra en láminas Foodsy",
+    "match_method": "TOKEN_gelatina"
+  },
+  {
+    "ingredient": "30 g olive oil",
+    "count": 4,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "vermut rojo",
+    "count": 4,
+    "matched_pid": "69310",
+    "matched_product_name": "Pimiento rojo",
+    "match_method": "TOKEN_rojo"
+  },
+  {
+    "ingredient": "refresco de cola",
+    "count": 4,
+    "matched_pid": "24340",
+    "matched_product_name": "Cola de rape del Cabo sin piel Hacendado ultracongelada",
+    "match_method": "TOKEN_cola"
+  },
+  {
+    "ingredient": "panes de hamburguesa",
+    "count": 4,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "picantones",
+    "count": 4,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "unto",
+    "count": 4,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "pulpa de tamarindo",
+    "count": 4,
+    "matched_pid": "3427",
+    "matched_product_name": "Nectarina pulpa amarilla",
+    "match_method": "TOKEN_pulpa"
+  },
+  {
+    "ingredient": "zumo de mandarina",
+    "count": 4,
+    "matched_pid": "3238",
+    "matched_product_name": "Mandarina",
+    "match_method": "TOKEN_mandarina"
+  },
+  {
+    "ingredient": "raíz de galanga fresca",
+    "count": 4,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "hueso de caña",
+    "count": 4,
+    "matched_pid": "58307",
+    "matched_product_name": "Hueso garrón",
+    "match_method": "TOKEN_hueso"
+  },
+  {
+    "ingredient": "palomitas de maíz",
+    "count": 4,
+    "matched_pid": "34822",
+    "matched_product_name": "Palomitas de maíz con sal Hacendado para microondas",
+    "match_method": "TOKEN_palomitas"
+  },
+  {
+    "ingredient": "mero",
+    "count": 4,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "carabineros",
+    "count": 4,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "filetes de rodaballo",
+    "count": 4,
+    "matched_pid": "3400",
+    "matched_product_name": "Filetes pechuga de pollo corte fino",
+    "match_method": "TOKEN_filetes"
+  },
+  {
+    "ingredient": "corvina",
+    "count": 4,
+    "matched_pid": "87326",
+    "matched_product_name": "Filete de corvina",
+    "match_method": "TOKEN_corvina"
+  },
+  {
+    "ingredient": "salsa harissa",
+    "count": 4,
+    "matched_pid": "35839",
+    "matched_product_name": "Salsa Original Ligeresa",
+    "match_method": "TOKEN_salsa"
+  },
+  {
+    "ingredient": "berza de hoja lisa",
+    "count": 4,
+    "matched_pid": "69114",
+    "matched_product_name": "Lechuga hoja roble",
+    "match_method": "TOKEN_hoja"
+  },
+  {
+    "ingredient": "langostas",
+    "count": 4,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "carabineros crudos",
+    "count": 4,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "kikos",
+    "count": 4,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "bogavante",
+    "count": 4,
+    "matched_pid": "62380",
+    "matched_product_name": "Bogavante americano crudo Hacendado ultracongelado",
+    "match_method": "TOKEN_bogavante"
+  },
+  {
+    "ingredient": "judías carilla secas",
+    "count": 4,
+    "matched_pid": "16315",
+    "matched_product_name": "Judías verdes redondas Hacendado",
+    "match_method": "TOKEN_judias"
+  },
+  {
+    "ingredient": "habas frescas",
+    "count": 4,
+    "matched_pid": "15896",
+    "matched_product_name": "Habas fritas con sal Hacendado",
+    "match_method": "TOKEN_habas"
+  },
+  {
+    "ingredient": "melocotones",
+    "count": 4,
+    "matched_pid": "3422",
+    "matched_product_name": "Melocotones amarillos",
+    "match_method": "TOKEN_melocotones"
+  },
+  {
+    "ingredient": "judías blancas secas",
+    "count": 4,
+    "matched_pid": "16315",
+    "matched_product_name": "Judías verdes redondas Hacendado",
+    "match_method": "TOKEN_judias"
+  },
+  {
+    "ingredient": "chistorra",
+    "count": 4,
+    "matched_pid": "2864",
+    "matched_product_name": "Chistorra",
+    "match_method": "TOKEN_chistorra"
+  },
+  {
+    "ingredient": "yuca",
+    "count": 4,
+    "matched_pid": "69173",
+    "matched_product_name": "Yuca",
+    "match_method": "TOKEN_yuca"
+  },
+  {
+    "ingredient": "castañas crudas enteras",
+    "count": 4,
+    "matched_pid": "34194",
+    "matched_product_name": "Castañas cocidas y peladas Hacendado",
+    "match_method": "TOKEN_castanas"
+  },
+  {
+    "ingredient": "escarola",
+    "count": 4,
+    "matched_pid": "69720",
+    "matched_product_name": "Escarola rizada cortada y lavada",
+    "match_method": "TOKEN_escarola"
+  },
+  {
+    "ingredient": "papaya",
+    "count": 4,
+    "matched_pid": "3026",
+    "matched_product_name": "Papaya",
+    "match_method": "TOKEN_papaya"
+  },
+  {
+    "ingredient": "salami",
+    "count": 4,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "fécula de maíz",
+    "count": 4,
+    "matched_pid": "69469",
+    "matched_product_name": "Maíz dulce en mazorca cocido",
+    "match_method": "TOKEN_maiz"
+  },
+  {
+    "ingredient": "mermelada de frambuesas",
+    "count": 4,
+    "matched_pid": "86755",
+    "matched_product_name": "Mermelada de fresa Hacendado",
+    "match_method": "TOKEN_mermelada"
+  },
+  {
+    "ingredient": "pomelo rosa",
+    "count": 4,
+    "matched_pid": "3202",
+    "matched_product_name": "Pomelo",
+    "match_method": "TOKEN_pomelo"
+  },
+  {
+    "ingredient": "500 g de agua",
+    "count": 3,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "20 g olive oil",
+    "count": 3,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 lemon",
+    "count": 3,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "¼ tsp fine sea salt",
+    "count": 3,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "½ tsp ground cumin",
+    "count": 3,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "½ tsp ground coriander",
+    "count": 3,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 pellizco de sal",
+    "count": 3,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "4 oz red onion",
+    "count": 3,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 vegetable stock cube (for 0.5 l)",
+    "count": 3,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "5 g fresh coriander leaves",
+    "count": 3,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 tbsp Vegetable stock paste",
+    "count": 3,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "barra de pan",
+    "count": 3,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "zumo de piña",
+    "count": 3,
+    "matched_pid": "51619",
+    "matched_product_name": "Queso rulo con piña y almendra Liptana",
+    "match_method": "TOKEN_pina"
+  },
+  {
+    "ingredient": "rodajas de piña en conserva",
+    "count": 3,
+    "matched_pid": "3024",
+    "matched_product_name": "Piña natural a rodajas",
+    "match_method": "TOKEN_rodajas"
+  },
+  {
+    "ingredient": "callos cocidos",
+    "count": 3,
+    "matched_pid": "31010",
+    "matched_product_name": "Huevos cocidos",
+    "match_method": "TOKEN_cocidos"
+  },
+  {
+    "ingredient": "galanga fresca",
+    "count": 3,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "cochinillo",
+    "count": 3,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "Marsala",
+    "count": 3,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "ito togarashi",
+    "count": 3,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "humo líquido",
+    "count": 3,
+    "matched_pid": "70741",
+    "matched_product_name": "Edulcorante líquido sacarina Hacendado",
+    "match_method": "TOKEN_liquido"
+  },
+  {
+    "ingredient": "café molido",
+    "count": 3,
+    "matched_pid": "10688",
+    "matched_product_name": "Bebida de avena con café Hacendado",
+    "match_method": "TOKEN_cafe"
+  },
+  {
+    "ingredient": "bouquet garni",
+    "count": 3,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "endibia",
+    "count": 3,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "pato (entero)",
+    "count": 3,
+    "matched_pid": "23990",
+    "matched_product_name": "Foie gras de pato fresco",
+    "match_method": "TOKEN_pato"
+  },
+  {
+    "ingredient": "butifarra blanca",
+    "count": 3,
+    "matched_pid": "6044",
+    "matched_product_name": "Butifarra fresca",
+    "match_method": "TOKEN_butifarra"
+  },
+  {
+    "ingredient": "galletas",
+    "count": 3,
+    "matched_pid": "82585",
+    "matched_product_name": "Galletas saladas salpicks Galbusera",
+    "match_method": "TOKEN_galletas"
+  },
+  {
+    "ingredient": "Faba de la Granja Asturiana",
+    "count": 3,
+    "matched_pid": "26002",
+    "matched_product_name": "Alubia cocida granja Hacendado",
+    "match_method": "TOKEN_granja"
+  },
+  {
+    "ingredient": "chicharros",
+    "count": 3,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "filetes de pez espada",
+    "count": 3,
+    "matched_pid": "3400",
+    "matched_product_name": "Filetes pechuga de pollo corte fino",
+    "match_method": "TOKEN_filetes"
+  },
+  {
+    "ingredient": "polenta",
+    "count": 3,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "cabracho",
+    "count": 3,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "centollos",
+    "count": 3,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "amaranto hinchado",
+    "count": 3,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "cardo cocido (en conserva)",
+    "count": 3,
+    "matched_pid": "16417",
+    "matched_product_name": "Cardo troceado Hacendado",
+    "match_method": "TOKEN_cardo"
+  },
+  {
+    "ingredient": "gurullos",
+    "count": 3,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "vieiras con coral",
+    "count": 3,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "cangrejos de río",
+    "count": 3,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "granos de espelta",
+    "count": 3,
+    "matched_pid": "21596.1",
+    "matched_product_name": "Barra pan integral de espelta 100%",
+    "match_method": "TOKEN_espelta"
+  },
+  {
+    "ingredient": "fabes cocidas (en conserva)",
+    "count": 3,
+    "matched_pid": "53141",
+    "matched_product_name": "Salchichas cocidas estilo Frankfurt Hacendado de pollo y cerdo sabor ahumado",
+    "match_method": "TOKEN_cocidas"
+  },
+  {
+    "ingredient": "ostras",
+    "count": 3,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "ñoquis",
+    "count": 3,
+    "matched_pid": "6175",
+    "matched_product_name": "Pasta fresca gnocchi Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "agua con gas",
+    "count": 3,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "agaragar",
+    "count": 3,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "tortiglioni",
+    "count": 3,
+    "matched_pid": "6358",
+    "matched_product_name": "Pasta tortiglioni Armando",
+    "match_method": "TOKEN_tortiglioni"
+  },
+  {
+    "ingredient": "coquinas",
+    "count": 3,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "trufa negra en su jugo",
+    "count": 3,
+    "matched_pid": "4883",
+    "matched_product_name": "Queso curado mezcla con trufa Hacendado",
+    "match_method": "TOKEN_trufa"
+  },
+  {
+    "ingredient": "espirulina en polvo",
+    "count": 3,
+    "matched_pid": "51151",
+    "matched_product_name": "Queso en polvo especial pasta mezcla Hacendado",
+    "match_method": "TOKEN_polvo"
+  },
+  {
+    "ingredient": "judías blancas cocidas",
+    "count": 3,
+    "matched_pid": "16315",
+    "matched_product_name": "Judías verdes redondas Hacendado",
+    "match_method": "TOKEN_judias"
+  },
+  {
+    "ingredient": "frambuesas",
+    "count": 3,
+    "matched_pid": "5500",
+    "matched_product_name": "Frambuesas",
+    "match_method": "TOKEN_frambuesas"
+  },
+  {
+    "ingredient": "salsa",
+    "count": 3,
+    "matched_pid": "35839",
+    "matched_product_name": "Salsa Original Ligeresa",
+    "match_method": "TOKEN_salsa"
+  },
+  {
+    "ingredient": "mazorcas de maíz",
+    "count": 3,
+    "matched_pid": "69469",
+    "matched_product_name": "Maíz dulce en mazorca cocido",
+    "match_method": "TOKEN_maiz"
+  },
+  {
+    "ingredient": "judiones de El Barco de Ávila secas",
+    "count": 3,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "longaniza fresca",
+    "count": 3,
+    "matched_pid": "6040",
+    "matched_product_name": "Longaniza magro fresca",
+    "match_method": "TOKEN_longaniza"
+  },
+  {
+    "ingredient": "verdura",
+    "count": 3,
+    "matched_pid": "69587",
+    "matched_product_name": "Preparado de verdura para cocido",
+    "match_method": "TOKEN_verdura"
+  },
+  {
+    "ingredient": "picadillo",
+    "count": 3,
+    "matched_pid": "4868",
+    "matched_product_name": "Picadillo de variantes Hacendado",
+    "match_method": "TOKEN_picadillo"
+  },
+  {
+    "ingredient": "maíz frito",
+    "count": 3,
+    "matched_pid": "69469",
+    "matched_product_name": "Maíz dulce en mazorca cocido",
+    "match_method": "TOKEN_maiz"
+  },
+  {
+    "ingredient": "melón",
+    "count": 3,
+    "matched_pid": "3515",
+    "matched_product_name": "Medio melón piel de sapo",
+    "match_method": "TOKEN_melon"
+  },
+  {
+    "ingredient": "galletas saladas",
+    "count": 3,
+    "matched_pid": "82585",
+    "matched_product_name": "Galletas saladas salpicks Galbusera",
+    "match_method": "TOKEN_galletas"
+  },
+  {
+    "ingredient": "fuet",
+    "count": 3,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "surimi (en palitos)",
+    "count": 3,
+    "matched_pid": "62502",
+    "matched_product_name": "Palitos de surimi Hacendado",
+    "match_method": "TOKEN_surimi"
+  },
+  {
+    "ingredient": "masa kataifi",
+    "count": 3,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "cogollo de Tudela",
+    "count": 3,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "zumo de pomelo",
+    "count": 3,
+    "matched_pid": "3202",
+    "matched_product_name": "Pomelo",
+    "match_method": "TOKEN_pomelo"
+  },
+  {
+    "ingredient": "pomelos rosas",
+    "count": 3,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "crackers integrales",
+    "count": 3,
+    "matched_pid": "82626",
+    "matched_product_name": "Crackers integrales de espelta Bachman",
+    "match_method": "TOKEN_crackers"
+  },
+  {
+    "ingredient": "caviar",
+    "count": 3,
+    "matched_pid": "18808",
+    "matched_product_name": "Sucedáneo de caviar negro Ubago Caviartic",
+    "match_method": "TOKEN_caviar"
+  },
+  {
+    "ingredient": "mijo inflado",
+    "count": 3,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "3 makrut lime leaves",
+    "count": 2,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 brown onion",
+    "count": 2,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "2 tsp Vegetable stock paste",
+    "count": 2,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1200 g water",
+    "count": 2,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "10 g olive oil",
+    "count": 2,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "2 tsp fine sea salt",
+    "count": 2,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 avocado",
+    "count": 2,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "400 g water",
+    "count": 2,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 carrot",
+    "count": 2,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 tsp ground cumin",
+    "count": 2,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 ½ tsp salt",
+    "count": 2,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "2 tsp garam masala",
+    "count": 2,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "1000 g water",
+    "count": 2,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 pinch fine sea salt",
+    "count": 2,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "4 sprigs fresh parsley",
+    "count": 2,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "2 oz olive oil",
+    "count": 2,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 tbsp honey",
+    "count": 2,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 oz apple cider vinegar",
+    "count": 2,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "3 oz extra virgin olive oil",
+    "count": 2,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "3 ½ oz zucchini",
+    "count": 2,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 oz olive oil",
+    "count": 2,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "½ tsp ground ginger",
+    "count": 2,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "¼ tsp ground cumin",
+    "count": 2,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "5 g fresh root ginger",
+    "count": 2,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "15 g olive oil",
+    "count": 2,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 fresh red chilli",
+    "count": 2,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "3 garlic cloves",
+    "count": 2,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "½ tsp caster sugar",
+    "count": 2,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "25 g olive oil",
+    "count": 2,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 lime",
+    "count": 2,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "50 g lemon juice",
+    "count": 2,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1000 g de agua",
+    "count": 2,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "2 cucharaditas de sal",
+    "count": 2,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "2 pellizcos de sal",
+    "count": 2,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "80 g onions",
+    "count": 2,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "30 g unsalted butter",
+    "count": 2,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "2 - 3 pinches ground black pepper",
+    "count": 2,
+    "matched_pid": "17587",
+    "matched_product_name": "Patatas prefritas Pepper Sticks Hacendado rebozadas con sal y pimienta",
+    "match_method": "TOKEN_pepper"
+  },
+  {
+    "ingredient": "2 pinches salt",
+    "count": 2,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "2 pinches ground black pepper",
+    "count": 2,
+    "matched_pid": "17587",
+    "matched_product_name": "Patatas prefritas Pepper Sticks Hacendado rebozadas con sal y pimienta",
+    "match_method": "TOKEN_pepper"
+  },
+  {
+    "ingredient": "1 tsp freshly ground black pepper",
+    "count": 2,
+    "matched_pid": "17587",
+    "matched_product_name": "Patatas prefritas Pepper Sticks Hacendado rebozadas con sal y pimienta",
+    "match_method": "TOKEN_pepper"
+  },
+  {
+    "ingredient": "salt",
+    "count": 2,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "ground black pepper",
+    "count": 2,
+    "matched_pid": "17587",
+    "matched_product_name": "Patatas prefritas Pepper Sticks Hacendado rebozadas con sal y pimienta",
+    "match_method": "TOKEN_pepper"
+  },
+  {
+    "ingredient": "½ oz unsalted butter",
+    "count": 2,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "120 g onions",
+    "count": 2,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "½ - 1 tsp fine sea salt",
+    "count": 2,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "cereza",
+    "count": 2,
+    "matched_pid": "12890",
+    "matched_product_name": "Preparado en polvo gelatina cereza Hacendado",
+    "match_method": "TOKEN_cereza"
+  },
+  {
+    "ingredient": "panes",
+    "count": 2,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "lacón cocido",
+    "count": 2,
+    "matched_pid": "59216",
+    "matched_product_name": "Lacón al horno Noel lonchas",
+    "match_method": "TOKEN_lacon"
+  },
+  {
+    "ingredient": "mermelada de cerezas",
+    "count": 2,
+    "matched_pid": "86755",
+    "matched_product_name": "Mermelada de fresa Hacendado",
+    "match_method": "TOKEN_mermelada"
+  },
+  {
+    "ingredient": "Marsala seco",
+    "count": 2,
+    "matched_pid": "16046",
+    "matched_product_name": "Tomate seco Hacendado en aceite de oliva",
+    "match_method": "TOKEN_seco"
+  },
+  {
+    "ingredient": "castañas en almíbar",
+    "count": 2,
+    "matched_pid": "34194",
+    "matched_product_name": "Castañas cocidas y peladas Hacendado",
+    "match_method": "TOKEN_castanas"
+  },
+  {
+    "ingredient": "castañas secas peladas",
+    "count": 2,
+    "matched_pid": "34194",
+    "matched_product_name": "Castañas cocidas y peladas Hacendado",
+    "match_method": "TOKEN_castanas"
+  },
+  {
+    "ingredient": "rebozuelos frescos",
+    "count": 2,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "alcaravea molida",
+    "count": 2,
+    "matched_pid": "34171",
+    "matched_product_name": "Pimienta negra molida Hacendado",
+    "match_method": "TOKEN_molida"
+  },
+  {
+    "ingredient": "zumaque",
+    "count": 2,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "sémola de trigo duro",
+    "count": 2,
+    "matched_pid": "13045",
+    "matched_product_name": "Sémola de trigo Hacendado",
+    "match_method": "TOKEN_semola"
+  },
+  {
+    "ingredient": "hígado",
+    "count": 2,
+    "matched_pid": "2859",
+    "matched_product_name": "Filetes hígado de cerdo",
+    "match_method": "TOKEN_higado"
+  },
+  {
+    "ingredient": "edulcorante en polvo",
+    "count": 2,
+    "matched_pid": "70741",
+    "matched_product_name": "Edulcorante líquido sacarina Hacendado",
+    "match_method": "TOKEN_edulcorante"
+  },
+  {
+    "ingredient": "muslos de pato con piel",
+    "count": 2,
+    "matched_pid": "2788",
+    "matched_product_name": "Muslos de pollo deshuesados con piel",
+    "match_method": "TOKEN_muslos"
+  },
+  {
+    "ingredient": "café soluble",
+    "count": 2,
+    "matched_pid": "10688",
+    "matched_product_name": "Bebida de avena con café Hacendado",
+    "match_method": "TOKEN_cafe"
+  },
+  {
+    "ingredient": "butifarras",
+    "count": 2,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "uvas negras",
+    "count": 2,
+    "matched_pid": "11968",
+    "matched_product_name": "Vino blanco Chardonnay Mar de Uvas",
+    "match_method": "TOKEN_uvas"
+  },
+  {
+    "ingredient": "perdices",
+    "count": 2,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "oporto",
+    "count": 2,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "agua de azahar",
+    "count": 2,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "melaza de cebada malteada",
+    "count": 2,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "ciruelas frescas",
+    "count": 2,
+    "matched_pid": "5962",
+    "matched_product_name": "Ciruelas Claudia",
+    "match_method": "TOKEN_ciruelas"
+  },
+  {
+    "ingredient": "filetes de perca",
+    "count": 2,
+    "matched_pid": "3400",
+    "matched_product_name": "Filetes pechuga de pollo corte fino",
+    "match_method": "TOKEN_filetes"
+  },
+  {
+    "ingredient": "mejorana fresca",
+    "count": 2,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "pescadilla fresca",
+    "count": 2,
+    "matched_pid": "62176",
+    "matched_product_name": "Pescadilla de merluza sin cabeza Hacendado ultracongelada",
+    "match_method": "TOKEN_pescadilla"
+  },
+  {
+    "ingredient": "caballas frescas limpias",
+    "count": 2,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "filetes de gallo",
+    "count": 2,
+    "matched_pid": "3400",
+    "matched_product_name": "Filetes pechuga de pollo corte fino",
+    "match_method": "TOKEN_filetes"
+  },
+  {
+    "ingredient": "besugo",
+    "count": 2,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "cardo congelado",
+    "count": 2,
+    "matched_pid": "16417",
+    "matched_product_name": "Cardo troceado Hacendado",
+    "match_method": "TOKEN_cardo"
+  },
+  {
+    "ingredient": "palmitos",
+    "count": 2,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "sepietas",
+    "count": 2,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "frutos rojos congelados variados",
+    "count": 2,
+    "matched_pid": "13240",
+    "matched_product_name": "Ensalada de pollo, queso y frutos secos Listo para Comer",
+    "match_method": "TOKEN_frutos"
+  },
+  {
+    "ingredient": "achicoria roja",
+    "count": 2,
+    "matched_pid": "26000",
+    "matched_product_name": "Alubia cocida roja Hacendado",
+    "match_method": "TOKEN_roja"
+  },
+  {
+    "ingredient": "wasabi en polvo",
+    "count": 2,
+    "matched_pid": "51151",
+    "matched_product_name": "Queso en polvo especial pasta mezcla Hacendado",
+    "match_method": "TOKEN_polvo"
+  },
+  {
+    "ingredient": "hojas de col rizada",
+    "count": 2,
+    "matched_pid": "69720",
+    "matched_product_name": "Escarola rizada cortada y lavada",
+    "match_method": "TOKEN_rizada"
+  },
+  {
+    "ingredient": "zumo de arándanos rojos",
+    "count": 2,
+    "matched_pid": "5501",
+    "matched_product_name": "Arándanos",
+    "match_method": "TOKEN_arandanos"
+  },
+  {
+    "ingredient": "centollo",
+    "count": 2,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "sazonador para paella",
+    "count": 2,
+    "matched_pid": "23353",
+    "matched_product_name": "Sazonador para fajitas Hacendado sabor tex-mex",
+    "match_method": "TOKEN_sazonador"
+  },
+  {
+    "ingredient": "morralla",
+    "count": 2,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "verduras para sofrito",
+    "count": 2,
+    "matched_pid": "69433",
+    "matched_product_name": "Preparado de verduras para sofreír cortado y lavado",
+    "match_method": "TOKEN_verduras"
+  },
+  {
+    "ingredient": "zamburiñas",
+    "count": 2,
+    "matched_pid": "23531",
+    "matched_product_name": "Zamburiñas en salsa de vieira Hacendado",
+    "match_method": "TOKEN_zamburinas"
+  },
+  {
+    "ingredient": "speck tirolés",
+    "count": 2,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "mango",
+    "count": 2,
+    "matched_pid": "3050",
+    "matched_product_name": "Mango",
+    "match_method": "TOKEN_mango"
+  },
+  {
+    "ingredient": "rigatoni",
+    "count": 2,
+    "matched_pid": "21326",
+    "matched_product_name": "Pasta rigatoni Armando",
+    "match_method": "TOKEN_rigatoni"
+  },
+  {
+    "ingredient": "pulpa de sandía",
+    "count": 2,
+    "matched_pid": "3427",
+    "matched_product_name": "Nectarina pulpa amarilla",
+    "match_method": "TOKEN_pulpa"
+  },
+  {
+    "ingredient": "salsa bechamel",
+    "count": 2,
+    "matched_pid": "35839",
+    "matched_product_name": "Salsa Original Ligeresa",
+    "match_method": "TOKEN_salsa"
+  },
+  {
+    "ingredient": "mortadela",
+    "count": 2,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "panes bagel",
+    "count": 2,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "cardo",
+    "count": 2,
+    "matched_pid": "16417",
+    "matched_product_name": "Cardo troceado Hacendado",
+    "match_method": "TOKEN_cardo"
+  },
+  {
+    "ingredient": "sal de verduras",
+    "count": 2,
+    "matched_pid": "69433",
+    "matched_product_name": "Preparado de verduras para sofreír cortado y lavado",
+    "match_method": "TOKEN_verduras"
+  },
+  {
+    "ingredient": "judías pintas cocidas (en conserva)",
+    "count": 2,
+    "matched_pid": "16315",
+    "matched_product_name": "Judías verdes redondas Hacendado",
+    "match_method": "TOKEN_judias"
+  },
+  {
+    "ingredient": "agar-agar",
+    "count": 2,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "bayas goji",
+    "count": 2,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "líquido de cocción",
+    "count": 2,
+    "matched_pid": "70741",
+    "matched_product_name": "Edulcorante líquido sacarina Hacendado",
+    "match_method": "TOKEN_liquido"
+  },
+  {
+    "ingredient": "judías pintas secas",
+    "count": 2,
+    "matched_pid": "16315",
+    "matched_product_name": "Judías verdes redondas Hacendado",
+    "match_method": "TOKEN_judias"
+  },
+  {
+    "ingredient": "uva blancas",
+    "count": 2,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "mazorca de maíz",
+    "count": 2,
+    "matched_pid": "69469",
+    "matched_product_name": "Maíz dulce en mazorca cocido",
+    "match_method": "TOKEN_mazorca"
+  },
+  {
+    "ingredient": "barras de pan",
+    "count": 2,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "kirsch",
+    "count": 2,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "albaricoques frescos",
+    "count": 2,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "magret de pato con piel sin hueso",
+    "count": 2,
+    "matched_pid": "25629",
+    "matched_product_name": "Magret de pato",
+    "match_method": "TOKEN_magret"
+  },
+  {
+    "ingredient": "okras (quimbombó)",
+    "count": 2,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "ramilletes de romanescu",
+    "count": 2,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "moras frescas",
+    "count": 2,
+    "matched_pid": "14379",
+    "matched_product_name": "Moras",
+    "match_method": "TOKEN_moras"
+  },
+  {
+    "ingredient": "carabinero crudo",
+    "count": 2,
+    "matched_pid": "24712",
+    "matched_product_name": "Langostino crudo Hacendado ultracongelado",
+    "match_method": "TOKEN_crudo"
+  },
+  {
+    "ingredient": "hueso de espinazo en salazón",
+    "count": 2,
+    "matched_pid": "58307",
+    "matched_product_name": "Hueso garrón",
+    "match_method": "TOKEN_hueso"
+  },
+  {
+    "ingredient": "gallina",
+    "count": 2,
+    "matched_pid": "8645",
+    "matched_product_name": "Fideos orientales Yatekomo sabor pollo Gallina Blanca",
+    "match_method": "TOKEN_gallina"
+  },
+  {
+    "ingredient": "granos de trigo",
+    "count": 2,
+    "matched_pid": "80859",
+    "matched_product_name": "Tortillas de trigo Hacendado",
+    "match_method": "TOKEN_trigo"
+  },
+  {
+    "ingredient": "agua mineral",
+    "count": 2,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "goma xantana",
+    "count": 2,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "tomatillos verdes",
+    "count": 2,
+    "matched_pid": "69656",
+    "matched_product_name": "Espárragos verdes finos",
+    "match_method": "TOKEN_verdes"
+  },
+  {
+    "ingredient": "pomelo",
+    "count": 2,
+    "matched_pid": "3202",
+    "matched_product_name": "Pomelo",
+    "match_method": "TOKEN_pomelo"
+  },
+  {
+    "ingredient": "volovanes",
+    "count": 2,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "níscalos",
+    "count": 2,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "gambones crudos pelados",
+    "count": 2,
+    "matched_pid": "69695",
+    "matched_product_name": "Ajo negro dientes pelados",
+    "match_method": "TOKEN_pelados"
+  },
+  {
+    "ingredient": "chapata",
+    "count": 2,
+    "matched_pid": "83194.1",
+    "matched_product_name": "Barra de pan chapata",
+    "match_method": "TOKEN_chapata"
+  },
+  {
+    "ingredient": "dashi en polvo instantáneo",
+    "count": 2,
+    "matched_pid": "51151",
+    "matched_product_name": "Queso en polvo especial pasta mezcla Hacendado",
+    "match_method": "TOKEN_polvo"
+  },
+  {
+    "ingredient": "dulce de membrillo",
+    "count": 2,
+    "matched_pid": "8177",
+    "matched_product_name": "Manzana roja dulce",
+    "match_method": "TOKEN_dulce"
+  },
+  {
+    "ingredient": "tacos de aperitivo frito de maíz",
+    "count": 2,
+    "matched_pid": "2811",
+    "matched_product_name": "Costillas de cerdo carnosas a tacos",
+    "match_method": "TOKEN_tacos"
+  },
+  {
+    "ingredient": "colorante rojo",
+    "count": 2,
+    "matched_pid": "34182",
+    "matched_product_name": "Colorante alimentario Hacendado",
+    "match_method": "TOKEN_colorante"
+  },
+  {
+    "ingredient": "dátiles",
+    "count": 2,
+    "matched_pid": "22606",
+    "matched_product_name": "Dátiles en rama Hacendado",
+    "match_method": "TOKEN_datiles"
+  },
+  {
+    "ingredient": "galletas caramelizadas",
+    "count": 2,
+    "matched_pid": "82585",
+    "matched_product_name": "Galletas saladas salpicks Galbusera",
+    "match_method": "TOKEN_galletas"
+  },
+  {
+    "ingredient": "amaranto inflado",
+    "count": 2,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "2 fresh green chillies",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "2 shallots",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 tsp palm sugar",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "400 g white fish fillets",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "10 g fish sauce",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 medium egg",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "groundnut oil",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "2 limes",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "3 pellizcos de sal",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "50 g onions",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "200 g green asparagus",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "2 pinches ground white pepper",
+    "count": 1,
+    "matched_pid": "17587",
+    "matched_product_name": "Patatas prefritas Pepper Sticks Hacendado rebozadas con sal y pimienta",
+    "match_method": "TOKEN_pepper"
+  },
+  {
+    "ingredient": "½ tsp dried mixed herbs",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "150 g frozen peas",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "230 g fat-free plain yoghurt",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "300 g red capsicum",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "300 g zucchini",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "40 g olive oil",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 pinch cayenne pepper",
+    "count": 1,
+    "matched_pid": "17587",
+    "matched_product_name": "Patatas prefritas Pepper Sticks Hacendado rebozadas con sal y pimienta",
+    "match_method": "TOKEN_pepper"
+  },
+  {
+    "ingredient": "50 g pouring (whipping) cream",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "150 g red onions",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "150 g fresh baby spinach",
+    "count": 1,
+    "matched_pid": "69984",
+    "matched_product_name": "Espinacas baby lavadas",
+    "match_method": "TOKEN_baby"
+  },
+  {
+    "ingredient": "150 g tinned chickpeas",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "240 g plain yoghurt",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "50 g peanuts, roasted, unsalted",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "500 g watermelon",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "250 g cooked chickpeas",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "200 g cherry tomatoes",
+    "count": 1,
+    "matched_pid": "69937",
+    "matched_product_name": "Tomate ensalada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "100 g watercress",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "½ fresh red chilli",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "50 g olive oil",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "20 g lemon juice",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "15 g fresh parsley leaves",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "800 g water",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "100 g rocket leaves",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "3 peaches",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "50 g almonds",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "30 g lemon juice",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "10 g honey",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "70 g Parmesan cheese",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "2 sprigs fresh rosemary",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "2 sprigs fresh thyme",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "½ brown onion",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "120 g pancetta",
+    "count": 1,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "400 g tinned chopped tomatoes",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "100 g courgettes",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "2 celery stalks",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "400 g tinned chickpeas",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "400 g tinned kidney beans",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "400 g tinned cannellini beans",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 Tbsp vegetable stock paste, homemade",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 tsp dried chilli flakes",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "6 slices crusty bread",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "2 fresh long red chillies",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "40 g fresh ginger",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "20 g garlic cloves",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "320 g fresh coriander",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "160 g brown onion",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "60 g olive oil",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "½ tsp ground turmeric",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "20 g ground coriander",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "120 g fresh tomatoes",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "½ tsp raw sugar",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "120 g water",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1500 g firm white fish fillets",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 pinch salt",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "250 g green beans",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "400 g red onions",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "50 g red wine vinegar",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "750 g large raw prawns, peeled",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "300 g cherry tomatoes",
+    "count": 1,
+    "matched_pid": "69937",
+    "matched_product_name": "Tomate ensalada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "50 g extra virgin olive oil",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "¼ tsp ground white pepper",
+    "count": 1,
+    "matched_pid": "17587",
+    "matched_product_name": "Patatas prefritas Pepper Sticks Hacendado rebozadas con sal y pimienta",
+    "match_method": "TOKEN_pepper"
+  },
+  {
+    "ingredient": "60 g blanched almonds",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "60 g raw cashews",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "200 g water",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "60 g brown onion",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 tbsp lemon juice",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 tbsp apple cider vinegar",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 - 2 pinches salt",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "180 g brown onion",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 tsp olive oil",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "20 - 30 g chipotle chillies in adobo sauce",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "400 g canned chopped tomatoes",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "70 g tomato paste",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 tsp Vegetable stock paste",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "250 g water",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "400 g canned kidney beans",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "400 g canned mixed beans",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "120 g frozen corn kernels",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "fresh coriander leaves",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "150 g de orejones de albaricoque",
+    "count": 1,
+    "matched_pid": "13877",
+    "matched_product_name": "Orejones albaricoque Hacendado",
+    "match_method": "TOKEN_orejones"
+  },
+  {
+    "ingredient": "½ cucharadita de sal",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "600 g de agua",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 oz slivered almonds",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "5 oz mayonnaise",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "3 ½ oz green apple",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "2 oz red onion",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "3 oz celery",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "3 ½ oz dried cranberries",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "½ oz lime juice",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "⅛ tsp fine sea salt",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "⅛ tsp ground black pepper",
+    "count": 1,
+    "matched_pid": "17587",
+    "matched_product_name": "Patatas prefritas Pepper Sticks Hacendado rebozadas con sal y pimienta",
+    "match_method": "TOKEN_pepper"
+  },
+  {
+    "ingredient": "14 oz chicken breast",
+    "count": 1,
+    "matched_pid": "4079",
+    "matched_product_name": "Burger Crunchy Chicken",
+    "match_method": "TOKEN_chicken"
+  },
+  {
+    "ingredient": "4 - 5 fresh chives",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "½ oz lime peel",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 ¼ tsp fine sea salt",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 ¼ tsp ground black pepper",
+    "count": 1,
+    "matched_pid": "17587",
+    "matched_product_name": "Patatas prefritas Pepper Sticks Hacendado rebozadas con sal y pimienta",
+    "match_method": "TOKEN_pepper"
+  },
+  {
+    "ingredient": "½ oz fresh parsley",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "2 oz lime juice",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "½ tsp smoked paprika",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "24 oz firm white fish fillets",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "6 oz red cabbage",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 oz carrot",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 jalapeño pepper",
+    "count": 1,
+    "matched_pid": "33178",
+    "matched_product_name": "Aceitunas verdes rellenas de jalapeño Hacendado",
+    "match_method": "TOKEN_jalapeno"
+  },
+  {
+    "ingredient": "2 oz mayonnaise",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "18 oz water",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 - 2 oz garlic cloves",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "35 oz ripe tomatoes",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "2 anchovies, preserved in olive oil",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 heaping tsp chili powder",
+    "count": 1,
+    "matched_pid": "22613",
+    "matched_product_name": "Salsa Thai Chili dulce J-Lek",
+    "match_method": "TOKEN_chili"
+  },
+  {
+    "ingredient": "43 oz water",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "15 fresh basil leaves",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "12 oz broccoli florets",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "5 ½ oz apple",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 oz red onion",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "4 oz onion",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "24 oz butternut squash",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "12 oz green apples",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "2 oz carrots",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "2 oz celery",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "24 oz water",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 ½ heaping tbsp vegetable stock paste",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "2 oz heavy whipping cream",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 red chilli, fresh",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "½ - 1 tsp dried fennel seeds",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 pinch ground cinnamon",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "3 Tbsp olive oil",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "2 white fish fillets, skinless",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "30 g fresh coriander",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "½ - 1 tsp ground cumin",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 tsp sweet paprika",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 pinch dried chilli flakes",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "30 g freshly squeezed lemon juice",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "100 g couscous",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "110 g water",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 pinch ground cumin",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "5 sprigs fresh coriander",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 tsp lemon zest",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "50 g pitted black olives",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "80 g tinned chickpeas",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "400 g button mushrooms",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "500 - 600 g water",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "200 g milk",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 heaped tsp vegetable stock paste, homemade",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "50 g plain flour",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "50 g cream",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "2 slices wholemeal bread",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "5 g fresh parsley",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "3 - 4 shallots",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "750 g passata",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 ½ Tbsp balsamic vinegar",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "½ tsp dried basil",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "½ tsp dried chilli flakes",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "150 g fresh spinach",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "water",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "240 g onions",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "15 g fresh parsley",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "800 g tinned chopped tomatoes",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "2 fish stock cubes (for 0.5 l each)",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1000 g boiling water",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "300 g couscous",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "¼ tsp ground cinnamon",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "600 - 700 g fish",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "2 Tbsp flaked almonds, toasted",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "2 perch fillets",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 Tbsp Shaoxing rice wine",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "2 spring onions",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 Tbsp soy sauce, seasoned, for seafood",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 mango maduro",
+    "count": 1,
+    "matched_pid": "3050",
+    "matched_product_name": "Mango",
+    "match_method": "TOKEN_mango"
+  },
+  {
+    "ingredient": "250 g de fresas",
+    "count": 1,
+    "matched_pid": "3723",
+    "matched_product_name": "Fresas",
+    "match_method": "TOKEN_fresas"
+  },
+  {
+    "ingredient": "6 Roma tomatoes",
+    "count": 1,
+    "matched_pid": "51110",
+    "matched_product_name": "Queso rallado mozzarella pizza-Roma de vaca Hacendado",
+    "match_method": "TOKEN_roma"
+  },
+  {
+    "ingredient": "2 ½ oz white onion",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "8 ½ oz chicken stock",
+    "count": 1,
+    "matched_pid": "4079",
+    "matched_product_name": "Burger Crunchy Chicken",
+    "match_method": "TOKEN_chicken"
+  },
+  {
+    "ingredient": "1 ½ tsp ancho chili powder",
+    "count": 1,
+    "matched_pid": "22613",
+    "matched_product_name": "Salsa Thai Chili dulce J-Lek",
+    "match_method": "TOKEN_chili"
+  },
+  {
+    "ingredient": "½ oz vegetable oil",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "5 oz panela cheese (Mexican fresh cheese)",
+    "count": 1,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "sour cream",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 tbsp ground cumin",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 tbsp ground coriander",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 tsp ground turmeric",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 tsp ground allspice",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 - 2 pinch ground cayenne pepper",
+    "count": 1,
+    "matched_pid": "17587",
+    "matched_product_name": "Patatas prefritas Pepper Sticks Hacendado rebozadas con sal y pimienta",
+    "match_method": "TOKEN_pepper"
+  },
+  {
+    "ingredient": "60 g extra virgin olive oil",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "400 g canned chickpeas",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 red onion",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 red capsicum",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "2 pita breads",
+    "count": 1,
+    "matched_pid": "14378",
+    "matched_product_name": "Pan de pita Mission",
+    "match_method": "TOKEN_pita"
+  },
+  {
+    "ingredient": "150 g red cabbage",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "20 g red wine vinegar",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "¼ red onion",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "2 tsp sumac",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "½ yellow capsicum",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "40 g extra virgin olive oil",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "50 g mixed baby leaf salad",
+    "count": 1,
+    "matched_pid": "69984",
+    "matched_product_name": "Espinacas baby lavadas",
+    "match_method": "TOKEN_baby"
+  },
+  {
+    "ingredient": "1 - 2 Lebanese cucumbers",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 pomegranate",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "2 sprigs fresh mint",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "2 sprigs fresh flat-leaf parsley",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "3 ½ oz fresh corn kernels",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "4 ½ oz Granny Smith apple",
+    "count": 1,
+    "matched_pid": "3021",
+    "matched_product_name": "Manzana Granny Smith",
+    "match_method": "TOKEN_granny"
+  },
+  {
+    "ingredient": "4 ½ oz mango",
+    "count": 1,
+    "matched_pid": "3050",
+    "matched_product_name": "Mango",
+    "match_method": "TOKEN_mango"
+  },
+  {
+    "ingredient": "4 oz red bell pepper",
+    "count": 1,
+    "matched_pid": "17587",
+    "matched_product_name": "Patatas prefritas Pepper Sticks Hacendado rebozadas con sal y pimienta",
+    "match_method": "TOKEN_pepper"
+  },
+  {
+    "ingredient": "1 oz fresh jalapeño chili",
+    "count": 1,
+    "matched_pid": "33178",
+    "matched_product_name": "Aceitunas verdes rellenas de jalapeño Hacendado",
+    "match_method": "TOKEN_jalapeno"
+  },
+  {
+    "ingredient": "1 oz freshly squeezed lime juice",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "½ oz apple cider vinegar",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "5 oz fresh tomatoes",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "24 oz fresh raw small shrimp, peeled and deveined",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "2 tbsp Cajun spice mix",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "10 ½ oz water",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "2 avocados",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 cucharada de sal",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "720 g de agua",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "50 - 60 g de picatostes",
+    "count": 1,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "1 tsp extra virgin olive oil",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "24 oz chicken thighs, boneless and skinless",
+    "count": 1,
+    "matched_pid": "4079",
+    "matched_product_name": "Burger Crunchy Chicken",
+    "match_method": "TOKEN_chicken"
+  },
+  {
+    "ingredient": "3 oz mayonnaise",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "2 tsp lemon juice",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "½ tsp turmeric powder",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "¼ tsp ground ginger",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "⅛ tsp ground cayenne pepper",
+    "count": 1,
+    "matched_pid": "17587",
+    "matched_product_name": "Patatas prefritas Pepper Sticks Hacendado rebozadas con sal y pimienta",
+    "match_method": "TOKEN_pepper"
+  },
+  {
+    "ingredient": "6 oz Pink Lady apple",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "4 oz celery",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 oz raisins",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "red leaf lettuce",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "½ - 1 oz olive oil",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "6 - 7 oz mixed vegetables, for sautéing",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "25 - 27 ½ oz mixed vegetables",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "26 ½ - 28 oz water",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 tsp vegetable stock paste",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "500 g frozen green peas",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "10 g fresh mint leaves",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "200 g brown bread",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "650 g sweet potatoes",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 tsp coriander seeds",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "20 g freshly squeezed lemon juice",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "50 g water",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "500 - 600 g mixed vegetables",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "vegetable oil",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 - 2 cucharaditas de sal",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "40 oz water",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "4 garlic cloves",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 - 2 fresh chilies",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "4 pieces lemon peel",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "2 oz lemon juice",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "3 tbsp capers",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "3 - 4 sprigs fresh flat leaf parsley",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "450 g de agua",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "200 g de batata",
+    "count": 1,
+    "matched_pid": "69239",
+    "matched_product_name": "Batata",
+    "match_method": "TOKEN_batata"
+  },
+  {
+    "ingredient": "6 - 8 firm white fish fillets",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "3 ½ oz fresh baby spinach",
+    "count": 1,
+    "matched_pid": "69984",
+    "matched_product_name": "Espinacas baby lavadas",
+    "match_method": "TOKEN_baby"
+  },
+  {
+    "ingredient": "14 oz fresh raw shrimp, peeled, deveined",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "12 oz light whipping cream",
+    "count": 1,
+    "matched_pid": "51079",
+    "matched_product_name": "Queso untar light Philadelphia",
+    "match_method": "TOKEN_light"
+  },
+  {
+    "ingredient": "7 oz goat cheese",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 tbsp vegetable stock paste",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "2 mixed bell peppers, green and red",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "35 oz water",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "14 oz white basmati rice",
+    "count": 1,
+    "matched_pid": "22280",
+    "matched_product_name": "Arroz cocido basmati Sabroz",
+    "match_method": "TOKEN_basmati"
+  },
+  {
+    "ingredient": "1 ½ oz extra virgin olive oil",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "22 oz water",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 tbsp chicken stock paste",
+    "count": 1,
+    "matched_pid": "4079",
+    "matched_product_name": "Burger Crunchy Chicken",
+    "match_method": "TOKEN_chicken"
+  },
+  {
+    "ingredient": "3 ½ oz farro",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "30 oz water",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "2 green onions",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "10 fresh mint leaves",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "4 oz English cucumber",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "½ oz lemon juice",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "4 large eggs",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "16 oz salad greens",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "radishes",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "50 g brown onion",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "500 g zucchini",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "10 g butter",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "40 g cream cheese",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "80 g extra virgin olive oil",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "¾ tsp salt",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "2 tbsp grated lemon zest",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "4 white fish fillets",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "200 g mixed vegetables",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "6 sprigs fresh flat-leaf parsley",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "400 g potatoes",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "50 g Parmesan cheese",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "100 g cured ham",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "120 g brown onion",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "30 g extra virgin olive oil",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "400 g canned whole tomatoes",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "600 g water",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "250 g de agua",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "500 g de chirivías",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "500 g de batata",
+    "count": 1,
+    "matched_pid": "69239",
+    "matched_product_name": "Batata",
+    "match_method": "TOKEN_batata"
+  },
+  {
+    "ingredient": "100 g de agua",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "10 g de pie de masa",
+    "count": 1,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "300 g de agua",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "60 g carrot",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "100 g leek",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "100 g celeriac",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "100 g Bündnerfleisch",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "80 g pearl barley",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "900 g water",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "2 heaped tsp vegetable stock paste, homemade",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "100 g whipping cream",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "½ bunch fresh flat-leaf parsley",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "350 g parsnips",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "60 g onion",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "50 g unsalted butter",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "750 g liquid vegetable stock",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "½ in. fresh ginger",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "½ oz extra virgin olive oil",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "13 ½ oz carrots",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "18 ½ oz water",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 heaping tbsp homemade vegetable stock base",
+    "count": 1,
+    "matched_pid": "66905",
+    "matched_product_name": "Bebida aromatizada a base de vino para cocinar Abuela Carola",
+    "match_method": "TOKEN_base"
+  },
+  {
+    "ingredient": "pumpkin seeds",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 oz extra virgin olive oil",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "7 ½ oz water",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 packet/envelope active dry yeast",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "14 oz bread flour",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "3 oz white button mushrooms",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "3 ½ oz yellow bell pepper",
+    "count": 1,
+    "matched_pid": "17587",
+    "matched_product_name": "Patatas prefritas Pepper Sticks Hacendado rebozadas con sal y pimienta",
+    "match_method": "TOKEN_pepper"
+  },
+  {
+    "ingredient": "3 ½ oz red bell pepper",
+    "count": 1,
+    "matched_pid": "17587",
+    "matched_product_name": "Patatas prefritas Pepper Sticks Hacendado rebozadas con sal y pimienta",
+    "match_method": "TOKEN_pepper"
+  },
+  {
+    "ingredient": "10 oz canned chopped tomatoes",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "2 - 3 pinches salt",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "17 ½ oz water",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "14 oz fish fillets",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 ½ oz Gruyère cheese",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 large egg",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 tbsp all-purpose flour",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 ½ oz whole milk",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "2 oz yellow onion",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "2 oz baby spinach",
+    "count": 1,
+    "matched_pid": "69984",
+    "matched_product_name": "Espinacas baby lavadas",
+    "match_method": "TOKEN_baby"
+  },
+  {
+    "ingredient": "3 oz cherry tomatoes",
+    "count": 1,
+    "matched_pid": "69937",
+    "matched_product_name": "Tomate ensalada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "1130 g de agua",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "110 g laksa paste",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "150 g water",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "2 tsp tamarind paste",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "120 g green beans",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "100 g broccoli florets",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "400 g raw prawn meat",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "20 g fish sauce",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "40 g fresh limes",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "150 g bean sprouts",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "2 spring onions/green onions",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "2 sprigs fresh coriander",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "2 sprigs fresh Thai basil",
+    "count": 1,
+    "matched_pid": "22613",
+    "matched_product_name": "Salsa Thai Chili dulce J-Lek",
+    "match_method": "TOKEN_thai"
+  },
+  {
+    "ingredient": "1 tbsp fried shallots",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "14 oz chicken breast fillet, boneless, skinless",
+    "count": 1,
+    "matched_pid": "4079",
+    "matched_product_name": "Burger Crunchy Chicken",
+    "match_method": "TOKEN_chicken"
+  },
+  {
+    "ingredient": "1 ½ oz soy sauce",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "3 ½ oz carrots",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "2 oz apple",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 fresh red chili",
+    "count": 1,
+    "matched_pid": "22613",
+    "matched_product_name": "Salsa Thai Chili dulce J-Lek",
+    "match_method": "TOKEN_chili"
+  },
+  {
+    "ingredient": "1 tsp ground coriander",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "½ oz tomato paste",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "½ oz sesame oil",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 ½ tsp chicken stock paste",
+    "count": 1,
+    "matched_pid": "4079",
+    "matched_product_name": "Burger Crunchy Chicken",
+    "match_method": "TOKEN_chicken"
+  },
+  {
+    "ingredient": "28 oz water",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "5 oz broccoli florets",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "3 ½ oz cremini mushrooms",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 tbsp sambal oelek",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "450 g water",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "100 g cream",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "100 g milk",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "2 pinches ground nutmeg",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "200 g frozen green peas",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "10 g fresh coriander",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "10 g fresh root ginger",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 fresh green chilli",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "350 g aubergines",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "150 g red split lentils",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 tsp black mustard seeds",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "15 g tomato purée",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "300 g liquid vegetable stock",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "450 g ripe tomatoes",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "150 g fresh spinach leaves",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "5 garlic cloves",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "50 g shallots",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "10 dried chillies",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "10 g fresh ginger",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "2 stalks fresh lemongrass",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "60 g cooking oil",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "20 g light soy sauce",
+    "count": 1,
+    "matched_pid": "51079",
+    "matched_product_name": "Queso untar light Philadelphia",
+    "match_method": "TOKEN_light"
+  },
+  {
+    "ingredient": "1 stalk torch ginger flower",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "10 g homemade chicken stock powder",
+    "count": 1,
+    "matched_pid": "4079",
+    "matched_product_name": "Burger Crunchy Chicken",
+    "match_method": "TOKEN_chicken"
+  },
+  {
+    "ingredient": "500 - 600 g fish",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 tsp lemon juice",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "8 ladies' fingers",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "4 tomatoes",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "100 g onions",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1500 g water",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "85 g vermicelli noodles",
+    "count": 1,
+    "matched_pid": "35981",
+    "matched_product_name": "Noodles de arroz Hacendado",
+    "match_method": "TOKEN_noodles"
+  },
+  {
+    "ingredient": "100 g bean sprouts",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "100 g cabbage",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "110 g Indonesian yellow spice paste",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "600 g chicken thighs",
+    "count": 1,
+    "matched_pid": "4079",
+    "matched_product_name": "Burger Crunchy Chicken",
+    "match_method": "TOKEN_chicken"
+  },
+  {
+    "ingredient": "5 makrut lime leaves",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "3 fresh salam leaves",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 ½ tsp sea salt",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 tsp ground white pepper",
+    "count": 1,
+    "matched_pid": "17587",
+    "matched_product_name": "Patatas prefritas Pepper Sticks Hacendado rebozadas con sal y pimienta",
+    "match_method": "TOKEN_pepper"
+  },
+  {
+    "ingredient": "¼ tsp Chicken stock paste",
+    "count": 1,
+    "matched_pid": "4079",
+    "matched_product_name": "Burger Crunchy Chicken",
+    "match_method": "TOKEN_chicken"
+  },
+  {
+    "ingredient": "4 hard-boiled eggs",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 stalk celery",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "fried shallots",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "2 lime",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "400 - 500 g cucumbers",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 Tbsp Korean chilli paste (gochujang)",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "15 g rice vinegar",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "30 g light soy sauce",
+    "count": 1,
+    "matched_pid": "51079",
+    "matched_product_name": "Queso untar light Philadelphia",
+    "match_method": "TOKEN_light"
+  },
+  {
+    "ingredient": "2 pinches fine sea salt",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "sesame seeds",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1000 g zucchini",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "20 g extra virgin olive oil",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 - 2 fresh long red chilli",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "3 stalks lemongrass",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 tsp sea salt",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 tbsp fish sauce",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "100 g canned baby corn",
+    "count": 1,
+    "matched_pid": "69984",
+    "matched_product_name": "Espinacas baby lavadas",
+    "match_method": "TOKEN_baby"
+  },
+  {
+    "ingredient": "200 g peeled, large raw prawn",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "100 g beef fillet steak",
+    "count": 1,
+    "matched_pid": "8308",
+    "matched_product_name": "Steak Tartar de vacuno marinado",
+    "match_method": "TOKEN_steak"
+  },
+  {
+    "ingredient": "4 eggs",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "30 g lime juice",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "80 g pouring (whipping) cream",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "4 tbsp fresh coriander",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "2 fresh chilli",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 pinch garlic powder",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "80 g tinned button mushrooms, sliced",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "300 g passata",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "550 g water",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "300 g dried spaghetti",
+    "count": 1,
+    "matched_pid": "6277",
+    "matched_product_name": "Spaghetti fino Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "1 ½ oz yellow onions",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 oz unsalted butter",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "24 oz tomatoes",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "2 ½ oz tomato paste",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "17 oz water",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 stock cube",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "3 ½ oz cream",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "2 - 4 fresh basil leaves",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 sprig fresh parsley",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "10 ½ oz broccoli florets",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 red bell pepper",
+    "count": 1,
+    "matched_pid": "17587",
+    "matched_product_name": "Patatas prefritas Pepper Sticks Hacendado rebozadas con sal y pimienta",
+    "match_method": "TOKEN_pepper"
+  },
+  {
+    "ingredient": "1 dessert apple",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 oz pine nuts",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "½ oz fruit vinegar",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 tsp honey",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 ½ tsp mustard",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "30 g Parmesan cheese",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "100 g sun-dried tomato",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "180 g red capsicum",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "½ tsp sea salt",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "500 g skinless chicken thigh fillets",
+    "count": 1,
+    "matched_pid": "4079",
+    "matched_product_name": "Burger Crunchy Chicken",
+    "match_method": "TOKEN_chicken"
+  },
+  {
+    "ingredient": "250 g pouring (whipping) cream",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "¾ tsp paprika",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 tsp dried Italian herbs",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "120 g fresh baby spinach leaves",
+    "count": 1,
+    "matched_pid": "69984",
+    "matched_product_name": "Espinacas baby lavadas",
+    "match_method": "TOKEN_baby"
+  },
+  {
+    "ingredient": "3 sprigs fresh flat-leaf parsley",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "14 oz cooked boneless chicken, from pre-cooked roasted chicken",
+    "count": 1,
+    "matched_pid": "4079",
+    "matched_product_name": "Burger Crunchy Chicken",
+    "match_method": "TOKEN_chicken"
+  },
+  {
+    "ingredient": "2 heaping tbsp fresh parsley",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "3 ½ oz yellow onions",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "11 oz mixed vegetables",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "6 oz celery",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "¼ - ½ tsp ground black pepper",
+    "count": 1,
+    "matched_pid": "17587",
+    "matched_product_name": "Patatas prefritas Pepper Sticks Hacendado rebozadas con sal y pimienta",
+    "match_method": "TOKEN_pepper"
+  },
+  {
+    "ingredient": "2 heaping tbsp chicken stock paste",
+    "count": 1,
+    "matched_pid": "4079",
+    "matched_product_name": "Burger Crunchy Chicken",
+    "match_method": "TOKEN_chicken"
+  },
+  {
+    "ingredient": "1 - 2 rebanadas de pan",
+    "count": 1,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "1 sprig coriander leaves",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "10 garlic cloves",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "5 bird's eye chilli (chilli padi)",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "2 fresh red chilli",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 tbsp sugar",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "3 tbsp fish sauce",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 tsp chicken stock powder",
+    "count": 1,
+    "matched_pid": "4079",
+    "matched_product_name": "Burger Crunchy Chicken",
+    "match_method": "TOKEN_chicken"
+  },
+  {
+    "ingredient": "1100 g water",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "50 g lime juice",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "4 fresh lemongrass",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "600 g barramundi fish (siakap)",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "150 g white shimeiji mushrooms",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 ½ tbsp oyster sauce",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "2 tbsp water",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "½ tsp sugar",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "½ tsp white pepper powder",
+    "count": 1,
+    "matched_pid": "17587",
+    "matched_product_name": "Patatas prefritas Pepper Sticks Hacendado rebozadas con sal y pimienta",
+    "match_method": "TOKEN_pepper"
+  },
+  {
+    "ingredient": "300 g jasmine rice",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 stalk spring onions",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "100 gram walnut, shelled",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "90 gram oat flake",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "3 egg (from chicken)",
+    "count": 1,
+    "matched_pid": "4079",
+    "matched_product_name": "Burger Crunchy Chicken",
+    "match_method": "TOKEN_chicken"
+  },
+  {
+    "ingredient": "1 tablespoon Japanese soy sauce (or shoyu), type tamari",
+    "count": 1,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "50 gram breadcrumbs, dried",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "3 sheet puff pastry",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "wheat flour",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "cow milk",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "sesame seed, any colour",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "perdiz escabechada en conserva",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "tandoori masala",
+    "count": 1,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "mermelada de fresa",
+    "count": 1,
+    "matched_pid": "86755",
+    "matched_product_name": "Mermelada de fresa Hacendado",
+    "match_method": "TOKEN_mermelada"
+  },
+  {
+    "ingredient": "mitades de melocotón en almíbar",
+    "count": 1,
+    "matched_pid": "3433",
+    "matched_product_name": "Melocotón amarillo",
+    "match_method": "TOKEN_melocoton"
+  },
+  {
+    "ingredient": "entrecot",
+    "count": 1,
+    "matched_pid": "8932",
+    "matched_product_name": "Entrecot de vacuno añojo",
+    "match_method": "TOKEN_entrecot"
+  },
+  {
+    "ingredient": "pulpa de mango",
+    "count": 1,
+    "matched_pid": "3427",
+    "matched_product_name": "Nectarina pulpa amarilla",
+    "match_method": "TOKEN_pulpa"
+  },
+  {
+    "ingredient": "pularda",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "faba asturiana seca",
+    "count": 1,
+    "matched_pid": "10505",
+    "matched_product_name": "Leche semidesnatada Asturiana",
+    "match_method": "TOKEN_asturiana"
+  },
+  {
+    "ingredient": "panela",
+    "count": 1,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "vermut",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "ruibarbo",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "hogaza",
+    "count": 1,
+    "matched_pid": "86917.1",
+    "matched_product_name": "Hogaza con semillas 12%",
+    "match_method": "TOKEN_hogaza"
+  },
+  {
+    "ingredient": "tequila",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "granos de cereales",
+    "count": 1,
+    "matched_pid": "86750",
+    "matched_product_name": "Pan de molde cereales sin gluten Hacendado",
+    "match_method": "TOKEN_cereales"
+  },
+  {
+    "ingredient": "té negro",
+    "count": 1,
+    "matched_pid": "69695",
+    "matched_product_name": "Ajo negro dientes pelados",
+    "match_method": "TOKEN_negro"
+  },
+  {
+    "ingredient": "paletilla de cabrito",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "entrecots",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "café solo",
+    "count": 1,
+    "matched_pid": "10688",
+    "matched_product_name": "Bebida de avena con café Hacendado",
+    "match_method": "TOKEN_cafe"
+  },
+  {
+    "ingredient": "ciruelas rojas",
+    "count": 1,
+    "matched_pid": "5962",
+    "matched_product_name": "Ciruelas Claudia",
+    "match_method": "TOKEN_ciruelas"
+  },
+  {
+    "ingredient": "pétalos de rosa",
+    "count": 1,
+    "matched_pid": "8930",
+    "matched_product_name": "Sal rosa del Himalaya Hacendado",
+    "match_method": "TOKEN_rosa"
+  },
+  {
+    "ingredient": "mandarina",
+    "count": 1,
+    "matched_pid": "3238",
+    "matched_product_name": "Mandarina",
+    "match_method": "TOKEN_mandarina"
+  },
+  {
+    "ingredient": "mermelada de ciruela negra",
+    "count": 1,
+    "matched_pid": "86755",
+    "matched_product_name": "Mermelada de fresa Hacendado",
+    "match_method": "TOKEN_mermelada"
+  },
+  {
+    "ingredient": "cabrito",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "albóndigas",
+    "count": 1,
+    "matched_pid": "2871",
+    "matched_product_name": "Albóndigas de cerdo",
+    "match_method": "TOKEN_albondigas"
+  },
+  {
+    "ingredient": "granos de café",
+    "count": 1,
+    "matched_pid": "10688",
+    "matched_product_name": "Bebida de avena con café Hacendado",
+    "match_method": "TOKEN_cafe"
+  },
+  {
+    "ingredient": "ají panca molido",
+    "count": 1,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "codillos en salmuera semicocidos",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "paletillas de cabrito",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "pintada",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "galletas digestive",
+    "count": 1,
+    "matched_pid": "82585",
+    "matched_product_name": "Galletas saladas salpicks Galbusera",
+    "match_method": "TOKEN_galletas"
+  },
+  {
+    "ingredient": "salvado de trigo",
+    "count": 1,
+    "matched_pid": "80859",
+    "matched_product_name": "Tortillas de trigo Hacendado",
+    "match_method": "TOKEN_trigo"
+  },
+  {
+    "ingredient": "polvo ahumado",
+    "count": 1,
+    "matched_pid": "51151",
+    "matched_product_name": "Queso en polvo especial pasta mezcla Hacendado",
+    "match_method": "TOKEN_polvo"
+  },
+  {
+    "ingredient": "langosta",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "urta",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "ajete",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "rosada",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "vieira",
+    "count": 1,
+    "matched_pid": "23531",
+    "matched_product_name": "Zamburiñas en salsa de vieira Hacendado",
+    "match_method": "TOKEN_vieira"
+  },
+  {
+    "ingredient": "chutney de mango",
+    "count": 1,
+    "matched_pid": "3050",
+    "matched_product_name": "Mango",
+    "match_method": "TOKEN_mango"
+  },
+  {
+    "ingredient": "melocotones en almíbar (en mitades)",
+    "count": 1,
+    "matched_pid": "3422",
+    "matched_product_name": "Melocotones amarillos",
+    "match_method": "TOKEN_melocotones"
+  },
+  {
+    "ingredient": "filetes de corvina",
+    "count": 1,
+    "matched_pid": "3400",
+    "matched_product_name": "Filetes pechuga de pollo corte fino",
+    "match_method": "TOKEN_filetes"
+  },
+  {
+    "ingredient": "zatar",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "filetes de fletán",
+    "count": 1,
+    "matched_pid": "3400",
+    "matched_product_name": "Filetes pechuga de pollo corte fino",
+    "match_method": "TOKEN_filetes"
+  },
+  {
+    "ingredient": "gallinetas",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "gofio",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "chocos",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "filete de perca",
+    "count": 1,
+    "matched_pid": "24350",
+    "matched_product_name": "Filete de salmón rosado salvaje con piel Hacendado ultracongelado",
+    "match_method": "TOKEN_filete"
+  },
+  {
+    "ingredient": "lenguado entero limpio",
+    "count": 1,
+    "matched_pid": "87196",
+    "matched_product_name": "Lenguado rubio",
+    "match_method": "TOKEN_lenguado"
+  },
+  {
+    "ingredient": "piel de mandarina",
+    "count": 1,
+    "matched_pid": "24350",
+    "matched_product_name": "Filete de salmón rosado salvaje con piel Hacendado ultracongelado",
+    "match_method": "TOKEN_piel"
+  },
+  {
+    "ingredient": "filete de pez espada",
+    "count": 1,
+    "matched_pid": "24350",
+    "matched_product_name": "Filete de salmón rosado salvaje con piel Hacendado ultracongelado",
+    "match_method": "TOKEN_filete"
+  },
+  {
+    "ingredient": "raya",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "percebes",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "bígaros",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "baharat",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "kimchi",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "capón",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "magret de pato",
+    "count": 1,
+    "matched_pid": "25629",
+    "matched_product_name": "Magret de pato",
+    "match_method": "TOKEN_magret"
+  },
+  {
+    "ingredient": "tuétano",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "garrofón congelado",
+    "count": 1,
+    "matched_pid": "61270",
+    "matched_product_name": "Garrofón Hacendado ultracongelado",
+    "match_method": "TOKEN_garrofon"
+  },
+  {
+    "ingredient": "fritos de maíz",
+    "count": 1,
+    "matched_pid": "29180",
+    "matched_product_name": "Harina semolosa de trigo Hacendado especial para fritos",
+    "match_method": "TOKEN_fritos"
+  },
+  {
+    "ingredient": "pulpitos de playa",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "botarga",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "espelta precocida en grano",
+    "count": 1,
+    "matched_pid": "21596.1",
+    "matched_product_name": "Barra pan integral de espelta 100%",
+    "match_method": "TOKEN_espelta"
+  },
+  {
+    "ingredient": "hojas de mulujía congeladas",
+    "count": 1,
+    "matched_pid": "25184",
+    "matched_product_name": "Alas de pollo congeladas",
+    "match_method": "TOKEN_congeladas"
+  },
+  {
+    "ingredient": "habas secas",
+    "count": 1,
+    "matched_pid": "15896",
+    "matched_product_name": "Habas fritas con sal Hacendado",
+    "match_method": "TOKEN_habas"
+  },
+  {
+    "ingredient": "butifarra negra",
+    "count": 1,
+    "matched_pid": "6044",
+    "matched_product_name": "Butifarra fresca",
+    "match_method": "TOKEN_butifarra"
+  },
+  {
+    "ingredient": "galletas maría",
+    "count": 1,
+    "matched_pid": "82585",
+    "matched_product_name": "Galletas saladas salpicks Galbusera",
+    "match_method": "TOKEN_galletas"
+  },
+  {
+    "ingredient": "ensaladilla de verduras congeladas",
+    "count": 1,
+    "matched_pid": "61101",
+    "matched_product_name": "Ensaladilla Hacendado ultracongelada",
+    "match_method": "TOKEN_ensaladilla"
+  },
+  {
+    "ingredient": "grelos (en conserva)",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "carabinero",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "mazorca de maíz cocida",
+    "count": 1,
+    "matched_pid": "69469",
+    "matched_product_name": "Maíz dulce en mazorca cocido",
+    "match_method": "TOKEN_mazorca"
+  },
+  {
+    "ingredient": "romanescu",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "stevia en polvo",
+    "count": 1,
+    "matched_pid": "19820",
+    "matched_product_name": "Edulcorante líquido stevia Hacendado",
+    "match_method": "TOKEN_stevia"
+  },
+  {
+    "ingredient": "melocotón en almíbar (en mitades)",
+    "count": 1,
+    "matched_pid": "3433",
+    "matched_product_name": "Melocotón amarillo",
+    "match_method": "TOKEN_melocoton"
+  },
+  {
+    "ingredient": "zumo de melocotón",
+    "count": 1,
+    "matched_pid": "3433",
+    "matched_product_name": "Melocotón amarillo",
+    "match_method": "TOKEN_melocoton"
+  },
+  {
+    "ingredient": "judías blancas congeladas",
+    "count": 1,
+    "matched_pid": "16315",
+    "matched_product_name": "Judías verdes redondas Hacendado",
+    "match_method": "TOKEN_judias"
+  },
+  {
+    "ingredient": "nécora",
+    "count": 1,
+    "matched_pid": "87291",
+    "matched_product_name": "Nécora cocida descongelada",
+    "match_method": "TOKEN_necora"
+  },
+  {
+    "ingredient": "melón piel de sapo",
+    "count": 1,
+    "matched_pid": "3515",
+    "matched_product_name": "Medio melón piel de sapo",
+    "match_method": "TOKEN_melon"
+  },
+  {
+    "ingredient": "anguila ahumada",
+    "count": 1,
+    "matched_pid": "18436",
+    "matched_product_name": "Filetes de sardina ahumada Hacendado en aceite de girasol",
+    "match_method": "TOKEN_ahumada"
+  },
+  {
+    "ingredient": "caviar de arenque",
+    "count": 1,
+    "matched_pid": "18808",
+    "matched_product_name": "Sucedáneo de caviar negro Ubago Caviartic",
+    "match_method": "TOKEN_caviar"
+  },
+  {
+    "ingredient": "fumet",
+    "count": 1,
+    "matched_pid": "22860",
+    "matched_product_name": "Caldo de carne Hacendado en pastillas",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "huesos de espinazo en salazón",
+    "count": 1,
+    "matched_pid": "2853",
+    "matched_product_name": "Carcasa y espinazo de pollo",
+    "match_method": "TOKEN_espinazo"
+  },
+  {
+    "ingredient": "cangrejos",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "cebada en grano",
+    "count": 1,
+    "matched_pid": "34172",
+    "matched_product_name": "Pimienta negra en grano Hacendado",
+    "match_method": "TOKEN_grano"
+  },
+  {
+    "ingredient": "purpurina comestible de oro",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "pulpa de melón cantaloupe",
+    "count": 1,
+    "matched_pid": "3427",
+    "matched_product_name": "Nectarina pulpa amarilla",
+    "match_method": "TOKEN_pulpa"
+  },
+  {
+    "ingredient": "membrillo crudo",
+    "count": 1,
+    "matched_pid": "35846",
+    "matched_product_name": "Dulce de membrillo Hacendado 0% azúcares añadidos",
+    "match_method": "TOKEN_membrillo"
+  },
+  {
+    "ingredient": "chips de verduras",
+    "count": 1,
+    "matched_pid": "69433",
+    "matched_product_name": "Preparado de verduras para sofreír cortado y lavado",
+    "match_method": "TOKEN_verduras"
+  },
+  {
+    "ingredient": "alcaravea en grano",
+    "count": 1,
+    "matched_pid": "34172",
+    "matched_product_name": "Pimienta negra en grano Hacendado",
+    "match_method": "TOKEN_grano"
+  },
+  {
+    "ingredient": "erizos de mar",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "perlas de sagú",
+    "count": 1,
+    "matched_pid": "51052",
+    "matched_product_name": "Mozzarella fresca de vaca Hacendado en perlas",
+    "match_method": "TOKEN_perlas"
+  },
+  {
+    "ingredient": "plancton",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "tartaletas",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "pasas sultanas",
+    "count": 1,
+    "matched_pid": "82665",
+    "matched_product_name": "Pan tostado pasas Hacendado",
+    "match_method": "TOKEN_pasas"
+  },
+  {
+    "ingredient": "camaiot",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "higo",
+    "count": 1,
+    "matched_pid": "67753",
+    "matched_product_name": "Mermelada de higo Hacendado",
+    "match_method": "TOKEN_higo"
+  },
+  {
+    "ingredient": "magrets de pato sin piel",
+    "count": 1,
+    "matched_pid": "23990",
+    "matched_product_name": "Foie gras de pato fresco",
+    "match_method": "TOKEN_pato"
+  },
+  {
+    "ingredient": "mango seco en polvo",
+    "count": 1,
+    "matched_pid": "3050",
+    "matched_product_name": "Mango",
+    "match_method": "TOKEN_mango"
+  },
+  {
+    "ingredient": "asafétida en polvo",
+    "count": 1,
+    "matched_pid": "51151",
+    "matched_product_name": "Queso en polvo especial pasta mezcla Hacendado",
+    "match_method": "TOKEN_polvo"
+  },
+  {
+    "ingredient": "gambón crudo entero",
+    "count": 1,
+    "matched_pid": "24608",
+    "matched_product_name": "Gambón grande congelado",
+    "match_method": "TOKEN_gambon"
+  },
+  {
+    "ingredient": "agua mineral con gas",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "huesos de caña",
+    "count": 1,
+    "matched_pid": "22349",
+    "matched_product_name": "Azúcar moreno de caña Hacendado",
+    "match_method": "TOKEN_cana"
+  },
+  {
+    "ingredient": "arándanos azules congelados",
+    "count": 1,
+    "matched_pid": "5501",
+    "matched_product_name": "Arándanos",
+    "match_method": "TOKEN_arandanos"
+  },
+  {
+    "ingredient": "bogavante entero cocido congelado",
+    "count": 1,
+    "matched_pid": "62380",
+    "matched_product_name": "Bogavante americano crudo Hacendado ultracongelado",
+    "match_method": "TOKEN_bogavante"
+  },
+  {
+    "ingredient": "frutos secos",
+    "count": 1,
+    "matched_pid": "13240",
+    "matched_product_name": "Ensalada de pollo, queso y frutos secos Listo para Comer",
+    "match_method": "TOKEN_frutos"
+  },
+  {
+    "ingredient": "chícharo congelado",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "habas frescas con vaina",
+    "count": 1,
+    "matched_pid": "15896",
+    "matched_product_name": "Habas fritas con sal Hacendado",
+    "match_method": "TOKEN_habas"
+  },
+  {
+    "ingredient": "gaseosa",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "cubito de hielo",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "granadina",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "agua de rosas",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "bolsita de té",
+    "count": 1,
+    "matched_pid": "22180",
+    "matched_product_name": "Bolsita puré fresa y plátano Hacendado +8 meses",
+    "match_method": "TOKEN_bolsita"
+  },
+  {
+    "ingredient": "pétalos de sal negros",
+    "count": 1,
+    "matched_pid": "69976",
+    "matched_product_name": "Tomates negros",
+    "match_method": "TOKEN_negros"
+  },
+  {
+    "ingredient": "ginebra",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "aceituna negra deshuesada",
+    "count": 1,
+    "matched_pid": "60320",
+    "matched_product_name": "Banderillas Gildas Hacendado pinchos de aceituna, anchoa y guindilla",
+    "match_method": "TOKEN_aceituna"
+  },
+  {
+    "ingredient": "castaña cocida pelada",
+    "count": 1,
+    "matched_pid": "26030",
+    "matched_product_name": "Lenteja cocida Hacendado",
+    "match_method": "TOKEN_cocida"
+  },
+  {
+    "ingredient": "borrajas cocidas (en conserva)",
+    "count": 1,
+    "matched_pid": "53141",
+    "matched_product_name": "Salchichas cocidas estilo Frankfurt Hacendado de pollo y cerdo sabor ahumado",
+    "match_method": "TOKEN_cocidas"
+  },
+  {
+    "ingredient": "caviar de esturión",
+    "count": 1,
+    "matched_pid": "18808",
+    "matched_product_name": "Sucedáneo de caviar negro Ubago Caviartic",
+    "match_method": "TOKEN_caviar"
+  },
+  {
+    "ingredient": "trigo tierno",
+    "count": 1,
+    "matched_pid": "80859",
+    "matched_product_name": "Tortillas de trigo Hacendado",
+    "match_method": "TOKEN_trigo"
+  },
+  {
+    "ingredient": "uvas rojas",
+    "count": 1,
+    "matched_pid": "11968",
+    "matched_product_name": "Vino blanco Chardonnay Mar de Uvas",
+    "match_method": "TOKEN_uvas"
+  },
+  {
+    "ingredient": "caviar de oricios",
+    "count": 1,
+    "matched_pid": "18808",
+    "matched_product_name": "Sucedáneo de caviar negro Ubago Caviartic",
+    "match_method": "TOKEN_caviar"
+  },
+  {
+    "ingredient": "brote de bambú (fresco)",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "espelta perlada",
+    "count": 1,
+    "matched_pid": "21596.1",
+    "matched_product_name": "Barra pan integral de espelta 100%",
+    "match_method": "TOKEN_espelta"
+  },
+  {
+    "ingredient": "amaranto en grano",
+    "count": 1,
+    "matched_pid": "34172",
+    "matched_product_name": "Pimienta negra en grano Hacendado",
+    "match_method": "TOKEN_grano"
+  },
+  {
+    "ingredient": "brevas",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "piña troceada en conserva",
+    "count": 1,
+    "matched_pid": "51619",
+    "matched_product_name": "Queso rulo con piña y almendra Liptana",
+    "match_method": "TOKEN_pina"
+  },
+  {
+    "ingredient": "pulpa de maracuyá congelada",
+    "count": 1,
+    "matched_pid": "3427",
+    "matched_product_name": "Nectarina pulpa amarilla",
+    "match_method": "TOKEN_pulpa"
+  },
+  {
+    "ingredient": "ají amarillo",
+    "count": 1,
+    "matched_pid": "3433",
+    "matched_product_name": "Melocotón amarillo",
+    "match_method": "TOKEN_amarillo"
+  },
+  {
+    "ingredient": "caracoles frescos",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "gambones",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "kumquats",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "hojas de mazorca de maíz secas",
+    "count": 1,
+    "matched_pid": "69469",
+    "matched_product_name": "Maíz dulce en mazorca cocido",
+    "match_method": "TOKEN_mazorca"
+  },
+  {
+    "ingredient": "hojas de parra",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "avellana (con o sin piel)",
+    "count": 1,
+    "matched_pid": "13849",
+    "matched_product_name": "Bebida de avellana y arroz sin azúcares añadidos Hacendado",
+    "match_method": "TOKEN_avellana"
+  },
+  {
+    "ingredient": "broccolini (Bimi®)",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "panes de brioche",
+    "count": 1,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "grosella roja",
+    "count": 1,
+    "matched_pid": "26000",
+    "matched_product_name": "Alubia cocida roja Hacendado",
+    "match_method": "TOKEN_roja"
+  },
+  {
+    "ingredient": "hígado crudo de pato",
+    "count": 1,
+    "matched_pid": "2859",
+    "matched_product_name": "Filetes hígado de cerdo",
+    "match_method": "TOKEN_higado"
+  },
+  {
+    "ingredient": "almidón de trigo",
+    "count": 1,
+    "matched_pid": "80859",
+    "matched_product_name": "Tortillas de trigo Hacendado",
+    "match_method": "TOKEN_trigo"
+  },
+  {
+    "ingredient": "mermelada de higos",
+    "count": 1,
+    "matched_pid": "86755",
+    "matched_product_name": "Mermelada de fresa Hacendado",
+    "match_method": "TOKEN_mermelada"
+  },
+  {
+    "ingredient": "mazorcas de maíz cocidas",
+    "count": 1,
+    "matched_pid": "69469",
+    "matched_product_name": "Maíz dulce en mazorca cocido",
+    "match_method": "TOKEN_maiz"
+  },
+  {
+    "ingredient": "ajetes congelados en trozos",
+    "count": 1,
+    "matched_pid": "25183",
+    "matched_product_name": "Jamoncitos de pollo congelados",
+    "match_method": "TOKEN_congelados"
+  },
+  {
+    "ingredient": "arándanos congelados",
+    "count": 1,
+    "matched_pid": "5501",
+    "matched_product_name": "Arándanos",
+    "match_method": "TOKEN_arandanos"
+  },
+  {
+    "ingredient": "espelta en grano pelada",
+    "count": 1,
+    "matched_pid": "21596.1",
+    "matched_product_name": "Barra pan integral de espelta 100%",
+    "match_method": "TOKEN_espelta"
+  },
+  {
+    "ingredient": "crema de galleta caramelizada Lotus®",
+    "count": 1,
+    "matched_pid": "51181",
+    "matched_product_name": "Crema de queso camembert Hacendado",
+    "match_method": "TOKEN_crema"
+  },
+  {
+    "ingredient": "gelatina en polvo sabor fresa",
+    "count": 1,
+    "matched_pid": "16275",
+    "matched_product_name": "Gelatina neutra en láminas Foodsy",
+    "match_method": "TOKEN_gelatina"
+  },
+  {
+    "ingredient": "colines",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "panes planos de cereales",
+    "count": 1,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "minicroissants",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "copos de cereales variados",
+    "count": 1,
+    "matched_pid": "82150",
+    "matched_product_name": "Pan tostado con copos de avena Vitalité Kaura Wasa",
+    "match_method": "TOKEN_copos"
+  },
+  {
+    "ingredient": "mini panes de hamburguesa",
+    "count": 1,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "palitos salados",
+    "count": 1,
+    "matched_pid": "69877",
+    "matched_product_name": "Palitos de zanahoria",
+    "match_method": "TOKEN_palitos"
+  },
+  {
+    "ingredient": "baguettes",
+    "count": 1,
+    "matched_pid": "60235",
+    "matched_product_name": "2 Baguettes para hornear",
+    "match_method": "TOKEN_baguettes"
+  },
+  {
+    "ingredient": "muesli",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "sucedáneo de caviar",
+    "count": 1,
+    "matched_pid": "18808",
+    "matched_product_name": "Sucedáneo de caviar negro Ubago Caviartic",
+    "match_method": "TOKEN_sucedaneo"
+  },
+  {
+    "ingredient": "soda",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "maíz para palomitas",
+    "count": 1,
+    "matched_pid": "69469",
+    "matched_product_name": "Maíz dulce en mazorca cocido",
+    "match_method": "TOKEN_maiz"
+  },
+  {
+    "ingredient": "crema de pistacho",
+    "count": 1,
+    "matched_pid": "51181",
+    "matched_product_name": "Crema de queso camembert Hacendado",
+    "match_method": "TOKEN_crema"
+  },
+  {
+    "ingredient": "láminas de masa para wonton",
+    "count": 1,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "copos de mijo",
+    "count": 1,
+    "matched_pid": "82150",
+    "matched_product_name": "Pan tostado con copos de avena Vitalité Kaura Wasa",
+    "match_method": "TOKEN_copos"
+  },
+  {
+    "ingredient": "salsa mexicana picante",
+    "count": 1,
+    "matched_pid": "35839",
+    "matched_product_name": "Salsa Original Ligeresa",
+    "match_method": "TOKEN_salsa"
+  },
+  {
+    "ingredient": "castañas de agua frescas",
+    "count": 1,
+    "matched_pid": "34194",
+    "matched_product_name": "Castañas cocidas y peladas Hacendado",
+    "match_method": "TOKEN_castanas"
+  },
+  {
+    "ingredient": "sal del Himalaya",
+    "count": 1,
+    "matched_pid": "8930",
+    "matched_product_name": "Sal rosa del Himalaya Hacendado",
+    "match_method": "TOKEN_himalaya"
+  },
+  {
+    "ingredient": "panes pita",
+    "count": 1,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "DIRECT_RULE"
+  }
+]

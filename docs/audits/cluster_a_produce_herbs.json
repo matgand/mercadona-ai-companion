@@ -1,0 +1,3691 @@
+[
+  {
+    "ingredient": "cebolla",
+    "count": 1730,
+    "matched_pid": "69089",
+    "matched_product_name": "Cebollas",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "dientes de ajo",
+    "count": 1506,
+    "matched_pid": "69297",
+    "matched_product_name": "Ajos morados",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pimienta molida",
+    "count": 1090,
+    "matched_pid": "34125",
+    "matched_product_name": "Curry Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "diente de ajo",
+    "count": 807,
+    "matched_pid": "69297",
+    "matched_product_name": "Ajos morados",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "perejil fresco",
+    "count": 735,
+    "matched_pid": "40475",
+    "matched_product_name": "Picada de ajo y perejil",
+    "match_method": "TOKEN_perejil"
+  },
+  {
+    "ingredient": "pimienta negra molida",
+    "count": 543,
+    "matched_pid": "34125",
+    "matched_product_name": "Curry Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "zumo de limón",
+    "count": 539,
+    "matched_pid": "3210",
+    "matched_product_name": "Limón",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "zanahoria",
+    "count": 487,
+    "matched_pid": "69669",
+    "matched_product_name": "Zanahorias",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pimiento rojo",
+    "count": 461,
+    "matched_pid": "69310",
+    "matched_product_name": "Pimiento rojo",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pimentón",
+    "count": 300,
+    "matched_pid": "34125",
+    "matched_product_name": "Curry Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "patatas",
+    "count": 287,
+    "matched_pid": "69386",
+    "matched_product_name": "Patatas guarnición",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pimiento verde",
+    "count": 279,
+    "matched_pid": "69310",
+    "matched_product_name": "Pimiento rojo",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "puerro",
+    "count": 272,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "jengibre fresco",
+    "count": 260,
+    "matched_pid": "69289",
+    "matched_product_name": "Jengibre",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "calabacín",
+    "count": 250,
+    "matched_pid": "69326",
+    "matched_product_name": "Berenjena",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "orégano seco",
+    "count": 236,
+    "matched_pid": "34125",
+    "matched_product_name": "Curry Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "cilantro fresco",
+    "count": 218,
+    "matched_pid": "69690",
+    "matched_product_name": "Cilantro",
+    "match_method": "TOKEN_cilantro"
+  },
+  {
+    "ingredient": "tomate triturado en conserva",
+    "count": 212,
+    "matched_pid": "16044",
+    "matched_product_name": "Tomate triturado Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "cebolla roja",
+    "count": 205,
+    "matched_pid": "69089",
+    "matched_product_name": "Cebollas",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pimentón dulce",
+    "count": 191,
+    "matched_pid": "34125",
+    "matched_product_name": "Curry Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "cebolleta",
+    "count": 190,
+    "matched_pid": "69089",
+    "matched_product_name": "Cebollas",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "comino molido",
+    "count": 170,
+    "matched_pid": "34125",
+    "matched_product_name": "Curry Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "nuez moscada molida",
+    "count": 165,
+    "matched_pid": "34125",
+    "matched_product_name": "Curry Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "hoja de laurel seca",
+    "count": 141,
+    "matched_pid": "34125",
+    "matched_product_name": "Curry Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "tomate maduro",
+    "count": 139,
+    "matched_pid": "69937",
+    "matched_product_name": "Tomate ensalada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "tomate troceado en conserva",
+    "count": 135,
+    "matched_pid": "69937",
+    "matched_product_name": "Tomate ensalada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "tomate concentrado",
+    "count": 134,
+    "matched_pid": "16074",
+    "matched_product_name": "Tomate doble concentrado Hacendado extra",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "zanahorias",
+    "count": 132,
+    "matched_pid": "69669",
+    "matched_product_name": "Zanahorias",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "tomillo fresco",
+    "count": 126,
+    "matched_pid": "34125",
+    "matched_product_name": "Curry Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "tomillo seco",
+    "count": 126,
+    "matched_pid": "34125",
+    "matched_product_name": "Curry Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "patata",
+    "count": 125,
+    "matched_pid": "69386",
+    "matched_product_name": "Patatas guarnición",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "tomates cherry",
+    "count": 125,
+    "matched_pid": "69937",
+    "matched_product_name": "Tomate ensalada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "apio",
+    "count": 117,
+    "matched_pid": "69275",
+    "matched_product_name": "Apio verde",
+    "match_method": "TOKEN_apio"
+  },
+  {
+    "ingredient": "chalota",
+    "count": 115,
+    "matched_pid": "69089",
+    "matched_product_name": "Cebollas",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "zumo de lima",
+    "count": 112,
+    "matched_pid": "3210",
+    "matched_product_name": "Limón",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "albahaca fresca",
+    "count": 110,
+    "matched_pid": "69287",
+    "matched_product_name": "Albahaca",
+    "match_method": "TOKEN_albahaca"
+  },
+  {
+    "ingredient": "cebollino fresco",
+    "count": 108,
+    "matched_pid": "69286",
+    "matched_product_name": "Cebollino",
+    "match_method": "TOKEN_cebollino"
+  },
+  {
+    "ingredient": "chalotas",
+    "count": 107,
+    "matched_pid": "69089",
+    "matched_product_name": "Cebollas",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "hebras de azafrán",
+    "count": 104,
+    "matched_pid": "34116",
+    "matched_product_name": "Azafrán molido Hacendado",
+    "match_method": "TOKEN_azafran"
+  },
+  {
+    "ingredient": "romero fresco",
+    "count": 100,
+    "matched_pid": "34125",
+    "matched_product_name": "Curry Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "ajo en polvo",
+    "count": 96,
+    "matched_pid": "69297",
+    "matched_product_name": "Ajos morados",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "ramilletes de brócoli",
+    "count": 95,
+    "matched_pid": "69580",
+    "matched_product_name": "Brócoli",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "hojas de albahaca fresca",
+    "count": 92,
+    "matched_pid": "69287",
+    "matched_product_name": "Albahaca",
+    "match_method": "TOKEN_albahaca"
+  },
+  {
+    "ingredient": "pimienta negra recién molida",
+    "count": 90,
+    "matched_pid": "34125",
+    "matched_product_name": "Curry Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "cúrcuma molida",
+    "count": 89,
+    "matched_pid": "34125",
+    "matched_product_name": "Curry Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "espárragos verdes",
+    "count": 88,
+    "matched_pid": "69656",
+    "matched_product_name": "Espárragos verdes finos",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "curry en polvo",
+    "count": 86,
+    "matched_pid": "34125",
+    "matched_product_name": "Curry Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pimienta blanca molida",
+    "count": 86,
+    "matched_pid": "34125",
+    "matched_product_name": "Curry Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pepino",
+    "count": 84,
+    "matched_pid": "69584",
+    "matched_product_name": "Pepino",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "aguacate",
+    "count": 80,
+    "matched_pid": "3830",
+    "matched_product_name": "Aguacate",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "hojas de laurel secas",
+    "count": 79,
+    "matched_pid": "34125",
+    "matched_product_name": "Curry Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "ramilletes de coliflor",
+    "count": 79,
+    "matched_pid": "69580",
+    "matched_product_name": "Brócoli",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "eneldo fresco",
+    "count": 79,
+    "matched_pid": "52739",
+    "matched_product_name": "Eneldo Hacendado",
+    "match_method": "TOKEN_eneldo"
+  },
+  {
+    "ingredient": "pimienta de Cayena molida",
+    "count": 77,
+    "matched_pid": "34125",
+    "matched_product_name": "Curry Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "hojas de espinaca frescas",
+    "count": 76,
+    "matched_pid": "69730",
+    "matched_product_name": "Espinacas cortadas y lavadas",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "canela molida",
+    "count": 75,
+    "matched_pid": "34125",
+    "matched_product_name": "Curry Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "tiras de piel de limón",
+    "count": 74,
+    "matched_pid": "3210",
+    "matched_product_name": "Limón",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "tomate",
+    "count": 67,
+    "matched_pid": "69937",
+    "matched_product_name": "Tomate ensalada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "comino en grano",
+    "count": 66,
+    "matched_pid": "34125",
+    "matched_product_name": "Curry Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "berenjena",
+    "count": 63,
+    "matched_pid": "69326",
+    "matched_product_name": "Berenjena",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "tomates secos en aceite",
+    "count": 62,
+    "matched_pid": "4740",
+    "matched_product_name": "Aceite de oliva virgen extra Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "champiñones frescos",
+    "count": 61,
+    "matched_pid": "69519",
+    "matched_product_name": "Champiñones laminados limpios",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "guisantes congelados",
+    "count": 61,
+    "matched_pid": "61200",
+    "matched_product_name": "Guisante muy tierno Hacendado ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "menta fresca",
+    "count": 58,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "berenjenas",
+    "count": 57,
+    "matched_pid": "69326",
+    "matched_product_name": "Berenjena",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "espinacas baby frescas",
+    "count": 56,
+    "matched_pid": "69730",
+    "matched_product_name": "Espinacas cortadas y lavadas",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "limón",
+    "count": 54,
+    "matched_pid": "3210",
+    "matched_product_name": "Limón",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pimienta de Cayena seca entera",
+    "count": 54,
+    "matched_pid": "34125",
+    "matched_product_name": "Curry Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "tomate frito",
+    "count": 50,
+    "matched_pid": "16044",
+    "matched_product_name": "Tomate triturado Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "champiñones",
+    "count": 49,
+    "matched_pid": "69519",
+    "matched_product_name": "Champiñones laminados limpios",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pimentón picante",
+    "count": 48,
+    "matched_pid": "34125",
+    "matched_product_name": "Curry Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "chile rojo fresco",
+    "count": 48,
+    "matched_pid": "62401",
+    "matched_product_name": "Mejillón de Chile entero cocido Hacendado ultracongelado",
+    "match_method": "TOKEN_chile"
+  },
+  {
+    "ingredient": "patatas de guarnición",
+    "count": 47,
+    "matched_pid": "69386",
+    "matched_product_name": "Patatas guarnición",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "vinagre de manzana",
+    "count": 47,
+    "matched_pid": "3028",
+    "matched_product_name": "Manzana Golden",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "chile seco desmenuzado",
+    "count": 46,
+    "matched_pid": "62401",
+    "matched_product_name": "Mejillón de Chile entero cocido Hacendado ultracongelado",
+    "match_method": "TOKEN_chile"
+  },
+  {
+    "ingredient": "zumo de naranja",
+    "count": 46,
+    "matched_pid": "3028",
+    "matched_product_name": "Manzana Golden",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pimiento amarillo",
+    "count": 46,
+    "matched_pid": "69310",
+    "matched_product_name": "Pimiento rojo",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "manzana",
+    "count": 45,
+    "matched_pid": "3028",
+    "matched_product_name": "Manzana Golden",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "setas frescas",
+    "count": 45,
+    "matched_pid": "69519",
+    "matched_product_name": "Champiñones laminados limpios",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "tomates maduros",
+    "count": 44,
+    "matched_pid": "69937",
+    "matched_product_name": "Tomate ensalada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pimientas de Cayena secas enteras",
+    "count": 43,
+    "matched_pid": "34125",
+    "matched_product_name": "Curry Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "champiñones frescos laminados",
+    "count": 42,
+    "matched_pid": "69519",
+    "matched_product_name": "Champiñones laminados limpios",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "piel de limón rallada",
+    "count": 42,
+    "matched_pid": "3210",
+    "matched_product_name": "Limón",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "hierbas provenzales secas",
+    "count": 41,
+    "matched_pid": "2833",
+    "matched_product_name": "Filetes pechuga de pollo finas hierbas marinadas",
+    "match_method": "TOKEN_hierbas"
+  },
+  {
+    "ingredient": "granos de pimienta negra",
+    "count": 41,
+    "matched_pid": "34125",
+    "matched_product_name": "Curry Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "patatas harinosas",
+    "count": 40,
+    "matched_pid": "69386",
+    "matched_product_name": "Patatas guarnición",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "puerros",
+    "count": 40,
+    "matched_pid": "68408",
+    "matched_product_name": "Puerros",
+    "match_method": "TOKEN_puerros"
+  },
+  {
+    "ingredient": "tomates pera",
+    "count": 38,
+    "matched_pid": "69937",
+    "matched_product_name": "Tomate ensalada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "guindilla seca",
+    "count": 38,
+    "matched_pid": "60320",
+    "matched_product_name": "Banderillas Gildas Hacendado pinchos de aceituna, anchoa y guindilla",
+    "match_method": "TOKEN_guindilla"
+  },
+  {
+    "ingredient": "tomates",
+    "count": 38,
+    "matched_pid": "69937",
+    "matched_product_name": "Tomate ensalada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "judías verdes redondas frescas",
+    "count": 38,
+    "matched_pid": "61200",
+    "matched_product_name": "Guisante muy tierno Hacendado ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "semillas de cilantro",
+    "count": 37,
+    "matched_pid": "34024",
+    "matched_product_name": "Nuez natural Hacendado pelada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pimientos del piquillo",
+    "count": 36,
+    "matched_pid": "69310",
+    "matched_product_name": "Pimiento rojo",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "tallos de apio",
+    "count": 36,
+    "matched_pid": "69275",
+    "matched_product_name": "Apio verde",
+    "match_method": "TOKEN_apio"
+  },
+  {
+    "ingredient": "tomate frito estilo casero",
+    "count": 35,
+    "matched_pid": "16044",
+    "matched_product_name": "Tomate triturado Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "maíz dulce en conserva",
+    "count": 34,
+    "matched_pid": "69469",
+    "matched_product_name": "Maíz dulce en mazorca cocido",
+    "match_method": "TOKEN_maiz"
+  },
+  {
+    "ingredient": "hojas de perejil fresco",
+    "count": 33,
+    "matched_pid": "40475",
+    "matched_product_name": "Picada de ajo y perejil",
+    "match_method": "TOKEN_perejil"
+  },
+  {
+    "ingredient": "salsa de tomate",
+    "count": 33,
+    "matched_pid": "16044",
+    "matched_product_name": "Tomate triturado Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pulpa de pimiento choricero",
+    "count": 33,
+    "matched_pid": "69310",
+    "matched_product_name": "Pimiento rojo",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "aguacates",
+    "count": 32,
+    "matched_pid": "3830",
+    "matched_product_name": "Aguacate",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "semillas de cilantro molidas",
+    "count": 31,
+    "matched_pid": "34024",
+    "matched_product_name": "Nuez natural Hacendado pelada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "judías verdes frescas",
+    "count": 31,
+    "matched_pid": "61200",
+    "matched_product_name": "Guisante muy tierno Hacendado ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "alcachofas frescas",
+    "count": 31,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "pulpa de calabaza",
+    "count": 31,
+    "matched_pid": "3427",
+    "matched_product_name": "Nectarina pulpa amarilla",
+    "match_method": "TOKEN_pulpa"
+  },
+  {
+    "ingredient": "calabaza",
+    "count": 30,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "TOKEN_calabaza"
+  },
+  {
+    "ingredient": "hierbas frescas variadas",
+    "count": 29,
+    "matched_pid": "2833",
+    "matched_product_name": "Filetes pechuga de pollo finas hierbas marinadas",
+    "match_method": "TOKEN_hierbas"
+  },
+  {
+    "ingredient": "pimienta negra en grano",
+    "count": 28,
+    "matched_pid": "34125",
+    "matched_product_name": "Curry Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "jengibre molido",
+    "count": 27,
+    "matched_pid": "69289",
+    "matched_product_name": "Jengibre",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "ñoras",
+    "count": 27,
+    "matched_pid": "34113",
+    "matched_product_name": "Ñoras Hacendado",
+    "match_method": "TOKEN_noras"
+  },
+  {
+    "ingredient": "tomates secos",
+    "count": 27,
+    "matched_pid": "69937",
+    "matched_product_name": "Tomate ensalada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "cebolletas",
+    "count": 27,
+    "matched_pid": "69089",
+    "matched_product_name": "Cebollas",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "hojas de menta fresca",
+    "count": 27,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "espinacas congeladas",
+    "count": 27,
+    "matched_pid": "69730",
+    "matched_product_name": "Espinacas cortadas y lavadas",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "cebolleta tierna",
+    "count": 27,
+    "matched_pid": "69089",
+    "matched_product_name": "Cebollas",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pimiento verde italiano",
+    "count": 27,
+    "matched_pid": "69310",
+    "matched_product_name": "Pimiento rojo",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "guindilla seca desmenuzada",
+    "count": 26,
+    "matched_pid": "60320",
+    "matched_product_name": "Banderillas Gildas Hacendado pinchos de aceituna, anchoa y guindilla",
+    "match_method": "TOKEN_guindilla"
+  },
+  {
+    "ingredient": "manzana Granny Smith",
+    "count": 26,
+    "matched_pid": "3028",
+    "matched_product_name": "Manzana Golden",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "bulbo de hinojo",
+    "count": 26,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "rúcula",
+    "count": 25,
+    "matched_pid": "69757",
+    "matched_product_name": "Ensalada mezcla brotes tiernos lavada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "romero seco desmenuzado",
+    "count": 25,
+    "matched_pid": "34125",
+    "matched_product_name": "Curry Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "cayena molida",
+    "count": 25,
+    "matched_pid": "21552",
+    "matched_product_name": "Cayena guindillas Hacendado",
+    "match_method": "TOKEN_cayena"
+  },
+  {
+    "ingredient": "naranja",
+    "count": 25,
+    "matched_pid": "3028",
+    "matched_product_name": "Manzana Golden",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "calabacines",
+    "count": 25,
+    "matched_pid": "69326",
+    "matched_product_name": "Berenjena",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "tiras de piel de naranja",
+    "count": 25,
+    "matched_pid": "3028",
+    "matched_product_name": "Manzana Golden",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "lombarda",
+    "count": 25,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "semillas de hinojo",
+    "count": 24,
+    "matched_pid": "34024",
+    "matched_product_name": "Nuez natural Hacendado pelada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "nabo",
+    "count": 24,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "pimienta de Cayena desmenuzada",
+    "count": 24,
+    "matched_pid": "34125",
+    "matched_product_name": "Curry Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "guindilla roja seca",
+    "count": 24,
+    "matched_pid": "60320",
+    "matched_product_name": "Banderillas Gildas Hacendado pinchos de aceituna, anchoa y guindilla",
+    "match_method": "TOKEN_guindilla"
+  },
+  {
+    "ingredient": "setas de cardo frescas",
+    "count": 23,
+    "matched_pid": "69519",
+    "matched_product_name": "Champiñones laminados limpios",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "palo de canela",
+    "count": 21,
+    "matched_pid": "34125",
+    "matched_product_name": "Curry Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "hojas de cilantro fresco",
+    "count": 21,
+    "matched_pid": "69690",
+    "matched_product_name": "Cilantro",
+    "match_method": "TOKEN_cilantro"
+  },
+  {
+    "ingredient": "pipas de calabaza",
+    "count": 21,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "TOKEN_pipas"
+  },
+  {
+    "ingredient": "setas shiitake frescas",
+    "count": 21,
+    "matched_pid": "69519",
+    "matched_product_name": "Champiñones laminados limpios",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "remolacha cocida",
+    "count": 21,
+    "matched_pid": "69523",
+    "matched_product_name": "Remolacha cocida y pelada",
+    "match_method": "TOKEN_remolacha"
+  },
+  {
+    "ingredient": "albahaca seca",
+    "count": 20,
+    "matched_pid": "69287",
+    "matched_product_name": "Albahaca",
+    "match_method": "TOKEN_albahaca"
+  },
+  {
+    "ingredient": "perejil seco",
+    "count": 20,
+    "matched_pid": "40475",
+    "matched_product_name": "Picada de ajo y perejil",
+    "match_method": "TOKEN_perejil"
+  },
+  {
+    "ingredient": "lechuga iceberg",
+    "count": 20,
+    "matched_pid": "69757",
+    "matched_product_name": "Ensalada mezcla brotes tiernos lavada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "remolacha cruda",
+    "count": 20,
+    "matched_pid": "69523",
+    "matched_product_name": "Remolacha cocida y pelada",
+    "match_method": "TOKEN_remolacha"
+  },
+  {
+    "ingredient": "tomate entero en conserva",
+    "count": 19,
+    "matched_pid": "69937",
+    "matched_product_name": "Tomate ensalada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "chile jalapeño fresco",
+    "count": 19,
+    "matched_pid": "62401",
+    "matched_product_name": "Mejillón de Chile entero cocido Hacendado ultracongelado",
+    "match_method": "TOKEN_chile"
+  },
+  {
+    "ingredient": "kale",
+    "count": 19,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "cebollas",
+    "count": 18,
+    "matched_pid": "69089",
+    "matched_product_name": "Cebollas",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pimientos rojos",
+    "count": 18,
+    "matched_pid": "69310",
+    "matched_product_name": "Pimiento rojo",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "chiles rojos frescos",
+    "count": 18,
+    "matched_pid": "12893",
+    "matched_product_name": "Preparado en polvo gelatina frutos rojos Hacendado 0% azúcares",
+    "match_method": "TOKEN_rojos"
+  },
+  {
+    "ingredient": "tiras de piel de lima",
+    "count": 18,
+    "matched_pid": "3210",
+    "matched_product_name": "Limón",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "setas shiitake secas",
+    "count": 18,
+    "matched_pid": "69519",
+    "matched_product_name": "Champiñones laminados limpios",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "apio nabo",
+    "count": 18,
+    "matched_pid": "69275",
+    "matched_product_name": "Apio verde",
+    "match_method": "TOKEN_apio"
+  },
+  {
+    "ingredient": "guisantes (frescos o congelados)",
+    "count": 18,
+    "matched_pid": "61200",
+    "matched_product_name": "Guisante muy tierno Hacendado ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "zumo de naranja recién exprimido",
+    "count": 17,
+    "matched_pid": "3028",
+    "matched_product_name": "Manzana Golden",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "cebolla en polvo",
+    "count": 17,
+    "matched_pid": "69089",
+    "matched_product_name": "Cebollas",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pimiento rojo en conserva",
+    "count": 17,
+    "matched_pid": "69310",
+    "matched_product_name": "Pimiento rojo",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "boletus deshidratados",
+    "count": 17,
+    "matched_pid": "69519",
+    "matched_product_name": "Champiñones laminados limpios",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "estragón fresco",
+    "count": 17,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "guindilla roja",
+    "count": 16,
+    "matched_pid": "60320",
+    "matched_product_name": "Banderillas Gildas Hacendado pinchos de aceituna, anchoa y guindilla",
+    "match_method": "TOKEN_guindilla"
+  },
+  {
+    "ingredient": "acelgas",
+    "count": 16,
+    "matched_pid": "69730",
+    "matched_product_name": "Espinacas cortadas y lavadas",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pepinos",
+    "count": 15,
+    "matched_pid": "69584",
+    "matched_product_name": "Pepino",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "hojas baby de ensalada variada",
+    "count": 15,
+    "matched_pid": "69757",
+    "matched_product_name": "Ensalada mezcla brotes tiernos lavada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "tirabeques",
+    "count": 14,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "zumo de limón recién exprimido",
+    "count": 14,
+    "matched_pid": "3210",
+    "matched_product_name": "Limón",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "colorante alimentario",
+    "count": 14,
+    "matched_pid": "34182",
+    "matched_product_name": "Colorante alimentario Hacendado",
+    "match_method": "TOKEN_colorante"
+  },
+  {
+    "ingredient": "judías verdes congeladas",
+    "count": 14,
+    "matched_pid": "61200",
+    "matched_product_name": "Guisante muy tierno Hacendado ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "manzanas Golden",
+    "count": 13,
+    "matched_pid": "3028",
+    "matched_product_name": "Manzana Golden",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "condimento de chile en polvo",
+    "count": 13,
+    "matched_pid": "62401",
+    "matched_product_name": "Mejillón de Chile entero cocido Hacendado ultracongelado",
+    "match_method": "TOKEN_chile"
+  },
+  {
+    "ingredient": "champiñones laminados en conserva",
+    "count": 13,
+    "matched_pid": "69519",
+    "matched_product_name": "Champiñones laminados limpios",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "manzanas",
+    "count": 13,
+    "matched_pid": "3028",
+    "matched_product_name": "Manzana Golden",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "guindilla fresca",
+    "count": 13,
+    "matched_pid": "60320",
+    "matched_product_name": "Banderillas Gildas Hacendado pinchos de aceituna, anchoa y guindilla",
+    "match_method": "TOKEN_guindilla"
+  },
+  {
+    "ingredient": "pera",
+    "count": 13,
+    "matched_pid": "3028",
+    "matched_product_name": "Manzana Golden",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pimienta recién molida",
+    "count": 13,
+    "matched_pid": "34125",
+    "matched_product_name": "Curry Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "piel de lima rallada",
+    "count": 13,
+    "matched_pid": "3210",
+    "matched_product_name": "Limón",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "peras",
+    "count": 13,
+    "matched_pid": "3028",
+    "matched_product_name": "Manzana Golden",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pimiento",
+    "count": 13,
+    "matched_pid": "69310",
+    "matched_product_name": "Pimiento rojo",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "espárragos blancos (en conserva)",
+    "count": 13,
+    "matched_pid": "69656",
+    "matched_product_name": "Espárragos verdes finos",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "hojas de salvia fresca",
+    "count": 12,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "pimientos variados",
+    "count": 12,
+    "matched_pid": "69310",
+    "matched_product_name": "Pimiento rojo",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "boletus frescos",
+    "count": 12,
+    "matched_pid": "69519",
+    "matched_product_name": "Champiñones laminados limpios",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "tallo de apio",
+    "count": 12,
+    "matched_pid": "69275",
+    "matched_product_name": "Apio verde",
+    "match_method": "TOKEN_apio"
+  },
+  {
+    "ingredient": "chile verde fresco",
+    "count": 12,
+    "matched_pid": "62401",
+    "matched_product_name": "Mejillón de Chile entero cocido Hacendado ultracongelado",
+    "match_method": "TOKEN_chile"
+  },
+  {
+    "ingredient": "guisantes frescos",
+    "count": 12,
+    "matched_pid": "61200",
+    "matched_product_name": "Guisante muy tierno Hacendado ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "lechuga",
+    "count": 11,
+    "matched_pid": "69757",
+    "matched_product_name": "Ensalada mezcla brotes tiernos lavada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "cebolletas tiernas",
+    "count": 11,
+    "matched_pid": "69089",
+    "matched_product_name": "Cebollas",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "anís estrellado",
+    "count": 11,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "tomate tamizado",
+    "count": 11,
+    "matched_pid": "69937",
+    "matched_product_name": "Tomate ensalada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "granos de granada",
+    "count": 11,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "piel de naranja rallada",
+    "count": 11,
+    "matched_pid": "3028",
+    "matched_product_name": "Manzana Golden",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "lima",
+    "count": 11,
+    "matched_pid": "3210",
+    "matched_product_name": "Limón",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "romero seco",
+    "count": 10,
+    "matched_pid": "34125",
+    "matched_product_name": "Curry Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "eneldo seco",
+    "count": 10,
+    "matched_pid": "52739",
+    "matched_product_name": "Eneldo Hacendado",
+    "match_method": "TOKEN_eneldo"
+  },
+  {
+    "ingredient": "cebolla frita crujiente",
+    "count": 10,
+    "matched_pid": "69089",
+    "matched_product_name": "Cebollas",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "hojas de acelgas",
+    "count": 10,
+    "matched_pid": "69730",
+    "matched_product_name": "Espinacas cortadas y lavadas",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pimientos rojos asados en conserva",
+    "count": 10,
+    "matched_pid": "69310",
+    "matched_product_name": "Pimiento rojo",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "remolacha fresca",
+    "count": 10,
+    "matched_pid": "69523",
+    "matched_product_name": "Remolacha cocida y pelada",
+    "match_method": "TOKEN_remolacha"
+  },
+  {
+    "ingredient": "ñora",
+    "count": 10,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "granos de pimienta rosa",
+    "count": 10,
+    "matched_pid": "34125",
+    "matched_product_name": "Curry Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "naranjas",
+    "count": 10,
+    "matched_pid": "3028",
+    "matched_product_name": "Manzana Golden",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pimientos",
+    "count": 10,
+    "matched_pid": "69310",
+    "matched_product_name": "Pimiento rojo",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "rábano daikon",
+    "count": 10,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "hojas variadas de ensalada (mezclum)",
+    "count": 10,
+    "matched_pid": "69757",
+    "matched_product_name": "Ensalada mezcla brotes tiernos lavada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "canónigos",
+    "count": 10,
+    "matched_pid": "69757",
+    "matched_product_name": "Ensalada mezcla brotes tiernos lavada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "coliflor",
+    "count": 10,
+    "matched_pid": "69580",
+    "matched_product_name": "Brócoli",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "granos de pimienta variada",
+    "count": 9,
+    "matched_pid": "34125",
+    "matched_product_name": "Curry Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "bayas de enebro",
+    "count": 9,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "chiles jalapeños frescos",
+    "count": 9,
+    "matched_pid": "33189",
+    "matched_product_name": "Jalapeños picantes en vinagre Hacendado",
+    "match_method": "TOKEN_jalapenos"
+  },
+  {
+    "ingredient": "cinco especias chinas en polvo",
+    "count": 9,
+    "matched_pid": "34125",
+    "matched_product_name": "Curry Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "chiles verdes frescos",
+    "count": 9,
+    "matched_pid": "69656",
+    "matched_product_name": "Espárragos verdes finos",
+    "match_method": "TOKEN_verdes"
+  },
+  {
+    "ingredient": "setas deshidratadas",
+    "count": 9,
+    "matched_pid": "69519",
+    "matched_product_name": "Champiñones laminados limpios",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "champiñones blancos frescos",
+    "count": 9,
+    "matched_pid": "69519",
+    "matched_product_name": "Champiñones laminados limpios",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "espinacas troceadas congeladas",
+    "count": 9,
+    "matched_pid": "69730",
+    "matched_product_name": "Espinacas cortadas y lavadas",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "chile fresco",
+    "count": 9,
+    "matched_pid": "62401",
+    "matched_product_name": "Mejillón de Chile entero cocido Hacendado ultracongelado",
+    "match_method": "TOKEN_chile"
+  },
+  {
+    "ingredient": "alcachofas congeladas en cuartos",
+    "count": 9,
+    "matched_pid": "25184",
+    "matched_product_name": "Alas de pollo congeladas",
+    "match_method": "TOKEN_congeladas"
+  },
+  {
+    "ingredient": "champiñones marrones",
+    "count": 9,
+    "matched_pid": "69519",
+    "matched_product_name": "Champiñones laminados limpios",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "hojas de lechuga",
+    "count": 9,
+    "matched_pid": "69757",
+    "matched_product_name": "Ensalada mezcla brotes tiernos lavada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "manzanas Granny Smith",
+    "count": 9,
+    "matched_pid": "3028",
+    "matched_product_name": "Manzana Golden",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "judías verdes planas frescas",
+    "count": 9,
+    "matched_pid": "61200",
+    "matched_product_name": "Guisante muy tierno Hacendado ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "hojas verdes de ensalada",
+    "count": 9,
+    "matched_pid": "69757",
+    "matched_product_name": "Ensalada mezcla brotes tiernos lavada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "fécula de patata",
+    "count": 9,
+    "matched_pid": "69386",
+    "matched_product_name": "Patatas guarnición",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "espárragos blancos",
+    "count": 9,
+    "matched_pid": "69656",
+    "matched_product_name": "Espárragos verdes finos",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "cabeza de ajos",
+    "count": 8,
+    "matched_pid": "69297",
+    "matched_product_name": "Ajos morados",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "limas",
+    "count": 8,
+    "matched_pid": "3210",
+    "matched_product_name": "Limón",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "azafrán",
+    "count": 8,
+    "matched_pid": "34116",
+    "matched_product_name": "Azafrán molido Hacendado",
+    "match_method": "TOKEN_azafran"
+  },
+  {
+    "ingredient": "cebolleta recta",
+    "count": 8,
+    "matched_pid": "69089",
+    "matched_product_name": "Cebollas",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pasta de chile coreana (gochujang)",
+    "count": 8,
+    "matched_pid": "6326",
+    "matched_product_name": "Macarrón Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "brotes germinados",
+    "count": 8,
+    "matched_pid": "69757",
+    "matched_product_name": "Ensalada mezcla brotes tiernos lavada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "espárragos verdes frescos",
+    "count": 8,
+    "matched_pid": "69656",
+    "matched_product_name": "Espárragos verdes finos",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "plátano",
+    "count": 8,
+    "matched_pid": "3028",
+    "matched_product_name": "Manzana Golden",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "brotes de soja frescos",
+    "count": 8,
+    "matched_pid": "69757",
+    "matched_product_name": "Ensalada mezcla brotes tiernos lavada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "corazones de alcachofa frescos",
+    "count": 8,
+    "matched_pid": "2857",
+    "matched_product_name": "Hígados y corazones de pollo",
+    "match_method": "TOKEN_corazones"
+  },
+  {
+    "ingredient": "hierbabuena fresca",
+    "count": 8,
+    "matched_pid": "68037",
+    "matched_product_name": "Hierbabuena",
+    "match_method": "TOKEN_hierbabuena"
+  },
+  {
+    "ingredient": "pimiento choricero",
+    "count": 7,
+    "matched_pid": "69310",
+    "matched_product_name": "Pimiento rojo",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "salvia seca desmenuzada",
+    "count": 7,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "anises estrellados",
+    "count": 7,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "pimientos choriceros",
+    "count": 7,
+    "matched_pid": "69310",
+    "matched_product_name": "Pimiento rojo",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "salsa de chile dulce tailandesa",
+    "count": 7,
+    "matched_pid": "35839",
+    "matched_product_name": "Salsa Original Ligeresa",
+    "match_method": "TOKEN_salsa"
+  },
+  {
+    "ingredient": "pimientos verdes",
+    "count": 7,
+    "matched_pid": "69310",
+    "matched_product_name": "Pimiento rojo",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "corazones de alcachofa en aceite",
+    "count": 7,
+    "matched_pid": "4740",
+    "matched_product_name": "Aceite de oliva virgen extra Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "lechuga romana",
+    "count": 7,
+    "matched_pid": "69757",
+    "matched_product_name": "Ensalada mezcla brotes tiernos lavada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "cebollas rojas",
+    "count": 7,
+    "matched_pid": "69089",
+    "matched_product_name": "Cebollas",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "setas portobello frescas",
+    "count": 7,
+    "matched_pid": "69519",
+    "matched_product_name": "Champiñones laminados limpios",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "dientes de ajo negro",
+    "count": 7,
+    "matched_pid": "69297",
+    "matched_product_name": "Ajos morados",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "emperador",
+    "count": 7,
+    "matched_pid": "3028",
+    "matched_product_name": "Manzana Golden",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "tomates en rama",
+    "count": 7,
+    "matched_pid": "69937",
+    "matched_product_name": "Tomate ensalada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "brócoli",
+    "count": 7,
+    "matched_pid": "69580",
+    "matched_product_name": "Brócoli",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "plátanos",
+    "count": 7,
+    "matched_pid": "3028",
+    "matched_product_name": "Manzana Golden",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "corazones de alcachofa en conserva",
+    "count": 7,
+    "matched_pid": "2857",
+    "matched_product_name": "Hígados y corazones de pollo",
+    "match_method": "TOKEN_corazones"
+  },
+  {
+    "ingredient": "patatas para freír",
+    "count": 7,
+    "matched_pid": "69386",
+    "matched_product_name": "Patatas guarnición",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "hierbas secas variadas",
+    "count": 6,
+    "matched_pid": "2833",
+    "matched_product_name": "Filetes pechuga de pollo finas hierbas marinadas",
+    "match_method": "TOKEN_hierbas"
+  },
+  {
+    "ingredient": "semillas de cardamomo",
+    "count": 6,
+    "matched_pid": "34024",
+    "matched_product_name": "Nuez natural Hacendado pelada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "setas secas variadas",
+    "count": 6,
+    "matched_pid": "69519",
+    "matched_product_name": "Champiñones laminados limpios",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "manzana Golden",
+    "count": 6,
+    "matched_pid": "3028",
+    "matched_product_name": "Manzana Golden",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "chile jalapeño en conserva",
+    "count": 6,
+    "matched_pid": "62401",
+    "matched_product_name": "Mejillón de Chile entero cocido Hacendado ultracongelado",
+    "match_method": "TOKEN_chile"
+  },
+  {
+    "ingredient": "estragón seco",
+    "count": 6,
+    "matched_pid": "16046",
+    "matched_product_name": "Tomate seco Hacendado en aceite de oliva",
+    "match_method": "TOKEN_seco"
+  },
+  {
+    "ingredient": "vainas de cardamomo",
+    "count": 6,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "pasta de curry rojo",
+    "count": 6,
+    "matched_pid": "6326",
+    "matched_product_name": "Macarrón Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "menta seca",
+    "count": 6,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "peras conferencia",
+    "count": 6,
+    "matched_pid": "3028",
+    "matched_product_name": "Manzana Golden",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "semillas de comino",
+    "count": 6,
+    "matched_pid": "34125",
+    "matched_product_name": "Curry Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "chile fresco (guindilla)",
+    "count": 6,
+    "matched_pid": "62401",
+    "matched_product_name": "Mejillón de Chile entero cocido Hacendado ultracongelado",
+    "match_method": "TOKEN_chile"
+  },
+  {
+    "ingredient": "pimientos de Padrón",
+    "count": 6,
+    "matched_pid": "69310",
+    "matched_product_name": "Pimiento rojo",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "licor de anís",
+    "count": 6,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "pimienta verde en conserva",
+    "count": 6,
+    "matched_pid": "34125",
+    "matched_product_name": "Curry Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "especias variadas",
+    "count": 5,
+    "matched_pid": "34125",
+    "matched_product_name": "Curry Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "hierbas aromáticas secas variadas",
+    "count": 5,
+    "matched_pid": "2833",
+    "matched_product_name": "Filetes pechuga de pollo finas hierbas marinadas",
+    "match_method": "TOKEN_hierbas"
+  },
+  {
+    "ingredient": "pimienta de Sichuán",
+    "count": 5,
+    "matched_pid": "34125",
+    "matched_product_name": "Curry Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pimientas variadas recién molidas",
+    "count": 5,
+    "matched_pid": "34125",
+    "matched_product_name": "Curry Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "nabos",
+    "count": 5,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "tira de piel de limón",
+    "count": 5,
+    "matched_pid": "3210",
+    "matched_product_name": "Limón",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pimiento rojo asado en conserva",
+    "count": 5,
+    "matched_pid": "69310",
+    "matched_product_name": "Pimiento rojo",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "guisantes",
+    "count": 5,
+    "matched_pid": "61200",
+    "matched_product_name": "Guisante muy tierno Hacendado ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "manzana (de cualquier tipo)",
+    "count": 5,
+    "matched_pid": "3028",
+    "matched_product_name": "Manzana Golden",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "salvia fresca",
+    "count": 5,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "hojas de hierbabuena fresca",
+    "count": 4,
+    "matched_pid": "68037",
+    "matched_product_name": "Hierbabuena",
+    "match_method": "TOKEN_hierbabuena"
+  },
+  {
+    "ingredient": "chile chipotle en conserva",
+    "count": 4,
+    "matched_pid": "62401",
+    "matched_product_name": "Mejillón de Chile entero cocido Hacendado ultracongelado",
+    "match_method": "TOKEN_chile"
+  },
+  {
+    "ingredient": "manzanas reineta",
+    "count": 4,
+    "matched_pid": "3028",
+    "matched_product_name": "Manzana Golden",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "granos de pimienta de Jamaica",
+    "count": 4,
+    "matched_pid": "34125",
+    "matched_product_name": "Curry Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "hojas de laurel frescas",
+    "count": 4,
+    "matched_pid": "34125",
+    "matched_product_name": "Curry Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "cardamomo molido",
+    "count": 4,
+    "matched_pid": "34116",
+    "matched_product_name": "Azafrán molido Hacendado",
+    "match_method": "TOKEN_molido"
+  },
+  {
+    "ingredient": "patatas nuevas",
+    "count": 4,
+    "matched_pid": "69386",
+    "matched_product_name": "Patatas guarnición",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "maíz dulce congelado",
+    "count": 4,
+    "matched_pid": "69469",
+    "matched_product_name": "Maíz dulce en mazorca cocido",
+    "match_method": "TOKEN_maiz"
+  },
+  {
+    "ingredient": "jengibre en polvo",
+    "count": 4,
+    "matched_pid": "69289",
+    "matched_product_name": "Jengibre",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "hojas de lima kaffir secas",
+    "count": 4,
+    "matched_pid": "3210",
+    "matched_product_name": "Limón",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "guindillas rojas secas",
+    "count": 4,
+    "matched_pid": "21552",
+    "matched_product_name": "Cayena guindillas Hacendado",
+    "match_method": "TOKEN_guindillas"
+  },
+  {
+    "ingredient": "corazones de alcachofa congelados",
+    "count": 4,
+    "matched_pid": "2857",
+    "matched_product_name": "Hígados y corazones de pollo",
+    "match_method": "TOKEN_corazones"
+  },
+  {
+    "ingredient": "licor de naranja",
+    "count": 4,
+    "matched_pid": "3028",
+    "matched_product_name": "Manzana Golden",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "chile seco",
+    "count": 4,
+    "matched_pid": "62401",
+    "matched_product_name": "Mejillón de Chile entero cocido Hacendado ultracongelado",
+    "match_method": "TOKEN_chile"
+  },
+  {
+    "ingredient": "guindilla roja de cualquier tipo",
+    "count": 4,
+    "matched_pid": "60320",
+    "matched_product_name": "Banderillas Gildas Hacendado pinchos de aceituna, anchoa y guindilla",
+    "match_method": "TOKEN_guindilla"
+  },
+  {
+    "ingredient": "guisantes frescos en vaina",
+    "count": 4,
+    "matched_pid": "61200",
+    "matched_product_name": "Guisante muy tierno Hacendado ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "patatas paja",
+    "count": 4,
+    "matched_pid": "69386",
+    "matched_product_name": "Patatas guarnición",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "judías verdes redondas congeladas",
+    "count": 4,
+    "matched_pid": "61200",
+    "matched_product_name": "Guisante muy tierno Hacendado ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "limones",
+    "count": 4,
+    "matched_pid": "3210",
+    "matched_product_name": "Limón",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "chiles jalapeños en conserva",
+    "count": 4,
+    "matched_pid": "33189",
+    "matched_product_name": "Jalapeños picantes en vinagre Hacendado",
+    "match_method": "TOKEN_jalapenos"
+  },
+  {
+    "ingredient": "hojas de rúcula",
+    "count": 4,
+    "matched_pid": "69757",
+    "matched_product_name": "Ensalada mezcla brotes tiernos lavada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pencas de acelga",
+    "count": 4,
+    "matched_pid": "69730",
+    "matched_product_name": "Espinacas cortadas y lavadas",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "calabaza (tipo butternut)",
+    "count": 4,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "TOKEN_calabaza"
+  },
+  {
+    "ingredient": "pimienta de Jamaica en grano",
+    "count": 3,
+    "matched_pid": "34125",
+    "matched_product_name": "Curry Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "tomate triturado",
+    "count": 3,
+    "matched_pid": "16044",
+    "matched_product_name": "Tomate triturado Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "patatas fritas",
+    "count": 3,
+    "matched_pid": "69386",
+    "matched_product_name": "Patatas guarnición",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pasta de chiles",
+    "count": 3,
+    "matched_pid": "6326",
+    "matched_product_name": "Macarrón Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "chiles frescos",
+    "count": 3,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "guindillas secas",
+    "count": 3,
+    "matched_pid": "21552",
+    "matched_product_name": "Cayena guindillas Hacendado",
+    "match_method": "TOKEN_guindillas"
+  },
+  {
+    "ingredient": "hojas de lima kaffir frescas",
+    "count": 3,
+    "matched_pid": "3210",
+    "matched_product_name": "Limón",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "bulbos de hinojo",
+    "count": 3,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "copos de puré de patata deshidratado",
+    "count": 3,
+    "matched_pid": "69386",
+    "matched_product_name": "Patatas guarnición",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "manzana reineta",
+    "count": 3,
+    "matched_pid": "3028",
+    "matched_product_name": "Manzana Golden",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "zumo de remolacha",
+    "count": 3,
+    "matched_pid": "69523",
+    "matched_product_name": "Remolacha cocida y pelada",
+    "match_method": "TOKEN_remolacha"
+  },
+  {
+    "ingredient": "brotes de bambú en conserva",
+    "count": 3,
+    "matched_pid": "69757",
+    "matched_product_name": "Ensalada mezcla brotes tiernos lavada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "granada",
+    "count": 3,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "zanahorias baby",
+    "count": 3,
+    "matched_pid": "69669",
+    "matched_product_name": "Zanahorias",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "hojas de apio",
+    "count": 3,
+    "matched_pid": "69275",
+    "matched_product_name": "Apio verde",
+    "match_method": "TOKEN_apio"
+  },
+  {
+    "ingredient": "setas congeladas",
+    "count": 3,
+    "matched_pid": "69519",
+    "matched_product_name": "Champiñones laminados limpios",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "orégano fresco",
+    "count": 3,
+    "matched_pid": "34125",
+    "matched_product_name": "Curry Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "manzana (cualquier tipo)",
+    "count": 3,
+    "matched_pid": "3028",
+    "matched_product_name": "Manzana Golden",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "champiñones enteros en conserva",
+    "count": 3,
+    "matched_pid": "69519",
+    "matched_product_name": "Champiñones laminados limpios",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pera conferencia",
+    "count": 3,
+    "matched_pid": "3028",
+    "matched_product_name": "Manzana Golden",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "guisantes en conserva",
+    "count": 3,
+    "matched_pid": "61200",
+    "matched_product_name": "Guisante muy tierno Hacendado ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "espárragos verdes congelados en trozos",
+    "count": 3,
+    "matched_pid": "69656",
+    "matched_product_name": "Espárragos verdes finos",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "espárragos verdes en conserva",
+    "count": 3,
+    "matched_pid": "69656",
+    "matched_product_name": "Espárragos verdes finos",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "1 diente de ajo",
+    "count": 2,
+    "matched_pid": "69297",
+    "matched_product_name": "Ajos morados",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "200 g de calabacín",
+    "count": 2,
+    "matched_pid": "69326",
+    "matched_product_name": "Berenjena",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "2 dientes de ajo",
+    "count": 2,
+    "matched_pid": "69297",
+    "matched_product_name": "Ajos morados",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "1 tsp dried oregano",
+    "count": 2,
+    "matched_pid": "34125",
+    "matched_product_name": "Curry Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "guindillas rojas",
+    "count": 2,
+    "matched_pid": "21552",
+    "matched_product_name": "Cayena guindillas Hacendado",
+    "match_method": "TOKEN_guindillas"
+  },
+  {
+    "ingredient": "tira de piel de naranja",
+    "count": 2,
+    "matched_pid": "3028",
+    "matched_product_name": "Manzana Golden",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "zumo de manzana",
+    "count": 2,
+    "matched_pid": "3028",
+    "matched_product_name": "Manzana Golden",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "salsa de chile chipotle",
+    "count": 2,
+    "matched_pid": "35839",
+    "matched_product_name": "Salsa Original Ligeresa",
+    "match_method": "TOKEN_salsa"
+  },
+  {
+    "ingredient": "pasta de curry rojo tailandesa",
+    "count": 2,
+    "matched_pid": "6326",
+    "matched_product_name": "Macarrón Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "ajo granulado",
+    "count": 2,
+    "matched_pid": "69297",
+    "matched_product_name": "Ajos morados",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "azafrán molido",
+    "count": 2,
+    "matched_pid": "34116",
+    "matched_product_name": "Azafrán molido Hacendado",
+    "match_method": "TOKEN_azafran"
+  },
+  {
+    "ingredient": "anís en grano",
+    "count": 2,
+    "matched_pid": "34172",
+    "matched_product_name": "Pimienta negra en grano Hacendado",
+    "match_method": "TOKEN_grano"
+  },
+  {
+    "ingredient": "setas negras chinas secas",
+    "count": 2,
+    "matched_pid": "69519",
+    "matched_product_name": "Champiñones laminados limpios",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "curry en polvo de Madrás",
+    "count": 2,
+    "matched_pid": "34125",
+    "matched_product_name": "Curry Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "piel de limón",
+    "count": 2,
+    "matched_pid": "3210",
+    "matched_product_name": "Limón",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pimienta negra, molida",
+    "count": 2,
+    "matched_pid": "34125",
+    "matched_product_name": "Curry Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "tomate pera",
+    "count": 2,
+    "matched_pid": "69937",
+    "matched_product_name": "Tomate ensalada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "hojas de acelga",
+    "count": 2,
+    "matched_pid": "69730",
+    "matched_product_name": "Espinacas cortadas y lavadas",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "cebolletas rectas",
+    "count": 2,
+    "matched_pid": "69089",
+    "matched_product_name": "Cebollas",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "manzana Royal Gala",
+    "count": 2,
+    "matched_pid": "3028",
+    "matched_product_name": "Manzana Golden",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "lechuga de mar deshidratada",
+    "count": 2,
+    "matched_pid": "69757",
+    "matched_product_name": "Ensalada mezcla brotes tiernos lavada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "granos de maíz dulce fresco",
+    "count": 2,
+    "matched_pid": "69469",
+    "matched_product_name": "Maíz dulce en mazorca cocido",
+    "match_method": "TOKEN_maiz"
+  },
+  {
+    "ingredient": "patatas rojas",
+    "count": 2,
+    "matched_pid": "69386",
+    "matched_product_name": "Patatas guarnición",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "cabezas de ajos",
+    "count": 2,
+    "matched_pid": "69297",
+    "matched_product_name": "Ajos morados",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pasta de curry rogan josh",
+    "count": 2,
+    "matched_pid": "6326",
+    "matched_product_name": "Macarrón Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "salsa de chiles rojos",
+    "count": 2,
+    "matched_pid": "35839",
+    "matched_product_name": "Salsa Original Ligeresa",
+    "match_method": "TOKEN_salsa"
+  },
+  {
+    "ingredient": "hojas de salvia secas",
+    "count": 2,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "compota de manzana",
+    "count": 2,
+    "matched_pid": "3028",
+    "matched_product_name": "Manzana Golden",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "espárragos",
+    "count": 2,
+    "matched_pid": "69656",
+    "matched_product_name": "Espárragos verdes finos",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "guindillas verdes en vinagre",
+    "count": 2,
+    "matched_pid": "21552",
+    "matched_product_name": "Cayena guindillas Hacendado",
+    "match_method": "TOKEN_guindillas"
+  },
+  {
+    "ingredient": "patatas cocidas",
+    "count": 2,
+    "matched_pid": "69386",
+    "matched_product_name": "Patatas guarnición",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "setas enoki frescas",
+    "count": 2,
+    "matched_pid": "69519",
+    "matched_product_name": "Champiñones laminados limpios",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "boletus congelados",
+    "count": 2,
+    "matched_pid": "69519",
+    "matched_product_name": "Champiñones laminados limpios",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "judías verdes cocidas (en conserva)",
+    "count": 2,
+    "matched_pid": "61200",
+    "matched_product_name": "Guisante muy tierno Hacendado ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pimientos verdes italianos",
+    "count": 2,
+    "matched_pid": "69310",
+    "matched_product_name": "Pimiento rojo",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "cebolletas rectas tiernas",
+    "count": 2,
+    "matched_pid": "69089",
+    "matched_product_name": "Cebollas",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "yemas de espárragos blancos en conserva",
+    "count": 2,
+    "matched_pid": "31505",
+    "matched_product_name": "Huevos medianos M",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "manzana para cocinar",
+    "count": 2,
+    "matched_pid": "3028",
+    "matched_product_name": "Manzana Golden",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "almidón de tapioca",
+    "count": 2,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "perlas de tapioca",
+    "count": 2,
+    "matched_pid": "51052",
+    "matched_product_name": "Mozzarella fresca de vaca Hacendado en perlas",
+    "match_method": "TOKEN_perlas"
+  },
+  {
+    "ingredient": "tapioca",
+    "count": 2,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "jugo de limón amarillo",
+    "count": 2,
+    "matched_pid": "3210",
+    "matched_product_name": "Limón",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "remolachas cocidas",
+    "count": 2,
+    "matched_pid": "53141",
+    "matched_product_name": "Salchichas cocidas estilo Frankfurt Hacendado de pollo y cerdo sabor ahumado",
+    "match_method": "TOKEN_cocidas"
+  },
+  {
+    "ingredient": "zumo de tomate",
+    "count": 2,
+    "matched_pid": "69937",
+    "matched_product_name": "Tomate ensalada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "cogollo de lechuga",
+    "count": 2,
+    "matched_pid": "69757",
+    "matched_product_name": "Ensalada mezcla brotes tiernos lavada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pasta de soja fermentada",
+    "count": 2,
+    "matched_pid": "6326",
+    "matched_product_name": "Macarrón Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "3 Tbsp red curry paste",
+    "count": 1,
+    "matched_pid": "34125",
+    "matched_product_name": "Curry Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "½ diente de ajo",
+    "count": 1,
+    "matched_pid": "69297",
+    "matched_product_name": "Ajos morados",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "80 g de hojas de albahaca fresca",
+    "count": 1,
+    "matched_pid": "69287",
+    "matched_product_name": "Albahaca",
+    "match_method": "TOKEN_albahaca"
+  },
+  {
+    "ingredient": "250 g de patata",
+    "count": 1,
+    "matched_pid": "69386",
+    "matched_product_name": "Patatas guarnición",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "100 g de judías verdes redondas frescas",
+    "count": 1,
+    "matched_pid": "61200",
+    "matched_product_name": "Guisante muy tierno Hacendado ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "1 - 2 pimientas de Cayena secas enteras",
+    "count": 1,
+    "matched_pid": "34125",
+    "matched_product_name": "Curry Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "1 cucharadita de perejil fresco",
+    "count": 1,
+    "matched_pid": "40475",
+    "matched_product_name": "Picada de ajo y perejil",
+    "match_method": "TOKEN_perejil"
+  },
+  {
+    "ingredient": "½ tbsp dried oregano",
+    "count": 1,
+    "matched_pid": "34125",
+    "matched_product_name": "Curry Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "300 g de cebolla",
+    "count": 1,
+    "matched_pid": "69089",
+    "matched_product_name": "Cebollas",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "20 g dientes de ajo",
+    "count": 1,
+    "matched_pid": "69297",
+    "matched_product_name": "Ajos morados",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "200 g de zanahorias",
+    "count": 1,
+    "matched_pid": "69669",
+    "matched_product_name": "Zanahorias",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "150 g de pimiento rojo",
+    "count": 1,
+    "matched_pid": "69310",
+    "matched_product_name": "Pimiento rojo",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "100 g de guisantes congelados",
+    "count": 1,
+    "matched_pid": "61200",
+    "matched_product_name": "Guisante muy tierno Hacendado ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "200 g de patata",
+    "count": 1,
+    "matched_pid": "69386",
+    "matched_product_name": "Patatas guarnición",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "3 ramitas perejil fresco",
+    "count": 1,
+    "matched_pid": "40475",
+    "matched_product_name": "Picada de ajo y perejil",
+    "match_method": "TOKEN_perejil"
+  },
+  {
+    "ingredient": "1 pellizco de tomillo seco",
+    "count": 1,
+    "matched_pid": "34125",
+    "matched_product_name": "Curry Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "1 cucharadita de cúrcuma molida",
+    "count": 1,
+    "matched_pid": "34125",
+    "matched_product_name": "Curry Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "35 g de zumo de limón recién exprimido",
+    "count": 1,
+    "matched_pid": "3210",
+    "matched_product_name": "Limón",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "fresh cilantro leaves",
+    "count": 1,
+    "matched_pid": "69690",
+    "matched_product_name": "Cilantro",
+    "match_method": "TOKEN_cilantro"
+  },
+  {
+    "ingredient": "½ oz cilantro leaves",
+    "count": 1,
+    "matched_pid": "69690",
+    "matched_product_name": "Cilantro",
+    "match_method": "TOKEN_cilantro"
+  },
+  {
+    "ingredient": "8 cucharadas de pasta de curry tikka",
+    "count": 1,
+    "matched_pid": "6326",
+    "matched_product_name": "Macarrón Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "280 g de judías verdes redondas frescas",
+    "count": 1,
+    "matched_pid": "61200",
+    "matched_product_name": "Guisante muy tierno Hacendado ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "300 g de patatas",
+    "count": 1,
+    "matched_pid": "69386",
+    "matched_product_name": "Patatas guarnición",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "20 - 30 g de pimiento rojo en conserva",
+    "count": 1,
+    "matched_pid": "69310",
+    "matched_product_name": "Pimiento rojo",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "2 pellizcos de pimienta negra molida",
+    "count": 1,
+    "matched_pid": "34125",
+    "matched_product_name": "Curry Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "1 chalota",
+    "count": 1,
+    "matched_pid": "69089",
+    "matched_product_name": "Cebollas",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "100 g de espinacas baby frescas",
+    "count": 1,
+    "matched_pid": "69730",
+    "matched_product_name": "Espinacas cortadas y lavadas",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "100 g de tomates cherry",
+    "count": 1,
+    "matched_pid": "69937",
+    "matched_product_name": "Tomate ensalada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "1 tbsp curry powder",
+    "count": 1,
+    "matched_pid": "34125",
+    "matched_product_name": "Curry Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "40 g de cebolla",
+    "count": 1,
+    "matched_pid": "69089",
+    "matched_product_name": "Cebollas",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "40 g de puerro",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "100 g de tomate troceado en conserva",
+    "count": 1,
+    "matched_pid": "69937",
+    "matched_product_name": "Tomate ensalada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "100 g de zanahoria",
+    "count": 1,
+    "matched_pid": "69669",
+    "matched_product_name": "Zanahorias",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "50 g de pimiento rojo",
+    "count": 1,
+    "matched_pid": "69310",
+    "matched_product_name": "Pimiento rojo",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "50 g de pimiento verde",
+    "count": 1,
+    "matched_pid": "69310",
+    "matched_product_name": "Pimiento rojo",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "1 cucharadita de pulpa de pimiento choricero",
+    "count": 1,
+    "matched_pid": "69310",
+    "matched_product_name": "Pimiento rojo",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "100 g de hojas de espinaca frescas",
+    "count": 1,
+    "matched_pid": "69730",
+    "matched_product_name": "Espinacas cortadas y lavadas",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "1 cucharada de perejil fresco",
+    "count": 1,
+    "matched_pid": "40475",
+    "matched_product_name": "Picada de ajo y perejil",
+    "match_method": "TOKEN_perejil"
+  },
+  {
+    "ingredient": "100 g de remolacha cocida",
+    "count": 1,
+    "matched_pid": "69523",
+    "matched_product_name": "Remolacha cocida y pelada",
+    "match_method": "TOKEN_remolacha"
+  },
+  {
+    "ingredient": "150 g ramilletes de brócoli",
+    "count": 1,
+    "matched_pid": "69580",
+    "matched_product_name": "Brócoli",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "20 g zumo de limón",
+    "count": 1,
+    "matched_pid": "3210",
+    "matched_product_name": "Limón",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "2 pellizcos de comino molido",
+    "count": 1,
+    "matched_pid": "34125",
+    "matched_product_name": "Curry Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "1 pellizco de pimienta negra molida",
+    "count": 1,
+    "matched_pid": "34125",
+    "matched_product_name": "Curry Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "1 aguacate",
+    "count": 1,
+    "matched_pid": "3830",
+    "matched_product_name": "Aguacate",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "1 manzana",
+    "count": 1,
+    "matched_pid": "3028",
+    "matched_product_name": "Manzana Golden",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "2 limas",
+    "count": 1,
+    "matched_pid": "3210",
+    "matched_product_name": "Limón",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "4 ramitas perejil fresco",
+    "count": 1,
+    "matched_pid": "40475",
+    "matched_product_name": "Picada de ajo y perejil",
+    "match_method": "TOKEN_perejil"
+  },
+  {
+    "ingredient": "½ tsp dried oregano",
+    "count": 1,
+    "matched_pid": "34125",
+    "matched_product_name": "Curry Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "30 g de cebolla",
+    "count": 1,
+    "matched_pid": "69089",
+    "matched_product_name": "Cebollas",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "1 cucharadita de pimienta molida",
+    "count": 1,
+    "matched_pid": "34125",
+    "matched_product_name": "Curry Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "2 pellizcos de nuez moscada molida",
+    "count": 1,
+    "matched_pid": "34125",
+    "matched_product_name": "Curry Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "500 g de patata",
+    "count": 1,
+    "matched_pid": "69386",
+    "matched_product_name": "Patatas guarnición",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "180 g de patatas harinosas",
+    "count": 1,
+    "matched_pid": "69386",
+    "matched_product_name": "Patatas guarnición",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "20 g de fécula de patata",
+    "count": 1,
+    "matched_pid": "69386",
+    "matched_product_name": "Patatas guarnición",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "1 tsp curry powder",
+    "count": 1,
+    "matched_pid": "34125",
+    "matched_product_name": "Curry Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "½ tsp curry powder",
+    "count": 1,
+    "matched_pid": "34125",
+    "matched_product_name": "Curry Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "250 g de tomate maduro",
+    "count": 1,
+    "matched_pid": "69937",
+    "matched_product_name": "Tomate ensalada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "20 g de hojas de rúcula",
+    "count": 1,
+    "matched_pid": "69757",
+    "matched_product_name": "Ensalada mezcla brotes tiernos lavada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "¼ bunch cilantro leaves",
+    "count": 1,
+    "matched_pid": "69690",
+    "matched_product_name": "Cilantro",
+    "match_method": "TOKEN_cilantro"
+  },
+  {
+    "ingredient": "30 g fish curry powder",
+    "count": 1,
+    "matched_pid": "34125",
+    "matched_product_name": "Curry Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "1 sprig fresh curry leaves",
+    "count": 1,
+    "matched_pid": "34125",
+    "matched_product_name": "Curry Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "1 ½ tbsp red curry paste",
+    "count": 1,
+    "matched_pid": "34125",
+    "matched_product_name": "Curry Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "3 - 4 dientes de ajo",
+    "count": 1,
+    "matched_pid": "69297",
+    "matched_product_name": "Ajos morados",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "200 g de cebolla",
+    "count": 1,
+    "matched_pid": "69089",
+    "matched_product_name": "Cebollas",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "1 pellizco de pimienta molida",
+    "count": 1,
+    "matched_pid": "34125",
+    "matched_product_name": "Curry Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "1 chorrito de zumo de limón",
+    "count": 1,
+    "matched_pid": "3210",
+    "matched_product_name": "Limón",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "1 tablespoon oregano, dried",
+    "count": 1,
+    "matched_pid": "34125",
+    "matched_product_name": "Curry Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "chiles rojos",
+    "count": 1,
+    "matched_pid": "12893",
+    "matched_product_name": "Preparado en polvo gelatina frutos rojos Hacendado 0% azúcares",
+    "match_method": "TOKEN_rojos"
+  },
+  {
+    "ingredient": "sopa de cebolla",
+    "count": 1,
+    "matched_pid": "69089",
+    "matched_product_name": "Cebollas",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "chiles chipotle en conserva",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "curry japonés instantáneo",
+    "count": 1,
+    "matched_pid": "34125",
+    "matched_product_name": "Curry Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pimienta de Cayena seca, desmenuzada",
+    "count": 1,
+    "matched_pid": "34125",
+    "matched_product_name": "Curry Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "chuletas de Sajonia",
+    "count": 1,
+    "matched_pid": "69297",
+    "matched_product_name": "Ajos morados",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "manzana tipo Pink Lady",
+    "count": 1,
+    "matched_pid": "3028",
+    "matched_product_name": "Manzana Golden",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "especias Tajín®",
+    "count": 1,
+    "matched_pid": "34125",
+    "matched_product_name": "Curry Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "chile serrano",
+    "count": 1,
+    "matched_pid": "62401",
+    "matched_product_name": "Mejillón de Chile entero cocido Hacendado ultracongelado",
+    "match_method": "TOKEN_chile"
+  },
+  {
+    "ingredient": "chiles secos",
+    "count": 1,
+    "matched_pid": "13240",
+    "matched_product_name": "Ensalada de pollo, queso y frutos secos Listo para Comer",
+    "match_method": "TOKEN_secos"
+  },
+  {
+    "ingredient": "salsa tailandesa de chiles",
+    "count": 1,
+    "matched_pid": "35839",
+    "matched_product_name": "Salsa Original Ligeresa",
+    "match_method": "TOKEN_salsa"
+  },
+  {
+    "ingredient": "pasta de curry amarillo",
+    "count": 1,
+    "matched_pid": "6326",
+    "matched_product_name": "Macarrón Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "baya de enebro",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "pasta de curry nyonya",
+    "count": 1,
+    "matched_pid": "6326",
+    "matched_product_name": "Macarrón Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "hojas de tomillo",
+    "count": 1,
+    "matched_pid": "34125",
+    "matched_product_name": "Curry Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "granos de pimienta blanca",
+    "count": 1,
+    "matched_pid": "34125",
+    "matched_product_name": "Curry Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "mermelada de naranja",
+    "count": 1,
+    "matched_pid": "3028",
+    "matched_product_name": "Manzana Golden",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pimienta de Jamaica molida",
+    "count": 1,
+    "matched_pid": "34125",
+    "matched_product_name": "Curry Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "mermelada de naranja amarga",
+    "count": 1,
+    "matched_pid": "3028",
+    "matched_product_name": "Manzana Golden",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "limón en salmuera",
+    "count": 1,
+    "matched_pid": "3210",
+    "matched_product_name": "Limón",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "filetes de emperador",
+    "count": 1,
+    "matched_pid": "3028",
+    "matched_product_name": "Manzana Golden",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "tomates cherry amarillos",
+    "count": 1,
+    "matched_pid": "69937",
+    "matched_product_name": "Tomate ensalada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "flores de calabacín",
+    "count": 1,
+    "matched_pid": "69326",
+    "matched_product_name": "Berenjena",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pimienta rosa molida",
+    "count": 1,
+    "matched_pid": "34125",
+    "matched_product_name": "Curry Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "plátano macho",
+    "count": 1,
+    "matched_pid": "3028",
+    "matched_product_name": "Manzana Golden",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "chile rocoto",
+    "count": 1,
+    "matched_pid": "62401",
+    "matched_product_name": "Mejillón de Chile entero cocido Hacendado ultracongelado",
+    "match_method": "TOKEN_chile"
+  },
+  {
+    "ingredient": "setas trompeta de la muerte secas",
+    "count": 1,
+    "matched_pid": "69519",
+    "matched_product_name": "Champiñones laminados limpios",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "hojas de limonero",
+    "count": 1,
+    "matched_pid": "3210",
+    "matched_product_name": "Limón",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "hoja de laurel fresca",
+    "count": 1,
+    "matched_pid": "34125",
+    "matched_product_name": "Curry Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "chile rojo",
+    "count": 1,
+    "matched_pid": "62401",
+    "matched_product_name": "Mejillón de Chile entero cocido Hacendado ultracongelado",
+    "match_method": "TOKEN_chile"
+  },
+  {
+    "ingredient": "albahaca tailandesa fresca",
+    "count": 1,
+    "matched_pid": "69287",
+    "matched_product_name": "Albahaca",
+    "match_method": "TOKEN_albahaca"
+  },
+  {
+    "ingredient": "pimientos amarillos",
+    "count": 1,
+    "matched_pid": "69310",
+    "matched_product_name": "Pimiento rojo",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "aceite de guindilla",
+    "count": 1,
+    "matched_pid": "4740",
+    "matched_product_name": "Aceite de oliva virgen extra Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "setas shiitake en conserva (al natural)",
+    "count": 1,
+    "matched_pid": "69519",
+    "matched_product_name": "Champiñones laminados limpios",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "colorante alimentario amarillo",
+    "count": 1,
+    "matched_pid": "34182",
+    "matched_product_name": "Colorante alimentario Hacendado",
+    "match_method": "TOKEN_colorante"
+  },
+  {
+    "ingredient": "cintas de pasta con espinacas",
+    "count": 1,
+    "matched_pid": "69730",
+    "matched_product_name": "Espinacas cortadas y lavadas",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "corazón de alcachofa fresco",
+    "count": 1,
+    "matched_pid": "69121",
+    "matched_product_name": "Lechugas corazón romana",
+    "match_method": "TOKEN_corazon"
+  },
+  {
+    "ingredient": "corazones de alcachofas frescas",
+    "count": 1,
+    "matched_pid": "2857",
+    "matched_product_name": "Hígados y corazones de pollo",
+    "match_method": "TOKEN_corazones"
+  },
+  {
+    "ingredient": "frutas frescas variadas",
+    "count": 1,
+    "matched_pid": "60955",
+    "matched_product_name": "Yogur con frutas Hacendado",
+    "match_method": "TOKEN_frutas"
+  },
+  {
+    "ingredient": "pimienta blanca en grano",
+    "count": 1,
+    "matched_pid": "34125",
+    "matched_product_name": "Curry Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "brócoli baby (Bimi®)",
+    "count": 1,
+    "matched_pid": "69580",
+    "matched_product_name": "Brócoli",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "chiles rojos secos",
+    "count": 1,
+    "matched_pid": "12893",
+    "matched_product_name": "Preparado en polvo gelatina frutos rojos Hacendado 0% azúcares",
+    "match_method": "TOKEN_rojos"
+  },
+  {
+    "ingredient": "hojas de zanahoria",
+    "count": 1,
+    "matched_pid": "69669",
+    "matched_product_name": "Zanahorias",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "especias para caracoles",
+    "count": 1,
+    "matched_pid": "34125",
+    "matched_product_name": "Curry Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "guindilla verde en vinagre",
+    "count": 1,
+    "matched_pid": "60320",
+    "matched_product_name": "Banderillas Gildas Hacendado pinchos de aceituna, anchoa y guindilla",
+    "match_method": "TOKEN_guindilla"
+  },
+  {
+    "ingredient": "tomates verdes",
+    "count": 1,
+    "matched_pid": "69937",
+    "matched_product_name": "Tomate ensalada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "sardinas en tomate (en conserva)",
+    "count": 1,
+    "matched_pid": "69937",
+    "matched_product_name": "Tomate ensalada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "grano de maíz dulce fresco",
+    "count": 1,
+    "matched_pid": "34172",
+    "matched_product_name": "Pimienta negra en grano Hacendado",
+    "match_method": "TOKEN_grano"
+  },
+  {
+    "ingredient": "tallos de apio blanco",
+    "count": 1,
+    "matched_pid": "69275",
+    "matched_product_name": "Apio verde",
+    "match_method": "TOKEN_apio"
+  },
+  {
+    "ingredient": "tallos de apio verde",
+    "count": 1,
+    "matched_pid": "69275",
+    "matched_product_name": "Apio verde",
+    "match_method": "TOKEN_apio"
+  },
+  {
+    "ingredient": "lechuga francesa",
+    "count": 1,
+    "matched_pid": "69757",
+    "matched_product_name": "Ensalada mezcla brotes tiernos lavada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "piel de lima",
+    "count": 1,
+    "matched_pid": "3210",
+    "matched_product_name": "Limón",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "tomate amarillo",
+    "count": 1,
+    "matched_pid": "69937",
+    "matched_product_name": "Tomate ensalada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "bouquet garni (atadillo de hierbas)",
+    "count": 1,
+    "matched_pid": "2833",
+    "matched_product_name": "Filetes pechuga de pollo finas hierbas marinadas",
+    "match_method": "TOKEN_hierbas"
+  },
+  {
+    "ingredient": "naranja de zumo",
+    "count": 1,
+    "matched_pid": "3028",
+    "matched_product_name": "Manzana Golden",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "raíces de perejil",
+    "count": 1,
+    "matched_pid": "40475",
+    "matched_product_name": "Picada de ajo y perejil",
+    "match_method": "TOKEN_perejil"
+  },
+  {
+    "ingredient": "setas en aceite",
+    "count": 1,
+    "matched_pid": "4740",
+    "matched_product_name": "Aceite de oliva virgen extra Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "peras Williams",
+    "count": 1,
+    "matched_pid": "3028",
+    "matched_product_name": "Manzana Golden",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "tomate seco en aceite",
+    "count": 1,
+    "matched_pid": "4740",
+    "matched_product_name": "Aceite de oliva virgen extra Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "manzana roja",
+    "count": 1,
+    "matched_pid": "3028",
+    "matched_product_name": "Manzana Golden",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "calabacín amarillo",
+    "count": 1,
+    "matched_pid": "69326",
+    "matched_product_name": "Berenjena",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "plátanos macho",
+    "count": 1,
+    "matched_pid": "3028",
+    "matched_product_name": "Manzana Golden",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pesto de albahaca",
+    "count": 1,
+    "matched_pid": "17577",
+    "matched_product_name": "Pasta fresca girasoles rellena de pesto y queso de oveja Hacendado",
+    "match_method": "TOKEN_pesto"
+  },
+  {
+    "ingredient": "tomate seco",
+    "count": 1,
+    "matched_pid": "69937",
+    "matched_product_name": "Tomate ensalada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "manzanas para cocinar",
+    "count": 1,
+    "matched_pid": "3028",
+    "matched_product_name": "Manzana Golden",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "brotes de alfalfa",
+    "count": 1,
+    "matched_pid": "69757",
+    "matched_product_name": "Ensalada mezcla brotes tiernos lavada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "hojas de espinaca baby frescas",
+    "count": 1,
+    "matched_pid": "69730",
+    "matched_product_name": "Espinacas cortadas y lavadas",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "perejil liso fresco",
+    "count": 1,
+    "matched_pid": "40475",
+    "matched_product_name": "Picada de ajo y perejil",
+    "match_method": "TOKEN_perejil"
+  },
+  {
+    "ingredient": "remolachas crudas",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "chile rojo seco",
+    "count": 1,
+    "matched_pid": "62401",
+    "matched_product_name": "Mejillón de Chile entero cocido Hacendado ultracongelado",
+    "match_method": "TOKEN_chile"
+  },
+  {
+    "ingredient": "verduras y frutas variadas",
+    "count": 1,
+    "matched_pid": "69433",
+    "matched_product_name": "Preparado de verduras para sofreír cortado y lavado",
+    "match_method": "TOKEN_verduras"
+  },
+  {
+    "ingredient": "jitomate cherry",
+    "count": 1,
+    "matched_pid": "69937",
+    "matched_product_name": "Tomate ensalada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "setas senderuela secas",
+    "count": 1,
+    "matched_pid": "69519",
+    "matched_product_name": "Champiñones laminados limpios",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "setas colmenillas secas",
+    "count": 1,
+    "matched_pid": "69519",
+    "matched_product_name": "Champiñones laminados limpios",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "vinagre de fruta",
+    "count": 1,
+    "matched_pid": "80405",
+    "matched_product_name": "Boquerones en vinagre Hacendado en aceite de girasol",
+    "match_method": "TOKEN_vinagre"
+  },
+  {
+    "ingredient": "hoja de albahaca fresca",
+    "count": 1,
+    "matched_pid": "69114",
+    "matched_product_name": "Lechuga hoja roble",
+    "match_method": "TOKEN_hoja"
+  },
+  {
+    "ingredient": "lechuga trocadero",
+    "count": 1,
+    "matched_pid": "69757",
+    "matched_product_name": "Ensalada mezcla brotes tiernos lavada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "piel de naranja",
+    "count": 1,
+    "matched_pid": "3028",
+    "matched_product_name": "Manzana Golden",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "jengibre confitado",
+    "count": 1,
+    "matched_pid": "69289",
+    "matched_product_name": "Jengibre",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "zanahorias tiernas",
+    "count": 1,
+    "matched_pid": "69669",
+    "matched_product_name": "Zanahorias",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "cebolla blanca",
+    "count": 1,
+    "matched_pid": "69089",
+    "matched_product_name": "Cebollas",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "especias para pan",
+    "count": 1,
+    "matched_pid": "34125",
+    "matched_product_name": "Curry Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "chiles anchos",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "calabazas",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "brotes",
+    "count": 1,
+    "matched_pid": "69757",
+    "matched_product_name": "Ensalada mezcla brotes tiernos lavada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "granos de pimienta roja",
+    "count": 1,
+    "matched_pid": "34125",
+    "matched_product_name": "Curry Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pak choi (acelgas chinas)",
+    "count": 1,
+    "matched_pid": "69730",
+    "matched_product_name": "Espinacas cortadas y lavadas",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "hoja de salvia fresca",
+    "count": 1,
+    "matched_pid": "69114",
+    "matched_product_name": "Lechuga hoja roble",
+    "match_method": "TOKEN_hoja"
+  },
+  {
+    "ingredient": "zanahorias baby congeladas",
+    "count": 1,
+    "matched_pid": "69669",
+    "matched_product_name": "Zanahorias",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "berenjenas tailandesas",
+    "count": 1,
+    "matched_pid": "69326",
+    "matched_product_name": "Berenjena",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "tomate en rama",
+    "count": 1,
+    "matched_pid": "69937",
+    "matched_product_name": "Tomate ensalada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "plátanos maduros dulces",
+    "count": 1,
+    "matched_pid": "3028",
+    "matched_product_name": "Manzana Golden",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "peras en almíbar",
+    "count": 1,
+    "matched_pid": "3028",
+    "matched_product_name": "Manzana Golden",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "brotes de rábano",
+    "count": 1,
+    "matched_pid": "69757",
+    "matched_product_name": "Ensalada mezcla brotes tiernos lavada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "plátano maduro dulce",
+    "count": 1,
+    "matched_pid": "3028",
+    "matched_product_name": "Manzana Golden",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "fruta deshidratada",
+    "count": 1,
+    "matched_pid": "22189",
+    "matched_product_name": "Papilla fruta variada Hacendado +4 meses",
+    "match_method": "TOKEN_fruta"
+  },
+  {
+    "ingredient": "granos de pimienta verde, en conserva",
+    "count": 1,
+    "matched_pid": "34125",
+    "matched_product_name": "Curry Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "semillas de ajonjolí tostadas",
+    "count": 1,
+    "matched_pid": "69297",
+    "matched_product_name": "Ajos morados",
+    "match_method": "DIRECT_RULE"
+  }
+]

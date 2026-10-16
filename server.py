@@ -1,13 +1,14 @@
 """HTTP Server for Mercadona AI Companion & Campaign Library Microservices.
 
 Supports both microservices:
-  - mercadona-ai-companion (main customer planner app, SERVICE_ROLE=companion)
+  - eci-ai-companion (main customer planner app, SERVICE_ROLE=companion)
   - campaign-library (Mercadona Marketing campaign microservice, SERVICE_ROLE=campaign-library)
 
 Enforces Google Identity allowlist for:
   - matgand@gmail.com
   - mgandolfi@google.com
   - andrea.anaut@gmail.com
+  - mattia@mgandolfi.altostrat.com
 """
 
 from __future__ import annotations
@@ -33,35 +34,91 @@ from campaign_service import (
     VALID_STATUSES,
     fetch_campaigns_from_remote_or_local,
     generate_campaign_from_brief,
+    get_demand_sensing_analytics,
+    is_campaign_library_role,
     load_local_campaigns,
     save_local_campaigns,
     update_campaign_record,
 )
-from cookidoo_service import load_cookidoo_catalog, send_recipe_to_thermomix
+from cookidoo_service import (
+    clear_cookidoo_session,
+    get_cookidoo_session_status,
+    load_cookidoo_catalog,
+    schedule_weekly_plan_to_cookidoo,
+    send_recipe_to_thermomix,
+    verify_and_save_cookidoo_session,
+)
+from mercadona_service import (
+    clear_mercadona_session,
+    fetch_algolia_products_batch,
+    get_catalog_for_postal_code,
+    get_mercadona_session_status,
+    load_snapshot_products,
+    prepare_mercadona_oneclick_cart,
+    resolve_postal_code,
+    search_algolia_replacement,
+    verify_and_save_mercadona_session,
+)
+
+# Backwards-compatible aliases for unified route handlers
+get_eci_session_status = get_mercadona_session_status
+verify_and_save_eci_session = verify_and_save_mercadona_session
+clear_eci_session = clear_mercadona_session
+prepare_eci_oneclick_cart = prepare_mercadona_oneclick_cart
+get_dia_session_status = get_mercadona_session_status
+verify_and_save_dia_session = verify_and_save_mercadona_session
+clear_dia_session = clear_mercadona_session
+prepare_dia_oneclick_cart = prepare_mercadona_oneclick_cart
+
+
+def fetch_eci_categories() -> list[dict[str, Any]]:
+    return []
+
+
+def fetch_eci_offers() -> list[dict[str, Any]]:
+    return []
+
+
+def search_eci_live(query: str, postal_code: str = "28016") -> list[dict[str, Any]]:
+    info = resolve_postal_code(postal_code)
+    rep = search_algolia_replacement(query, info.get("warehouse", "mad3"))
+    return [rep] if rep else []
+
+
+def fetch_eci_products_batch(product_ids: list[str], warehouse: str = "mad3", postal_code: str = "28016") -> dict[str, dict[str, Any]]:
+    return fetch_algolia_products_batch(product_ids, warehouse=warehouse)
+
+
+def search_eci_replacement(product_name: str, warehouse: str = "mad3", postal_code: str = "28016") -> dict[str, Any] | None:
+    return search_algolia_replacement(product_name, warehouse=warehouse)
 from gemini_planner import (
+    FRIDGE_VISION_PRESETS,
+    analyze_fridge_vision,
     build_weekly_plan,
     clear_user_recipe_preferences,
     format_constraint_pills,
     get_user_recipe_preferences,
     parse_constraints,
+    recalculate_plan_basket,
     record_recipe_vote,
     save_user_recipe_preferences,
     swap_single_recipe,
     validate_meal_planning_prompt,
 )
-from mercadona_service import (
-    clear_mercadona_session,
-    get_mercadona_session_status,
-    load_snapshot_products,
-    prepare_mercadona_oneclick_cart,
-    resolve_postal_code,
-    verify_and_save_mercadona_session,
+from whatsapp_service import (
+    format_whatsapp_share_link,
+    get_whatsapp_state,
+    handle_whatsapp_webhook_post,
+    process_whatsapp_user_message,
+    sync_active_plan_to_whatsapp,
+    update_whatsapp_config,
+    verify_whatsapp_webhook_get,
 )
 
 PUBLIC_DIR = Path(__file__).resolve().parent / "public"
 SESSION_SECRET = os.environ.get("SESSION_SECRET", "").strip() or DEFAULT_RUNTIME_SECRET
 SESSION_TTL_SECONDS = 604800  # 7 days
-MAX_BODY_BYTES = 262_144  # 256 KB max JSON request body
+MAX_BODY_BYTES = 6_291_456  # 6 MB max request body (supports Fridge Vision multimodal image uploads)
 GOOGLE_CLIENT_ID = os.environ.get("GOOGLE_CLIENT_ID", "")
 SERVICE_ROLE = os.environ.get("SERVICE_ROLE", "companion").strip().lower()
 
@@ -73,6 +130,14 @@ DEFAULT_ALLOWED_USERS = [
     "mgandolfi@google.com",
     "andrea.anaut@gmail.com",
     "mattia@mgandolfi.altostrat.com",
+    "barea@google.com",
+    "estherarribas@google.com",
+    "iolalla@google.com",
+    "jamarmu@google.com",
+    "lauramarse@google.com",
+    "cmartintomas@google.com",
+    "veronicapg@google.com",
+    "mikelju@gmail.com",
 ]
 
 
@@ -189,6 +254,13 @@ class CompanionRequestHandler(BaseHTTPRequestHandler):
             jwt_email = str(claims.get("email") or "").strip().lower()
             if not jwt_email or jwt_email != header_email:
                 return None
+            iss = str(claims.get("iss") or "").strip()
+            if iss and iss not in (
+                "https://cloud.google.com/iap",
+                "https://accounts.google.com",
+                "accounts.google.com",
+            ):
+                return None
             exp = claims.get("exp")
             if exp is not None:
                 try:
@@ -208,17 +280,16 @@ class CompanionRequestHandler(BaseHTTPRequestHandler):
         allowed = get_allowed_users()
 
         # 1. Google Cloud Identity-Aware Proxy (IAP) verified header (Primary on Cloud Run)
-        clean_iap = self._get_iap_email()
-        if clean_iap:
-            return clean_iap if clean_iap in allowed else None
+        if self.headers.get("X-Goog-Authenticated-User-Email") or self.headers.get("X-Goog-IAP-JWT-Assertion"):
+            clean_iap = self._get_iap_email()
+            return clean_iap if (clean_iap and clean_iap in allowed) else None
 
         # 2. Cryptographically verified Google OAuth2 Bearer ID Token
         auth_hdr = self.headers.get("Authorization", "").strip()
         if auth_hdr.lower().startswith("bearer "):
             token = auth_hdr[7:].strip()
             verified_email = verify_google_id_token(token)
-            if verified_email and verified_email in allowed:
-                return verified_email
+            return verified_email if (verified_email and verified_email in allowed) else None
 
         # 3. Signed session cookie (issued only after verified Google ID token or IAP authentication)
         cookie_hdr = self.headers.get("Cookie", "")
@@ -228,18 +299,32 @@ class CompanionRequestHandler(BaseHTTPRequestHandler):
                 jar.load(cookie_hdr)
             except Exception:
                 return None
-            if "mercadona_session" in jar:
-                val = urllib.parse.unquote(jar["mercadona_session"].value)
-                user = verify_session_token(val)
-                if user:
-                    return user
+            for cookie_name in ("mercadona_session", "eci_session", "dia_session"):
+                if cookie_name in jar:
+                    val = urllib.parse.unquote(jar[cookie_name].value)
+                    user = verify_session_token(val)
+                    if user:
+                        return user
+            return None
+
+        # 4. Local Cloudtop development fallback (only on real local socket connections when not on Cloud Run and JWT enforcement is off)
+        if (
+            not os.environ.get("K_SERVICE")
+            and os.environ.get("ENFORCE_IAP_JWT", "0") != "1"
+            and os.environ.get("ENFORCE_IAP_LOCAL", "0") != "1"
+            and os.environ.get("ALLOW_LOCAL_DEV_FALLBACK", "1") == "1"
+            and getattr(self, "client_address", None) is not None
+        ):
+            local_user = os.environ.get("LOCAL_DEV_USER", "mattia@mgandolfi.altostrat.com").strip().lower()
+            if local_user in allowed:
+                return local_user
         return None
 
     def _add_security_headers(self) -> None:
         self.send_header("X-Content-Type-Options", "nosniff")
         self.send_header("X-Frame-Options", "DENY")
         self.send_header("Referrer-Policy", "strict-origin-when-cross-origin")
-        self.send_header("Permissions-Policy", "geolocation=(), microphone=(), camera=()")
+        self.send_header("Permissions-Policy", "geolocation=(), microphone=(self), camera=(self)")
         self.send_header("Strict-Transport-Security", "max-age=31536000; includeSubDomains")
         self.send_header(
             "Content-Security-Policy",
@@ -248,6 +333,7 @@ class CompanionRequestHandler(BaseHTTPRequestHandler):
             "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; "
             "font-src 'self' https://fonts.gstatic.com data:; "
             "img-src 'self' https: data:; "
+            "media-src 'self' blob: data:; "
             "connect-src 'self' https://accounts.google.com https://oauth2.googleapis.com; "
             "frame-ancestors 'none'; "
             "base-uri 'self'; "
@@ -258,6 +344,10 @@ class CompanionRequestHandler(BaseHTTPRequestHandler):
         allowed_origins = {
             get_companion_url(),
             get_campaign_library_url(),
+            "https://mercadona-ai-companion-905208270932.europe-west1.run.app",
+            "https://campaign-library-905208270932.europe-west1.run.app",
+            "http://mgandolfi-cloudtop.c.googlers.com:8088",
+            "http://localhost:8088",
             "http://localhost:8080",
             "http://127.0.0.1:8080",
         }
@@ -274,7 +364,12 @@ class CompanionRequestHandler(BaseHTTPRequestHandler):
             or self.headers.get("X-Forwarded-Proto", "").strip().lower() == "https"
         )
 
-    def _send_json(self, status: int, payload: dict[str, Any], set_cookie: str | None = None) -> None:
+    def _send_json(
+        self,
+        status: int,
+        payload: dict[str, Any],
+        set_cookie: str | list[str] | None = None,
+    ) -> None:
         raw = json.dumps(payload, ensure_ascii=False).encode("utf-8")
         self.send_response(status)
         self.send_header("Content-Type", "application/json; charset=utf-8")
@@ -282,12 +377,26 @@ class CompanionRequestHandler(BaseHTTPRequestHandler):
         self.send_header("Cache-Control", "no-store")
         self._add_security_headers()
         self._add_cors_headers()
-        if set_cookie:
+        if isinstance(set_cookie, list):
+            for c_val in set_cookie:
+                self.send_header("Set-Cookie", c_val)
+        elif set_cookie:
             self.send_header("Set-Cookie", set_cookie)
         self.end_headers()
         self.wfile.write(raw)
 
-    def _read_json_body(self) -> dict[str, Any]:
+    def _send_raw(self, status: int, content_type: str, body_text: str) -> None:
+        raw = body_text.encode("utf-8")
+        self.send_response(status)
+        self.send_header("Content-Type", f"{content_type}; charset=utf-8")
+        self.send_header("Content-Length", str(len(raw)))
+        self.send_header("Cache-Control", "no-store")
+        self._add_security_headers()
+        self._add_cors_headers()
+        self.end_headers()
+        self.wfile.write(raw)
+
+    def _read_raw_body(self) -> bytes:
         raw_len = self.headers.get("Content-Length", "0") or "0"
         try:
             length = int(raw_len)
@@ -296,10 +405,16 @@ class CompanionRequestHandler(BaseHTTPRequestHandler):
         if length < 0:
             raise _PayloadError(400, "Cabecera Content-Length negativa.")
         if length > MAX_BODY_BYTES:
-            raise _PayloadError(413, "El cuerpo de la petición supera el límite permitido (256 KB).")
+            raise _PayloadError(413, "El cuerpo de la petición supera el límite permitido (6 MB).")
         if length == 0:
+            return b""
+        return self.rfile.read(length)
+
+    def _read_json_body(self) -> dict[str, Any]:
+        raw_bytes = self._read_raw_body()
+        if not raw_bytes:
             return {}
-        raw = self.rfile.read(length).decode("utf-8", "ignore")
+        raw = raw_bytes.decode("utf-8", "ignore")
         try:
             parsed = json.loads(raw)
             return parsed if isinstance(parsed, dict) else {}
@@ -311,6 +426,9 @@ class CompanionRequestHandler(BaseHTTPRequestHandler):
         self._add_security_headers()
         self._add_cors_headers()
         self.end_headers()
+
+    def do_HEAD(self) -> None:
+        self.do_GET()
 
     def do_GET(self) -> None:
         parsed = urllib.parse.urlparse(self.path)
@@ -324,14 +442,15 @@ class CompanionRequestHandler(BaseHTTPRequestHandler):
                 not user
                 and (os.environ.get("K_SERVICE") or os.environ.get("HIDE_ALLOWED_USERS_UNAUTHED") == "1")
             )
-            mercadona_status = (
-                get_mercadona_session_status(user)
+            eci_status = (
+                get_eci_session_status(user)
                 if user
                 else {
                     "connected": False,
                     "customer_id": None,
                     "has_refresh_token": False,
                     "warehouse": None,
+                    "center_name": None,
                     "postal_code": None,
                     "masked_token": None,
                 }
@@ -340,6 +459,20 @@ class CompanionRequestHandler(BaseHTTPRequestHandler):
                 get_user_recipe_preferences(user)
                 if user
                 else {"liked": [], "disliked": []}
+            )
+            cookidoo_status = (
+                get_cookidoo_session_status(user)
+                if user
+                else {
+                    "connected": False,
+                    "live_authenticated": False,
+                    "email": None,
+                    "masked_email": None,
+                    "device_name": None,
+                    "auth_mode": None,
+                    "planner_url": "https://cookidoo.es/planning/es-ES/my-week",
+                    "last_scheduled_week": None,
+                }
             )
             self._send_json(
                 200,
@@ -353,10 +486,26 @@ class CompanionRequestHandler(BaseHTTPRequestHandler):
                     "service_role": SERVICE_ROLE,
                     "companion_app_url": get_companion_url(),
                     "campaign_library_url": get_campaign_library_url(),
-                    "mercadona_session": mercadona_status,
+                    "mercadona_session": eci_status,
+                    "eci_session": eci_status,
+                    "cookidoo_session": cookidoo_status,
                     "recipe_preferences": recipe_prefs,
                 },
             )
+            return
+
+        if path == "/api/cookidoo/session":
+            user = self._get_authenticated_user()
+            if not user:
+                self._send_json(
+                    401,
+                    {
+                        "code": "AUTHENTICATION_REQUIRED",
+                        "error": "Autenticación requerida para consultar la sesión de Cookidoo.",
+                    },
+                )
+                return
+            self._send_json(200, get_cookidoo_session_status(user))
             return
 
         if path == "/api/preferences":
@@ -373,7 +522,7 @@ class CompanionRequestHandler(BaseHTTPRequestHandler):
             self._send_json(200, get_user_recipe_preferences(user))
             return
 
-        if path == "/api/mercadona/session":
+        if path in ("/api/mercadona/session", "/api/eci/session", "/api/dia/session"):
             user = self._get_authenticated_user()
             if not user:
                 self._send_json(
@@ -384,12 +533,28 @@ class CompanionRequestHandler(BaseHTTPRequestHandler):
                     },
                 )
                 return
-            self._send_json(200, get_mercadona_session_status(user))
+            status_fn = get_mercadona_session_status
+            self._send_json(200, status_fn(user))
+            return
+
+        if path in ("/api/mercadona/categories", "/api/eci/categories", "/api/dia/categories"):
+            self._send_json(200, {"categories": fetch_eci_categories()})
+            return
+
+        if path in ("/api/mercadona/offers", "/api/eci/offers", "/api/dia/offers"):
+            self._send_json(200, {"offers": fetch_eci_offers()})
+            return
+
+        if path in ("/api/mercadona/search", "/api/eci/search", "/api/dia/search"):
+            query = (qs.get("q") or [""])[0].strip()
+            postal_code = (qs.get("postal_code") or ["28001"])[0].strip()
+            results = search_eci_live(query, postal_code) if query else []
+            self._send_json(200, {"query": query, "postal_code": postal_code, "results": results})
             return
 
         if path == "/api/campaigns":
             source = (qs.get("source") or [""])[0]
-            if source == "internal" or SERVICE_ROLE == "campaign-library":
+            if source == "internal" or is_campaign_library_role(SERVICE_ROLE):
                 campaigns = load_local_campaigns()
             else:
                 campaigns = fetch_campaigns_from_remote_or_local()
@@ -417,16 +582,20 @@ class CompanionRequestHandler(BaseHTTPRequestHandler):
             return
 
         if path == "/api/catalog":
-            pc = (qs.get("postal_code") or ["28016"])[0]
+            pc = (qs.get("postal_code") or ["28001"])[0]
             pc_info = resolve_postal_code(pc)
-            products = list(load_snapshot_products().values())
+            cat_dict = load_snapshot_products()
+            products = list(cat_dict.values())
             recipes = load_cookidoo_catalog()
             self._send_json(
                 200,
                 {
                     "postal_code": pc_info["postal_code"],
                     "warehouse": pc_info["warehouse"],
-                    "source": pc_info["source"],
+                    "center_name": pc_info.get("center_name", pc_info["warehouse"]),
+                    "delivery_available": pc_info.get("delivery_available", True),
+                    "source": pc_info.get("source", "snapshot"),
+                    "total_products": len(products),
                     "products": products,
                     "recipes": recipes,
                 },
@@ -439,8 +608,36 @@ class CompanionRequestHandler(BaseHTTPRequestHandler):
             self._send_json(200, {"constraints": c, "pills": format_constraint_pills(c)})
             return
 
+        if path == "/api/whatsapp/webhook":
+            status_code, body_text = verify_whatsapp_webhook_get(qs)
+            self._send_raw(status_code, "text/plain", body_text)
+            return
+
+        if path == "/api/whatsapp/state":
+            user = self._get_authenticated_user()
+            if not user:
+                self._send_json(
+                    401,
+                    {
+                        "code": "AUTHENTICATION_REQUIRED",
+                        "error": "Autenticación requerida para consultar el estado de WhatsApp.",
+                    },
+                )
+                return
+            st = get_whatsapp_state(base_url=get_companion_url())
+            self._send_json(200, st)
+            return
+
+        if path == "/api/fridge-vision/presets":
+            self._send_json(200, {"presets": FRIDGE_VISION_PRESETS})
+            return
+
+        if path == "/api/campaigns/analytics":
+            self._send_json(200, get_demand_sensing_analytics())
+            return
+
         # Serve static files from public/
-        default_html = "marketing.html" if SERVICE_ROLE == "campaign-library" else "index.html"
+        default_html = "marketing.html" if is_campaign_library_role(SERVICE_ROLE) else "index.html"
         rel = path.lstrip("/") or default_html
         if rel == "marketing":
             rel = "marketing.html"
@@ -467,19 +664,73 @@ class CompanionRequestHandler(BaseHTTPRequestHandler):
             ctype = "image/x-icon"
         elif file_path.suffix == ".png":
             ctype = "image/png"
+        elif file_path.suffix == ".mp4":
+            ctype = "video/mp4"
         data = file_path.read_bytes()
+        total_len = len(data)
+        range_hdr = self.headers.get("Range", "").strip()
+        if range_hdr.startswith("bytes=") and total_len > 0:
+            try:
+                spec = range_hdr[6:].split(",")[0].strip()
+                s_str, e_str = spec.split("-", 1)
+                start = int(s_str) if s_str else max(0, total_len - int(e_str))
+                end = int(e_str) if (s_str and e_str) else (total_len - 1)
+                start = max(0, min(start, total_len - 1))
+                end = max(start, min(end, total_len - 1))
+                chunk = data[start : end + 1]
+                self.send_response(206)
+                self.send_header("Content-Type", ctype or "application/octet-stream")
+                self.send_header("Accept-Ranges", "bytes")
+                self.send_header("Content-Range", f"bytes {start}-{end}/{total_len}")
+                self.send_header("Content-Length", str(len(chunk)))
+                self.send_header("Cache-Control", "no-store, no-cache, must-revalidate, max-age=0")
+                self._add_security_headers()
+                self._add_cors_headers()
+                self.end_headers()
+                if self.command != "HEAD":
+                    self.wfile.write(chunk)
+                return
+            except Exception:
+                pass
         self.send_response(200)
         self.send_header("Content-Type", ctype or "application/octet-stream")
-        self.send_header("Content-Length", str(len(data)))
+        self.send_header("Accept-Ranges", "bytes")
+        self.send_header("Content-Length", str(total_len))
         self.send_header("Cache-Control", "no-store, no-cache, must-revalidate, max-age=0")
         self._add_security_headers()
         self._add_cors_headers()
         self.end_headers()
-        self.wfile.write(data)
+        if self.command != "HEAD":
+            self.wfile.write(data)
 
     def do_POST(self) -> None:
         parsed = urllib.parse.urlparse(self.path)
         path = parsed.path
+
+        # Real external Webhook endpoint for Meta WhatsApp Cloud API & Twilio WhatsApp Sandbox
+        if path == "/api/whatsapp/webhook":
+            try:
+                raw_bytes = self._read_raw_body()
+            except _PayloadError as err:
+                self._send_json(err.status, {"error": err.message})
+                return
+            content_type_hdr = self.headers.get("Content-Type", "application/json")
+            sig_hdr = self.headers.get("X-Hub-Signature-256", "")
+            status_code, resp_ctype, resp_bytes = handle_whatsapp_webhook_post(
+                raw_body=raw_bytes,
+                content_type=content_type_hdr,
+                signature_header=sig_hdr,
+            )
+            self.send_response(status_code)
+            self.send_header("Content-Type", resp_ctype)
+            self.send_header("Content-Length", str(len(resp_bytes)))
+            self.send_header("Cache-Control", "no-store")
+            self._add_security_headers()
+            self._add_cors_headers()
+            self.end_headers()
+            self.wfile.write(resp_bytes)
+            return
+
         try:
             body = self._read_json_body()
         except _PayloadError as err:
@@ -487,8 +738,6 @@ class CompanionRequestHandler(BaseHTTPRequestHandler):
             return
 
         if path == "/api/auth/login":
-            # Only allow cryptographically verified Google Identity JWT or Cloud Run IAP header.
-            # Unverified plain-text email selection is strictly forbidden.
             id_token = str(body.get("credential") or "").strip()
             email = ""
             if id_token:
@@ -535,14 +784,22 @@ class CompanionRequestHandler(BaseHTTPRequestHandler):
 
             signed = urllib.parse.quote(sign_session_email(email))
             secure_attr = "; Secure" if self._is_https_request() else ""
-            cookie = f"mercadona_session={signed}; Path=/; HttpOnly; SameSite=Lax; Max-Age={SESSION_TTL_SECONDS}{secure_attr}"
-            self._send_json(200, {"authenticated": True, "user": email}, set_cookie=cookie)
+            cookies = [
+                f"mercadona_session={signed}; Path=/; HttpOnly; SameSite=Lax; Max-Age={SESSION_TTL_SECONDS}{secure_attr}",
+                f"eci_session={signed}; Path=/; HttpOnly; SameSite=Lax; Max-Age={SESSION_TTL_SECONDS}{secure_attr}",
+                f"dia_session={signed}; Path=/; HttpOnly; SameSite=Lax; Max-Age={SESSION_TTL_SECONDS}{secure_attr}",
+            ]
+            self._send_json(200, {"authenticated": True, "user": email}, set_cookie=cookies)
             return
 
         if path == "/api/auth/logout":
             secure_attr = "; Secure" if self._is_https_request() else ""
-            cookie = f"mercadona_session=; Path=/; HttpOnly; SameSite=Lax; Max-Age=0{secure_attr}"
-            self._send_json(200, {"authenticated": False, "user": None}, set_cookie=cookie)
+            cookies = [
+                f"mercadona_session=; Path=/; HttpOnly; SameSite=Lax; Max-Age=0{secure_attr}",
+                f"eci_session=; Path=/; HttpOnly; SameSite=Lax; Max-Age=0{secure_attr}",
+                f"dia_session=; Path=/; HttpOnly; SameSite=Lax; Max-Age=0{secure_attr}",
+            ]
+            self._send_json(200, {"authenticated": False, "user": None}, set_cookie=cookies)
             return
 
         # Internal microservice-to-microservice campaign synchronization endpoint
@@ -575,7 +832,7 @@ class CompanionRequestHandler(BaseHTTPRequestHandler):
             )
             return
 
-        # Campaign Library endpoints (protected by the same IAP + 4-user allowlist)
+        # Campaign Library endpoints
         if path == "/api/campaigns/generate":
             brief = str(body.get("brief") or body.get("prompt") or "").strip()
             category = body.get("category")
@@ -615,15 +872,76 @@ class CompanionRequestHandler(BaseHTTPRequestHandler):
             return
 
         if path == "/api/postal-code":
-            pc = str(body.get("postal_code") or "28016").strip()
+            pc = str(body.get("postal_code") or "28001").strip()
             info = resolve_postal_code(pc)
+            if info.get("delivery_available"):
+                msg = (
+                    f"Código postal {info['postal_code']} verificado con cobertura de reparto a domicilio "
+                    f"({info.get('center_name') or info['warehouse']})."
+                )
+            else:
+                msg = (
+                    f"El código postal {info['postal_code']} no tiene reparto a domicilio directo en Mercadona. "
+                    f"Mostrando surtido de referencia ({info.get('center_name') or info['warehouse']})."
+                )
             self._send_json(
                 200,
                 {
                     "postal_code": info["postal_code"],
                     "warehouse": info["warehouse"],
+                    "center_name": info.get("center_name", info["warehouse"]),
+                    "delivery_available": info.get("delivery_available", True),
                     "source": info["source"],
-                    "message": f"Código postal actualizado a {info['postal_code']} (Almacén Mercadona: {info['warehouse']}).",
+                    "message": msg,
+                },
+            )
+            return
+
+        if path in ("/api/mercadona/verify-stock", "/api/eci/verify-stock", "/api/dia/verify-stock"):
+            postal_code = str(body.get("postal_code") or "28001").strip()
+            product_ids = body.get("product_ids") or []
+            if not isinstance(product_ids, list) or not product_ids:
+                product_ids = []
+            clean_ids = [str(pid).strip() for pid in product_ids if str(pid).strip()][:35]
+            pc_info = resolve_postal_code(postal_code)
+            wh = pc_info["warehouse"]
+            live_map = (
+                fetch_eci_products_batch(clean_ids, warehouse=wh, postal_code=pc_info["postal_code"])
+                if clean_ids
+                else {}
+            )
+            snapshot = load_snapshot_products()
+            results: list[dict[str, Any]] = []
+            for pid in clean_ids:
+                prod = live_map.get(pid) or snapshot.get(pid)
+                if not prod:
+                    continue
+                in_stock = prod.get("available", True) is not False and prod.get("in_stock", True) is not False
+                replacement = None
+                if not in_stock:
+                    replacement = search_eci_replacement(
+                        prod.get("name", ""), warehouse=wh, postal_code=pc_info["postal_code"]
+                    )
+                results.append(
+                    {
+                        "id": pid,
+                        "name": prod.get("name"),
+                        "price": prod.get("unit_price") or prod.get("price"),
+                        "in_stock": in_stock,
+                        "source": prod.get("source", "snapshot"),
+                        "warehouse": wh,
+                        "replacement": replacement,
+                    }
+                )
+            self._send_json(
+                200,
+                {
+                    "postal_code": pc_info["postal_code"],
+                    "warehouse": pc_info["warehouse"],
+                    "center_name": pc_info.get("center_name", pc_info["warehouse"]),
+                    "delivery_available": pc_info.get("delivery_available", True),
+                    "verified_count": len(results),
+                    "items": results,
                 },
             )
             return
@@ -635,17 +953,25 @@ class CompanionRequestHandler(BaseHTTPRequestHandler):
                 self._send_json(200, prefs)
                 return
             recipe_id = str(body.get("recipe_id") or body.get("recipeId") or "").strip()
-            if recipe_id:
-                vote = str(body.get("vote") or "none").strip()
+            vote = str(body.get("vote") or "").strip()
+            if recipe_id and vote:
                 prefs = record_recipe_vote(user or "default", recipe_id, vote)
                 self._send_json(200, prefs)
                 return
-            in_liked = body.get("liked_recipe_ids") or body.get("likedRecipeIds") or []
-            in_disliked = body.get("disliked_recipe_ids") or body.get("dislikedRecipeIds") or []
+            liked_in = (
+                body.get("liked")
+                if isinstance(body.get("liked"), list)
+                else (body.get("liked_recipe_ids") or body.get("likedRecipeIds"))
+            )
+            disliked_in = (
+                body.get("disliked")
+                if isinstance(body.get("disliked"), list)
+                else (body.get("disliked_recipe_ids") or body.get("dislikedRecipeIds"))
+            )
             prefs = save_user_recipe_preferences(
                 user_email=user or "default",
-                liked_recipe_ids=in_liked if isinstance(in_liked, list) else [],
-                disliked_recipe_ids=in_disliked if isinstance(in_disliked, list) else [],
+                liked_recipe_ids=liked_in if isinstance(liked_in, list) else None,
+                disliked_recipe_ids=disliked_in if isinstance(disliked_in, list) else None,
                 merge=bool(body.get("merge", False)),
             )
             self._send_json(200, prefs)
@@ -653,7 +979,7 @@ class CompanionRequestHandler(BaseHTTPRequestHandler):
 
         if path == "/api/plan":
             prompt = str(body.get("message") or body.get("prompt") or "").strip()
-            postal_code = str(body.get("postalCode") or body.get("postal_code") or "28016").strip()
+            postal_code = str(body.get("postalCode") or body.get("postal_code") or "28001").strip()
             current_plan = body.get("currentPlan")
             variety_seed = str(body.get("varietySeed") or "1")
             liked_ids = body.get("likedRecipeIds") if "likedRecipeIds" in body else body.get("liked_recipe_ids")
@@ -675,6 +1001,10 @@ class CompanionRequestHandler(BaseHTTPRequestHandler):
                     disliked_recipe_ids=disliked_ids if isinstance(disliked_ids, list) else None,
                     user_email=user or "default",
                 )
+                try:
+                    sync_active_plan_to_whatsapp(plan, postal_code=postal_code)
+                except Exception:
+                    pass
                 self._send_json(200, plan)
             except Exception as exc:
                 self._send_json(422, {"error": str(exc)})
@@ -684,7 +1014,7 @@ class CompanionRequestHandler(BaseHTTPRequestHandler):
             current_meals = body.get("currentMeals") or []
             target_id = str(body.get("targetRecipeId") or "")
             constraints = body.get("constraints") or {}
-            postal_code = str(body.get("postalCode") or "28016")
+            postal_code = str(body.get("postalCode") or "28001")
             try:
                 rotation = int(body.get("rotation") or 1)
             except (TypeError, ValueError):
@@ -702,8 +1032,140 @@ class CompanionRequestHandler(BaseHTTPRequestHandler):
                     disliked_recipe_ids=disliked_ids if isinstance(disliked_ids, list) else None,
                     user_email=user or "default",
                 )
+                try:
+                    sync_active_plan_to_whatsapp(res, postal_code=postal_code)
+                except Exception:
+                    pass
                 self._send_json(200, res)
             except Exception as exc:
+                self._send_json(422, {"error": str(exc)})
+            return
+
+        if path == "/api/basket/recalculate":
+            current_plan = body.get("currentPlan") or body.get("plan") or {}
+            postal_code = str(body.get("postalCode") or body.get("postal_code") or "28001").strip()
+            basket_tier = body.get("basketTier") or body.get("basket_tier")
+            day_servings = body.get("dayServings") if isinstance(body.get("dayServings"), dict) else body.get("day_servings")
+            custom_cuts = body.get("customCounterCuts") if isinstance(body.get("customCounterCuts"), dict) else body.get("custom_counter_cuts")
+            include_sommelier = body.get("includeSommelierItem") if "includeSommelierItem" in body else body.get("include_sommelier_item")
+            try:
+                updated_plan = recalculate_plan_basket(
+                    plan=current_plan,
+                    basket_tier=str(basket_tier).strip().lower() if basket_tier else None,
+                    day_servings=day_servings if isinstance(day_servings, dict) else None,
+                    custom_counter_cuts=custom_cuts if isinstance(custom_cuts, dict) else None,
+                    include_sommelier_item=bool(include_sommelier) if include_sommelier is not None else None,
+                    postal_code=postal_code,
+                )
+                try:
+                    sync_active_plan_to_whatsapp(updated_plan, postal_code=postal_code)
+                except Exception:
+                    pass
+                self._send_json(200, updated_plan)
+            except Exception as exc:
+                self._send_json(422, {"error": str(exc)})
+            return
+
+        if path == "/api/fridge-vision":
+            image_base64 = body.get("imageBase64") or body.get("image_base64")
+            mime_type = str(body.get("mimeType") or body.get("mime_type") or "image/jpeg")
+            preset_id = body.get("presetId") or body.get("preset_id")
+            current_prompt = str(body.get("currentPrompt") or body.get("current_prompt") or "")
+            postal_code = str(body.get("postalCode") or body.get("postal_code") or "28001").strip()
+            current_plan = body.get("currentPlan") if isinstance(body.get("currentPlan"), dict) else None
+            try:
+                res = analyze_fridge_vision(
+                    image_base64=str(image_base64) if image_base64 else None,
+                    mime_type=mime_type,
+                    preset_id=str(preset_id) if preset_id else None,
+                    current_prompt=current_prompt,
+                    postal_code=postal_code,
+                    current_plan=current_plan,
+                    user_email=user or "default",
+                )
+                if isinstance(res.get("plan"), dict):
+                    try:
+                        sync_active_plan_to_whatsapp(res["plan"], postal_code=postal_code)
+                    except Exception:
+                        pass
+                self._send_json(200, res)
+            except Exception as exc:
+                self._send_json(422, {"error": str(exc)})
+            return
+
+        if path == "/api/whatsapp/send":
+            text = str(body.get("text") or body.get("message") or "").strip()
+            current_plan = body.get("currentPlan") if isinstance(body.get("currentPlan"), dict) else None
+            postal_code = str(body.get("postalCode") or body.get("postal_code") or "28001").strip()
+            msg_type = str(body.get("type") or "text").strip()
+            image_b64 = body.get("imageBase64") or body.get("image_base64")
+            if not text and not image_b64:
+                self._send_json(400, {"error": "Escribe un mensaje o adjunta una foto para el asistente de WhatsApp."})
+                return
+            try:
+                res = process_whatsapp_user_message(
+                    user_text=text,
+                    sender=user or "cliente_whatsapp",
+                    message_type=msg_type,
+                    image_base64=str(image_b64) if image_b64 else None,
+                    postal_code=postal_code,
+                    current_plan_override=current_plan,
+                )
+                st = get_whatsapp_state(base_url=get_companion_url())
+                res["webhook_url"] = st["webhook_url"]
+                res["webhook_stats"] = st["webhook_stats"]
+                self._send_json(200, res)
+            except Exception as exc:
+                self._send_json(422, {"error": str(exc)})
+            return
+
+        if path == "/api/whatsapp/config":
+            st = update_whatsapp_config(
+                verify_token=body.get("verify_token") or body.get("verifyToken"),
+                phone_number_id=body.get("phone_number_id") or body.get("phoneNumberId"),
+                access_token=body.get("access_token") or body.get("accessToken"),
+                recipient_phone=body.get("recipient_phone") or body.get("recipientPhone"),
+                reset_chat=bool(body.get("reset_chat") or body.get("resetChat")),
+            )
+            st["webhook_url"] = f"{get_companion_url()}/api/whatsapp/webhook"
+            self._send_json(200, st)
+            return
+
+        if path == "/api/cookidoo/session":
+            action = str(body.get("action") or "").strip().lower()
+            if action == "disconnect":
+                self._send_json(200, clear_cookidoo_session(user or "default"))
+                return
+            cookidoo_email = str(body.get("cookidoo_email") or body.get("email") or "").strip()
+            cookidoo_password = str(body.get("cookidoo_password") or body.get("password") or "").strip() or None
+            demo_mode = bool(body.get("demo_mode") or body.get("demoMode"))
+            try:
+                res = verify_and_save_cookidoo_session(
+                    email=cookidoo_email,
+                    password=cookidoo_password,
+                    user_email=user or "default",
+                    demo_mode=demo_mode,
+                )
+                self._send_json(200, res)
+            except ValueError as exc:
+                self._send_json(422, {"connected": False, "error": str(exc)})
+            return
+
+        if path == "/api/cookidoo/schedule-week":
+            meals = body.get("meals") or []
+            cookidoo_email = str(body.get("cookidoo_email") or "").strip() or None
+            cookidoo_password = str(body.get("cookidoo_password") or "").strip() or None
+            week_mode = str(body.get("week_mode") or body.get("weekMode") or "current").strip()
+            try:
+                res = schedule_weekly_plan_to_cookidoo(
+                    meals=meals if isinstance(meals, list) else [],
+                    email=cookidoo_email,
+                    password=cookidoo_password,
+                    week_mode=week_mode,
+                    user_email=user or "default",
+                )
+                self._send_json(200, res)
+            except ValueError as exc:
                 self._send_json(422, {"error": str(exc)})
             return
 
@@ -711,20 +1173,29 @@ class CompanionRequestHandler(BaseHTTPRequestHandler):
             recipe_id = str(body.get("recipe_id") or "").strip()
             cookidoo_email = str(body.get("cookidoo_email") or "").strip() or None
             cookidoo_password = str(body.get("cookidoo_password") or "").strip() or None
+            day_name = str(body.get("day") or body.get("day_name") or "").strip() or None
+            week_mode = str(body.get("week_mode") or body.get("weekMode") or "current").strip()
             try:
-                res = send_recipe_to_thermomix(recipe_id, cookidoo_email, cookidoo_password)
+                res = send_recipe_to_thermomix(
+                    recipe_id=recipe_id,
+                    email=cookidoo_email,
+                    password=cookidoo_password,
+                    day_name=day_name,
+                    week_mode=week_mode,
+                    user_email=user or "default",
+                )
                 self._send_json(200, res)
             except ValueError as exc:
                 self._send_json(422, {"error": str(exc)})
             return
 
-        if path == "/api/mercadona/session":
+        if path in ("/api/mercadona/session", "/api/eci/session", "/api/dia/session"):
             action = str(body.get("action") or "").strip().lower()
             if action == "disconnect":
                 res = clear_mercadona_session(user or "default")
                 self._send_json(200, res)
                 return
-            auth_input = str(body.get("auth_input") or body.get("mercadona_auth") or "").strip()
+            auth_input = str(body.get("auth_input") or body.get("mercadona_auth") or body.get("eci_auth") or body.get("dia_auth") or "").strip()
             postal_code = str(body.get("postal_code") or "28016").strip()
             try:
                 res = verify_and_save_mercadona_session(
@@ -737,10 +1208,10 @@ class CompanionRequestHandler(BaseHTTPRequestHandler):
                 self._send_json(422, {"connected": False, "error": str(exc)})
             return
 
-        if path == "/api/mercadona/cart":
+        if path in ("/api/mercadona/cart", "/api/eci/cart", "/api/dia/cart"):
             basket = body.get("basket") or []
             postal_code = str(body.get("postal_code") or "28016")
-            mercadona_auth = str(body.get("mercadona_auth") or "").strip() or None
+            mercadona_auth = str(body.get("mercadona_auth") or body.get("eci_auth") or body.get("dia_auth") or "").strip() or None
             mode = str(body.get("mode") or "add").strip().lower()
             res = prepare_mercadona_oneclick_cart(
                 basket=basket,

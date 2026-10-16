@@ -1,6 +1,6 @@
 /**
  * Mercadona Campaign Library — Microservicio para el equipo de Marketing
- * Conectado en tiempo real con Mercadona AI Shopping Companion
+ * Conectado en tiempo real con Mercadona AI Companion
  */
 
 const CATEGORIES = ["Familias", "Saludables", "Rutina rápida", "Ahorro"];
@@ -42,16 +42,12 @@ const mState = {
     authenticated: false,
     user: null,
     iapEmail: null,
-    allowedUsers: [
-      "matgand@gmail.com",
-      "mgandolfi@google.com",
-      "andrea.anaut@gmail.com",
-      "mattia@mgandolfi.altostrat.com",
-    ],
+    allowedUsers: [],
     error: "",
   },
   companionAppUrl: "https://mercadona-ai-companion-905208270932.europe-west1.run.app",
   campaigns: [],
+  analytics: null,
   selectedId: null,
   filterCategory: "Todas",
   filterStatus: "Todos",
@@ -74,16 +70,16 @@ function escapeHtml(str) {
 }
 
 function sanitizeUrl(url, fallback = "#") {
-  const raw = String(url ?? "").trim();
-  if (!raw) return fallback;
-  if (raw.startsWith("/") && !raw.startsWith("//")) return raw;
+  const s = String(url ?? "").trim();
+  if (!s) return fallback;
+  if (s.startsWith("/") && !s.startsWith("//")) return escapeHtml(s);
   try {
-    const parsed = new URL(raw, window.location.origin);
+    const parsed = new URL(s);
     if (parsed.protocol === "https:" || parsed.protocol === "http:") {
-      return parsed.href;
+      return escapeHtml(s);
     }
   } catch (e) {
-    // Ignore malformed URL
+    // Invalid URL
   }
   return fallback;
 }
@@ -102,12 +98,13 @@ function showNotice(msg, isError = false) {
   render();
 }
 
-function renderGoogleCloudLockup() {
+function renderGoogleCloudLockup(white = false) {
+  const src = white ? "/brand/google-cloud-white.svg?v=mercadona-md3-2026" : "/brand/google-cloud.svg?v=mercadona-md3-2026";
   return `
     <span class="gcloud-lockup-badge" aria-label="Google Cloud">
       <img
         class="gcloud-logo-img"
-        src="/brand/google-cloud.svg"
+        src="${src}"
         alt="Google Cloud"
       />
     </span>
@@ -125,12 +122,12 @@ function renderAuthModal() {
         <div class="brand-lockup" style="margin-bottom: 18px;">
           ${renderGoogleCloudLockup()}
           <span class="brand-divider"></span>
-          <img class="mercadona-logo" src="/brand/mercadona.svg" alt="Mercadona" style="width: 125px;" />
+          <img class="dia-logo" src="/brand/mercadona.svg?v=mercadona-md3-2026" alt="Mercadona" style="width: 125px;" />
         </div>
         <p class="eyebrow" style="margin-bottom: 6px;">Campaign Library · Google Cloud Identity-Aware Proxy (IAP)</p>
         <h2 id="auth-gate-title">Autenticación Google obligatoria</h2>
         <p>
-          El acceso a Campaign Library en Cloud Run está protegido mediante <strong>Google Cloud Identity-Aware Proxy (IAP)</strong> y restringido exclusivamente a las 4 cuentas de Google autorizadas:
+          El acceso a Campaign Library en Cloud Run está protegido mediante <strong>Google Cloud Identity-Aware Proxy (IAP)</strong> y restringido exclusivamente a las ${mState.auth.allowedUsers.length} cuentas de Google autorizadas:
         </p>
         ${detectedAccount}
         <div class="allowed-users-box" aria-label="Cuentas de Google en la allowlist de IAP">
@@ -185,7 +182,10 @@ async function initMarketingApp() {
 
 async function loadCampaigns() {
   try {
-    const res = await fetch("/api/campaigns");
+    const [res, analyticsRes] = await Promise.all([
+      fetch("/api/campaigns"),
+      fetch("/api/campaigns/analytics"),
+    ]);
     if (res.ok) {
       const data = await res.json();
       mState.campaigns = data.campaigns || [];
@@ -195,6 +195,9 @@ async function loadCampaigns() {
       if (!mState.selectedId && mState.campaigns.length > 0) {
         mState.selectedId = mState.campaigns[0].id;
       }
+    }
+    if (analyticsRes && analyticsRes.ok) {
+      mState.analytics = await analyticsRes.json();
     }
   } catch (e) {
     console.error("Error loading campaigns:", e);
@@ -300,6 +303,8 @@ async function handleSaveSelectedEdits(e) {
   const seedPrompt = document.getElementById("edit-seed-prompt")?.value.trim() || selected.seedPrompt;
   const maxBudget = Number(document.getElementById("edit-budget")?.value || selected.maxBudget);
   const maxMinutes = Number(document.getElementById("edit-minutes")?.value || selected.maxMinutes);
+  const sponsoredBrand = document.getElementById("edit-sponsored-brand")?.value.trim() ?? (selected.sponsoredBrand || "");
+  const retailMediaPromo = document.getElementById("edit-retail-promo")?.value.trim() ?? (selected.retailMediaPromo || "");
 
   mState.saving = true;
   render();
@@ -319,6 +324,8 @@ async function handleSaveSelectedEdits(e) {
           seedPrompt,
           maxBudget,
           maxMinutes,
+          sponsoredBrand,
+          retailMediaPromo,
         },
       }),
     });
@@ -353,6 +360,127 @@ function getSelectedCampaign() {
   return mState.campaigns[0] || null;
 }
 
+function renderDemandSensingSection() {
+  const a = mState.analytics;
+  if (!a) return "";
+  const kpis = a.kpis || {};
+  const zones = a.top_postal_zones || [];
+  const signals = a.dietary_signals || [];
+  const sponsors = a.retail_media_sponsors || [];
+
+  return `
+    <section class="demand-sensing-section" aria-label="Radar de Intención Culinaria y Retail Media">
+      <div class="demand-sensing-header">
+        <div>
+          <p class="eyebrow">First-Party Data · Retail Media & Demand Sensing</p>
+          <h2>📊 Radar de Intención Culinaria por Código Postal y Rendimiento Retail Media</h2>
+          <p>
+            Analítica agregada en vivo a partir de las peticiones en lenguaje natural de los hogares en el Planificador IA y WhatsApp Copilot.
+            Permite a Compras anticipar la demanda de frescos en mostrador y a Retail Media monetizar ingredientes patrocinados con atribución directa a cesta.
+          </p>
+        </div>
+        <div class="demand-kpis-strip">
+          <div class="demand-kpi-box">
+            <strong>${escapeHtml(kpis.avg_ticket_uplift || "+24,6 %")}</strong>
+            <span>Incremento Ticket Medio</span>
+          </div>
+          <div class="demand-kpi-box">
+            <strong>${escapeHtml(kpis.retail_media_roas || "4.8x")}</strong>
+            <span>ROAS Retail Media</span>
+          </div>
+          <div class="demand-kpi-box">
+            <strong>${escapeHtml(kpis.fresh_counter_orders_pct || "68,4 %")}</strong>
+            <span>Cestas con Mostrador Fresco</span>
+          </div>
+          <div class="demand-kpi-box">
+            <strong>${escapeHtml(kpis.whatsapp_plan_sync_rate || "41,2 %")}</strong>
+            <span>Sincronización WhatsApp</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="demand-sensing-grid">
+        <div class="demand-card">
+          <h3>📍 Intención Culinaria y Frescos en Tendencia por Colmena Mercadona</h3>
+          <div class="demand-table-wrap">
+            <table class="demand-table">
+              <thead>
+                <tr>
+                  <th>Zona / CP</th>
+                  <th>Intención Principal Detectada</th>
+                  <th>Frescos Mostrador en Tendencia</th>
+                  <th>Nivel de Cesta Dominante</th>
+                  <th>Ticket Medio</th>
+                </tr>
+              </thead>
+              <tbody>
+                ${zones
+                  .map(
+                    (z) => `
+                  <tr>
+                    <td>
+                      <strong>${escapeHtml(z.postal_code)}</strong>
+                      <small>${escapeHtml(z.center)}</small>
+                    </td>
+                    <td>${escapeHtml(z.top_intent)}</td>
+                    <td>${escapeHtml(z.trending_fresh)}</td>
+                    <td><span class="demand-tier-pill">${escapeHtml(z.dominant_tier)}</span></td>
+                    <td><strong>${escapeHtml(z.avg_ticket)}</strong></td>
+                  </tr>
+                `
+                  )
+                  .join("")}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="demand-card">
+          <h3>🥗 Señales de Intención en Prompts Semanales</h3>
+          <div class="demand-signals-list">
+            ${signals
+              .map(
+                (s) => `
+              <div class="demand-signal-row">
+                <div class="demand-signal-meta">
+                  <strong>${escapeHtml(s.label)}</strong>
+                  <span>${Number(s.share)}% de hogares · <em>${escapeHtml(s.trend)}</em></span>
+                </div>
+                <div class="demand-signal-bar-track">
+                  <div class="demand-signal-bar-fill" style="width: ${Math.min(100, Number(s.share))}%;"></div>
+                </div>
+              </div>
+            `
+              )
+              .join("")}
+          </div>
+
+          <h3 style="margin-top: 18px;">🎯 Campañas Patrocinadas · Proveedores Totaler & Mercadona</h3>
+          <div class="retail-sponsors-list">
+            ${sponsors
+              .map(
+                (sp) => `
+              <div class="retail-sponsor-item">
+                <div>
+                  <strong>${escapeHtml(sp.brand)}</strong>
+                  <small>${escapeHtml(sp.category)} · ${escapeHtml(sp.promo)}</small>
+                </div>
+                <div class="retail-sponsor-metrics">
+                  <span>${escapeHtml(sp.impressions)}</span>
+                  <span>Conv. ${escapeHtml(sp.conversion)}</span>
+                  <strong class="roas-pill">ROAS ${escapeHtml(sp.roas)}</strong>
+                </div>
+              </div>
+            `
+              )
+              .join("")}
+          </div>
+        </div>
+      </div>
+    </section>
+  `;
+}
+
 function render() {
   const root = document.getElementById("marketing-root");
   if (!root) return;
@@ -369,9 +497,9 @@ function render() {
     <main class="marketing-shell">
       <header class="brand-bar marketing-brand-bar">
         <a class="brand-lockup" href="${escapeHtml(mState.companionAppUrl)}" aria-label="Google Cloud y Mercadona">
-          ${renderGoogleCloudLockup()}
+          ${renderGoogleCloudLockup(true)}
           <span class="brand-divider" aria-hidden="true"></span>
-          <img class="mercadona-logo" src="/brand/mercadona.svg" alt="Mercadona" />
+          <img class="dia-logo" src="/brand/mercadona-white.svg?v=mercadona-md3-2026" alt="Mercadona" />
         </a>
         <nav class="top-navigation" aria-label="Navegación entre microservicios">
           <a href="${escapeHtml(mState.companionAppUrl)}">Experiencia Cliente (Planificador)</a>
@@ -402,7 +530,7 @@ function render() {
             Define en lenguaje natural propuestas semanales adaptadas a cada perfil de usuario
             (<strong>Familias</strong>, <strong>Saludables</strong>, <strong>Rutina rápida</strong>, <strong>Ahorro</strong>).
             Las campañas en estado <strong>Activa</strong> se publican automáticamente en la sección
-            <em>«Más ideas para tu semana. Olvida el buscador. Compra según tu estilo de vida.»</em> de la aplicación principal.
+            <em>«Más ideas para tu semana. Olvida el buscador. Elije una de nuestras propuestas.»</em> de la aplicación principal.
           </p>
         </div>
         <div class="marketing-kpis" aria-label="Resumen del portfolio de campañas">
@@ -529,7 +657,7 @@ function render() {
               <p class="eyebrow">Copiloto de Campañas IA</p>
               <h2>Definir nueva campaña</h2>
             </div>
-            <span class="prototype-label">Gemini 3.8 Flash</span>
+            <span class="prototype-label">Google Gemini</span>
           </div>
 
           <form class="campaign-brief-form" id="create-campaign-form">
@@ -574,7 +702,7 @@ function render() {
             </div>
 
             <button class="primary-button compact" type="submit" ${mState.generating ? "disabled" : ""}>
-              ${mState.generating ? "Generando campaña con Gemini 3.8 Flash..." : "Crear campaña desde lenguaje natural"}
+              ${mState.generating ? "Generando campaña con Google Gemini..." : "Crear campaña desde lenguaje natural"}
               <span aria-hidden="true">↗</span>
             </button>
           </form>
@@ -631,6 +759,14 @@ function render() {
                     <input type="number" id="edit-minutes" min="10" max="90" step="5" value="${Number(selected.maxMinutes)}" title="Tiempo máximo (min)" />
                   </div>
                 </label>
+                <label>
+                  Marca Patrocinadora (Proveedores Totaler & Mercadona)
+                  <input type="text" id="edit-sponsored-brand" value="${escapeHtml(selected.sponsoredBrand || "")}" placeholder="Ej.: Mercadona Bio · Pescanova" />
+                </label>
+                <label>
+                  Promoción / Incentivo Retail Media
+                  <input type="text" id="edit-retail-promo" value="${escapeHtml(selected.retailMediaPromo || "")}" placeholder="Ej.: 10% dto. directo o corte Varoma gratis" />
+                </label>
               </div>
 
               <div class="validation-ribbon guardrail-grid">
@@ -658,7 +794,7 @@ function render() {
               ? `
             <article class="campaign-preview-card">
               <figure>
-                <img src="${escapeHtml(sanitizeUrl(selected.imageUrl, "/meals/lemon-hake-potatoes.webp"))}" alt="${escapeHtml(selected.title)}" />
+                <img src="${sanitizeUrl(selected.imageUrl, "/meals/salmon-rice-bowl.webp")}" alt="${escapeHtml(selected.title)}" />
               </figure>
               <div class="campaign-preview-body">
                 <div style="display:flex; justify-content:space-between; align-items:center; gap:8px; margin-bottom:14px; flex-wrap:wrap;">
@@ -677,6 +813,16 @@ function render() {
                   <strong>Por qué encaja con el perfil «${escapeHtml(selected.category)}»</strong>
                   <p>${escapeHtml(selected.whyProfile)}</p>
                 </div>
+                ${
+                  selected.sponsoredBrand || selected.retailMediaPromo
+                    ? `
+                  <div class="why-profile retail-media-preview-box">
+                    <strong>🎯 Retail Media · Marca Patrocinadora</strong>
+                    <p><strong>${escapeHtml(selected.sponsoredBrand || "Mercadona Selection")}</strong>${selected.retailMediaPromo ? ` · ${escapeHtml(selected.retailMediaPromo)}` : ""}</p>
+                  </div>
+                `
+                    : ""
+                }
                 <div class="why-profile">
                   <strong>Menú inicial que cargará en el Planificador</strong>
                   <p style="font-family:var(--font-geist-mono),monospace; font-size:10px; background:#f6f6f2; padding:8px 10px; border-radius:2px; margin-top:6px; color:var(--ink);">
@@ -694,7 +840,7 @@ function render() {
             <p class="preview-disclaimer">
               ${
                 selected.status === "Activa"
-                  ? `✓ Esta campaña está <strong>Activa</strong> y aparece ahora mismo en la sección <em>«Más ideas para tu semana. Olvida el buscador. Compra según tu estilo de vida.»</em> de la aplicación principal.`
+                  ? `✓ Esta campaña está <strong>Activa</strong> y aparece ahora mismo en la sección <em>«Más ideas para tu semana. Olvida el buscador. Elije una de nuestras propuestas.»</em> de la aplicación principal.`
                   : `ℹ️ Esta campaña está en estado <strong>${escapeHtml(selected.status)}</strong>. Cámbiala a <strong>Activa</strong> para publicarla en <em>«Más ideas para tu semana»</em>.`
               }
             </p>
@@ -703,6 +849,8 @@ function render() {
           }
         </aside>
       </section>
+
+      ${renderDemandSensingSection()}
     </main>
   `;
 
@@ -806,7 +954,7 @@ function bindMarketingEvents() {
   }
 }
 
-function ensureMercadonaFavicon() {
+function ensureDiaFavicon() {
   document.querySelectorAll('link[rel*="icon"]').forEach((el) => el.remove());
   const pngLink = document.createElement("link");
   pngLink.rel = "icon";
@@ -822,5 +970,5 @@ function ensureMercadonaFavicon() {
   document.head.appendChild(icoLink);
 }
 
-ensureMercadonaFavicon();
+ensureDiaFavicon();
 initMarketingApp();

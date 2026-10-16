@@ -1,0 +1,3943 @@
+[
+  {
+    "ingredient": "mantequilla",
+    "count": 746,
+    "matched_pid": "60622",
+    "matched_product_name": "Mantequilla sin sal añadida Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "huevos",
+    "count": 558,
+    "matched_pid": "31505",
+    "matched_product_name": "Huevos medianos M",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "leche",
+    "count": 341,
+    "matched_pid": "10380",
+    "matched_product_name": "Leche entera Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "queso parmesano",
+    "count": 286,
+    "matched_pid": "22216",
+    "matched_product_name": "Queso rallado emmental gratinar Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "huevo",
+    "count": 264,
+    "matched_pid": "31505",
+    "matched_product_name": "Huevos medianos M",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "queso cremoso",
+    "count": 135,
+    "matched_pid": "51197",
+    "matched_product_name": "Queso feta mezcla Hacendado en dados",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "nata (35% de grasa)",
+    "count": 122,
+    "matched_pid": "10161",
+    "matched_product_name": "Nata ligera para cocinar Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "nata",
+    "count": 117,
+    "matched_pid": "10161",
+    "matched_product_name": "Nata ligera para cocinar Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "caldo de pescado",
+    "count": 88,
+    "matched_pid": "22860",
+    "matched_product_name": "Caldo de carne Hacendado en pastillas",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "almejas frescas",
+    "count": 67,
+    "matched_pid": "62396",
+    "matched_product_name": "Carne de mejillón cocido Hacendado ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "queso parmesano rallado",
+    "count": 65,
+    "matched_pid": "22216",
+    "matched_product_name": "Queso rallado emmental gratinar Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "leche entera",
+    "count": 63,
+    "matched_pid": "10380",
+    "matched_product_name": "Leche entera Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "yogur griego",
+    "count": 62,
+    "matched_pid": "22313",
+    "matched_product_name": "Yogur natural Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "huevos duros",
+    "count": 60,
+    "matched_pid": "31505",
+    "matched_product_name": "Huevos medianos M",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "caldo de pollo",
+    "count": 59,
+    "matched_pid": "3400",
+    "matched_product_name": "Filetes pechuga de pollo corte fino",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "filete de pechuga de pollo sin piel",
+    "count": 59,
+    "matched_pid": "3400",
+    "matched_product_name": "Filetes pechuga de pollo corte fino",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "dados de beicon",
+    "count": 59,
+    "matched_pid": "2169",
+    "matched_product_name": "Flautas de bacón y queso",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "contramuslos de pollo sin piel ni hueso",
+    "count": 57,
+    "matched_pid": "3400",
+    "matched_product_name": "Filetes pechuga de pollo corte fino",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pechuga de pollo",
+    "count": 55,
+    "matched_pid": "3400",
+    "matched_product_name": "Filetes pechuga de pollo corte fino",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "queso emmental",
+    "count": 55,
+    "matched_pid": "22216",
+    "matched_product_name": "Queso rallado emmental gratinar Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "leche de coco",
+    "count": 55,
+    "matched_pid": "10380",
+    "matched_product_name": "Leche entera Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "crème fraîche",
+    "count": 54,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "mejillones frescos limpios",
+    "count": 54,
+    "matched_pid": "62396",
+    "matched_product_name": "Carne de mejillón cocido Hacendado ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "salmón ahumado",
+    "count": 54,
+    "matched_pid": "24350",
+    "matched_product_name": "Filete de salmón rosado salvaje con piel Hacendado ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "chorizo",
+    "count": 52,
+    "matched_pid": "6048",
+    "matched_product_name": "Chorizo oreado",
+    "match_method": "TOKEN_chorizo"
+  },
+  {
+    "ingredient": "queso cheddar",
+    "count": 52,
+    "matched_pid": "22216",
+    "matched_product_name": "Queso rallado emmental gratinar Hacendado",
+    "match_method": "TOKEN_queso"
+  },
+  {
+    "ingredient": "gambas crudas peladas",
+    "count": 52,
+    "matched_pid": "24712",
+    "matched_product_name": "Langostino crudo Hacendado ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "yemas de huevo",
+    "count": 51,
+    "matched_pid": "31505",
+    "matched_product_name": "Huevos medianos M",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "yema de huevo",
+    "count": 50,
+    "matched_pid": "31505",
+    "matched_product_name": "Huevos medianos M",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "carne picada mixta",
+    "count": 50,
+    "matched_pid": "6565",
+    "matched_product_name": "Tortellini carne Pagani",
+    "match_method": "TOKEN_carne"
+  },
+  {
+    "ingredient": "jamón cocido",
+    "count": 49,
+    "matched_pid": "60329",
+    "matched_product_name": "Jamón cocido extra Hacendado finas lonchas",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "caldo de carne",
+    "count": 48,
+    "matched_pid": "22860",
+    "matched_product_name": "Caldo de carne Hacendado en pastillas",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "carne picada de ternera",
+    "count": 46,
+    "matched_pid": "6565",
+    "matched_product_name": "Tortellini carne Pagani",
+    "match_method": "TOKEN_carne"
+  },
+  {
+    "ingredient": "queso feta",
+    "count": 44,
+    "matched_pid": "51197",
+    "matched_product_name": "Queso feta mezcla Hacendado en dados",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pastilla de caldo de pescado",
+    "count": 44,
+    "matched_pid": "7313",
+    "matched_product_name": "Caldo de pollo Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pastilla de caldo de carne",
+    "count": 41,
+    "matched_pid": "7313",
+    "matched_product_name": "Caldo de pollo Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "jamón serrano en dados",
+    "count": 41,
+    "matched_pid": "17797",
+    "matched_product_name": "Jamón serrano Incarlopsa lonchas",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "contramuslo de pollo sin piel ni hueso",
+    "count": 40,
+    "matched_pid": "3400",
+    "matched_product_name": "Filetes pechuga de pollo corte fino",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "bacalao en salazón remojado y desalado",
+    "count": 40,
+    "matched_pid": "24016",
+    "matched_product_name": "Filetes de bacalao MareDeus ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "filetes de anchoa en aceite",
+    "count": 37,
+    "matched_pid": "4740",
+    "matched_product_name": "Aceite de oliva virgen extra Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "mozzarella fresca",
+    "count": 37,
+    "matched_pid": "51050",
+    "matched_product_name": "Mozzarella fresca de vaca Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "gambas frescas enteras sin pelar",
+    "count": 37,
+    "matched_pid": "24712",
+    "matched_product_name": "Langostino crudo Hacendado ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "langostinos crudos medianos pelados",
+    "count": 37,
+    "matched_pid": "24712",
+    "matched_product_name": "Langostino crudo Hacendado ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "manteca de cerdo",
+    "count": 36,
+    "matched_pid": "14968",
+    "matched_product_name": "Manteca de cerdo Hacendado",
+    "match_method": "TOKEN_manteca"
+  },
+  {
+    "ingredient": "yogur natural",
+    "count": 36,
+    "matched_pid": "22313",
+    "matched_product_name": "Yogur natural Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "repollo",
+    "count": 34,
+    "matched_pid": "3400",
+    "matched_product_name": "Filetes pechuga de pollo corte fino",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "queso gruyère",
+    "count": 34,
+    "matched_pid": "22216",
+    "matched_product_name": "Queso rallado emmental gratinar Hacendado",
+    "match_method": "TOKEN_queso"
+  },
+  {
+    "ingredient": "jamón serrano",
+    "count": 34,
+    "matched_pid": "17797",
+    "matched_product_name": "Jamón serrano Incarlopsa lonchas",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "extracto de buey",
+    "count": 33,
+    "matched_pid": "87290",
+    "matched_product_name": "Buey de mar cocido hembra descongelado",
+    "match_method": "TOKEN_buey"
+  },
+  {
+    "ingredient": "langostinos crudos sin pelar",
+    "count": 33,
+    "matched_pid": "24712",
+    "matched_product_name": "Langostino crudo Hacendado ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "atún en aceite",
+    "count": 32,
+    "matched_pid": "4740",
+    "matched_product_name": "Aceite de oliva virgen extra Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "sepia",
+    "count": 32,
+    "matched_pid": "26775",
+    "matched_product_name": "Chipirones enharinados Hacendado ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "lomos de salmón fresco sin piel ni espinas",
+    "count": 32,
+    "matched_pid": "24350",
+    "matched_product_name": "Filete de salmón rosado salvaje con piel Hacendado ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "jamón curado en dados",
+    "count": 32,
+    "matched_pid": "17797",
+    "matched_product_name": "Jamón serrano Incarlopsa lonchas",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pastilla de caldo de pollo",
+    "count": 31,
+    "matched_pid": "3400",
+    "matched_product_name": "Filetes pechuga de pollo corte fino",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "solomillo de cerdo",
+    "count": 31,
+    "matched_pid": "4152",
+    "matched_product_name": "Medallones preparado de solomillo cerdo provenzal",
+    "match_method": "TOKEN_solomillo"
+  },
+  {
+    "ingredient": "dados de beicon ahumado",
+    "count": 31,
+    "matched_pid": "2169",
+    "matched_product_name": "Flautas de bacón y queso",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "salsa de pescado",
+    "count": 30,
+    "matched_pid": "35839",
+    "matched_product_name": "Salsa Original Ligeresa",
+    "match_method": "TOKEN_salsa"
+  },
+  {
+    "ingredient": "huevo duro",
+    "count": 28,
+    "matched_pid": "31505",
+    "matched_product_name": "Huevos medianos M",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "solomillo de ternera",
+    "count": 27,
+    "matched_pid": "4152",
+    "matched_product_name": "Medallones preparado de solomillo cerdo provenzal",
+    "match_method": "TOKEN_solomillo"
+  },
+  {
+    "ingredient": "costillas de cerdo frescas",
+    "count": 25,
+    "matched_pid": "2811",
+    "matched_product_name": "Costillas de cerdo carnosas a tacos",
+    "match_method": "TOKEN_costillas"
+  },
+  {
+    "ingredient": "filetes de ternera",
+    "count": 25,
+    "matched_pid": "3400",
+    "matched_product_name": "Filetes pechuga de pollo corte fino",
+    "match_method": "TOKEN_filetes"
+  },
+  {
+    "ingredient": "queso",
+    "count": 25,
+    "matched_pid": "22216",
+    "matched_product_name": "Queso rallado emmental gratinar Hacendado",
+    "match_method": "TOKEN_queso"
+  },
+  {
+    "ingredient": "atún en aceite de oliva",
+    "count": 25,
+    "matched_pid": "4740",
+    "matched_product_name": "Aceite de oliva virgen extra Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "conejo",
+    "count": 24,
+    "matched_pid": "25972",
+    "matched_product_name": "Medio conejo troceado",
+    "match_method": "TOKEN_conejo"
+  },
+  {
+    "ingredient": "queso manchego",
+    "count": 23,
+    "matched_pid": "22216",
+    "matched_product_name": "Queso rallado emmental gratinar Hacendado",
+    "match_method": "TOKEN_queso"
+  },
+  {
+    "ingredient": "clara de huevo",
+    "count": 23,
+    "matched_pid": "31505",
+    "matched_product_name": "Huevos medianos M",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "lomo de salmón fresco sin piel ni espinas",
+    "count": 23,
+    "matched_pid": "24350",
+    "matched_product_name": "Filete de salmón rosado salvaje con piel Hacendado ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "carrilleras de cerdo",
+    "count": 22,
+    "matched_pid": "35902",
+    "matched_product_name": "Brochetas de pollo, pimiento verde y tocino de cerdo con varilla",
+    "match_method": "TOKEN_cerdo"
+  },
+  {
+    "ingredient": "morcillo de ternera",
+    "count": 22,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "nata para cocinar",
+    "count": 22,
+    "matched_pid": "10161",
+    "matched_product_name": "Nata ligera para cocinar Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "queso gorgonzola",
+    "count": 22,
+    "matched_pid": "22216",
+    "matched_product_name": "Queso rallado emmental gratinar Hacendado",
+    "match_method": "TOKEN_queso"
+  },
+  {
+    "ingredient": "jamón ibérico",
+    "count": 22,
+    "matched_pid": "56619",
+    "matched_product_name": "Jamón de pavo Hacendado finas lonchas",
+    "match_method": "TOKEN_jamon"
+  },
+  {
+    "ingredient": "beicon",
+    "count": 22,
+    "matched_pid": "2169",
+    "matched_product_name": "Flautas de bacón y queso",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "nata líquida",
+    "count": 22,
+    "matched_pid": "10161",
+    "matched_product_name": "Nata ligera para cocinar Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "lomos de bacalao desalado",
+    "count": 22,
+    "matched_pid": "24016",
+    "matched_product_name": "Filetes de bacalao MareDeus ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "requesón",
+    "count": 21,
+    "matched_pid": "51197",
+    "matched_product_name": "Queso feta mezcla Hacendado en dados",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "tinta de calamar",
+    "count": 21,
+    "matched_pid": "26775",
+    "matched_product_name": "Chipirones enharinados Hacendado ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pulpo cocido",
+    "count": 21,
+    "matched_pid": "26775",
+    "matched_product_name": "Chipirones enharinados Hacendado ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "salmón fresco sin piel ni espinas",
+    "count": 21,
+    "matched_pid": "24350",
+    "matched_product_name": "Filete de salmón rosado salvaje con piel Hacendado ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "queso ricota",
+    "count": 21,
+    "matched_pid": "22216",
+    "matched_product_name": "Queso rallado emmental gratinar Hacendado",
+    "match_method": "TOKEN_queso"
+  },
+  {
+    "ingredient": "carne picada",
+    "count": 20,
+    "matched_pid": "6565",
+    "matched_product_name": "Tortellini carne Pagani",
+    "match_method": "TOKEN_carne"
+  },
+  {
+    "ingredient": "mozzarella rallada",
+    "count": 20,
+    "matched_pid": "51050",
+    "matched_product_name": "Mozzarella fresca de vaca Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "chorizo semicurado",
+    "count": 20,
+    "matched_pid": "6048",
+    "matched_product_name": "Chorizo oreado",
+    "match_method": "TOKEN_chorizo"
+  },
+  {
+    "ingredient": "queso de cabra en rulo",
+    "count": 20,
+    "matched_pid": "22216",
+    "matched_product_name": "Queso rallado emmental gratinar Hacendado",
+    "match_method": "TOKEN_queso"
+  },
+  {
+    "ingredient": "lomo de rape (sin piel ni hueso)",
+    "count": 20,
+    "matched_pid": "62113",
+    "matched_product_name": "Lomos y centros de merluza del Cabo Hacendado ultracongelados",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "leche evaporada",
+    "count": 20,
+    "matched_pid": "10380",
+    "matched_product_name": "Leche entera Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "mantequilla de cacahuete",
+    "count": 19,
+    "matched_pid": "60622",
+    "matched_product_name": "Mantequilla sin sal añadida Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "queso manchego semicurado",
+    "count": 19,
+    "matched_pid": "22216",
+    "matched_product_name": "Queso rallado emmental gratinar Hacendado",
+    "match_method": "TOKEN_queso"
+  },
+  {
+    "ingredient": "beicon en lonchas",
+    "count": 18,
+    "matched_pid": "2169",
+    "matched_product_name": "Flautas de bacón y queso",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "alitas de pollo",
+    "count": 18,
+    "matched_pid": "3400",
+    "matched_product_name": "Filetes pechuga de pollo corte fino",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "filetes de pechuga de pollo",
+    "count": 18,
+    "matched_pid": "3400",
+    "matched_product_name": "Filetes pechuga de pollo corte fino",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "queso azul",
+    "count": 18,
+    "matched_pid": "22216",
+    "matched_product_name": "Queso rallado emmental gratinar Hacendado",
+    "match_method": "TOKEN_queso"
+  },
+  {
+    "ingredient": "claras de huevo",
+    "count": 18,
+    "matched_pid": "31505",
+    "matched_product_name": "Huevos medianos M",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "langostinos crudos grandes pelados",
+    "count": 18,
+    "matched_pid": "24712",
+    "matched_product_name": "Langostino crudo Hacendado ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "berberechos frescos",
+    "count": 18,
+    "matched_pid": "62396",
+    "matched_product_name": "Carne de mejillón cocido Hacendado ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "mejillones",
+    "count": 18,
+    "matched_pid": "62396",
+    "matched_product_name": "Carne de mejillón cocido Hacendado ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "carne picada de cerdo",
+    "count": 17,
+    "matched_pid": "6565",
+    "matched_product_name": "Tortellini carne Pagani",
+    "match_method": "TOKEN_carne"
+  },
+  {
+    "ingredient": "atún al natural",
+    "count": 17,
+    "matched_pid": "18114",
+    "matched_product_name": "Filetes de melva canutera con pimientos del piquillo Hacendado en aceite de oliva",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "lomo de salmón fresco",
+    "count": 17,
+    "matched_pid": "24350",
+    "matched_product_name": "Filete de salmón rosado salvaje con piel Hacendado ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "carne de cordero",
+    "count": 16,
+    "matched_pid": "6565",
+    "matched_product_name": "Tortellini carne Pagani",
+    "match_method": "TOKEN_carne"
+  },
+  {
+    "ingredient": "solomillos de cerdo",
+    "count": 16,
+    "matched_pid": "2786",
+    "matched_product_name": "Solomillos de pollo",
+    "match_method": "TOKEN_solomillos"
+  },
+  {
+    "ingredient": "fumet de pescado",
+    "count": 16,
+    "matched_pid": "22860",
+    "matched_product_name": "Caldo de carne Hacendado en pastillas",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "queso mozzarella",
+    "count": 16,
+    "matched_pid": "51050",
+    "matched_product_name": "Mozzarella fresca de vaca Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "lomo de cerdo",
+    "count": 15,
+    "matched_pid": "62050",
+    "matched_product_name": "Lomo de bacalao MareDeus ultracongelado",
+    "match_method": "TOKEN_lomo"
+  },
+  {
+    "ingredient": "sobrasada",
+    "count": 15,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "queso provolone",
+    "count": 15,
+    "matched_pid": "22216",
+    "matched_product_name": "Queso rallado emmental gratinar Hacendado",
+    "match_method": "TOKEN_queso"
+  },
+  {
+    "ingredient": "queso mascarpone",
+    "count": 15,
+    "matched_pid": "51197",
+    "matched_product_name": "Queso feta mezcla Hacendado en dados",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pulpo congelado crudo",
+    "count": 15,
+    "matched_pid": "26775",
+    "matched_product_name": "Chipirones enharinados Hacendado ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "queso pecorino",
+    "count": 15,
+    "matched_pid": "22216",
+    "matched_product_name": "Queso rallado emmental gratinar Hacendado",
+    "match_method": "TOKEN_queso"
+  },
+  {
+    "ingredient": "pechuga de pavo sin piel ni hueso",
+    "count": 14,
+    "matched_pid": "3400",
+    "matched_product_name": "Filetes pechuga de pollo corte fino",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "aguja de cerdo",
+    "count": 14,
+    "matched_pid": "4900",
+    "matched_product_name": "Chuletas aguja de cerdo",
+    "match_method": "TOKEN_aguja"
+  },
+  {
+    "ingredient": "queso rallado",
+    "count": 14,
+    "matched_pid": "22216",
+    "matched_product_name": "Queso rallado emmental gratinar Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "repollo blanco",
+    "count": 14,
+    "matched_pid": "3400",
+    "matched_product_name": "Filetes pechuga de pollo corte fino",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "queso emmental rallado",
+    "count": 14,
+    "matched_pid": "22216",
+    "matched_product_name": "Queso rallado emmental gratinar Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pierna de cordero deshuesada",
+    "count": 13,
+    "matched_pid": "21836",
+    "matched_product_name": "Chuletas de cordero pierna",
+    "match_method": "TOKEN_pierna"
+  },
+  {
+    "ingredient": "huevos de codorniz",
+    "count": 13,
+    "matched_pid": "31505",
+    "matched_product_name": "Huevos medianos M",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "morcilla de cebolla",
+    "count": 13,
+    "matched_pid": "69089",
+    "matched_product_name": "Cebollas",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "lomos de bacalao al punto de sal",
+    "count": 13,
+    "matched_pid": "24016",
+    "matched_product_name": "Filetes de bacalao MareDeus ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "carne picada de pavo",
+    "count": 12,
+    "matched_pid": "3400",
+    "matched_product_name": "Filetes pechuga de pollo corte fino",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "carne de ternera sin nervios en trozos",
+    "count": 12,
+    "matched_pid": "6565",
+    "matched_product_name": "Tortellini carne Pagani",
+    "match_method": "TOKEN_carne"
+  },
+  {
+    "ingredient": "queso gouda",
+    "count": 12,
+    "matched_pid": "22216",
+    "matched_product_name": "Queso rallado emmental gratinar Hacendado",
+    "match_method": "TOKEN_queso"
+  },
+  {
+    "ingredient": "carne de ternera",
+    "count": 12,
+    "matched_pid": "6565",
+    "matched_product_name": "Tortellini carne Pagani",
+    "match_method": "TOKEN_carne"
+  },
+  {
+    "ingredient": "carne de cordero en trozos, sin nervios",
+    "count": 12,
+    "matched_pid": "6565",
+    "matched_product_name": "Tortellini carne Pagani",
+    "match_method": "TOKEN_carne"
+  },
+  {
+    "ingredient": "salchichas blancas frescas",
+    "count": 12,
+    "matched_pid": "53141",
+    "matched_product_name": "Salchichas cocidas estilo Frankfurt Hacendado de pollo y cerdo sabor ahumado",
+    "match_method": "TOKEN_salchichas"
+  },
+  {
+    "ingredient": "atún fresco",
+    "count": 12,
+    "matched_pid": "18114",
+    "matched_product_name": "Filetes de melva canutera con pimientos del piquillo Hacendado en aceite de oliva",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "bonito fresco",
+    "count": 12,
+    "matched_pid": "18114",
+    "matched_product_name": "Filetes de melva canutera con pimientos del piquillo Hacendado en aceite de oliva",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "lomos de salmón fresco",
+    "count": 12,
+    "matched_pid": "24350",
+    "matched_product_name": "Filete de salmón rosado salvaje con piel Hacendado ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "lomos de bacalao fresco",
+    "count": 12,
+    "matched_pid": "24016",
+    "matched_product_name": "Filetes de bacalao MareDeus ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "queso roquefort",
+    "count": 12,
+    "matched_pid": "22216",
+    "matched_product_name": "Queso rallado emmental gratinar Hacendado",
+    "match_method": "TOKEN_queso"
+  },
+  {
+    "ingredient": "berberechos al natural (en conserva)",
+    "count": 12,
+    "matched_pid": "62396",
+    "matched_product_name": "Carne de mejillón cocido Hacendado ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "aguja de ternera",
+    "count": 11,
+    "matched_pid": "4900",
+    "matched_product_name": "Chuletas aguja de cerdo",
+    "match_method": "TOKEN_aguja"
+  },
+  {
+    "ingredient": "muslos de pollo con piel",
+    "count": 11,
+    "matched_pid": "3400",
+    "matched_product_name": "Filetes pechuga de pollo corte fino",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "magro de cerdo",
+    "count": 11,
+    "matched_pid": "23308",
+    "matched_product_name": "Fiambre de magro de cerdo adobado",
+    "match_method": "TOKEN_magro"
+  },
+  {
+    "ingredient": "pollo entero",
+    "count": 11,
+    "matched_pid": "3400",
+    "matched_product_name": "Filetes pechuga de pollo corte fino",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "contramuslos de pollo con piel y hueso",
+    "count": 11,
+    "matched_pid": "3400",
+    "matched_product_name": "Filetes pechuga de pollo corte fino",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "beicon ahumado",
+    "count": 11,
+    "matched_pid": "2169",
+    "matched_product_name": "Flautas de bacón y queso",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "tocino entreverado curado",
+    "count": 11,
+    "matched_pid": "2169",
+    "matched_product_name": "Flautas de bacón y queso",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "jamón curado",
+    "count": 11,
+    "matched_pid": "17797",
+    "matched_product_name": "Jamón serrano Incarlopsa lonchas",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "anchoas en aceite",
+    "count": 11,
+    "matched_pid": "4740",
+    "matched_product_name": "Aceite de oliva virgen extra Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "queso de cabra",
+    "count": 11,
+    "matched_pid": "22216",
+    "matched_product_name": "Queso rallado emmental gratinar Hacendado",
+    "match_method": "TOKEN_queso"
+  },
+  {
+    "ingredient": "lubina",
+    "count": 11,
+    "matched_pid": "62113",
+    "matched_product_name": "Lomos y centros de merluza del Cabo Hacendado ultracongelados",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "calamares frescos",
+    "count": 11,
+    "matched_pid": "26775",
+    "matched_product_name": "Chipirones enharinados Hacendado ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "lomos de bacalao desalados",
+    "count": 11,
+    "matched_pid": "24016",
+    "matched_product_name": "Filetes de bacalao MareDeus ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pollo asado",
+    "count": 11,
+    "matched_pid": "3400",
+    "matched_product_name": "Filetes pechuga de pollo corte fino",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "queso de cabra fresco",
+    "count": 11,
+    "matched_pid": "22216",
+    "matched_product_name": "Queso rallado emmental gratinar Hacendado",
+    "match_method": "TOKEN_queso"
+  },
+  {
+    "ingredient": "pechuga de pavo sin piel",
+    "count": 10,
+    "matched_pid": "3400",
+    "matched_product_name": "Filetes pechuga de pollo corte fino",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "queso de bola",
+    "count": 10,
+    "matched_pid": "22216",
+    "matched_product_name": "Queso rallado emmental gratinar Hacendado",
+    "match_method": "TOKEN_queso"
+  },
+  {
+    "ingredient": "carne de ternera en trozos",
+    "count": 10,
+    "matched_pid": "6565",
+    "matched_product_name": "Tortellini carne Pagani",
+    "match_method": "TOKEN_carne"
+  },
+  {
+    "ingredient": "queso fresco",
+    "count": 10,
+    "matched_pid": "51197",
+    "matched_product_name": "Queso feta mezcla Hacendado en dados",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "repollo liso blanco",
+    "count": 10,
+    "matched_pid": "3400",
+    "matched_product_name": "Filetes pechuga de pollo corte fino",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "panceta fresca de cerdo",
+    "count": 10,
+    "matched_pid": "2169",
+    "matched_product_name": "Flautas de bacón y queso",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "dorada",
+    "count": 10,
+    "matched_pid": "62113",
+    "matched_product_name": "Lomos y centros de merluza del Cabo Hacendado ultracongelados",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "langostinos cocidos",
+    "count": 10,
+    "matched_pid": "24712",
+    "matched_product_name": "Langostino crudo Hacendado ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "lomos de merluza fresca",
+    "count": 10,
+    "matched_pid": "62113",
+    "matched_product_name": "Lomos y centros de merluza del Cabo Hacendado ultracongelados",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "chirlas frescas",
+    "count": 10,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "anillas de calamar",
+    "count": 10,
+    "matched_pid": "26775",
+    "matched_product_name": "Chipirones enharinados Hacendado ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "filetes de merluza fresca",
+    "count": 10,
+    "matched_pid": "62113",
+    "matched_product_name": "Lomos y centros de merluza del Cabo Hacendado ultracongelados",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "migas de bacalao remojadas y desaladas",
+    "count": 10,
+    "matched_pid": "24016",
+    "matched_product_name": "Filetes de bacalao MareDeus ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "nata (18% materia grasa)",
+    "count": 10,
+    "matched_pid": "10161",
+    "matched_product_name": "Nata ligera para cocinar Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "queso quark",
+    "count": 10,
+    "matched_pid": "22216",
+    "matched_product_name": "Queso rallado emmental gratinar Hacendado",
+    "match_method": "TOKEN_queso"
+  },
+  {
+    "ingredient": "leche condensada",
+    "count": 10,
+    "matched_pid": "10380",
+    "matched_product_name": "Leche entera Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "leche desnatada",
+    "count": 10,
+    "matched_pid": "10380",
+    "matched_product_name": "Leche entera Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "lonchas de queso de sándwich",
+    "count": 9,
+    "matched_pid": "22216",
+    "matched_product_name": "Queso rallado emmental gratinar Hacendado",
+    "match_method": "TOKEN_queso"
+  },
+  {
+    "ingredient": "entraña de ternera",
+    "count": 9,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "higaditos de pollo",
+    "count": 9,
+    "matched_pid": "3400",
+    "matched_product_name": "Filetes pechuga de pollo corte fino",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "carne de cerdo",
+    "count": 9,
+    "matched_pid": "6565",
+    "matched_product_name": "Tortellini carne Pagani",
+    "match_method": "TOKEN_carne"
+  },
+  {
+    "ingredient": "pechugas de pollo",
+    "count": 9,
+    "matched_pid": "3400",
+    "matched_product_name": "Filetes pechuga de pollo corte fino",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "panceta de cerdo sin corteza",
+    "count": 9,
+    "matched_pid": "2169",
+    "matched_product_name": "Flautas de bacón y queso",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "salchichas frescas de cerdo",
+    "count": 9,
+    "matched_pid": "53141",
+    "matched_product_name": "Salchichas cocidas estilo Frankfurt Hacendado de pollo y cerdo sabor ahumado",
+    "match_method": "TOKEN_salchichas"
+  },
+  {
+    "ingredient": "pastilla de caldo de pollo (para 0,5 l.)",
+    "count": 9,
+    "matched_pid": "3400",
+    "matched_product_name": "Filetes pechuga de pollo corte fino",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "tocino fresco",
+    "count": 9,
+    "matched_pid": "2169",
+    "matched_product_name": "Flautas de bacón y queso",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pastillas de caldo de pollo",
+    "count": 9,
+    "matched_pid": "3400",
+    "matched_product_name": "Filetes pechuga de pollo corte fino",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "lomos de rape sin piel ni hueso",
+    "count": 9,
+    "matched_pid": "62113",
+    "matched_product_name": "Lomos y centros de merluza del Cabo Hacendado ultracongelados",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "yogures griegos",
+    "count": 9,
+    "matched_pid": "22313",
+    "matched_product_name": "Yogur natural Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "sardinas en aceite",
+    "count": 9,
+    "matched_pid": "4740",
+    "matched_product_name": "Aceite de oliva virgen extra Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "gambas arroceras crudas",
+    "count": 9,
+    "matched_pid": "24712",
+    "matched_product_name": "Langostino crudo Hacendado ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "mozzarella",
+    "count": 9,
+    "matched_pid": "51050",
+    "matched_product_name": "Mozzarella fresca de vaca Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pollo",
+    "count": 8,
+    "matched_pid": "3400",
+    "matched_product_name": "Filetes pechuga de pollo corte fino",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "nata (mínimo 30% de grasa)",
+    "count": 8,
+    "matched_pid": "10161",
+    "matched_product_name": "Nata ligera para cocinar Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "carne de conejo en trozos",
+    "count": 8,
+    "matched_pid": "6565",
+    "matched_product_name": "Tortellini carne Pagani",
+    "match_method": "TOKEN_carne"
+  },
+  {
+    "ingredient": "cintas de bacon",
+    "count": 8,
+    "matched_pid": "2169",
+    "matched_product_name": "Flautas de bacón y queso",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "fiambre de pavo",
+    "count": 8,
+    "matched_pid": "3400",
+    "matched_product_name": "Filetes pechuga de pollo corte fino",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "leche de almendras",
+    "count": 8,
+    "matched_pid": "10380",
+    "matched_product_name": "Leche entera Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "lonchas de beicon ahumado",
+    "count": 8,
+    "matched_pid": "2169",
+    "matched_product_name": "Flautas de bacón y queso",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "lomo de salmón fresco sin piel",
+    "count": 8,
+    "matched_pid": "24350",
+    "matched_product_name": "Filete de salmón rosado salvaje con piel Hacendado ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "chipirones frescos",
+    "count": 8,
+    "matched_pid": "26775",
+    "matched_product_name": "Chipirones enharinados Hacendado ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "filetes de pescado blanco sin piel",
+    "count": 8,
+    "matched_pid": "62113",
+    "matched_product_name": "Lomos y centros de merluza del Cabo Hacendado ultracongelados",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "mozzarella de barra",
+    "count": 8,
+    "matched_pid": "51050",
+    "matched_product_name": "Mozzarella fresca de vaca Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "lonchas de beicon",
+    "count": 7,
+    "matched_pid": "2169",
+    "matched_product_name": "Flautas de bacón y queso",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "concentrado de caldo de carne",
+    "count": 7,
+    "matched_pid": "22860",
+    "matched_product_name": "Caldo de carne Hacendado en pastillas",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "magro de cerdo en trozos",
+    "count": 7,
+    "matched_pid": "23308",
+    "matched_product_name": "Fiambre de magro de cerdo adobado",
+    "match_method": "TOKEN_magro"
+  },
+  {
+    "ingredient": "hueso de jamón",
+    "count": 7,
+    "matched_pid": "58307",
+    "matched_product_name": "Hueso garrón",
+    "match_method": "TOKEN_hueso"
+  },
+  {
+    "ingredient": "morcilla",
+    "count": 7,
+    "matched_pid": "21562",
+    "matched_product_name": "Morcilla de cebolla",
+    "match_method": "TOKEN_morcilla"
+  },
+  {
+    "ingredient": "solomillos de pollo",
+    "count": 7,
+    "matched_pid": "3400",
+    "matched_product_name": "Filetes pechuga de pollo corte fino",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "beicon ahumado en lonchas",
+    "count": 7,
+    "matched_pid": "2169",
+    "matched_product_name": "Flautas de bacón y queso",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "queso de Burgos",
+    "count": 7,
+    "matched_pid": "22216",
+    "matched_product_name": "Queso rallado emmental gratinar Hacendado",
+    "match_method": "TOKEN_queso"
+  },
+  {
+    "ingredient": "salchichas de Frankfurt",
+    "count": 7,
+    "matched_pid": "53141",
+    "matched_product_name": "Salchichas cocidas estilo Frankfurt Hacendado de pollo y cerdo sabor ahumado",
+    "match_method": "TOKEN_salchichas"
+  },
+  {
+    "ingredient": "calamares",
+    "count": 7,
+    "matched_pid": "26775",
+    "matched_product_name": "Chipirones enharinados Hacendado ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "bacalao al punto de sal",
+    "count": 7,
+    "matched_pid": "24016",
+    "matched_product_name": "Filetes de bacalao MareDeus ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "filetes de lubina",
+    "count": 7,
+    "matched_pid": "62113",
+    "matched_product_name": "Lomos y centros de merluza del Cabo Hacendado ultracongelados",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "queso brie",
+    "count": 7,
+    "matched_pid": "22216",
+    "matched_product_name": "Queso rallado emmental gratinar Hacendado",
+    "match_method": "TOKEN_queso"
+  },
+  {
+    "ingredient": "nata (30-40% de grasa)",
+    "count": 7,
+    "matched_pid": "10161",
+    "matched_product_name": "Nata ligera para cocinar Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "contramuslos de pollo sin piel",
+    "count": 6,
+    "matched_pid": "3400",
+    "matched_product_name": "Filetes pechuga de pollo corte fino",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "secreto de cerdo",
+    "count": 6,
+    "matched_pid": "13046",
+    "matched_product_name": "Secreto de cerdo",
+    "match_method": "TOKEN_secreto"
+  },
+  {
+    "ingredient": "lomo alto de buey",
+    "count": 6,
+    "matched_pid": "62050",
+    "matched_product_name": "Lomo de bacalao MareDeus ultracongelado",
+    "match_method": "TOKEN_lomo"
+  },
+  {
+    "ingredient": "costillas de cerdo adobadas",
+    "count": 6,
+    "matched_pid": "2811",
+    "matched_product_name": "Costillas de cerdo carnosas a tacos",
+    "match_method": "TOKEN_costillas"
+  },
+  {
+    "ingredient": "nata agria",
+    "count": 6,
+    "matched_pid": "10161",
+    "matched_product_name": "Nata ligera para cocinar Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "rabo de ternera",
+    "count": 6,
+    "matched_pid": "2635",
+    "matched_product_name": "Rabo de cerdo",
+    "match_method": "TOKEN_rabo"
+  },
+  {
+    "ingredient": "carne de pavo, sin huesos ni piel",
+    "count": 6,
+    "matched_pid": "3400",
+    "matched_product_name": "Filetes pechuga de pollo corte fino",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "queso camembert",
+    "count": 6,
+    "matched_pid": "22216",
+    "matched_product_name": "Queso rallado emmental gratinar Hacendado",
+    "match_method": "TOKEN_queso"
+  },
+  {
+    "ingredient": "queso cheddar rallado",
+    "count": 6,
+    "matched_pid": "22216",
+    "matched_product_name": "Queso rallado emmental gratinar Hacendado",
+    "match_method": "TOKEN_queso"
+  },
+  {
+    "ingredient": "mantequilla clarificada",
+    "count": 6,
+    "matched_pid": "60622",
+    "matched_product_name": "Mantequilla sin sal añadida Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "rodajas de merluza",
+    "count": 6,
+    "matched_pid": "62113",
+    "matched_product_name": "Lomos y centros de merluza del Cabo Hacendado ultracongelados",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "calamar fresco",
+    "count": 6,
+    "matched_pid": "26775",
+    "matched_product_name": "Chipirones enharinados Hacendado ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "filetes de trucha con piel",
+    "count": 6,
+    "matched_pid": "3400",
+    "matched_product_name": "Filetes pechuga de pollo corte fino",
+    "match_method": "TOKEN_filetes"
+  },
+  {
+    "ingredient": "pulpo congelado",
+    "count": 6,
+    "matched_pid": "26775",
+    "matched_product_name": "Chipirones enharinados Hacendado ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "boquerones frescos",
+    "count": 6,
+    "matched_pid": "80405",
+    "matched_product_name": "Boquerones en vinagre Hacendado en aceite de girasol",
+    "match_method": "TOKEN_boquerones"
+  },
+  {
+    "ingredient": "queso Cabrales",
+    "count": 6,
+    "matched_pid": "22216",
+    "matched_product_name": "Queso rallado emmental gratinar Hacendado",
+    "match_method": "TOKEN_queso"
+  },
+  {
+    "ingredient": "langostinos crudos",
+    "count": 6,
+    "matched_pid": "24712",
+    "matched_product_name": "Langostino crudo Hacendado ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pastillas de caldo de carne",
+    "count": 5,
+    "matched_pid": "22860",
+    "matched_product_name": "Caldo de carne Hacendado en pastillas",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "vacío de ternera",
+    "count": 5,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "chorizos",
+    "count": 5,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "pechugas de pollo sin piel",
+    "count": 5,
+    "matched_pid": "3400",
+    "matched_product_name": "Filetes pechuga de pollo corte fino",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "carrilleras de ternera",
+    "count": 5,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "jamón de cerdo fresco",
+    "count": 5,
+    "matched_pid": "56619",
+    "matched_product_name": "Jamón de pavo Hacendado finas lonchas",
+    "match_method": "TOKEN_jamon"
+  },
+  {
+    "ingredient": "medallones de solomillo de ternera",
+    "count": 5,
+    "matched_pid": "26749",
+    "matched_product_name": "Medallones de salmón Hacendado cocinar congelados",
+    "match_method": "TOKEN_medallones"
+  },
+  {
+    "ingredient": "conejo entero",
+    "count": 5,
+    "matched_pid": "25972",
+    "matched_product_name": "Medio conejo troceado",
+    "match_method": "TOKEN_conejo"
+  },
+  {
+    "ingredient": "oreja de cerdo cocida",
+    "count": 5,
+    "matched_pid": "35902",
+    "matched_product_name": "Brochetas de pollo, pimiento verde y tocino de cerdo con varilla",
+    "match_method": "TOKEN_cerdo"
+  },
+  {
+    "ingredient": "redondo de ternera",
+    "count": 5,
+    "matched_pid": "5044",
+    "matched_product_name": "Arroz redondo Hacendado",
+    "match_method": "TOKEN_redondo"
+  },
+  {
+    "ingredient": "carne picada de pollo",
+    "count": 5,
+    "matched_pid": "3400",
+    "matched_product_name": "Filetes pechuga de pollo corte fino",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "jamón",
+    "count": 5,
+    "matched_pid": "56619",
+    "matched_product_name": "Jamón de pavo Hacendado finas lonchas",
+    "match_method": "TOKEN_jamon"
+  },
+  {
+    "ingredient": "carne picada de cordero",
+    "count": 5,
+    "matched_pid": "6565",
+    "matched_product_name": "Tortellini carne Pagani",
+    "match_method": "TOKEN_carne"
+  },
+  {
+    "ingredient": "berberechos",
+    "count": 5,
+    "matched_pid": "62396",
+    "matched_product_name": "Carne de mejillón cocido Hacendado ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "leche en polvo",
+    "count": 5,
+    "matched_pid": "10380",
+    "matched_product_name": "Leche entera Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "lubinas",
+    "count": 5,
+    "matched_pid": "62113",
+    "matched_product_name": "Lomos y centros de merluza del Cabo Hacendado ultracongelados",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "lomo de bacalao fresco",
+    "count": 5,
+    "matched_pid": "24016",
+    "matched_product_name": "Filetes de bacalao MareDeus ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "filetes de pescado",
+    "count": 5,
+    "matched_pid": "3400",
+    "matched_product_name": "Filetes pechuga de pollo corte fino",
+    "match_method": "TOKEN_filetes"
+  },
+  {
+    "ingredient": "sardinas frescas enteras limpias",
+    "count": 5,
+    "matched_pid": "3682",
+    "matched_product_name": "Pechugas enteras familiar de pollo",
+    "match_method": "TOKEN_enteras"
+  },
+  {
+    "ingredient": "queso fresco batido desnatado",
+    "count": 5,
+    "matched_pid": "10161",
+    "matched_product_name": "Nata ligera para cocinar Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "mejillones en escabeche",
+    "count": 5,
+    "matched_pid": "62396",
+    "matched_product_name": "Carne de mejillón cocido Hacendado ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "bonito en aceite",
+    "count": 5,
+    "matched_pid": "4740",
+    "matched_product_name": "Aceite de oliva virgen extra Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "huesos de jamón",
+    "count": 5,
+    "matched_pid": "56619",
+    "matched_product_name": "Jamón de pavo Hacendado finas lonchas",
+    "match_method": "TOKEN_jamon"
+  },
+  {
+    "ingredient": "beicon entreverado, curado y ahumado",
+    "count": 4,
+    "matched_pid": "2169",
+    "matched_product_name": "Flautas de bacón y queso",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pechuga de pavo, sin piel ni hueso",
+    "count": 4,
+    "matched_pid": "3400",
+    "matched_product_name": "Filetes pechuga de pollo corte fino",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "rabillo de ternera",
+    "count": 4,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "cuartos traseros de pollo con piel",
+    "count": 4,
+    "matched_pid": "3400",
+    "matched_product_name": "Filetes pechuga de pollo corte fino",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "falda de ternera",
+    "count": 4,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "pierna de cordero con hueso",
+    "count": 4,
+    "matched_pid": "21836",
+    "matched_product_name": "Chuletas de cordero pierna",
+    "match_method": "TOKEN_pierna"
+  },
+  {
+    "ingredient": "yogures naturales",
+    "count": 4,
+    "matched_pid": "22313",
+    "matched_product_name": "Yogur natural Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "piernas de cordero lechal con hueso",
+    "count": 4,
+    "matched_pid": "8839",
+    "matched_product_name": "Hamburguesa de cordero al romero",
+    "match_method": "TOKEN_cordero"
+  },
+  {
+    "ingredient": "falda de cordero",
+    "count": 4,
+    "matched_pid": "8839",
+    "matched_product_name": "Hamburguesa de cordero al romero",
+    "match_method": "TOKEN_cordero"
+  },
+  {
+    "ingredient": "carne de pollo",
+    "count": 4,
+    "matched_pid": "3400",
+    "matched_product_name": "Filetes pechuga de pollo corte fino",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "costillar de cordero",
+    "count": 4,
+    "matched_pid": "8839",
+    "matched_product_name": "Hamburguesa de cordero al romero",
+    "match_method": "TOKEN_cordero"
+  },
+  {
+    "ingredient": "queso de Mahón",
+    "count": 4,
+    "matched_pid": "22216",
+    "matched_product_name": "Queso rallado emmental gratinar Hacendado",
+    "match_method": "TOKEN_queso"
+  },
+  {
+    "ingredient": "repollo verde rizado",
+    "count": 4,
+    "matched_pid": "3400",
+    "matched_product_name": "Filetes pechuga de pollo corte fino",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "filetes de pescado blanco",
+    "count": 4,
+    "matched_pid": "62113",
+    "matched_product_name": "Lomos y centros de merluza del Cabo Hacendado ultracongelados",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "huevas de salmón",
+    "count": 4,
+    "matched_pid": "24350",
+    "matched_product_name": "Filete de salmón rosado salvaje con piel Hacendado ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pescado blanco limpio sin piel",
+    "count": 4,
+    "matched_pid": "62113",
+    "matched_product_name": "Lomos y centros de merluza del Cabo Hacendado ultracongelados",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "doradas",
+    "count": 4,
+    "matched_pid": "62113",
+    "matched_product_name": "Lomos y centros de merluza del Cabo Hacendado ultracongelados",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "bacalao fresco",
+    "count": 4,
+    "matched_pid": "24016",
+    "matched_product_name": "Filetes de bacalao MareDeus ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "solomillo de atún fresco",
+    "count": 4,
+    "matched_pid": "18114",
+    "matched_product_name": "Filetes de melva canutera con pimientos del piquillo Hacendado en aceite de oliva",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "lomo de atún rojo",
+    "count": 4,
+    "matched_pid": "18114",
+    "matched_product_name": "Filetes de melva canutera con pimientos del piquillo Hacendado en aceite de oliva",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "filete de merluza fresca",
+    "count": 4,
+    "matched_pid": "62113",
+    "matched_product_name": "Lomos y centros de merluza del Cabo Hacendado ultracongelados",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "salmonetes limpios",
+    "count": 4,
+    "matched_pid": "24350",
+    "matched_product_name": "Filete de salmón rosado salvaje con piel Hacendado ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "espinas de pescado",
+    "count": 4,
+    "matched_pid": "62012",
+    "matched_product_name": "Fritura de pescado Hacendado ultracongelada",
+    "match_method": "TOKEN_pescado"
+  },
+  {
+    "ingredient": "jamón de York",
+    "count": 4,
+    "matched_pid": "56619",
+    "matched_product_name": "Jamón de pavo Hacendado finas lonchas",
+    "match_method": "TOKEN_jamon"
+  },
+  {
+    "ingredient": "fideos orientales de huevo",
+    "count": 4,
+    "matched_pid": "31505",
+    "matched_product_name": "Huevos medianos M",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "panceta ahumada",
+    "count": 4,
+    "matched_pid": "2169",
+    "matched_product_name": "Flautas de bacón y queso",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "queso Idiazábal",
+    "count": 4,
+    "matched_pid": "22216",
+    "matched_product_name": "Queso rallado emmental gratinar Hacendado",
+    "match_method": "TOKEN_queso"
+  },
+  {
+    "ingredient": "pastillas de caldo de pescado",
+    "count": 4,
+    "matched_pid": "22860",
+    "matched_product_name": "Caldo de carne Hacendado en pastillas",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "filete de anchoa en aceite",
+    "count": 3,
+    "matched_pid": "4740",
+    "matched_product_name": "Aceite de oliva virgen extra Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "lomo de ternera",
+    "count": 3,
+    "matched_pid": "62050",
+    "matched_product_name": "Lomo de bacalao MareDeus ultracongelado",
+    "match_method": "TOKEN_lomo"
+  },
+  {
+    "ingredient": "muslos de pollo sin piel",
+    "count": 3,
+    "matched_pid": "3400",
+    "matched_product_name": "Filetes pechuga de pollo corte fino",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "contramuslo de pollo con piel y hueso",
+    "count": 3,
+    "matched_pid": "3400",
+    "matched_product_name": "Filetes pechuga de pollo corte fino",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "babilla de ternera",
+    "count": 3,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "carne cocida",
+    "count": 3,
+    "matched_pid": "6565",
+    "matched_product_name": "Tortellini carne Pagani",
+    "match_method": "TOKEN_carne"
+  },
+  {
+    "ingredient": "carne de pollo sin piel ni huesos",
+    "count": 3,
+    "matched_pid": "3400",
+    "matched_product_name": "Filetes pechuga de pollo corte fino",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "chuletas de cerdo",
+    "count": 3,
+    "matched_pid": "23305",
+    "matched_product_name": "Chuletas de cerdo sajonia",
+    "match_method": "TOKEN_chuletas"
+  },
+  {
+    "ingredient": "cuartos traseros de pollo sin piel y con hueso",
+    "count": 3,
+    "matched_pid": "3400",
+    "matched_product_name": "Filetes pechuga de pollo corte fino",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "manita de cerdo",
+    "count": 3,
+    "matched_pid": "35902",
+    "matched_product_name": "Brochetas de pollo, pimiento verde y tocino de cerdo con varilla",
+    "match_method": "TOKEN_cerdo"
+  },
+  {
+    "ingredient": "contramuslos de pollo sin piel con hueso",
+    "count": 3,
+    "matched_pid": "3400",
+    "matched_product_name": "Filetes pechuga de pollo corte fino",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "filetes de pechuga de pavo",
+    "count": 3,
+    "matched_pid": "3400",
+    "matched_product_name": "Filetes pechuga de pollo corte fino",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "chuletas de cordero",
+    "count": 3,
+    "matched_pid": "23305",
+    "matched_product_name": "Chuletas de cerdo sajonia",
+    "match_method": "TOKEN_chuletas"
+  },
+  {
+    "ingredient": "paletilla de cerdo fresca deshuesada",
+    "count": 3,
+    "matched_pid": "35902",
+    "matched_product_name": "Brochetas de pollo, pimiento verde y tocino de cerdo con varilla",
+    "match_method": "TOKEN_cerdo"
+  },
+  {
+    "ingredient": "panceta curada",
+    "count": 3,
+    "matched_pid": "2169",
+    "matched_product_name": "Flautas de bacón y queso",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "aleta de ternera",
+    "count": 3,
+    "matched_pid": "87197",
+    "matched_product_name": "Rodajas de atún de aleta amarilla descongelada",
+    "match_method": "TOKEN_aleta"
+  },
+  {
+    "ingredient": "langostinos grandes crudos enteros",
+    "count": 3,
+    "matched_pid": "24712",
+    "matched_product_name": "Langostino crudo Hacendado ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "langostinos grandes crudos sin pelar",
+    "count": 3,
+    "matched_pid": "24712",
+    "matched_product_name": "Langostino crudo Hacendado ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "rodajas de salmón fresco",
+    "count": 3,
+    "matched_pid": "24350",
+    "matched_product_name": "Filete de salmón rosado salvaje con piel Hacendado ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "chipirones troceados congelados",
+    "count": 3,
+    "matched_pid": "26775",
+    "matched_product_name": "Chipirones enharinados Hacendado ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "lomo de salmón fresco sin piel ni espinas (calidad de sushi)",
+    "count": 3,
+    "matched_pid": "24350",
+    "matched_product_name": "Filete de salmón rosado salvaje con piel Hacendado ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "mantequilla salada",
+    "count": 3,
+    "matched_pid": "60622",
+    "matched_product_name": "Mantequilla sin sal añadida Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "cocochas de bacalao frescas",
+    "count": 3,
+    "matched_pid": "24016",
+    "matched_product_name": "Filetes de bacalao MareDeus ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "mejillones limpios",
+    "count": 3,
+    "matched_pid": "62396",
+    "matched_product_name": "Carne de mejillón cocido Hacendado ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "lomo de merluza fresca",
+    "count": 3,
+    "matched_pid": "62113",
+    "matched_product_name": "Lomos y centros de merluza del Cabo Hacendado ultracongelados",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pulpo crudo",
+    "count": 3,
+    "matched_pid": "26775",
+    "matched_product_name": "Chipirones enharinados Hacendado ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "ventresca de bonito",
+    "count": 3,
+    "matched_pid": "18114",
+    "matched_product_name": "Filetes de melva canutera con pimientos del piquillo Hacendado en aceite de oliva",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "lomos de mero",
+    "count": 3,
+    "matched_pid": "62113",
+    "matched_product_name": "Lomos y centros de merluza del Cabo Hacendado ultracongelados",
+    "match_method": "TOKEN_lomos"
+  },
+  {
+    "ingredient": "cola de rape sin piel con hueso",
+    "count": 3,
+    "matched_pid": "62113",
+    "matched_product_name": "Lomos y centros de merluza del Cabo Hacendado ultracongelados",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pastilla de caldo de pescado (para 0.5 l)",
+    "count": 3,
+    "matched_pid": "7313",
+    "matched_product_name": "Caldo de pollo Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "lonchas de jamón cocido",
+    "count": 3,
+    "matched_pid": "60329",
+    "matched_product_name": "Jamón cocido extra Hacendado finas lonchas",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "huesos de rape",
+    "count": 3,
+    "matched_pid": "62113",
+    "matched_product_name": "Lomos y centros de merluza del Cabo Hacendado ultracongelados",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "filetes de trucha fresca sin piel ni espinas",
+    "count": 3,
+    "matched_pid": "3400",
+    "matched_product_name": "Filetes pechuga de pollo corte fino",
+    "match_method": "TOKEN_filetes"
+  },
+  {
+    "ingredient": "papada de cerdo adobada",
+    "count": 3,
+    "matched_pid": "35902",
+    "matched_product_name": "Brochetas de pollo, pimiento verde y tocino de cerdo con varilla",
+    "match_method": "TOKEN_cerdo"
+  },
+  {
+    "ingredient": "muslo de pollo con piel",
+    "count": 3,
+    "matched_pid": "3400",
+    "matched_product_name": "Filetes pechuga de pollo corte fino",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "queso fontina",
+    "count": 3,
+    "matched_pid": "22216",
+    "matched_product_name": "Queso rallado emmental gratinar Hacendado",
+    "match_method": "TOKEN_queso"
+  },
+  {
+    "ingredient": "calamares en salsa americana",
+    "count": 3,
+    "matched_pid": "26775",
+    "matched_product_name": "Chipirones enharinados Hacendado ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "salchichas ahumadas de cerdo",
+    "count": 3,
+    "matched_pid": "53141",
+    "matched_product_name": "Salchichas cocidas estilo Frankfurt Hacendado de pollo y cerdo sabor ahumado",
+    "match_method": "TOKEN_salchichas"
+  },
+  {
+    "ingredient": "aceitunas rellenas de anchoa",
+    "count": 3,
+    "matched_pid": "22910",
+    "matched_product_name": "Aceitunas verdes rellenas de anchoa Hacendado",
+    "match_method": "TOKEN_aceitunas"
+  },
+  {
+    "ingredient": "queso crescenza",
+    "count": 3,
+    "matched_pid": "22216",
+    "matched_product_name": "Queso rallado emmental gratinar Hacendado",
+    "match_method": "TOKEN_queso"
+  },
+  {
+    "ingredient": "queso cottage",
+    "count": 3,
+    "matched_pid": "22216",
+    "matched_product_name": "Queso rallado emmental gratinar Hacendado",
+    "match_method": "TOKEN_queso"
+  },
+  {
+    "ingredient": "chorizo picante",
+    "count": 3,
+    "matched_pid": "6048",
+    "matched_product_name": "Chorizo oreado",
+    "match_method": "TOKEN_chorizo"
+  },
+  {
+    "ingredient": "nata de soja",
+    "count": 3,
+    "matched_pid": "10161",
+    "matched_product_name": "Nata ligera para cocinar Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "carcasa de pollo",
+    "count": 3,
+    "matched_pid": "3400",
+    "matched_product_name": "Filetes pechuga de pollo corte fino",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "mejillones cocidos al natural",
+    "count": 3,
+    "matched_pid": "62396",
+    "matched_product_name": "Carne de mejillón cocido Hacendado ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "mozzarellas mini",
+    "count": 3,
+    "matched_pid": "51050",
+    "matched_product_name": "Mozzarella fresca de vaca Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "tinta de calamar congelada",
+    "count": 3,
+    "matched_pid": "26775",
+    "matched_product_name": "Chipirones enharinados Hacendado ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "mozzarella mini",
+    "count": 3,
+    "matched_pid": "51050",
+    "matched_product_name": "Mozzarella fresca de vaca Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "panecillos de leche",
+    "count": 3,
+    "matched_pid": "10380",
+    "matched_product_name": "Leche entera Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "queso tetilla",
+    "count": 3,
+    "matched_pid": "22216",
+    "matched_product_name": "Queso rallado emmental gratinar Hacendado",
+    "match_method": "TOKEN_queso"
+  },
+  {
+    "ingredient": "gambas cocidas",
+    "count": 3,
+    "matched_pid": "24712",
+    "matched_product_name": "Langostino crudo Hacendado ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "75 g grated mozzarella",
+    "count": 2,
+    "matched_pid": "51050",
+    "matched_product_name": "Mozzarella fresca de vaca Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "1 huevo",
+    "count": 2,
+    "matched_pid": "31505",
+    "matched_product_name": "Huevos medianos M",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "15 g de mantequilla",
+    "count": 2,
+    "matched_pid": "60622",
+    "matched_product_name": "Mantequilla sin sal añadida Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "presa de cerdo",
+    "count": 2,
+    "matched_pid": "35902",
+    "matched_product_name": "Brochetas de pollo, pimiento verde y tocino de cerdo con varilla",
+    "match_method": "TOKEN_cerdo"
+  },
+  {
+    "ingredient": "filetes de hígado de ternera",
+    "count": 2,
+    "matched_pid": "3400",
+    "matched_product_name": "Filetes pechuga de pollo corte fino",
+    "match_method": "TOKEN_filetes"
+  },
+  {
+    "ingredient": "manitas de cerdo",
+    "count": 2,
+    "matched_pid": "35902",
+    "matched_product_name": "Brochetas de pollo, pimiento verde y tocino de cerdo con varilla",
+    "match_method": "TOKEN_cerdo"
+  },
+  {
+    "ingredient": "queso panela (queso fresco mexicano)",
+    "count": 2,
+    "matched_pid": "51197",
+    "matched_product_name": "Queso feta mezcla Hacendado en dados",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "carne de ciervo",
+    "count": 2,
+    "matched_pid": "6565",
+    "matched_product_name": "Tortellini carne Pagani",
+    "match_method": "TOKEN_carne"
+  },
+  {
+    "ingredient": "lomo de cerdo adobado",
+    "count": 2,
+    "matched_pid": "62050",
+    "matched_product_name": "Lomo de bacalao MareDeus ultracongelado",
+    "match_method": "TOKEN_lomo"
+  },
+  {
+    "ingredient": "riñones de ternera",
+    "count": 2,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "tocino cortado en dados",
+    "count": 2,
+    "matched_pid": "2169",
+    "matched_product_name": "Flautas de bacón y queso",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "yogur natural (1,8% de grasa)",
+    "count": 2,
+    "matched_pid": "22313",
+    "matched_product_name": "Yogur natural Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "carne de cabrito",
+    "count": 2,
+    "matched_pid": "6565",
+    "matched_product_name": "Tortellini carne Pagani",
+    "match_method": "TOKEN_carne"
+  },
+  {
+    "ingredient": "salchichas blancas frescas de cerdo",
+    "count": 2,
+    "matched_pid": "53141",
+    "matched_product_name": "Salchichas cocidas estilo Frankfurt Hacendado de pollo y cerdo sabor ahumado",
+    "match_method": "TOKEN_salchichas"
+  },
+  {
+    "ingredient": "paletilla de cordero deshuesada",
+    "count": 2,
+    "matched_pid": "8839",
+    "matched_product_name": "Hamburguesa de cordero al romero",
+    "match_method": "TOKEN_cordero"
+  },
+  {
+    "ingredient": "conejo entero (sin cabeza)",
+    "count": 2,
+    "matched_pid": "25972",
+    "matched_product_name": "Medio conejo troceado",
+    "match_method": "TOKEN_conejo"
+  },
+  {
+    "ingredient": "filete de pechuga de pollo",
+    "count": 2,
+    "matched_pid": "3400",
+    "matched_product_name": "Filetes pechuga de pollo corte fino",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "sofrito de carne picada",
+    "count": 2,
+    "matched_pid": "7021",
+    "matched_product_name": "Caldo de marisco o fideuá para paella Hacendado con sofrito",
+    "match_method": "TOKEN_sofrito"
+  },
+  {
+    "ingredient": "beicon curado en lonchas",
+    "count": 2,
+    "matched_pid": "2169",
+    "matched_product_name": "Flautas de bacón y queso",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "cuartos traseros de conejo",
+    "count": 2,
+    "matched_pid": "3680",
+    "matched_product_name": "Cuartos traseros familiar de pollo",
+    "match_method": "TOKEN_cuartos"
+  },
+  {
+    "ingredient": "paletilla de cordero",
+    "count": 2,
+    "matched_pid": "8839",
+    "matched_product_name": "Hamburguesa de cordero al romero",
+    "match_method": "TOKEN_cordero"
+  },
+  {
+    "ingredient": "mollejas de cordero",
+    "count": 2,
+    "matched_pid": "2856",
+    "matched_product_name": "Mollejas de pollo",
+    "match_method": "TOKEN_mollejas"
+  },
+  {
+    "ingredient": "pastilla de caldo de carne (para 0,5 l.)",
+    "count": 2,
+    "matched_pid": "7313",
+    "matched_product_name": "Caldo de pollo Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "mantequilla (con o sin sal)",
+    "count": 2,
+    "matched_pid": "60622",
+    "matched_product_name": "Mantequilla sin sal añadida Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "carne de cordero deshuesada para guisar",
+    "count": 2,
+    "matched_pid": "6565",
+    "matched_product_name": "Tortellini carne Pagani",
+    "match_method": "TOKEN_carne"
+  },
+  {
+    "ingredient": "cuna de cordero lechal",
+    "count": 2,
+    "matched_pid": "8839",
+    "matched_product_name": "Hamburguesa de cordero al romero",
+    "match_method": "TOKEN_cordero"
+  },
+  {
+    "ingredient": "lomos de merluza",
+    "count": 2,
+    "matched_pid": "62113",
+    "matched_product_name": "Lomos y centros de merluza del Cabo Hacendado ultracongelados",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "truchas frescas limpias",
+    "count": 2,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "lomos de pescado",
+    "count": 2,
+    "matched_pid": "62113",
+    "matched_product_name": "Lomos y centros de merluza del Cabo Hacendado ultracongelados",
+    "match_method": "TOKEN_lomos"
+  },
+  {
+    "ingredient": "lomos de merluza congelada",
+    "count": 2,
+    "matched_pid": "62113",
+    "matched_product_name": "Lomos y centros de merluza del Cabo Hacendado ultracongelados",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "sardinas frescas enteras",
+    "count": 2,
+    "matched_pid": "3682",
+    "matched_product_name": "Pechugas enteras familiar de pollo",
+    "match_method": "TOKEN_enteras"
+  },
+  {
+    "ingredient": "chipirones enteros frescos",
+    "count": 2,
+    "matched_pid": "26775",
+    "matched_product_name": "Chipirones enharinados Hacendado ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "gambas crudas peladas congeladas",
+    "count": 2,
+    "matched_pid": "24712",
+    "matched_product_name": "Langostino crudo Hacendado ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "hueso de ternera",
+    "count": 2,
+    "matched_pid": "58307",
+    "matched_product_name": "Hueso garrón",
+    "match_method": "TOKEN_hueso"
+  },
+  {
+    "ingredient": "lomo de bacalao desalado",
+    "count": 2,
+    "matched_pid": "24016",
+    "matched_product_name": "Filetes de bacalao MareDeus ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "chorizos criollos",
+    "count": 2,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "carne de centollo",
+    "count": 2,
+    "matched_pid": "6565",
+    "matched_product_name": "Tortellini carne Pagani",
+    "match_method": "TOKEN_carne"
+  },
+  {
+    "ingredient": "pappardelle al huevo",
+    "count": 2,
+    "matched_pid": "31505",
+    "matched_product_name": "Huevos medianos M",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "yogures naturales desnatados",
+    "count": 2,
+    "matched_pid": "10161",
+    "matched_product_name": "Nata ligera para cocinar Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "queso ricota salado",
+    "count": 2,
+    "matched_pid": "22216",
+    "matched_product_name": "Queso rallado emmental gratinar Hacendado",
+    "match_method": "TOKEN_queso"
+  },
+  {
+    "ingredient": "queso rallado vegano",
+    "count": 2,
+    "matched_pid": "22216",
+    "matched_product_name": "Queso rallado emmental gratinar Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "clara de huevo pasteurizada",
+    "count": 2,
+    "matched_pid": "31505",
+    "matched_product_name": "Huevos medianos M",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "yogur natural desnatado",
+    "count": 2,
+    "matched_pid": "10161",
+    "matched_product_name": "Nata ligera para cocinar Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "dados de quesos variados",
+    "count": 2,
+    "matched_pid": "51197",
+    "matched_product_name": "Queso feta mezcla Hacendado en dados",
+    "match_method": "TOKEN_dados"
+  },
+  {
+    "ingredient": "morcillas de cebolla",
+    "count": 2,
+    "matched_pid": "69089",
+    "matched_product_name": "Cebollas",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "queso burrata",
+    "count": 2,
+    "matched_pid": "22216",
+    "matched_product_name": "Queso rallado emmental gratinar Hacendado",
+    "match_method": "TOKEN_queso"
+  },
+  {
+    "ingredient": "pecho de ternera",
+    "count": 2,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "morcilla de arroz",
+    "count": 2,
+    "matched_pid": "5044",
+    "matched_product_name": "Arroz redondo Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "paté de hígado de cerdo",
+    "count": 2,
+    "matched_pid": "2859",
+    "matched_product_name": "Filetes hígado de cerdo",
+    "match_method": "TOKEN_higado"
+  },
+  {
+    "ingredient": "huesos de ternera",
+    "count": 2,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "yogur de soja",
+    "count": 2,
+    "matched_pid": "22313",
+    "matched_product_name": "Yogur natural Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "huevos L (63-73 g)",
+    "count": 2,
+    "matched_pid": "31505",
+    "matched_product_name": "Huevos medianos M",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "yemas",
+    "count": 2,
+    "matched_pid": "31505",
+    "matched_product_name": "Huevos medianos M",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "bonito en escabeche",
+    "count": 2,
+    "matched_pid": "18114",
+    "matched_product_name": "Filetes de melva canutera con pimientos del piquillo Hacendado en aceite de oliva",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "chorizos semicurados",
+    "count": 2,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "chocolate con leche",
+    "count": 2,
+    "matched_pid": "10380",
+    "matched_product_name": "Leche entera Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "queso palmero",
+    "count": 2,
+    "matched_pid": "22216",
+    "matched_product_name": "Queso rallado emmental gratinar Hacendado",
+    "match_method": "TOKEN_queso"
+  },
+  {
+    "ingredient": "bacalao ahumado",
+    "count": 2,
+    "matched_pid": "24016",
+    "matched_product_name": "Filetes de bacalao MareDeus ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "kéfir",
+    "count": 2,
+    "matched_pid": "20029",
+    "matched_product_name": "Kéfir natural sabor suave",
+    "match_method": "TOKEN_kefir"
+  },
+  {
+    "ingredient": "hígado de cerdo",
+    "count": 2,
+    "matched_pid": "2859",
+    "matched_product_name": "Filetes hígado de cerdo",
+    "match_method": "TOKEN_higado"
+  },
+  {
+    "ingredient": "50 g de queso parmesano",
+    "count": 1,
+    "matched_pid": "22216",
+    "matched_product_name": "Queso rallado emmental gratinar Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "30 g de queso pecorino",
+    "count": 1,
+    "matched_pid": "22216",
+    "matched_product_name": "Queso rallado emmental gratinar Hacendado",
+    "match_method": "TOKEN_queso"
+  },
+  {
+    "ingredient": "15 slices streaky bacon, cured and smoked",
+    "count": 1,
+    "matched_pid": "2169",
+    "matched_product_name": "Flautas de bacón y queso",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "200 g feta cheese",
+    "count": 1,
+    "matched_pid": "51197",
+    "matched_product_name": "Queso feta mezcla Hacendado en dados",
+    "match_method": "TOKEN_feta"
+  },
+  {
+    "ingredient": "40 g mozzarella",
+    "count": 1,
+    "matched_pid": "51050",
+    "matched_product_name": "Mozzarella fresca de vaca Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "3 huevos",
+    "count": 1,
+    "matched_pid": "31505",
+    "matched_product_name": "Huevos medianos M",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "1000 de mejillones frescos limpios",
+    "count": 1,
+    "matched_pid": "62396",
+    "matched_product_name": "Carne de mejillón cocido Hacendado ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "200 g de queso feta",
+    "count": 1,
+    "matched_pid": "51197",
+    "matched_product_name": "Queso feta mezcla Hacendado en dados",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "2 oz plain Greek yogurt",
+    "count": 1,
+    "matched_pid": "22313",
+    "matched_product_name": "Yogur natural Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "grated pecorino cheese",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "400 g de atún en aceite",
+    "count": 1,
+    "matched_pid": "4740",
+    "matched_product_name": "Aceite de oliva virgen extra Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "185 g de leche condensada",
+    "count": 1,
+    "matched_pid": "10380",
+    "matched_product_name": "Leche entera Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "2 yogures griegos",
+    "count": 1,
+    "matched_pid": "22313",
+    "matched_product_name": "Yogur natural Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "4 lomos de salmón fresco",
+    "count": 1,
+    "matched_pid": "24350",
+    "matched_product_name": "Filete de salmón rosado salvaje con piel Hacendado ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "300 g de lomos de merluza fresca",
+    "count": 1,
+    "matched_pid": "62113",
+    "matched_product_name": "Lomos y centros de merluza del Cabo Hacendado ultracongelados",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "250 g de almejas frescas",
+    "count": 1,
+    "matched_pid": "62396",
+    "matched_product_name": "Carne de mejillón cocido Hacendado ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "150 g de gambas crudas peladas",
+    "count": 1,
+    "matched_pid": "24712",
+    "matched_product_name": "Langostino crudo Hacendado ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "40 g de queso emmental",
+    "count": 1,
+    "matched_pid": "22216",
+    "matched_product_name": "Queso rallado emmental gratinar Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "1 huevo L (63-73 g)",
+    "count": 1,
+    "matched_pid": "31505",
+    "matched_product_name": "Huevos medianos M",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "40 g de leche",
+    "count": 1,
+    "matched_pid": "10380",
+    "matched_product_name": "Leche entera Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "4 oz plain Greek yogurt",
+    "count": 1,
+    "matched_pid": "22313",
+    "matched_product_name": "Yogur natural Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "4 fresh salmon fillets",
+    "count": 1,
+    "matched_pid": "24350",
+    "matched_product_name": "Filete de salmón rosado salvaje con piel Hacendado ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "5 ½ oz hot smoked salmon",
+    "count": 1,
+    "matched_pid": "24350",
+    "matched_product_name": "Filete de salmón rosado salvaje con piel Hacendado ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "150 g de yogur griego",
+    "count": 1,
+    "matched_pid": "22313",
+    "matched_product_name": "Yogur natural Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "6 oz plain Greek yogurt",
+    "count": 1,
+    "matched_pid": "22313",
+    "matched_product_name": "Yogur natural Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "100 g chorizo",
+    "count": 1,
+    "matched_pid": "6048",
+    "matched_product_name": "Chorizo oreado",
+    "match_method": "TOKEN_chorizo"
+  },
+  {
+    "ingredient": "150 g de queso azul",
+    "count": 1,
+    "matched_pid": "22216",
+    "matched_product_name": "Queso rallado emmental gratinar Hacendado",
+    "match_method": "TOKEN_queso"
+  },
+  {
+    "ingredient": "50 g de mantequilla",
+    "count": 1,
+    "matched_pid": "60622",
+    "matched_product_name": "Mantequilla sin sal añadida Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "80 g de nata",
+    "count": 1,
+    "matched_pid": "10161",
+    "matched_product_name": "Nata ligera para cocinar Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "7 oz shredded mozzarella",
+    "count": 1,
+    "matched_pid": "51050",
+    "matched_product_name": "Mozzarella fresca de vaca Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "150 g de jamón serrano",
+    "count": 1,
+    "matched_pid": "17797",
+    "matched_product_name": "Jamón serrano Incarlopsa lonchas",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "60 g Emmental cheese",
+    "count": 1,
+    "matched_pid": "22216",
+    "matched_product_name": "Queso rallado emmental gratinar Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "150 g de jamón serrano en dados",
+    "count": 1,
+    "matched_pid": "17797",
+    "matched_product_name": "Jamón serrano Incarlopsa lonchas",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "700 g de caldo de pollo",
+    "count": 1,
+    "matched_pid": "3400",
+    "matched_product_name": "Filetes pechuga de pollo corte fino",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "1 - 2 huevos duros",
+    "count": 1,
+    "matched_pid": "31505",
+    "matched_product_name": "Huevos medianos M",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "150 gram feta cheese",
+    "count": 1,
+    "matched_pid": "51197",
+    "matched_product_name": "Queso feta mezcla Hacendado en dados",
+    "match_method": "TOKEN_feta"
+  },
+  {
+    "ingredient": "paletillas de cordero",
+    "count": 1,
+    "matched_pid": "8839",
+    "matched_product_name": "Hamburguesa de cordero al romero",
+    "match_method": "TOKEN_cordero"
+  },
+  {
+    "ingredient": "suero de leche",
+    "count": 1,
+    "matched_pid": "10380",
+    "matched_product_name": "Leche entera Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "contramuslos de pollo de corral sin piel y con hueso",
+    "count": 1,
+    "matched_pid": "3400",
+    "matched_product_name": "Filetes pechuga de pollo corte fino",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "muslos de pavo sin piel",
+    "count": 1,
+    "matched_pid": "3400",
+    "matched_product_name": "Filetes pechuga de pollo corte fino",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pasta fresca al huevo (tipo pappardelle)",
+    "count": 1,
+    "matched_pid": "31505",
+    "matched_product_name": "Huevos medianos M",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "carne de pechuga de pollo",
+    "count": 1,
+    "matched_pid": "3400",
+    "matched_product_name": "Filetes pechuga de pollo corte fino",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "filetes de pechuga de pavo sin piel",
+    "count": 1,
+    "matched_pid": "3400",
+    "matched_product_name": "Filetes pechuga de pollo corte fino",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "lomo de Sajonia",
+    "count": 1,
+    "matched_pid": "69297",
+    "matched_product_name": "Ajos morados",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "salsa de queso",
+    "count": 1,
+    "matched_pid": "35839",
+    "matched_product_name": "Salsa Original Ligeresa",
+    "match_method": "TOKEN_salsa"
+  },
+  {
+    "ingredient": "callos de ternera crudos",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "lonchas finas de queso de sándwich",
+    "count": 1,
+    "matched_pid": "22216",
+    "matched_product_name": "Queso rallado emmental gratinar Hacendado",
+    "match_method": "TOKEN_queso"
+  },
+  {
+    "ingredient": "beicon magro ahumado",
+    "count": 1,
+    "matched_pid": "2169",
+    "matched_product_name": "Flautas de bacón y queso",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pata de pavo",
+    "count": 1,
+    "matched_pid": "3400",
+    "matched_product_name": "Filetes pechuga de pollo corte fino",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "carne sin nervios",
+    "count": 1,
+    "matched_pid": "6565",
+    "matched_product_name": "Tortellini carne Pagani",
+    "match_method": "TOKEN_carne"
+  },
+  {
+    "ingredient": "chuletones de ternera",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "hígado de cordero",
+    "count": 1,
+    "matched_pid": "2859",
+    "matched_product_name": "Filetes hígado de cerdo",
+    "match_method": "TOKEN_higado"
+  },
+  {
+    "ingredient": "huevo L (63-73 g)",
+    "count": 1,
+    "matched_pid": "31505",
+    "matched_product_name": "Huevos medianos M",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "costilla de ternera en trozos",
+    "count": 1,
+    "matched_pid": "1564",
+    "matched_product_name": "Costilla de cerdo ibérico adobada",
+    "match_method": "TOKEN_costilla"
+  },
+  {
+    "ingredient": "contramuslos de pollo con piel y sin hueso",
+    "count": 1,
+    "matched_pid": "3400",
+    "matched_product_name": "Filetes pechuga de pollo corte fino",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "chuletón de ternera",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "entraña de buey",
+    "count": 1,
+    "matched_pid": "87290",
+    "matched_product_name": "Buey de mar cocido hembra descongelado",
+    "match_method": "TOKEN_buey"
+  },
+  {
+    "ingredient": "paletilla de cerdo fresca con hueso",
+    "count": 1,
+    "matched_pid": "35902",
+    "matched_product_name": "Brochetas de pollo, pimiento verde y tocino de cerdo con varilla",
+    "match_method": "TOKEN_cerdo"
+  },
+  {
+    "ingredient": "salchichas frescas picantes",
+    "count": 1,
+    "matched_pid": "53141",
+    "matched_product_name": "Salchichas cocidas estilo Frankfurt Hacendado de pollo y cerdo sabor ahumado",
+    "match_method": "TOKEN_salchichas"
+  },
+  {
+    "ingredient": "contramuslo de pavo sin piel ni hueso",
+    "count": 1,
+    "matched_pid": "3400",
+    "matched_product_name": "Filetes pechuga de pollo corte fino",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pata de pavo sin piel y con hueso",
+    "count": 1,
+    "matched_pid": "3400",
+    "matched_product_name": "Filetes pechuga de pollo corte fino",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "carré de cerdo",
+    "count": 1,
+    "matched_pid": "35902",
+    "matched_product_name": "Brochetas de pollo, pimiento verde y tocino de cerdo con varilla",
+    "match_method": "TOKEN_cerdo"
+  },
+  {
+    "ingredient": "carne de aguja de ternera",
+    "count": 1,
+    "matched_pid": "6565",
+    "matched_product_name": "Tortellini carne Pagani",
+    "match_method": "TOKEN_carne"
+  },
+  {
+    "ingredient": "pavo entero",
+    "count": 1,
+    "matched_pid": "3400",
+    "matched_product_name": "Filetes pechuga de pollo corte fino",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "lengua de ternera",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "patas de pavo con hueso y piel",
+    "count": 1,
+    "matched_pid": "3400",
+    "matched_product_name": "Filetes pechuga de pollo corte fino",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "jarrete de ternera",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "churrasco de ternera",
+    "count": 1,
+    "matched_pid": "35286",
+    "matched_product_name": "Costilla de cerdo churrasco",
+    "match_method": "TOKEN_churrasco"
+  },
+  {
+    "ingredient": "carne de conejo en trozos sin hueso",
+    "count": 1,
+    "matched_pid": "6565",
+    "matched_product_name": "Tortellini carne Pagani",
+    "match_method": "TOKEN_carne"
+  },
+  {
+    "ingredient": "nata sin lactosa",
+    "count": 1,
+    "matched_pid": "10161",
+    "matched_product_name": "Nata ligera para cocinar Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pavo",
+    "count": 1,
+    "matched_pid": "3400",
+    "matched_product_name": "Filetes pechuga de pollo corte fino",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "piernas de cordero deshuesadas",
+    "count": 1,
+    "matched_pid": "8839",
+    "matched_product_name": "Hamburguesa de cordero al romero",
+    "match_method": "TOKEN_cordero"
+  },
+  {
+    "ingredient": "matambre de ternera",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "ossobucos de ternera",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "mollejas de ternera",
+    "count": 1,
+    "matched_pid": "2856",
+    "matched_product_name": "Mollejas de pollo",
+    "match_method": "TOKEN_mollejas"
+  },
+  {
+    "ingredient": "pulpos cocidos",
+    "count": 1,
+    "matched_pid": "26775",
+    "matched_product_name": "Chipirones enharinados Hacendado ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "buey de mar",
+    "count": 1,
+    "matched_pid": "87290",
+    "matched_product_name": "Buey de mar cocido hembra descongelado",
+    "match_method": "TOKEN_buey"
+  },
+  {
+    "ingredient": "lomos de merluza frescos",
+    "count": 1,
+    "matched_pid": "62113",
+    "matched_product_name": "Lomos y centros de merluza del Cabo Hacendado ultracongelados",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "gambas crudas peladas sin intestino",
+    "count": 1,
+    "matched_pid": "24712",
+    "matched_product_name": "Langostino crudo Hacendado ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "trucha fresca limpia",
+    "count": 1,
+    "matched_pid": "87341",
+    "matched_product_name": "Trucha Arco iris abierta a la espalda",
+    "match_method": "TOKEN_trucha"
+  },
+  {
+    "ingredient": "lonchas de queso",
+    "count": 1,
+    "matched_pid": "22216",
+    "matched_product_name": "Queso rallado emmental gratinar Hacendado",
+    "match_method": "TOKEN_queso"
+  },
+  {
+    "ingredient": "hoja de repollo blanco",
+    "count": 1,
+    "matched_pid": "3400",
+    "matched_product_name": "Filetes pechuga de pollo corte fino",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "truchas asalmonadas limpias",
+    "count": 1,
+    "matched_pid": "24350",
+    "matched_product_name": "Filete de salmón rosado salvaje con piel Hacendado ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "cortezas de cerdo fritas",
+    "count": 1,
+    "matched_pid": "35902",
+    "matched_product_name": "Brochetas de pollo, pimiento verde y tocino de cerdo con varilla",
+    "match_method": "TOKEN_cerdo"
+  },
+  {
+    "ingredient": "filetes de sardina",
+    "count": 1,
+    "matched_pid": "3400",
+    "matched_product_name": "Filetes pechuga de pollo corte fino",
+    "match_method": "TOKEN_filetes"
+  },
+  {
+    "ingredient": "medallones de merluza",
+    "count": 1,
+    "matched_pid": "62113",
+    "matched_product_name": "Lomos y centros de merluza del Cabo Hacendado ultracongelados",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "carne de mejillón congelado",
+    "count": 1,
+    "matched_pid": "62396",
+    "matched_product_name": "Carne de mejillón cocido Hacendado ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "bacalao en salazón",
+    "count": 1,
+    "matched_pid": "24016",
+    "matched_product_name": "Filetes de bacalao MareDeus ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "salmón fresco, entero, sin tripas",
+    "count": 1,
+    "matched_pid": "24350",
+    "matched_product_name": "Filete de salmón rosado salvaje con piel Hacendado ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "filete de pescado blanco sin piel",
+    "count": 1,
+    "matched_pid": "62113",
+    "matched_product_name": "Lomos y centros de merluza del Cabo Hacendado ultracongelados",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pescado de roca",
+    "count": 1,
+    "matched_pid": "62012",
+    "matched_product_name": "Fritura de pescado Hacendado ultracongelada",
+    "match_method": "TOKEN_pescado"
+  },
+  {
+    "ingredient": "filetes de merluza congelados",
+    "count": 1,
+    "matched_pid": "62113",
+    "matched_product_name": "Lomos y centros de merluza del Cabo Hacendado ultracongelados",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "cola de rape (sin piel y con hueso)",
+    "count": 1,
+    "matched_pid": "62113",
+    "matched_product_name": "Lomos y centros de merluza del Cabo Hacendado ultracongelados",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "lomo de rape sin piel ni hueso",
+    "count": 1,
+    "matched_pid": "62113",
+    "matched_product_name": "Lomos y centros de merluza del Cabo Hacendado ultracongelados",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "carne de cangrejo",
+    "count": 1,
+    "matched_pid": "6565",
+    "matched_product_name": "Tortellini carne Pagani",
+    "match_method": "TOKEN_carne"
+  },
+  {
+    "ingredient": "sardinas frescas",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "queso crema",
+    "count": 1,
+    "matched_pid": "22216",
+    "matched_product_name": "Queso rallado emmental gratinar Hacendado",
+    "match_method": "TOKEN_queso"
+  },
+  {
+    "ingredient": "lata de calamares en su tinta",
+    "count": 1,
+    "matched_pid": "26775",
+    "matched_product_name": "Chipirones enharinados Hacendado ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "tallarines al huevo",
+    "count": 1,
+    "matched_pid": "31505",
+    "matched_product_name": "Huevos medianos M",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "panceta sin ternillas ni corteza",
+    "count": 1,
+    "matched_pid": "2169",
+    "matched_product_name": "Flautas de bacón y queso",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "tagliatelle al huevo",
+    "count": 1,
+    "matched_pid": "31505",
+    "matched_product_name": "Huevos medianos M",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "rape entero",
+    "count": 1,
+    "matched_pid": "62113",
+    "matched_product_name": "Lomos y centros de merluza del Cabo Hacendado ultracongelados",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "carne de cangrejo real o chatka",
+    "count": 1,
+    "matched_pid": "6565",
+    "matched_product_name": "Tortellini carne Pagani",
+    "match_method": "TOKEN_carne"
+  },
+  {
+    "ingredient": "salchichas rojas frescas",
+    "count": 1,
+    "matched_pid": "53141",
+    "matched_product_name": "Salchichas cocidas estilo Frankfurt Hacendado de pollo y cerdo sabor ahumado",
+    "match_method": "TOKEN_salchichas"
+  },
+  {
+    "ingredient": "filetes de aguja de ternera",
+    "count": 1,
+    "matched_pid": "3400",
+    "matched_product_name": "Filetes pechuga de pollo corte fino",
+    "match_method": "TOKEN_filetes"
+  },
+  {
+    "ingredient": "queso de cabra curado",
+    "count": 1,
+    "matched_pid": "22216",
+    "matched_product_name": "Queso rallado emmental gratinar Hacendado",
+    "match_method": "TOKEN_queso"
+  },
+  {
+    "ingredient": "pescado y marisco fresco variado",
+    "count": 1,
+    "matched_pid": "62012",
+    "matched_product_name": "Fritura de pescado Hacendado ultracongelada",
+    "match_method": "TOKEN_pescado"
+  },
+  {
+    "ingredient": "carne magra de cerdo",
+    "count": 1,
+    "matched_pid": "6565",
+    "matched_product_name": "Tortellini carne Pagani",
+    "match_method": "TOKEN_carne"
+  },
+  {
+    "ingredient": "queso ahumado",
+    "count": 1,
+    "matched_pid": "22216",
+    "matched_product_name": "Queso rallado emmental gratinar Hacendado",
+    "match_method": "TOKEN_queso"
+  },
+  {
+    "ingredient": "carne de buey",
+    "count": 1,
+    "matched_pid": "6565",
+    "matched_product_name": "Tortellini carne Pagani",
+    "match_method": "TOKEN_carne"
+  },
+  {
+    "ingredient": "nata vegetal",
+    "count": 1,
+    "matched_pid": "10161",
+    "matched_product_name": "Nata ligera para cocinar Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "carne picada vegetariana",
+    "count": 1,
+    "matched_pid": "6565",
+    "matched_product_name": "Tortellini carne Pagani",
+    "match_method": "TOKEN_carne"
+  },
+  {
+    "ingredient": "salchichas vegetarianas de soja y champiñones",
+    "count": 1,
+    "matched_pid": "69519",
+    "matched_product_name": "Champiñones laminados limpios",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "yogur de leche de cabra",
+    "count": 1,
+    "matched_pid": "10380",
+    "matched_product_name": "Leche entera Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "hojas de repollo",
+    "count": 1,
+    "matched_pid": "3400",
+    "matched_product_name": "Filetes pechuga de pollo corte fino",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "queso Havarti",
+    "count": 1,
+    "matched_pid": "22216",
+    "matched_product_name": "Queso rallado emmental gratinar Hacendado",
+    "match_method": "TOKEN_queso"
+  },
+  {
+    "ingredient": "morcillas",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "leche de avena",
+    "count": 1,
+    "matched_pid": "10380",
+    "matched_product_name": "Leche entera Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "cuarto trasero de pollo sin piel y con hueso",
+    "count": 1,
+    "matched_pid": "3400",
+    "matched_product_name": "Filetes pechuga de pollo corte fino",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "huevo (de gallina)",
+    "count": 1,
+    "matched_pid": "31505",
+    "matched_product_name": "Huevos medianos M",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "queso scamorza",
+    "count": 1,
+    "matched_pid": "22216",
+    "matched_product_name": "Queso rallado emmental gratinar Hacendado",
+    "match_method": "TOKEN_queso"
+  },
+  {
+    "ingredient": "espinas y cabeza de pescado",
+    "count": 1,
+    "matched_pid": "87929",
+    "matched_product_name": "Boquerón limpio sin cabeza",
+    "match_method": "TOKEN_cabeza"
+  },
+  {
+    "ingredient": "caldo de jamón",
+    "count": 1,
+    "matched_pid": "7313",
+    "matched_product_name": "Caldo de pollo Hacendado",
+    "match_method": "TOKEN_caldo"
+  },
+  {
+    "ingredient": "almejas al natural (en conserva)",
+    "count": 1,
+    "matched_pid": "62396",
+    "matched_product_name": "Carne de mejillón cocido Hacendado ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "repollo liso verde",
+    "count": 1,
+    "matched_pid": "3400",
+    "matched_product_name": "Filetes pechuga de pollo corte fino",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "hueso blanco de cerdo",
+    "count": 1,
+    "matched_pid": "58307",
+    "matched_product_name": "Hueso garrón",
+    "match_method": "TOKEN_hueso"
+  },
+  {
+    "ingredient": "pechuga de pollo sin piel",
+    "count": 1,
+    "matched_pid": "3400",
+    "matched_product_name": "Filetes pechuga de pollo corte fino",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "carne de cuarto trasero de pollo sin hueso",
+    "count": 1,
+    "matched_pid": "3400",
+    "matched_product_name": "Filetes pechuga de pollo corte fino",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "huevas de trucha",
+    "count": 1,
+    "matched_pid": "87341",
+    "matched_product_name": "Trucha Arco iris abierta a la espalda",
+    "match_method": "TOKEN_trucha"
+  },
+  {
+    "ingredient": "copos de bonito deshidratado",
+    "count": 1,
+    "matched_pid": "18114",
+    "matched_product_name": "Filetes de melva canutera con pimientos del piquillo Hacendado en aceite de oliva",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "corazones de pollo",
+    "count": 1,
+    "matched_pid": "3400",
+    "matched_product_name": "Filetes pechuga de pollo corte fino",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "raviolis frescos rellenos de queso",
+    "count": 1,
+    "matched_pid": "6142",
+    "matched_product_name": "Pasta fresca tortellini rellena de carne Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "huesos de cordero",
+    "count": 1,
+    "matched_pid": "8839",
+    "matched_product_name": "Hamburguesa de cordero al romero",
+    "match_method": "TOKEN_cordero"
+  },
+  {
+    "ingredient": "queso scamorza ahumado",
+    "count": 1,
+    "matched_pid": "22216",
+    "matched_product_name": "Queso rallado emmental gratinar Hacendado",
+    "match_method": "TOKEN_queso"
+  },
+  {
+    "ingredient": "salchicha cruda",
+    "count": 1,
+    "matched_pid": "21538",
+    "matched_product_name": "Salteado de patata y salchicha frankfurt Hacendado ultracongelado",
+    "match_method": "TOKEN_salchicha"
+  },
+  {
+    "ingredient": "bacalao desalado desmigado sin espinas",
+    "count": 1,
+    "matched_pid": "24016",
+    "matched_product_name": "Filetes de bacalao MareDeus ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "queso Halloumi",
+    "count": 1,
+    "matched_pid": "22216",
+    "matched_product_name": "Queso rallado emmental gratinar Hacendado",
+    "match_method": "TOKEN_queso"
+  },
+  {
+    "ingredient": "muslo de pollo sin piel",
+    "count": 1,
+    "matched_pid": "3400",
+    "matched_product_name": "Filetes pechuga de pollo corte fino",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "queso de pasta semidura",
+    "count": 1,
+    "matched_pid": "6326",
+    "matched_product_name": "Macarrón Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "yema de huevo (de gallina)",
+    "count": 1,
+    "matched_pid": "31505",
+    "matched_product_name": "Huevos medianos M",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "oreja de cerdo fresca",
+    "count": 1,
+    "matched_pid": "35902",
+    "matched_product_name": "Brochetas de pollo, pimiento verde y tocino de cerdo con varilla",
+    "match_method": "TOKEN_cerdo"
+  },
+  {
+    "ingredient": "gambas blancas frescas",
+    "count": 1,
+    "matched_pid": "24712",
+    "matched_product_name": "Langostino crudo Hacendado ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "panceta fresca de cerdo sin corteza",
+    "count": 1,
+    "matched_pid": "2169",
+    "matched_product_name": "Flautas de bacón y queso",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "queso cremoso bajo en grasa",
+    "count": 1,
+    "matched_pid": "69297",
+    "matched_product_name": "Ajos morados",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "cebolla dorada",
+    "count": 1,
+    "matched_pid": "69089",
+    "matched_product_name": "Cebollas",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "jamón Ibérico",
+    "count": 1,
+    "matched_pid": "56619",
+    "matched_product_name": "Jamón de pavo Hacendado finas lonchas",
+    "match_method": "TOKEN_jamon"
+  },
+  {
+    "ingredient": "ventresca de atún",
+    "count": 1,
+    "matched_pid": "18114",
+    "matched_product_name": "Filetes de melva canutera con pimientos del piquillo Hacendado en aceite de oliva",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "queso quark desnatado",
+    "count": 1,
+    "matched_pid": "10161",
+    "matched_product_name": "Nata ligera para cocinar Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "filete de lubina",
+    "count": 1,
+    "matched_pid": "62113",
+    "matched_product_name": "Lomos y centros de merluza del Cabo Hacendado ultracongelados",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "yogures de soja",
+    "count": 1,
+    "matched_pid": "22313",
+    "matched_product_name": "Yogur natural Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "atún en escabeche",
+    "count": 1,
+    "matched_pid": "18114",
+    "matched_product_name": "Filetes de melva canutera con pimientos del piquillo Hacendado en aceite de oliva",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "trucha ahumada",
+    "count": 1,
+    "matched_pid": "87341",
+    "matched_product_name": "Trucha Arco iris abierta a la espalda",
+    "match_method": "TOKEN_trucha"
+  },
+  {
+    "ingredient": "muslo de pollo, sin hueso y sin piel",
+    "count": 1,
+    "matched_pid": "3400",
+    "matched_product_name": "Filetes pechuga de pollo corte fino",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "tomates corazón de buey",
+    "count": 1,
+    "matched_pid": "69937",
+    "matched_product_name": "Tomate ensalada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "boquerones en vinagre",
+    "count": 1,
+    "matched_pid": "80405",
+    "matched_product_name": "Boquerones en vinagre Hacendado en aceite de girasol",
+    "match_method": "TOKEN_boquerones"
+  },
+  {
+    "ingredient": "huevas de pescado frescas",
+    "count": 1,
+    "matched_pid": "62012",
+    "matched_product_name": "Fritura de pescado Hacendado ultracongelada",
+    "match_method": "TOKEN_pescado"
+  },
+  {
+    "ingredient": "colas de langostino cocido peladas",
+    "count": 1,
+    "matched_pid": "24712",
+    "matched_product_name": "Langostino crudo Hacendado ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "mantequilla con sal",
+    "count": 1,
+    "matched_pid": "60622",
+    "matched_product_name": "Mantequilla sin sal añadida Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "carne de pavo asada",
+    "count": 1,
+    "matched_pid": "3400",
+    "matched_product_name": "Filetes pechuga de pollo corte fino",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "beicon de pavo",
+    "count": 1,
+    "matched_pid": "3400",
+    "matched_product_name": "Filetes pechuga de pollo corte fino",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "queso fresco desnatado batido",
+    "count": 1,
+    "matched_pid": "10161",
+    "matched_product_name": "Nata ligera para cocinar Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "leche semidesnatada",
+    "count": 1,
+    "matched_pid": "10380",
+    "matched_product_name": "Leche entera Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "salchichas vegetarianas",
+    "count": 1,
+    "matched_pid": "53141",
+    "matched_product_name": "Salchichas cocidas estilo Frankfurt Hacendado de pollo y cerdo sabor ahumado",
+    "match_method": "TOKEN_salchichas"
+  },
+  {
+    "ingredient": "yogures de leche de cabra",
+    "count": 1,
+    "matched_pid": "10380",
+    "matched_product_name": "Leche entera Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "careta de cerdo",
+    "count": 1,
+    "matched_pid": "35902",
+    "matched_product_name": "Brochetas de pollo, pimiento verde y tocino de cerdo con varilla",
+    "match_method": "TOKEN_cerdo"
+  },
+  {
+    "ingredient": "fondo de carne",
+    "count": 1,
+    "matched_pid": "6565",
+    "matched_product_name": "Tortellini carne Pagani",
+    "match_method": "TOKEN_carne"
+  },
+  {
+    "ingredient": "queso Torta del Casar",
+    "count": 1,
+    "matched_pid": "22216",
+    "matched_product_name": "Queso rallado emmental gratinar Hacendado",
+    "match_method": "TOKEN_queso"
+  },
+  {
+    "ingredient": "chipirón fresco",
+    "count": 1,
+    "matched_pid": "26775",
+    "matched_product_name": "Chipirones enharinados Hacendado ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "cortezas de cerdo deshidratada",
+    "count": 1,
+    "matched_pid": "35902",
+    "matched_product_name": "Brochetas de pollo, pimiento verde y tocino de cerdo con varilla",
+    "match_method": "TOKEN_cerdo"
+  },
+  {
+    "ingredient": "morcilla de Burgos",
+    "count": 1,
+    "matched_pid": "21562",
+    "matched_product_name": "Morcilla de cebolla",
+    "match_method": "TOKEN_morcilla"
+  },
+  {
+    "ingredient": "carne de rabo de ternera",
+    "count": 1,
+    "matched_pid": "6565",
+    "matched_product_name": "Tortellini carne Pagani",
+    "match_method": "TOKEN_carne"
+  },
+  {
+    "ingredient": "ventresca de atún fresco",
+    "count": 1,
+    "matched_pid": "18114",
+    "matched_product_name": "Filetes de melva canutera con pimientos del piquillo Hacendado en aceite de oliva",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "queso cabrales",
+    "count": 1,
+    "matched_pid": "22216",
+    "matched_product_name": "Queso rallado emmental gratinar Hacendado",
+    "match_method": "TOKEN_queso"
+  },
+  {
+    "ingredient": "caramelos duros de azúcar y mantequilla",
+    "count": 1,
+    "matched_pid": "60622",
+    "matched_product_name": "Mantequilla sin sal añadida Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "chips de pan de gamba",
+    "count": 1,
+    "matched_pid": "24712",
+    "matched_product_name": "Langostino crudo Hacendado ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "mozzarella fresca de búfala",
+    "count": 1,
+    "matched_pid": "51050",
+    "matched_product_name": "Mozzarella fresca de vaca Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "piel de pollo",
+    "count": 1,
+    "matched_pid": "3400",
+    "matched_product_name": "Filetes pechuga de pollo corte fino",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "mozzarella light de barra",
+    "count": 1,
+    "matched_pid": "51050",
+    "matched_product_name": "Mozzarella fresca de vaca Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "chipirones rellenos (en tinta)",
+    "count": 1,
+    "matched_pid": "26775",
+    "matched_product_name": "Chipirones enharinados Hacendado ultracongelado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "carne magra de cerdo sin nervios",
+    "count": 1,
+    "matched_pid": "6565",
+    "matched_product_name": "Tortellini carne Pagani",
+    "match_method": "TOKEN_carne"
+  },
+  {
+    "ingredient": "carne de gallina",
+    "count": 1,
+    "matched_pid": "6565",
+    "matched_product_name": "Tortellini carne Pagani",
+    "match_method": "TOKEN_carne"
+  }
+]

@@ -1,0 +1,3019 @@
+[
+  {
+    "ingredient": "aceite de oliva",
+    "count": 2313,
+    "matched_pid": "4740",
+    "matched_product_name": "Aceite de oliva virgen extra Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "aceite de oliva virgen extra",
+    "count": 975,
+    "matched_pid": "4740",
+    "matched_product_name": "Aceite de oliva virgen extra Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "azúcar",
+    "count": 530,
+    "matched_pid": "29322",
+    "matched_product_name": "Bebida de soja 0% azúcar Hacendado",
+    "match_method": "TOKEN_azucar"
+  },
+  {
+    "ingredient": "vino blanco",
+    "count": 358,
+    "matched_pid": "4940",
+    "matched_product_name": "Vinagre de vino blanco Hacendado",
+    "match_method": "TOKEN_vino"
+  },
+  {
+    "ingredient": "harina",
+    "count": 276,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "salsa de soja",
+    "count": 269,
+    "matched_pid": "35839",
+    "matched_product_name": "Salsa Original Ligeresa",
+    "match_method": "TOKEN_salsa"
+  },
+  {
+    "ingredient": "vinagre",
+    "count": 229,
+    "matched_pid": "80405",
+    "matched_product_name": "Boquerones en vinagre Hacendado en aceite de girasol",
+    "match_method": "TOKEN_vinagre"
+  },
+  {
+    "ingredient": "levadura prensada fresca",
+    "count": 228,
+    "matched_pid": "87811",
+    "matched_product_name": "Levadura fresca Levital",
+    "match_method": "TOKEN_levadura"
+  },
+  {
+    "ingredient": "harina de trigo",
+    "count": 213,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "miel",
+    "count": 192,
+    "matched_pid": "15436",
+    "matched_product_name": "Miel de flores Hacendado",
+    "match_method": "TOKEN_miel"
+  },
+  {
+    "ingredient": "aceite de girasol",
+    "count": 188,
+    "matched_pid": "4740",
+    "matched_product_name": "Aceite de oliva virgen extra Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "arroz de grano redondo",
+    "count": 180,
+    "matched_pid": "5044",
+    "matched_product_name": "Arroz redondo Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "azúcar moreno",
+    "count": 175,
+    "matched_pid": "29322",
+    "matched_product_name": "Bebida de soja 0% azúcar Hacendado",
+    "match_method": "TOKEN_azucar"
+  },
+  {
+    "ingredient": "harina de fuerza",
+    "count": 167,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "maicena",
+    "count": 143,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "pan rallado",
+    "count": 133,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "aceite",
+    "count": 124,
+    "matched_pid": "4740",
+    "matched_product_name": "Aceite de oliva virgen extra Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "polvo de hornear",
+    "count": 119,
+    "matched_pid": "51151",
+    "matched_product_name": "Queso en polvo especial pasta mezcla Hacendado",
+    "match_method": "TOKEN_polvo"
+  },
+  {
+    "ingredient": "mayonesa",
+    "count": 108,
+    "matched_pid": "13406",
+    "matched_product_name": "Mayonesa Hacendado",
+    "match_method": "TOKEN_mayonesa"
+  },
+  {
+    "ingredient": "pastilla de caldo de verduras",
+    "count": 104,
+    "matched_pid": "7313",
+    "matched_product_name": "Caldo de pollo Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "mostaza",
+    "count": 90,
+    "matched_pid": "17228",
+    "matched_product_name": "Mostaza de Dijon Hacendado",
+    "match_method": "TOKEN_mostaza"
+  },
+  {
+    "ingredient": "vino blanco seco",
+    "count": 89,
+    "matched_pid": "4940",
+    "matched_product_name": "Vinagre de vino blanco Hacendado",
+    "match_method": "TOKEN_vino"
+  },
+  {
+    "ingredient": "brandy",
+    "count": 86,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "mostaza de Dijon",
+    "count": 85,
+    "matched_pid": "17228",
+    "matched_product_name": "Mostaza de Dijon Hacendado",
+    "match_method": "TOKEN_mostaza"
+  },
+  {
+    "ingredient": "caldo de verduras",
+    "count": 85,
+    "matched_pid": "7313",
+    "matched_product_name": "Caldo de pollo Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "aceitunas negras sin hueso",
+    "count": 85,
+    "matched_pid": "22910",
+    "matched_product_name": "Aceitunas verdes rellenas de anchoa Hacendado",
+    "match_method": "TOKEN_aceitunas"
+  },
+  {
+    "ingredient": "harina de repostería",
+    "count": 83,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "vinagre de arroz",
+    "count": 81,
+    "matched_pid": "5044",
+    "matched_product_name": "Arroz redondo Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "garbanzos cocidos (en conserva)",
+    "count": 78,
+    "matched_pid": "26029",
+    "matched_product_name": "Garbanzo cocido Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "alcaparras",
+    "count": 76,
+    "matched_pid": "33190",
+    "matched_product_name": "Alcaparras Hacendado",
+    "match_method": "TOKEN_alcaparras"
+  },
+  {
+    "ingredient": "piñones",
+    "count": 74,
+    "matched_pid": "34024",
+    "matched_product_name": "Nuez natural Hacendado pelada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "aceite para freír",
+    "count": 67,
+    "matched_pid": "4740",
+    "matched_product_name": "Aceite de oliva virgen extra Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "nueces peladas",
+    "count": 67,
+    "matched_pid": "34024",
+    "matched_product_name": "Nuez natural Hacendado pelada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "vino tinto",
+    "count": 65,
+    "matched_pid": "4940",
+    "matched_product_name": "Vinagre de vino blanco Hacendado",
+    "match_method": "TOKEN_vino"
+  },
+  {
+    "ingredient": "semillas de sésamo tostado",
+    "count": 63,
+    "matched_pid": "34024",
+    "matched_product_name": "Nuez natural Hacendado pelada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pasta corta seca",
+    "count": 61,
+    "matched_pid": "6326",
+    "matched_product_name": "Macarrón Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "vinagre balsámico",
+    "count": 61,
+    "matched_pid": "80405",
+    "matched_product_name": "Boquerones en vinagre Hacendado en aceite de girasol",
+    "match_method": "TOKEN_vinagre"
+  },
+  {
+    "ingredient": "quinoa en grano",
+    "count": 59,
+    "matched_pid": "22278",
+    "matched_product_name": "Quinoa cocida blanca y roja Sabroz",
+    "match_method": "TOKEN_quinoa"
+  },
+  {
+    "ingredient": "aceite de sésamo tostado",
+    "count": 59,
+    "matched_pid": "4740",
+    "matched_product_name": "Aceite de oliva virgen extra Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "almendras crudas sin piel",
+    "count": 58,
+    "matched_pid": "34024",
+    "matched_product_name": "Nuez natural Hacendado pelada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pasas sin semillas",
+    "count": 55,
+    "matched_pid": "34024",
+    "matched_product_name": "Nuez natural Hacendado pelada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "vinagre de jerez",
+    "count": 54,
+    "matched_pid": "80405",
+    "matched_product_name": "Boquerones en vinagre Hacendado en aceite de girasol",
+    "match_method": "TOKEN_vinagre"
+  },
+  {
+    "ingredient": "aceite de sésamo",
+    "count": 51,
+    "matched_pid": "4740",
+    "matched_product_name": "Aceite de oliva virgen extra Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "semillas de sésamo",
+    "count": 50,
+    "matched_pid": "34024",
+    "matched_product_name": "Nuez natural Hacendado pelada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "arroz de grano largo",
+    "count": 48,
+    "matched_pid": "5044",
+    "matched_product_name": "Arroz redondo Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "arroz basmati",
+    "count": 47,
+    "matched_pid": "22280",
+    "matched_product_name": "Arroz cocido basmati Sabroz",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pepinillos en vinagre",
+    "count": 44,
+    "matched_pid": "29540",
+    "matched_product_name": "Pepinillos pequeños Hacendado",
+    "match_method": "TOKEN_pepinillos"
+  },
+  {
+    "ingredient": "vinagre de vino blanco",
+    "count": 44,
+    "matched_pid": "80405",
+    "matched_product_name": "Boquerones en vinagre Hacendado en aceite de girasol",
+    "match_method": "TOKEN_vinagre"
+  },
+  {
+    "ingredient": "aceitunas verdes sin hueso",
+    "count": 43,
+    "matched_pid": "22910",
+    "matched_product_name": "Aceitunas verdes rellenas de anchoa Hacendado",
+    "match_method": "TOKEN_aceitunas"
+  },
+  {
+    "ingredient": "kétchup",
+    "count": 42,
+    "matched_pid": "23579",
+    "matched_product_name": "Ketchup Hacendado",
+    "match_method": "TOKEN_ketchup"
+  },
+  {
+    "ingredient": "pan de molde",
+    "count": 41,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "nueces en mitades",
+    "count": 39,
+    "matched_pid": "34024",
+    "matched_product_name": "Nuez natural Hacendado pelada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "copos de avena",
+    "count": 37,
+    "matched_pid": "82150",
+    "matched_product_name": "Pan tostado con copos de avena Vitalité Kaura Wasa",
+    "match_method": "TOKEN_copos"
+  },
+  {
+    "ingredient": "cerveza",
+    "count": 37,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "almendras tostadas sin sal",
+    "count": 34,
+    "matched_pid": "34024",
+    "matched_product_name": "Nuez natural Hacendado pelada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "tabasco",
+    "count": 33,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "caldo de ave",
+    "count": 31,
+    "matched_pid": "7313",
+    "matched_product_name": "Caldo de pollo Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "miga de pan blanco",
+    "count": 30,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "garbanzos secos",
+    "count": 30,
+    "matched_pid": "26029",
+    "matched_product_name": "Garbanzo cocido Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "mirin",
+    "count": 27,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "vino de Jerez seco",
+    "count": 27,
+    "matched_pid": "4940",
+    "matched_product_name": "Vinagre de vino blanco Hacendado",
+    "match_method": "TOKEN_vino"
+  },
+  {
+    "ingredient": "aceite vegetal",
+    "count": 27,
+    "matched_pid": "4740",
+    "matched_product_name": "Aceite de oliva virgen extra Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "lentejas pardinas",
+    "count": 27,
+    "matched_pid": "26030",
+    "matched_product_name": "Lenteja cocida Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "harina integral de trigo",
+    "count": 26,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "anacardos crudos",
+    "count": 26,
+    "matched_pid": "34024",
+    "matched_product_name": "Nuez natural Hacendado pelada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pastilla de caldo",
+    "count": 25,
+    "matched_pid": "7313",
+    "matched_product_name": "Caldo de pollo Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "lentejas cocidas (en conserva)",
+    "count": 25,
+    "matched_pid": "26030",
+    "matched_product_name": "Lenteja cocida Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "arroz integral",
+    "count": 25,
+    "matched_pid": "5044",
+    "matched_product_name": "Arroz redondo Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "cuscús",
+    "count": 24,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "arroz",
+    "count": 24,
+    "matched_pid": "5044",
+    "matched_product_name": "Arroz redondo Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "espaguetis",
+    "count": 24,
+    "matched_pid": "6277",
+    "matched_product_name": "Spaghetti fino Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "levadura de panadería deshidratada",
+    "count": 24,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pastillas de caldo de verduras",
+    "count": 23,
+    "matched_pid": "7313",
+    "matched_product_name": "Caldo de pollo Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "vinagre de vino tinto",
+    "count": 23,
+    "matched_pid": "80405",
+    "matched_product_name": "Boquerones en vinagre Hacendado en aceite de girasol",
+    "match_method": "TOKEN_vinagre"
+  },
+  {
+    "ingredient": "mostaza a la antigua",
+    "count": 22,
+    "matched_pid": "17228",
+    "matched_product_name": "Mostaza de Dijon Hacendado",
+    "match_method": "TOKEN_mostaza"
+  },
+  {
+    "ingredient": "pan duro",
+    "count": 22,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pistachos pelados (sin sal)",
+    "count": 22,
+    "matched_pid": "34024",
+    "matched_product_name": "Nuez natural Hacendado pelada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "bicarbonato",
+    "count": 22,
+    "matched_pid": "29007",
+    "matched_product_name": "Bicarbonato de sódio Hacendado",
+    "match_method": "TOKEN_bicarbonato"
+  },
+  {
+    "ingredient": "almendra cruda sin piel",
+    "count": 21,
+    "matched_pid": "34024",
+    "matched_product_name": "Nuez natural Hacendado pelada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "harina integral",
+    "count": 21,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "macarrones",
+    "count": 21,
+    "matched_pid": "6326",
+    "matched_product_name": "Macarrón Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "vino de Oporto",
+    "count": 20,
+    "matched_pid": "4940",
+    "matched_product_name": "Vinagre de vino blanco Hacendado",
+    "match_method": "TOKEN_vino"
+  },
+  {
+    "ingredient": "sake",
+    "count": 20,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "vinagre de sidra",
+    "count": 20,
+    "matched_pid": "80405",
+    "matched_product_name": "Boquerones en vinagre Hacendado en aceite de girasol",
+    "match_method": "TOKEN_vinagre"
+  },
+  {
+    "ingredient": "avellanas tostadas",
+    "count": 20,
+    "matched_pid": "34024",
+    "matched_product_name": "Nuez natural Hacendado pelada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "tofu firme",
+    "count": 20,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "tahini",
+    "count": 19,
+    "matched_pid": "17441",
+    "matched_product_name": "Pasta de sésamo Tahini Hacendado",
+    "match_method": "TOKEN_tahini"
+  },
+  {
+    "ingredient": "vino dulce",
+    "count": 18,
+    "matched_pid": "4940",
+    "matched_product_name": "Vinagre de vino blanco Hacendado",
+    "match_method": "TOKEN_vino"
+  },
+  {
+    "ingredient": "concentrado de caldo de verduras casero",
+    "count": 18,
+    "matched_pid": "7313",
+    "matched_product_name": "Caldo de pollo Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "tortillas de trigo",
+    "count": 18,
+    "matched_pid": "80859",
+    "matched_product_name": "Tortillas de trigo Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "almendra molida",
+    "count": 17,
+    "matched_pid": "34024",
+    "matched_product_name": "Nuez natural Hacendado pelada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "harina de arroz",
+    "count": 17,
+    "matched_pid": "5044",
+    "matched_product_name": "Arroz redondo Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "bebida de soja",
+    "count": 17,
+    "matched_pid": "10814",
+    "matched_product_name": "Bebida láctea semidesnatada con fibra Hacendado",
+    "match_method": "TOKEN_bebida"
+  },
+  {
+    "ingredient": "coco rallado",
+    "count": 16,
+    "matched_pid": "17174",
+    "matched_product_name": "Preparado de coco Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "semillas de sésamo negro",
+    "count": 16,
+    "matched_pid": "34024",
+    "matched_product_name": "Nuez natural Hacendado pelada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pan blanco",
+    "count": 16,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "sidra",
+    "count": 15,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "azúcar glas",
+    "count": 15,
+    "matched_pid": "29322",
+    "matched_product_name": "Bebida de soja 0% azúcar Hacendado",
+    "match_method": "TOKEN_azucar"
+  },
+  {
+    "ingredient": "vino Pedro Ximénez",
+    "count": 15,
+    "matched_pid": "4940",
+    "matched_product_name": "Vinagre de vino blanco Hacendado",
+    "match_method": "TOKEN_vino"
+  },
+  {
+    "ingredient": "semillas de lino",
+    "count": 15,
+    "matched_pid": "34024",
+    "matched_product_name": "Nuez natural Hacendado pelada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "cerveza negra",
+    "count": 14,
+    "matched_pid": "34171",
+    "matched_product_name": "Pimienta negra molida Hacendado",
+    "match_method": "TOKEN_negra"
+  },
+  {
+    "ingredient": "pistachos (sin piel y sin sal)",
+    "count": 14,
+    "matched_pid": "34024",
+    "matched_product_name": "Nuez natural Hacendado pelada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "aceitunas negras",
+    "count": 14,
+    "matched_pid": "22910",
+    "matched_product_name": "Aceitunas verdes rellenas de anchoa Hacendado",
+    "match_method": "TOKEN_aceitunas"
+  },
+  {
+    "ingredient": "piñones crudos",
+    "count": 14,
+    "matched_pid": "34024",
+    "matched_product_name": "Nuez natural Hacendado pelada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "harina de trigo sarraceno",
+    "count": 14,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "harina de maíz",
+    "count": 13,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "caldo",
+    "count": 13,
+    "matched_pid": "7313",
+    "matched_product_name": "Caldo de pollo Hacendado",
+    "match_method": "TOKEN_caldo"
+  },
+  {
+    "ingredient": "lentejas rojas partidas",
+    "count": 13,
+    "matched_pid": "26030",
+    "matched_product_name": "Lenteja cocida Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "bulgur",
+    "count": 13,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "garbanzos cocidos",
+    "count": 13,
+    "matched_pid": "26029",
+    "matched_product_name": "Garbanzo cocido Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "chocolate negro (70% de cacao)",
+    "count": 13,
+    "matched_pid": "12531",
+    "matched_product_name": "Chocolate negro fundir Hacendado",
+    "match_method": "TOKEN_chocolate"
+  },
+  {
+    "ingredient": "harina panificable sin gluten",
+    "count": 13,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "jarabe de arce",
+    "count": 12,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "pan blanco semiduro",
+    "count": 12,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "maní",
+    "count": 12,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "semillas de mostaza",
+    "count": 12,
+    "matched_pid": "34024",
+    "matched_product_name": "Nuez natural Hacendado pelada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "aceite de coco",
+    "count": 12,
+    "matched_pid": "4740",
+    "matched_product_name": "Aceite de oliva virgen extra Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "fideos",
+    "count": 12,
+    "matched_pid": "6253",
+    "matched_product_name": "Fideuá Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "obleas de masa para empanadillas",
+    "count": 12,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pastilla de caldo de ave",
+    "count": 11,
+    "matched_pid": "7313",
+    "matched_product_name": "Caldo de pollo Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "cacahuetes tostados sin sal",
+    "count": 11,
+    "matched_pid": "82417",
+    "matched_product_name": "Panecillos tostados cereales y semillas Hacendado",
+    "match_method": "TOKEN_tostados"
+  },
+  {
+    "ingredient": "semillas de chía",
+    "count": 11,
+    "matched_pid": "34024",
+    "matched_product_name": "Nuez natural Hacendado pelada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "cava",
+    "count": 11,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "vainilla líquida",
+    "count": 11,
+    "matched_pid": "32524",
+    "matched_product_name": "Aroma de vainilla Hacendado",
+    "match_method": "TOKEN_vainilla"
+  },
+  {
+    "ingredient": "tallarines",
+    "count": 11,
+    "matched_pid": "6246",
+    "matched_product_name": "Tallarines Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "whisky",
+    "count": 10,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "pan del día anterior",
+    "count": 10,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pastilla de caldo de verduras (para 0,5 l)",
+    "count": 10,
+    "matched_pid": "7313",
+    "matched_product_name": "Caldo de pollo Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pan blanco duro",
+    "count": 10,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "arroz blanco de grano largo",
+    "count": 10,
+    "matched_pid": "5044",
+    "matched_product_name": "Arroz redondo Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "placas de canelones",
+    "count": 10,
+    "matched_pid": "52889",
+    "matched_product_name": "Placas para canelones El Pavo",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "avellanas",
+    "count": 10,
+    "matched_pid": "34024",
+    "matched_product_name": "Nuez natural Hacendado pelada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "semillas de amapola",
+    "count": 10,
+    "matched_pid": "34024",
+    "matched_product_name": "Nuez natural Hacendado pelada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "arroz vaporizado",
+    "count": 10,
+    "matched_pid": "5044",
+    "matched_product_name": "Arroz redondo Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "almendras crudas con piel",
+    "count": 10,
+    "matched_pid": "34024",
+    "matched_product_name": "Nuez natural Hacendado pelada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "aceitunas sin hueso",
+    "count": 10,
+    "matched_pid": "22910",
+    "matched_product_name": "Aceitunas verdes rellenas de anchoa Hacendado",
+    "match_method": "TOKEN_aceitunas"
+  },
+  {
+    "ingredient": "lentejas secas",
+    "count": 10,
+    "matched_pid": "26030",
+    "matched_product_name": "Lenteja cocida Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "soja texturizada",
+    "count": 10,
+    "matched_pid": "8727",
+    "matched_product_name": "Fideos orientales Yakisoba sabor soja Hacendado",
+    "match_method": "TOKEN_soja"
+  },
+  {
+    "ingredient": "cacahuetes tostados o fritos sin sal",
+    "count": 9,
+    "matched_pid": "82417",
+    "matched_product_name": "Panecillos tostados cereales y semillas Hacendado",
+    "match_method": "TOKEN_tostados"
+  },
+  {
+    "ingredient": "levadura nutricional",
+    "count": 9,
+    "matched_pid": "87811",
+    "matched_product_name": "Levadura fresca Levital",
+    "match_method": "TOKEN_levadura"
+  },
+  {
+    "ingredient": "almendras fritas con sal",
+    "count": 9,
+    "matched_pid": "34024",
+    "matched_product_name": "Nuez natural Hacendado pelada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pistachos",
+    "count": 9,
+    "matched_pid": "34024",
+    "matched_product_name": "Nuez natural Hacendado pelada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "harina de garbanzos",
+    "count": 9,
+    "matched_pid": "26029",
+    "matched_product_name": "Garbanzo cocido Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pasta de miso rojo (aka miso)",
+    "count": 8,
+    "matched_pid": "6326",
+    "matched_product_name": "Macarrón Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "vinagre de vino",
+    "count": 8,
+    "matched_pid": "80405",
+    "matched_product_name": "Boquerones en vinagre Hacendado en aceite de girasol",
+    "match_method": "TOKEN_vinagre"
+  },
+  {
+    "ingredient": "pasta de ají amarillo",
+    "count": 8,
+    "matched_pid": "6326",
+    "matched_product_name": "Macarrón Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "cuscús de grano medio",
+    "count": 8,
+    "matched_pid": "34172",
+    "matched_product_name": "Pimienta negra en grano Hacendado",
+    "match_method": "TOKEN_grano"
+  },
+  {
+    "ingredient": "mostaza de grano entero",
+    "count": 8,
+    "matched_pid": "17228",
+    "matched_product_name": "Mostaza de Dijon Hacendado",
+    "match_method": "TOKEN_mostaza"
+  },
+  {
+    "ingredient": "arroz jazmín",
+    "count": 8,
+    "matched_pid": "5044",
+    "matched_product_name": "Arroz redondo Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "fideos orientales de arroz",
+    "count": 8,
+    "matched_pid": "5044",
+    "matched_product_name": "Arroz redondo Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "almendras laminadas",
+    "count": 8,
+    "matched_pid": "34024",
+    "matched_product_name": "Nuez natural Hacendado pelada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "harina de espelta",
+    "count": 8,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pastilla de caldo de verduras (para 0,5 l.)",
+    "count": 7,
+    "matched_pid": "7313",
+    "matched_product_name": "Caldo de pollo Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "nueces pecanas",
+    "count": 7,
+    "matched_pid": "34024",
+    "matched_product_name": "Nuez natural Hacendado pelada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "anacardos tostados sin sal",
+    "count": 7,
+    "matched_pid": "34024",
+    "matched_product_name": "Nuez natural Hacendado pelada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "semillas variadas",
+    "count": 7,
+    "matched_pid": "34024",
+    "matched_product_name": "Nuez natural Hacendado pelada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "chocolate fondant para postres (50% cacao)",
+    "count": 7,
+    "matched_pid": "12531",
+    "matched_product_name": "Chocolate negro fundir Hacendado",
+    "match_method": "TOKEN_chocolate"
+  },
+  {
+    "ingredient": "cebollitas en vinagre",
+    "count": 7,
+    "matched_pid": "33141",
+    "matched_product_name": "Cebollitas Hacendado",
+    "match_method": "TOKEN_cebollitas"
+  },
+  {
+    "ingredient": "pasta seca",
+    "count": 7,
+    "matched_pid": "6326",
+    "matched_product_name": "Macarrón Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "placas de lasaña secas",
+    "count": 7,
+    "matched_pid": "6856",
+    "matched_product_name": "Placas para lasaña precocidas El Pavo",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pasta seca integral",
+    "count": 7,
+    "matched_pid": "6326",
+    "matched_product_name": "Macarrón Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "lentejas cocidas en conserva",
+    "count": 7,
+    "matched_pid": "26030",
+    "matched_product_name": "Lenteja cocida Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "lentejas castellanas secas",
+    "count": 7,
+    "matched_pid": "26030",
+    "matched_product_name": "Lenteja cocida Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "ron",
+    "count": 6,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "aceite de cacahuete",
+    "count": 6,
+    "matched_pid": "4740",
+    "matched_product_name": "Aceite de oliva virgen extra Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "azúcar vainillado",
+    "count": 6,
+    "matched_pid": "29322",
+    "matched_product_name": "Bebida de soja 0% azúcar Hacendado",
+    "match_method": "TOKEN_azucar"
+  },
+  {
+    "ingredient": "piñones tostados",
+    "count": 6,
+    "matched_pid": "34024",
+    "matched_product_name": "Nuez natural Hacendado pelada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "espaguetis integrales",
+    "count": 6,
+    "matched_pid": "6277",
+    "matched_product_name": "Spaghetti fino Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pastillas de caldo",
+    "count": 6,
+    "matched_pid": "22860",
+    "matched_product_name": "Caldo de carne Hacendado en pastillas",
+    "match_method": "TOKEN_pastillas"
+  },
+  {
+    "ingredient": "wasabi en pasta",
+    "count": 6,
+    "matched_pid": "6326",
+    "matched_product_name": "Macarrón Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "cacao puro en polvo",
+    "count": 6,
+    "matched_pid": "12530",
+    "matched_product_name": "Chocolate negro 70% cacao fundir Hacendado 0% azúcares añadidos",
+    "match_method": "TOKEN_cacao"
+  },
+  {
+    "ingredient": "vino oloroso",
+    "count": 5,
+    "matched_pid": "4940",
+    "matched_product_name": "Vinagre de vino blanco Hacendado",
+    "match_method": "TOKEN_vino"
+  },
+  {
+    "ingredient": "harina de maíz amarillo precocida",
+    "count": 5,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "fideos orientales transparentes",
+    "count": 5,
+    "matched_pid": "6253",
+    "matched_product_name": "Fideuá Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "nueces de macadamia",
+    "count": 5,
+    "matched_pid": "34024",
+    "matched_product_name": "Nuez natural Hacendado pelada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pan rústico",
+    "count": 5,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "semillas de sésamo blanco",
+    "count": 5,
+    "matched_pid": "34024",
+    "matched_product_name": "Nuez natural Hacendado pelada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pasta miso",
+    "count": 5,
+    "matched_pid": "6326",
+    "matched_product_name": "Macarrón Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "almendra laminada",
+    "count": 5,
+    "matched_pid": "34024",
+    "matched_product_name": "Nuez natural Hacendado pelada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pasta de miso blanco (shiro miso)",
+    "count": 5,
+    "matched_pid": "6326",
+    "matched_product_name": "Macarrón Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "macarrones estriados",
+    "count": 5,
+    "matched_pid": "6326",
+    "matched_product_name": "Macarrón Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "arroz negro (venere)",
+    "count": 5,
+    "matched_pid": "5044",
+    "matched_product_name": "Arroz redondo Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "aceite en spray",
+    "count": 5,
+    "matched_pid": "4740",
+    "matched_product_name": "Aceite de oliva virgen extra Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "harina sin gluten",
+    "count": 5,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "harina integral de espelta",
+    "count": 5,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "tortillas de maíz",
+    "count": 4,
+    "matched_pid": "80859",
+    "matched_product_name": "Tortillas de trigo Hacendado",
+    "match_method": "TOKEN_tortillas"
+  },
+  {
+    "ingredient": "vino manzanilla",
+    "count": 4,
+    "matched_pid": "4940",
+    "matched_product_name": "Vinagre de vino blanco Hacendado",
+    "match_method": "TOKEN_vino"
+  },
+  {
+    "ingredient": "vinagre de frambuesa",
+    "count": 4,
+    "matched_pid": "80405",
+    "matched_product_name": "Boquerones en vinagre Hacendado en aceite de girasol",
+    "match_method": "TOKEN_vinagre"
+  },
+  {
+    "ingredient": "vino de Jerez dulce",
+    "count": 4,
+    "matched_pid": "4940",
+    "matched_product_name": "Vinagre de vino blanco Hacendado",
+    "match_method": "TOKEN_vino"
+  },
+  {
+    "ingredient": "cacahuetes tostados salados",
+    "count": 4,
+    "matched_pid": "82417",
+    "matched_product_name": "Panecillos tostados cereales y semillas Hacendado",
+    "match_method": "TOKEN_tostados"
+  },
+  {
+    "ingredient": "chocolate negro (85% de cacao)",
+    "count": 4,
+    "matched_pid": "12531",
+    "matched_product_name": "Chocolate negro fundir Hacendado",
+    "match_method": "TOKEN_chocolate"
+  },
+  {
+    "ingredient": "vaina de vainilla",
+    "count": 4,
+    "matched_pid": "32524",
+    "matched_product_name": "Aroma de vainilla Hacendado",
+    "match_method": "TOKEN_vainilla"
+  },
+  {
+    "ingredient": "harina de coco",
+    "count": 4,
+    "matched_pid": "17174",
+    "matched_product_name": "Preparado de coco Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "vino de arroz",
+    "count": 4,
+    "matched_pid": "5044",
+    "matched_product_name": "Arroz redondo Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "aceitunas",
+    "count": 4,
+    "matched_pid": "22910",
+    "matched_product_name": "Aceitunas verdes rellenas de anchoa Hacendado",
+    "match_method": "TOKEN_aceitunas"
+  },
+  {
+    "ingredient": "habas secas de soja blanca",
+    "count": 4,
+    "matched_pid": "15896",
+    "matched_product_name": "Habas fritas con sal Hacendado",
+    "match_method": "TOKEN_habas"
+  },
+  {
+    "ingredient": "harina de maíz blanco precocida",
+    "count": 4,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "tofu sedoso",
+    "count": 4,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "whisky bourbon",
+    "count": 3,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "pan de molde integral",
+    "count": 3,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pastilla de caldo de ave (para 0.5 l)",
+    "count": 3,
+    "matched_pid": "7313",
+    "matched_product_name": "Caldo de pollo Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "ron dorado",
+    "count": 3,
+    "matched_pid": "63023",
+    "matched_product_name": "Migas de bacalao dorado con cebolla y patatas paja Hacendado congelado",
+    "match_method": "TOKEN_dorado"
+  },
+  {
+    "ingredient": "turrón de Jijona blando",
+    "count": 3,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "vino blanco para cocinar",
+    "count": 3,
+    "matched_pid": "4940",
+    "matched_product_name": "Vinagre de vino blanco Hacendado",
+    "match_method": "TOKEN_vino"
+  },
+  {
+    "ingredient": "pastillas de caldo de ave",
+    "count": 3,
+    "matched_pid": "7313",
+    "matched_product_name": "Caldo de pollo Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "azúcar de coco",
+    "count": 3,
+    "matched_pid": "17174",
+    "matched_product_name": "Preparado de coco Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "granillo de almendra tostado",
+    "count": 3,
+    "matched_pid": "34024",
+    "matched_product_name": "Nuez natural Hacendado pelada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pistachos salados sin cáscara",
+    "count": 3,
+    "matched_pid": "34024",
+    "matched_product_name": "Nuez natural Hacendado pelada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "arroz basmati integral",
+    "count": 3,
+    "matched_pid": "22280",
+    "matched_product_name": "Arroz cocido basmati Sabroz",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "arroz salvaje",
+    "count": 3,
+    "matched_pid": "5044",
+    "matched_product_name": "Arroz redondo Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "caballa en aceite",
+    "count": 3,
+    "matched_pid": "4740",
+    "matched_product_name": "Aceite de oliva virgen extra Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "arroz carnaroli",
+    "count": 3,
+    "matched_pid": "5044",
+    "matched_product_name": "Arroz redondo Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "fideos de fideuá",
+    "count": 3,
+    "matched_pid": "6253",
+    "matched_product_name": "Fideuá Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "arroz cocido",
+    "count": 3,
+    "matched_pid": "5044",
+    "matched_product_name": "Arroz redondo Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "nuez pelada",
+    "count": 3,
+    "matched_pid": "34024",
+    "matched_product_name": "Nuez natural Hacendado pelada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "semillas de lino dorado",
+    "count": 3,
+    "matched_pid": "34024",
+    "matched_product_name": "Nuez natural Hacendado pelada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "harina de soja",
+    "count": 3,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "quinoa variada",
+    "count": 3,
+    "matched_pid": "22278",
+    "matched_product_name": "Quinoa cocida blanca y roja Sabroz",
+    "match_method": "TOKEN_quinoa"
+  },
+  {
+    "ingredient": "alubias verdinas secas",
+    "count": 3,
+    "matched_pid": "26019",
+    "matched_product_name": "Alubia cocida blanca Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "tortillas de trigo integral",
+    "count": 3,
+    "matched_pid": "80859",
+    "matched_product_name": "Tortillas de trigo Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pasta seca para sopa",
+    "count": 3,
+    "matched_pid": "6326",
+    "matched_product_name": "Macarrón Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "frijoles negros",
+    "count": 3,
+    "matched_pid": "26019",
+    "matched_product_name": "Alubia cocida blanca Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pepinillos agridulces",
+    "count": 3,
+    "matched_pid": "29540",
+    "matched_product_name": "Pepinillos pequeños Hacendado",
+    "match_method": "TOKEN_pepinillos"
+  },
+  {
+    "ingredient": "harina de arroz integral",
+    "count": 3,
+    "matched_pid": "5044",
+    "matched_product_name": "Arroz redondo Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "chocolate blanco",
+    "count": 3,
+    "matched_pid": "12531",
+    "matched_product_name": "Chocolate negro fundir Hacendado",
+    "match_method": "TOKEN_chocolate"
+  },
+  {
+    "ingredient": "pepitas de chocolate negro",
+    "count": 3,
+    "matched_pid": "12531",
+    "matched_product_name": "Chocolate negro fundir Hacendado",
+    "match_method": "TOKEN_chocolate"
+  },
+  {
+    "ingredient": "pasta brick",
+    "count": 3,
+    "matched_pid": "6326",
+    "matched_product_name": "Macarrón Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "arroz inflado",
+    "count": 3,
+    "matched_pid": "5044",
+    "matched_product_name": "Arroz redondo Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "40 g de aceite de oliva virgen extra",
+    "count": 2,
+    "matched_pid": "4740",
+    "matched_product_name": "Aceite de oliva virgen extra Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "60 g de aceite de oliva",
+    "count": 2,
+    "matched_pid": "4740",
+    "matched_product_name": "Aceite de oliva virgen extra Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "16 oz pasta",
+    "count": 2,
+    "matched_pid": "6326",
+    "matched_product_name": "Macarrón Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "10 g de levadura prensada fresca",
+    "count": 2,
+    "matched_pid": "87811",
+    "matched_product_name": "Levadura fresca Levital",
+    "match_method": "TOKEN_levadura"
+  },
+  {
+    "ingredient": "vino de Madeira",
+    "count": 2,
+    "matched_pid": "4940",
+    "matched_product_name": "Vinagre de vino blanco Hacendado",
+    "match_method": "TOKEN_vino"
+  },
+  {
+    "ingredient": "fideos vermicelli de arroz",
+    "count": 2,
+    "matched_pid": "5044",
+    "matched_product_name": "Arroz redondo Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pasta de achiote",
+    "count": 2,
+    "matched_pid": "6326",
+    "matched_product_name": "Macarrón Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pan de molde blanco",
+    "count": 2,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "levadura de panadería instantánea",
+    "count": 2,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pasta de tamarindo",
+    "count": 2,
+    "matched_pid": "6326",
+    "matched_product_name": "Macarrón Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "miel de azahar",
+    "count": 2,
+    "matched_pid": "15436",
+    "matched_product_name": "Miel de flores Hacendado",
+    "match_method": "TOKEN_miel"
+  },
+  {
+    "ingredient": "cacahuetes fritos salados",
+    "count": 2,
+    "matched_pid": "29180",
+    "matched_product_name": "Harina semolosa de trigo Hacendado especial para fritos",
+    "match_method": "TOKEN_fritos"
+  },
+  {
+    "ingredient": "lecitina de soja",
+    "count": 2,
+    "matched_pid": "8727",
+    "matched_product_name": "Fideos orientales Yakisoba sabor soja Hacendado",
+    "match_method": "TOKEN_soja"
+  },
+  {
+    "ingredient": "granillo de almendra cruda",
+    "count": 2,
+    "matched_pid": "34024",
+    "matched_product_name": "Nuez natural Hacendado pelada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "semillas de fenogreco",
+    "count": 2,
+    "matched_pid": "34024",
+    "matched_product_name": "Nuez natural Hacendado pelada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "cerveza rubia",
+    "count": 2,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "almendras laminadas tostadas",
+    "count": 2,
+    "matched_pid": "34024",
+    "matched_product_name": "Nuez natural Hacendado pelada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pan rústico de centeno",
+    "count": 2,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "arroz bomba",
+    "count": 2,
+    "matched_pid": "5044",
+    "matched_product_name": "Arroz redondo Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pasta fresca rellena (tipo ravioli)",
+    "count": 2,
+    "matched_pid": "6326",
+    "matched_product_name": "Macarrón Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "fideos ramen secos",
+    "count": 2,
+    "matched_pid": "6253",
+    "matched_product_name": "Fideuá Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "arroz arborio",
+    "count": 2,
+    "matched_pid": "5044",
+    "matched_product_name": "Arroz redondo Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "fideos orientales de trigo",
+    "count": 2,
+    "matched_pid": "6253",
+    "matched_product_name": "Fideuá Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "espaguetis negros",
+    "count": 2,
+    "matched_pid": "6277",
+    "matched_product_name": "Spaghetti fino Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "fideos soba secos",
+    "count": 2,
+    "matched_pid": "6253",
+    "matched_product_name": "Fideuá Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "uvas rojas sin semillas",
+    "count": 2,
+    "matched_pid": "34024",
+    "matched_product_name": "Nuez natural Hacendado pelada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "láminas de pasta fresca para lasaña",
+    "count": 2,
+    "matched_pid": "6326",
+    "matched_product_name": "Macarrón Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "harina de castañas",
+    "count": 2,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "coco fresco pelado",
+    "count": 2,
+    "matched_pid": "17174",
+    "matched_product_name": "Preparado de coco Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "lentejas verdinas",
+    "count": 2,
+    "matched_pid": "26030",
+    "matched_product_name": "Lenteja cocida Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "habas secas de soja verde",
+    "count": 2,
+    "matched_pid": "15896",
+    "matched_product_name": "Habas fritas con sal Hacendado",
+    "match_method": "TOKEN_habas"
+  },
+  {
+    "ingredient": "miel de caña",
+    "count": 2,
+    "matched_pid": "15436",
+    "matched_product_name": "Miel de flores Hacendado",
+    "match_method": "TOKEN_miel"
+  },
+  {
+    "ingredient": "pastilla de caldo (para 0,5 l.)",
+    "count": 2,
+    "matched_pid": "7313",
+    "matched_product_name": "Caldo de pollo Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "semillas de cáñamo",
+    "count": 2,
+    "matched_pid": "34024",
+    "matched_product_name": "Nuez natural Hacendado pelada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "azúcar de caña integral",
+    "count": 2,
+    "matched_pid": "29322",
+    "matched_product_name": "Bebida de soja 0% azúcar Hacendado",
+    "match_method": "TOKEN_azucar"
+  },
+  {
+    "ingredient": "aceite virgen de sésamo",
+    "count": 2,
+    "matched_pid": "4740",
+    "matched_product_name": "Aceite de oliva virgen extra Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "avellanas (con o sin piel)",
+    "count": 2,
+    "matched_pid": "34024",
+    "matched_product_name": "Nuez natural Hacendado pelada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "harina de centeno",
+    "count": 2,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "chocolate negro para postres",
+    "count": 2,
+    "matched_pid": "12531",
+    "matched_product_name": "Chocolate negro fundir Hacendado",
+    "match_method": "TOKEN_chocolate"
+  },
+  {
+    "ingredient": "harina integral de centeno",
+    "count": 2,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "harina de avena",
+    "count": 2,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "camarones frescos",
+    "count": 2,
+    "matched_pid": "63168",
+    "matched_product_name": "Tortillitas de camarones Hacendado ultracongeladas",
+    "match_method": "TOKEN_camarones"
+  },
+  {
+    "ingredient": "aceite de oliva extra virgen",
+    "count": 2,
+    "matched_pid": "4740",
+    "matched_product_name": "Aceite de oliva virgen extra Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "almendras enteras con piel",
+    "count": 2,
+    "matched_pid": "34024",
+    "matched_product_name": "Nuez natural Hacendado pelada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pepitas de chocolate",
+    "count": 2,
+    "matched_pid": "12531",
+    "matched_product_name": "Chocolate negro fundir Hacendado",
+    "match_method": "TOKEN_chocolate"
+  },
+  {
+    "ingredient": "extracto natural de vainilla",
+    "count": 2,
+    "matched_pid": "32524",
+    "matched_product_name": "Aroma de vainilla Hacendado",
+    "match_method": "TOKEN_vainilla"
+  },
+  {
+    "ingredient": "arroz glutinoso",
+    "count": 2,
+    "matched_pid": "5044",
+    "matched_product_name": "Arroz redondo Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "30 g de piñones",
+    "count": 1,
+    "matched_pid": "34024",
+    "matched_product_name": "Nuez natural Hacendado pelada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "130 g de aceite de oliva virgen extra",
+    "count": 1,
+    "matched_pid": "4740",
+    "matched_product_name": "Aceite de oliva virgen extra Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "400 g de tallarines",
+    "count": 1,
+    "matched_pid": "6246",
+    "matched_product_name": "Tallarines Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "280 g dried pasta",
+    "count": 1,
+    "matched_pid": "6326",
+    "matched_product_name": "Macarrón Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "250 g dried pasta",
+    "count": 1,
+    "matched_pid": "6326",
+    "matched_product_name": "Macarrón Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "120 g bulgur wheat",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "800 g coconut milk",
+    "count": 1,
+    "matched_pid": "17174",
+    "matched_product_name": "Preparado de coco Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "150 g de harina de garbanzos",
+    "count": 1,
+    "matched_pid": "26029",
+    "matched_product_name": "Garbanzo cocido Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "150 g de harina sin gluten",
+    "count": 1,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "100 g de vino blanco seco",
+    "count": 1,
+    "matched_pid": "4940",
+    "matched_product_name": "Vinagre de vino blanco Hacendado",
+    "match_method": "TOKEN_vino"
+  },
+  {
+    "ingredient": "150 g de avellanas",
+    "count": 1,
+    "matched_pid": "34024",
+    "matched_product_name": "Nuez natural Hacendado pelada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "200 g de cuscús",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1 cucharadita colmada concentrado de caldo de verduras casero",
+    "count": 1,
+    "matched_pid": "7313",
+    "matched_product_name": "Caldo de pollo Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "12 corn tortillas",
+    "count": 1,
+    "matched_pid": "80859",
+    "matched_product_name": "Tortillas de trigo Hacendado",
+    "match_method": "TOKEN_tortillas"
+  },
+  {
+    "ingredient": "¼ tsp saffron",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "1000 g gnocchi",
+    "count": 1,
+    "matched_pid": "6175",
+    "matched_product_name": "Pasta fresca gnocchi Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "200 g de pan rallado",
+    "count": 1,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "tortilla strips",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "18 mini corn tortillas (approx. 4 in.)",
+    "count": 1,
+    "matched_pid": "10467",
+    "matched_product_name": "Mini burgers de pollo",
+    "match_method": "TOKEN_mini"
+  },
+  {
+    "ingredient": "280 g de arroz basmati",
+    "count": 1,
+    "matched_pid": "22280",
+    "matched_product_name": "Arroz cocido basmati Sabroz",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "1 cucharada de aceite de girasol",
+    "count": 1,
+    "matched_pid": "4740",
+    "matched_product_name": "Aceite de oliva virgen extra Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "300 g de aceite de girasol",
+    "count": 1,
+    "matched_pid": "4740",
+    "matched_product_name": "Aceite de oliva virgen extra Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "80 g de aceite de oliva virgen extra",
+    "count": 1,
+    "matched_pid": "4740",
+    "matched_product_name": "Aceite de oliva virgen extra Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "100 g de vino de Jerez seco",
+    "count": 1,
+    "matched_pid": "4940",
+    "matched_product_name": "Vinagre de vino blanco Hacendado",
+    "match_method": "TOKEN_vino"
+  },
+  {
+    "ingredient": "20 g de harina de trigo",
+    "count": 1,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "1 ½ cucharadas de aceite de oliva",
+    "count": 1,
+    "matched_pid": "4740",
+    "matched_product_name": "Aceite de oliva virgen extra Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "50 g tahini",
+    "count": 1,
+    "matched_pid": "17441",
+    "matched_product_name": "Pasta de sésamo Tahini Hacendado",
+    "match_method": "TOKEN_tahini"
+  },
+  {
+    "ingredient": "40 g de aceite de oliva",
+    "count": 1,
+    "matched_pid": "4740",
+    "matched_product_name": "Aceite de oliva virgen extra Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "200 g de arroz de grano redondo",
+    "count": 1,
+    "matched_pid": "5044",
+    "matched_product_name": "Arroz redondo Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "1 pastilla de caldo de verduras",
+    "count": 1,
+    "matched_pid": "7313",
+    "matched_product_name": "Caldo de pollo Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "150 g de cuscús",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "100 g de tahini",
+    "count": 1,
+    "matched_pid": "17441",
+    "matched_product_name": "Pasta de sésamo Tahini Hacendado",
+    "match_method": "TOKEN_tahini"
+  },
+  {
+    "ingredient": "10 g de aceite de sésamo",
+    "count": 1,
+    "matched_pid": "4740",
+    "matched_product_name": "Aceite de oliva virgen extra Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "20 g de miel",
+    "count": 1,
+    "matched_pid": "15436",
+    "matched_product_name": "Miel de flores Hacendado",
+    "match_method": "TOKEN_miel"
+  },
+  {
+    "ingredient": "125 g de garbanzos cocidos (en conserva)",
+    "count": 1,
+    "matched_pid": "26029",
+    "matched_product_name": "Garbanzo cocido Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "4 cucharaditas de semillas de sésamo tostado",
+    "count": 1,
+    "matched_pid": "34024",
+    "matched_product_name": "Nuez natural Hacendado pelada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "350 g dried pasta",
+    "count": 1,
+    "matched_pid": "6326",
+    "matched_product_name": "Macarrón Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "20 g de aceite de oliva",
+    "count": 1,
+    "matched_pid": "4740",
+    "matched_product_name": "Aceite de oliva virgen extra Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "30 g de harina de trigo",
+    "count": 1,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "½ pastilla de caldo de verduras",
+    "count": 1,
+    "matched_pid": "7313",
+    "matched_product_name": "Caldo de pollo Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "2 cucharadas de miel",
+    "count": 1,
+    "matched_pid": "15436",
+    "matched_product_name": "Miel de flores Hacendado",
+    "match_method": "TOKEN_miel"
+  },
+  {
+    "ingredient": "8 - 12 nueces peladas",
+    "count": 1,
+    "matched_pid": "34024",
+    "matched_product_name": "Nuez natural Hacendado pelada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "100 g de harina de fuerza",
+    "count": 1,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "460 g de harina de fuerza",
+    "count": 1,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "80 g de harina integral de centeno",
+    "count": 1,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "1 cucharadita de aceite",
+    "count": 1,
+    "matched_pid": "4740",
+    "matched_product_name": "Aceite de oliva virgen extra Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "10 g de miel",
+    "count": 1,
+    "matched_pid": "15436",
+    "matched_product_name": "Miel de flores Hacendado",
+    "match_method": "TOKEN_miel"
+  },
+  {
+    "ingredient": "½ oz coconut oil",
+    "count": 1,
+    "matched_pid": "17174",
+    "matched_product_name": "Preparado de coco Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "20 g de azúcar",
+    "count": 1,
+    "matched_pid": "29322",
+    "matched_product_name": "Bebida de soja 0% azúcar Hacendado",
+    "match_method": "TOKEN_azucar"
+  },
+  {
+    "ingredient": "120 g de harina de repostería",
+    "count": 1,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "130 g de harina de fuerza",
+    "count": 1,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "5 g aceite de girasol",
+    "count": 1,
+    "matched_pid": "4740",
+    "matched_product_name": "Aceite de oliva virgen extra Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "2 cucharaditas de semillas de sésamo",
+    "count": 1,
+    "matched_pid": "34024",
+    "matched_product_name": "Nuez natural Hacendado pelada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "1 tbsp coconut oil",
+    "count": 1,
+    "matched_pid": "17174",
+    "matched_product_name": "Preparado de coco Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "400 g coconut cream",
+    "count": 1,
+    "matched_pid": "17174",
+    "matched_product_name": "Preparado de coco Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "2 ½ oz bulgur wheat",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "300 g dried pasta",
+    "count": 1,
+    "matched_pid": "6326",
+    "matched_product_name": "Macarrón Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "400 g coconut milk",
+    "count": 1,
+    "matched_pid": "17174",
+    "matched_product_name": "Preparado de coco Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "150 - 200 g coconut milk",
+    "count": 1,
+    "matched_pid": "17174",
+    "matched_product_name": "Preparado de coco Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "300 g dried fusilli pasta",
+    "count": 1,
+    "matched_pid": "6326",
+    "matched_product_name": "Macarrón Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "2 oz egg noodles (long fresh egg pasta)",
+    "count": 1,
+    "matched_pid": "6326",
+    "matched_product_name": "Macarrón Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "50 g de almendra cruda sin piel",
+    "count": 1,
+    "matched_pid": "34024",
+    "matched_product_name": "Nuez natural Hacendado pelada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "600 g silken tofu",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "azúcar moreno oscuro",
+    "count": 1,
+    "matched_pid": "29322",
+    "matched_product_name": "Bebida de soja 0% azúcar Hacendado",
+    "match_method": "TOKEN_azucar"
+  },
+  {
+    "ingredient": "mostaza inglesa",
+    "count": 1,
+    "matched_pid": "17228",
+    "matched_product_name": "Mostaza de Dijon Hacendado",
+    "match_method": "TOKEN_mostaza"
+  },
+  {
+    "ingredient": "mostaza picante",
+    "count": 1,
+    "matched_pid": "17228",
+    "matched_product_name": "Mostaza de Dijon Hacendado",
+    "match_method": "TOKEN_mostaza"
+  },
+  {
+    "ingredient": "granillo de almendra",
+    "count": 1,
+    "matched_pid": "34024",
+    "matched_product_name": "Nuez natural Hacendado pelada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "alubias de Tolosa",
+    "count": 1,
+    "matched_pid": "26019",
+    "matched_product_name": "Alubia cocida blanca Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pan sin gluten",
+    "count": 1,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pepinillo en vinagre",
+    "count": 1,
+    "matched_pid": "11946",
+    "matched_product_name": "Aceitunas verdes rellenas de pepinillo Hacendado",
+    "match_method": "TOKEN_pepinillo"
+  },
+  {
+    "ingredient": "tallarines de arroz",
+    "count": 1,
+    "matched_pid": "5044",
+    "matched_product_name": "Arroz redondo Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "mostaza en polvo",
+    "count": 1,
+    "matched_pid": "17228",
+    "matched_product_name": "Mostaza de Dijon Hacendado",
+    "match_method": "TOKEN_mostaza"
+  },
+  {
+    "ingredient": "crema de coco",
+    "count": 1,
+    "matched_pid": "17174",
+    "matched_product_name": "Preparado de coco Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pan de centeno",
+    "count": 1,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "vainas de vainilla",
+    "count": 1,
+    "matched_pid": "32524",
+    "matched_product_name": "Aroma de vainilla Hacendado",
+    "match_method": "TOKEN_vainilla"
+  },
+  {
+    "ingredient": "uvas blancas sin semillas",
+    "count": 1,
+    "matched_pid": "34024",
+    "matched_product_name": "Nuez natural Hacendado pelada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "chocolate",
+    "count": 1,
+    "matched_pid": "12531",
+    "matched_product_name": "Chocolate negro fundir Hacendado",
+    "match_method": "TOKEN_chocolate"
+  },
+  {
+    "ingredient": "cerveza de malta",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "avellanas crudas sin piel",
+    "count": 1,
+    "matched_pid": "34024",
+    "matched_product_name": "Nuez natural Hacendado pelada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "turrón de Alicante",
+    "count": 1,
+    "matched_pid": "66202",
+    "matched_product_name": "Vino blanco Marina Alta DO Alicante",
+    "match_method": "TOKEN_alicante"
+  },
+  {
+    "ingredient": "miel de acacia",
+    "count": 1,
+    "matched_pid": "15436",
+    "matched_product_name": "Miel de flores Hacendado",
+    "match_method": "TOKEN_miel"
+  },
+  {
+    "ingredient": "vino de lambrusco",
+    "count": 1,
+    "matched_pid": "4940",
+    "matched_product_name": "Vinagre de vino blanco Hacendado",
+    "match_method": "TOKEN_vino"
+  },
+  {
+    "ingredient": "agua de coco",
+    "count": 1,
+    "matched_pid": "17174",
+    "matched_product_name": "Preparado de coco Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "sardinillas en aceite",
+    "count": 1,
+    "matched_pid": "4740",
+    "matched_product_name": "Aceite de oliva virgen extra Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "copos de coco",
+    "count": 1,
+    "matched_pid": "17174",
+    "matched_product_name": "Preparado de coco Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "ron blanco",
+    "count": 1,
+    "matched_pid": "69339",
+    "matched_product_name": "Calabacín blanco",
+    "match_method": "TOKEN_blanco"
+  },
+  {
+    "ingredient": "sidra natural",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "arroz para sushi",
+    "count": 1,
+    "matched_pid": "5044",
+    "matched_product_name": "Arroz redondo Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "arroz para risotto",
+    "count": 1,
+    "matched_pid": "5044",
+    "matched_product_name": "Arroz redondo Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pasta seca de lenteja roja",
+    "count": 1,
+    "matched_pid": "6326",
+    "matched_product_name": "Macarrón Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "vinagre de arroz negro",
+    "count": 1,
+    "matched_pid": "5044",
+    "matched_product_name": "Arroz redondo Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "tagliatelle",
+    "count": 1,
+    "matched_pid": "6246",
+    "matched_product_name": "Tallarines Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "vino de Jerez Cream",
+    "count": 1,
+    "matched_pid": "4940",
+    "matched_product_name": "Vinagre de vino blanco Hacendado",
+    "match_method": "TOKEN_vino"
+  },
+  {
+    "ingredient": "bebida de avena",
+    "count": 1,
+    "matched_pid": "10814",
+    "matched_product_name": "Bebida láctea semidesnatada con fibra Hacendado",
+    "match_method": "TOKEN_bebida"
+  },
+  {
+    "ingredient": "pasta tipo macarrón",
+    "count": 1,
+    "matched_pid": "6326",
+    "matched_product_name": "Macarrón Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pasta corta seca, tipo farfalle",
+    "count": 1,
+    "matched_pid": "6326",
+    "matched_product_name": "Macarrón Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pasta fresca rellena (tipo tortellini)",
+    "count": 1,
+    "matched_pid": "6326",
+    "matched_product_name": "Macarrón Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "vino rosado",
+    "count": 1,
+    "matched_pid": "4940",
+    "matched_product_name": "Vinagre de vino blanco Hacendado",
+    "match_method": "TOKEN_vino"
+  },
+  {
+    "ingredient": "tortellini",
+    "count": 1,
+    "matched_pid": "6142",
+    "matched_product_name": "Pasta fresca tortellini rellena de carne Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pasta seca tipo bucatini",
+    "count": 1,
+    "matched_pid": "6326",
+    "matched_product_name": "Macarrón Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "cerveza sin alcohol",
+    "count": 1,
+    "matched_pid": "39488",
+    "matched_product_name": "Bebida refrescante aromatizada tinto sin alcohol light Castillo de Salobreña",
+    "match_method": "TOKEN_alcohol"
+  },
+  {
+    "ingredient": "vino de arroz (sake)",
+    "count": 1,
+    "matched_pid": "5044",
+    "matched_product_name": "Arroz redondo Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pasta seca tipo conchas",
+    "count": 1,
+    "matched_pid": "6326",
+    "matched_product_name": "Macarrón Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "sirope dorado",
+    "count": 1,
+    "matched_pid": "19860",
+    "matched_product_name": "Sirope de agave Hacendado",
+    "match_method": "TOKEN_sirope"
+  },
+  {
+    "ingredient": "lentejas beluga (lentejas negras)",
+    "count": 1,
+    "matched_pid": "26030",
+    "matched_product_name": "Lenteja cocida Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "cacahuetes crudos sin sal pelados",
+    "count": 1,
+    "matched_pid": "69695",
+    "matched_product_name": "Ajo negro dientes pelados",
+    "match_method": "TOKEN_pelados"
+  },
+  {
+    "ingredient": "habitas fritas en aceite de oliva (en conserva)",
+    "count": 1,
+    "matched_pid": "4740",
+    "matched_product_name": "Aceite de oliva virgen extra Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "azúcar de dátiles",
+    "count": 1,
+    "matched_pid": "29322",
+    "matched_product_name": "Bebida de soja 0% azúcar Hacendado",
+    "match_method": "TOKEN_azucar"
+  },
+  {
+    "ingredient": "aceite neutro",
+    "count": 1,
+    "matched_pid": "4740",
+    "matched_product_name": "Aceite de oliva virgen extra Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "aceite de maíz",
+    "count": 1,
+    "matched_pid": "4740",
+    "matched_product_name": "Aceite de oliva virgen extra Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "semillas de nigella",
+    "count": 1,
+    "matched_pid": "34024",
+    "matched_product_name": "Nuez natural Hacendado pelada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "pasta",
+    "count": 1,
+    "matched_pid": "6326",
+    "matched_product_name": "Macarrón Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "mayonesa vegana",
+    "count": 1,
+    "matched_pid": "13406",
+    "matched_product_name": "Mayonesa Hacendado",
+    "match_method": "TOKEN_mayonesa"
+  },
+  {
+    "ingredient": "pan de maíz",
+    "count": 1,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "harina de almortas",
+    "count": 1,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "aceite de soja",
+    "count": 1,
+    "matched_pid": "4740",
+    "matched_product_name": "Aceite de oliva virgen extra Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "placas de lasaña secas precocidas",
+    "count": 1,
+    "matched_pid": "6856",
+    "matched_product_name": "Placas para lasaña precocidas El Pavo",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "camarones pelados",
+    "count": 1,
+    "matched_pid": "63168",
+    "matched_product_name": "Tortillitas de camarones Hacendado ultracongeladas",
+    "match_method": "TOKEN_camarones"
+  },
+  {
+    "ingredient": "pastillas de caldo de verduras (para 0,5 l)",
+    "count": 1,
+    "matched_pid": "7313",
+    "matched_product_name": "Caldo de pollo Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "avellanas crudas",
+    "count": 1,
+    "matched_pid": "34024",
+    "matched_product_name": "Nuez natural Hacendado pelada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "tallarines de arroz orientales",
+    "count": 1,
+    "matched_pid": "5044",
+    "matched_product_name": "Arroz redondo Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "aceite de nuez",
+    "count": 1,
+    "matched_pid": "4740",
+    "matched_product_name": "Aceite de oliva virgen extra Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "alcaparrones",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "semillas de lino molidas",
+    "count": 1,
+    "matched_pid": "34024",
+    "matched_product_name": "Nuez natural Hacendado pelada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "levadura de panadería",
+    "count": 1,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "bicarbonato de sodio",
+    "count": 1,
+    "matched_pid": "29007",
+    "matched_product_name": "Bicarbonato de sódio Hacendado",
+    "match_method": "TOKEN_bicarbonato"
+  },
+  {
+    "ingredient": "pepperoni",
+    "count": 1,
+    "matched_pid": null,
+    "matched_product_name": null,
+    "match_method": "UNMATCHED"
+  },
+  {
+    "ingredient": "harina de maíz precocida",
+    "count": 1,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "crocanti de almendra",
+    "count": 1,
+    "matched_pid": "34024",
+    "matched_product_name": "Nuez natural Hacendado pelada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "semillas de sésamo crudo",
+    "count": 1,
+    "matched_pid": "34024",
+    "matched_product_name": "Nuez natural Hacendado pelada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "azúcar de vainilla casero",
+    "count": 1,
+    "matched_pid": "29322",
+    "matched_product_name": "Bebida de soja 0% azúcar Hacendado",
+    "match_method": "TOKEN_azucar"
+  },
+  {
+    "ingredient": "sirope de chocolate",
+    "count": 1,
+    "matched_pid": "19860",
+    "matched_product_name": "Sirope de agave Hacendado",
+    "match_method": "TOKEN_sirope"
+  },
+  {
+    "ingredient": "crema de whisky",
+    "count": 1,
+    "matched_pid": "51181",
+    "matched_product_name": "Crema de queso camembert Hacendado",
+    "match_method": "TOKEN_crema"
+  },
+  {
+    "ingredient": "paté de aceitunas negras",
+    "count": 1,
+    "matched_pid": "22910",
+    "matched_product_name": "Aceitunas verdes rellenas de anchoa Hacendado",
+    "match_method": "TOKEN_aceitunas"
+  },
+  {
+    "ingredient": "quinoa roja",
+    "count": 1,
+    "matched_pid": "22278",
+    "matched_product_name": "Quinoa cocida blanca y roja Sabroz",
+    "match_method": "TOKEN_quinoa"
+  },
+  {
+    "ingredient": "caldo dashi líquido",
+    "count": 1,
+    "matched_pid": "7313",
+    "matched_product_name": "Caldo de pollo Hacendado",
+    "match_method": "TOKEN_caldo"
+  },
+  {
+    "ingredient": "vinagre balsámico blanco",
+    "count": 1,
+    "matched_pid": "80405",
+    "matched_product_name": "Boquerones en vinagre Hacendado en aceite de girasol",
+    "match_method": "TOKEN_vinagre"
+  },
+  {
+    "ingredient": "tabasco verde",
+    "count": 1,
+    "matched_pid": "35902",
+    "matched_product_name": "Brochetas de pollo, pimiento verde y tocino de cerdo con varilla",
+    "match_method": "TOKEN_verde"
+  },
+  {
+    "ingredient": "mostaza Dijon",
+    "count": 1,
+    "matched_pid": "17228",
+    "matched_product_name": "Mostaza de Dijon Hacendado",
+    "match_method": "TOKEN_mostaza"
+  },
+  {
+    "ingredient": "habas secas de soja blanca peladas",
+    "count": 1,
+    "matched_pid": "15896",
+    "matched_product_name": "Habas fritas con sal Hacendado",
+    "match_method": "TOKEN_habas"
+  },
+  {
+    "ingredient": "arenques en vinagre",
+    "count": 1,
+    "matched_pid": "80405",
+    "matched_product_name": "Boquerones en vinagre Hacendado en aceite de girasol",
+    "match_method": "TOKEN_vinagre"
+  },
+  {
+    "ingredient": "salsa Tabasco",
+    "count": 1,
+    "matched_pid": "35839",
+    "matched_product_name": "Salsa Original Ligeresa",
+    "match_method": "TOKEN_salsa"
+  },
+  {
+    "ingredient": "harina de teff",
+    "count": 1,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "obleas para gyoza congeladas",
+    "count": 1,
+    "matched_pid": "25184",
+    "matched_product_name": "Alas de pollo congeladas",
+    "match_method": "TOKEN_congeladas"
+  },
+  {
+    "ingredient": "obleas de masa gruesa estilo argentino",
+    "count": 1,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "obleas de arroz",
+    "count": 1,
+    "matched_pid": "5044",
+    "matched_product_name": "Arroz redondo Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "aceitunas de Kalamata deshuesadas",
+    "count": 1,
+    "matched_pid": "22910",
+    "matched_product_name": "Aceitunas verdes rellenas de anchoa Hacendado",
+    "match_method": "TOKEN_aceitunas"
+  },
+  {
+    "ingredient": "galletas sándwich de chocolate",
+    "count": 1,
+    "matched_pid": "82585",
+    "matched_product_name": "Galletas saladas salpicks Galbusera",
+    "match_method": "TOKEN_galletas"
+  },
+  {
+    "ingredient": "harina de algarroba",
+    "count": 1,
+    "matched_pid": "83869",
+    "matched_product_name": "Pan de molde semillas y pipas de calabaza Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "nueces de Brasil",
+    "count": 1,
+    "matched_pid": "34024",
+    "matched_product_name": "Nuez natural Hacendado pelada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "perlas de chocolate",
+    "count": 1,
+    "matched_pid": "51052",
+    "matched_product_name": "Mozzarella fresca de vaca Hacendado en perlas",
+    "match_method": "TOKEN_perlas"
+  },
+  {
+    "ingredient": "hojas de pasta para rollitos primavera",
+    "count": 1,
+    "matched_pid": "6326",
+    "matched_product_name": "Macarrón Hacendado",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "nueces pacanas",
+    "count": 1,
+    "matched_pid": "34024",
+    "matched_product_name": "Nuez natural Hacendado pelada",
+    "match_method": "DIRECT_RULE"
+  },
+  {
+    "ingredient": "grageas de chocolate",
+    "count": 1,
+    "matched_pid": "12531",
+    "matched_product_name": "Chocolate negro fundir Hacendado",
+    "match_method": "TOKEN_chocolate"
+  },
+  {
+    "ingredient": "copos de quinoa",
+    "count": 1,
+    "matched_pid": "82150",
+    "matched_product_name": "Pan tostado con copos de avena Vitalité Kaura Wasa",
+    "match_method": "TOKEN_copos"
+  },
+  {
+    "ingredient": "soja amarilla seca",
+    "count": 1,
+    "matched_pid": "8727",
+    "matched_product_name": "Fideos orientales Yakisoba sabor soja Hacendado",
+    "match_method": "TOKEN_soja"
+  }
+]

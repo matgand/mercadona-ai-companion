@@ -23,7 +23,10 @@ from typing import Any
 
 DATA_DIR = Path(__file__).resolve().parent / "data"
 PRODUCTS_FILE = DATA_DIR / "mercadona_products.json"
-SESSIONS_FILE = DATA_DIR / "mercadona_sessions.json"
+SESSIONS_FILE = Path(
+    os.environ.get("MERCADONA_SESSIONS_FILE")
+    or (Path(tempfile.gettempdir()) / "mercadona_sessions.json")
+)
 
 MERCADONA_BASE_URL = "https://tienda.mercadona.es"
 MERCADONA_DEFAULT_UA = (

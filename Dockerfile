@@ -2,22 +2,22 @@ FROM python:3.12-slim
 
 WORKDIR /app
 
-ENV PYTHONDONTWRITEBYTECODE=1 \
-    PYTHONUNBUFFERED=1 \
-    PORT=8080 \
-    GEMINI_MODEL=gemini-3.8-flash \
-    ALLOWED_USERS="matgand@gmail.com,mgandolfi@google.com,andrea.anaut@gmail.com,mattia@mgandolfi.altostrat.com"
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+ENV PORT=8080
+ENV ENFORCE_IAP_JWT=1
+ENV HIDE_ALLOWED_USERS_UNAUTHED=1
+ENV ALLOW_LOCAL_DEV_FALLBACK=0
 
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+COPY requirements.txt /app/requirements.txt
+RUN pip install --no-cache-dir -r /app/requirements.txt \
+    && useradd -m -u 10001 appuser
 
-COPY . .
+COPY server.py mercadona_service.py cookidoo_service.py gemini_planner.py campaign_service.py whatsapp_service.py /app/
+COPY data/ /app/data/
+COPY public/ /app/public/
 
-RUN groupadd -g 10001 appgroup && \
-    useradd -u 10001 -g appgroup -m -s /usr/sbin/nologin appuser && \
-    mkdir -p /app/data && \
-    chmod 700 /app/data && \
-    chown -R appuser:appgroup /app
+RUN chown -R appuser:appuser /app
 
 USER appuser
 
